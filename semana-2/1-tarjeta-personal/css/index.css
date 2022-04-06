@@ -39,7 +39,7 @@
 
 .article-container {
   display: flex;
-  padding: 0 2rem;
+  padding: 0 2em;
 }
 
 .article__card {
@@ -48,27 +48,33 @@
   gap: 0.75rem;
   background-color: #16181dbf;
   max-width: 256px;
-  padding: 1rem;
+  padding: 1em;
   border-radius: 0.5rem;
+  text-align: center;
   box-sizing: border-box;
 }
 
 .article__card-title {
   font-size: 1.5rem;
-  text-align: center;
   margin: 0;
 }
 
 .article__card-keywords {
   font-size: 1rem;
-  text-align: center;
   margin: 0;
 }
 
 .article__card-description {
   font-size: 0.85rem;
-  text-align: center;
   margin: 0;
+}
+
+.article__card-description::before {
+  content: '📚';
+}
+
+.article__card-description::after {
+  content: '📚';
 }
 
 .footer {
@@ -99,6 +105,12 @@
 .footer-nav__link {
   display: flex;
   width: 1.75rem;
+  transition: all 0.25s;
+}
+
+.footer-nav__link:hover {
+  filter: brightness(150%);
+  transform: scale(1.25);
 }
 
 .footer-nav__link-image {
