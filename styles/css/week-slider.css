@@ -1,0 +1,88 @@
+.learning-week {
+  max-height: 100vh;
+}
+
+.learning-week__container {
+  display: flex;
+}
+
+.learning-week__slider-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.learning-week__slider-list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: var(--primary-shadow-color);
+}
+
+.learning-week__slider-item {
+  position: relative;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+.learning-week__slider-item-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.learning-week__slider-item-title {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  width: 80%;
+  transform: translate(-50%, -50%);
+  font-size: 0.875rem;
+  text-align: center;
+  text-shadow:
+    0 0 0.125rem var(--primary-highlight),
+    0 0 0.25rem var(--primary-highlight);
+  text-decoration: none;
+  color: var(--text-color);
+  background-color: var(--secondary-shadow-color);
+  border-radius: var(--border-radius);
+  padding: 0.5em;
+}
+
+.learning-week__slider-button {
+  position: absolute;
+  top: 50%;
+  width: 2rem;
+  height: 2rem;
+  transform: translateY(-50%);
+  background-color: var(--secondary-shadow-color);
+  border: none;
+  border-radius: 50%;
+  color: var(--text-color);
+  font-family: monospace;
+  font-size: 1.5rem;
+  font-weight: 800;
+  padding: 0;
+  cursor: pointer;
+  transition: var(--all-transitions);
+}
+
+.learning-week__slider-button:hover {
+  background-color: var(--button-color-active);
+  color: var(--button-text-color);
+}
+
+.learning-week__slider-button--left {
+  left: 1rem;
+}
+
+.learning-week__slider-button--right {
+  right: 1rem;
+}
+
+@media (min-width: 854px) {
+  .learning-week__slider-item-title {
+    font-size: 1.5rem;
+  }
+}
