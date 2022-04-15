@@ -1,4 +1,5 @@
 :root {
+  scroll-behavior: smooth;
   --primary-theme-color: #20232a;
   --secondary-theme-color: #282c34;
   --text-color: #fff;
@@ -7,26 +8,25 @@
   --button-color: #61dafb;
   --button-color-active: #fff;
   --button-text-color: #000;
-  --primary-highlight: #61dafb;
-  --secondary-highlight: #ffd700;
-  --padding-section: 2em 0;
-  --padding-container: 0 2em;
+  --primary-highlight-color: #61dafb;
+  --secondary-highlight-color: #ffd700;
+  --padding-section: 4rem 0;
+  --padding-container: 0 2rem;
   --max-width-container: 1024px;
   --border-radius: 0.5rem;
   --all-transitions: all 0.25s;
 }
 
 .body {
-  background-color: var(--secondary-theme-color);
+  background-color: var(--primary-theme-color);
   color: var(--text-color);
   font-family: 'Roboto Mono', monospace;
   margin: 0;
-  min-height: 200vh;
 }
 
 .header {
   position: fixed;
-  /* z-index: 100; */
+  z-index: 100;
   top: 0;
   left: 0;
   width: 100%;
@@ -56,8 +56,8 @@
 
 .header-nav__link-logo-container:hover {
   box-shadow:
-    0 0 0.25rem 0 var(--primary-highlight),
-    0 0 0.5rem 0 var(--primary-highlight);
+    0 0 0.25rem 0 var(--primary-highlight-color),
+    0 0 0.5rem 0 var(--primary-highlight-color);
 }
 
 .header-nav__link-logo {
@@ -72,8 +72,8 @@
 
 .header-nav__menu-icon-label:hover {
   text-shadow:
-    0 0 0.25rem var(--primary-highlight),
-    0 0 0.5rem var(--primary-highlight);
+    0 0 0.25rem var(--primary-highlight-color),
+    0 0 0.5rem var(--primary-highlight-color);
 }
 
 .header-nav__menu-icon-checkbox {
@@ -116,7 +116,7 @@
 
 .header-nav__menu-link:hover,
 .header-nav__menu-link--active {
-  color: var(--primary-highlight);
+  color: var(--primary-highlight-color);
 }
 
 .header-nav__menu-link::after {
@@ -126,7 +126,7 @@
   bottom: -0.125rem;
   width: 0;
   height: 0.0625rem;
-  background-color: var(--secondary-highlight);
+  background-color: var(--secondary-highlight-color);
   transition: var(--all-transitions);
 }
 
