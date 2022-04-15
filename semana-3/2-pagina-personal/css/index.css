@@ -1,4 +1,5 @@
 @import url(./header.css);
+@import url(./profile.css);
 
 :root {
   scroll-behavior: smooth;
@@ -24,6 +25,11 @@
   color: var(--text-color);
   font-family: 'Roboto Mono', monospace;
   margin: 0;
+}
+
+.main {
+  width: 100%;
+  min-height: 200vh;
 }
 
 @media (min-width: 854px) {
