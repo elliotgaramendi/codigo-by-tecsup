@@ -30,11 +30,14 @@
 
 .main {
   width: 100%;
-  min-height: 200vh;
 }
 
 .wave-separator {
   width: 100%;
+}
+
+.wave-separator--r-180deg {
+  transform: rotate(180deg);
 }
 
 .wave-separator__wave-container {
