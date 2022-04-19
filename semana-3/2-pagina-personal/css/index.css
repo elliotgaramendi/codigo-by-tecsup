@@ -1,5 +1,6 @@
 @import url(./header.css);
 @import url(./profile.css);
+@import url(./experiences.css);
 
 :root {
   scroll-behavior: smooth;
