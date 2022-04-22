@@ -1,0 +1,65 @@
+@keyframes verticalStretch {
+
+  0%,
+  40%,
+  100% {
+    transform: scaleY(0.4);
+  }
+
+  20% {
+    transform: scaleY(1.0);
+  }
+}
+
+.spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(to top, var(--primary-theme-color), var(--secondary-theme-color));
+  transition: var(--all-transitions)
+}
+
+.spinner--hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.spinner__spinner {
+  display: flex;
+  gap: 0.25rem;
+  height: 2.5rem;
+}
+
+.spinner__spinner-bar {
+  background-color: var(--text-color);
+  height: 100%;
+  width: 0.5rem;
+  animation: verticalStretch 1s infinite ease-in-out;
+}
+
+.spinner__spinner-bar--one {
+  animation-delay: -0.9s;
+}
+
+.spinner__spinner-bar--two {
+  animation-delay: -0.8s;
+}
+
+.spinner__spinner-bar--three {
+  animation-delay: -0.7s;
+}
+
+.spinner__spinner-bar--four {
+  animation-delay: -0.6s;
+}
+
+.spinner__spinner-bar--five {
+  animation-delay: -0.5s;
+}
