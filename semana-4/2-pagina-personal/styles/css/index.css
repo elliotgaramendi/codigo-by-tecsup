@@ -1,26 +1,8 @@
+@import url(./variables.css);
 @import url(./header.css);
 @import url(./profile.css);
 @import url(./experiences.css);
 @import url(./projects.css);
-
-:root {
-  scroll-behavior: smooth;
-  --primary-theme-color: #20232a;
-  --secondary-theme-color: #282c34;
-  --text-color: #fff;
-  --primary-shadow-color: #8888;
-  --secondary-shadow-color: #21242c80;
-  --button-color: #61dafb;
-  --button-color-active: #fff;
-  --button-text-color: #000;
-  --primary-highlight-color: #61dafb;
-  --secondary-highlight-color: #ffd700;
-  --padding-section: 4rem 0;
-  --padding-container: 0 2rem;
-  --max-width-container: 1024px;
-  --border-radius: 0.5rem;
-  --all-transitions: all 0.25s;
-}
 
 .body {
   background-color: var(--primary-theme-color);
