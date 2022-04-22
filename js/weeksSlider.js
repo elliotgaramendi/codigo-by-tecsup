@@ -8,6 +8,7 @@ const weeksSlider = () => {
   const sliderSliderButtonRight = document.getElementById('sliderSliderButtonRight');
 
   const previousSliderItem = () => {
+    clearInterval(timeoutId);
     const learningWeeksSliderItem = document.querySelectorAll('.learning-weeks__slider-item');
     const learningWeeksSliderItemLast = learningWeeksSliderItem[learningWeeksSliderItem.length - 1];
     learningWeeksSliderList.style.marginLeft = '0';
@@ -20,10 +21,12 @@ const weeksSlider = () => {
       learningWeeksSliderList.style.marginLeft = '-100%';
       sliderSliderButtonLeft.disabled = false;
       sliderSliderButtonRight.disabled = false;
+      timeoutId = setInterval(nextSliderItem, 5000)
     }, 500);
   };
 
   const nextSliderItem = () => {
+    clearInterval(timeoutId);
     const learningWeeksSliderItemFirst = document.querySelectorAll('.learning-weeks__slider-item')[0];
     learningWeeksSliderList.style.marginLeft = '-200%';
     learningWeeksSliderList.style.transition = 'all 0.5s';
@@ -35,6 +38,7 @@ const weeksSlider = () => {
       learningWeeksSliderList.style.marginLeft = '-100%';
       sliderSliderButtonLeft.disabled = false;
       sliderSliderButtonRight.disabled = false;
+      timeoutId = setInterval(nextSliderItem, 5000)
     }, 500);
 
   };
@@ -44,7 +48,7 @@ const weeksSlider = () => {
   learningWeeksSliderList.style.marginLeft = '-100%';
   sliderSliderButtonLeft.addEventListener('click', previousSliderItem);
   sliderSliderButtonRight.addEventListener('click', nextSliderItem);
-  setInterval(nextSliderItem, 5000);
+  let timeoutId = setInterval(nextSliderItem, 5000);
 };
 
 export default weeksSlider;
