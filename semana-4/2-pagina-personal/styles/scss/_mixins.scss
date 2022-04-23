@@ -12,7 +12,13 @@
   padding: var(--padding-container);
 }
 
-@mixin button($padding: 0.25em 1em, $font-weight: 700, $border-radius: 0.5rem) {
+@mixin title {
+  font-size: 2rem;
+  text-shadow: 0 0 0.25rem var(--primary-highlight-color);
+  margin: 0;
+}
+
+@mixin button($padding: 0.25em 1em, $font-weight: 700, $border-radius: var(--border-radius)) {
   background-color: var(--button-color);
   border: 0.0625rem solid var(--button-color);
   border-radius: $border-radius;
@@ -26,6 +32,23 @@
   &:hover {
     background-color: var(--button-color-active);
   }
+}
+
+@mixin box-shadow($border-radius: var(--border-radius), $spread-radius: 0.125rem, $growth-factor: 2) {
+  border-radius: $border-radius;
+  box-shadow:
+    0 0 0 $spread-radius var(--primary-shadow-color),
+    0 0 0 ($spread-radius * $growth-factor) var(--primary-shadow-color);
+
+  &:hover {
+    box-shadow:
+      0 0 0 ($spread-radius * $growth-factor) var(--primary-highlight-color),
+      0 0 ($spread-radius * ($growth-factor+2)) 0 var(--secondary-highlight-color),
+      0 0 ($spread-radius * ($growth-factor+4)) 0 var(--secondary-highlight-color);
+  }
+
+  overflow: hidden;
+  transition: var(--all-transitions);
 }
 
 @mixin decorator ($top: 0, $left: 0, $width: 100%, $transform: translate(-50%, -50%)) {

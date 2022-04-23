@@ -1,0 +1,84 @@
+:root {
+  scroll-behavior: smooth;
+  --primary-theme-color: #20232a;
+  --secondary-theme-color: #282c34;
+  --text-color: #fff;
+  --primary-shadow-color: #8888;
+  --secondary-shadow-color: #21242c80;
+  --button-color: #61dafb;
+  --button-color-active: #fff;
+  --button-text-color: #000;
+  --primary-highlight-color: #61dafb;
+  --secondary-highlight-color: #ffd700;
+  --invalid-color: #dc143c;
+  --padding-section: 4rem 0;
+  --padding-container: 0 2rem;
+  --max-width-container: 1024px;
+  --border-radius: 0.5rem;
+  --all-transitions: all 0.25s;
+}
+
+.contact {
+  padding: var(--padding-section);
+  background-color: var(--secondary-theme-color);
+}
+.contact__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1024px;
+  margin: auto;
+  padding: var(--padding-container);
+}
+.contact__title {
+  font-size: 2rem;
+  text-shadow: 0 0 0.25rem var(--primary-highlight-color);
+  margin: 0;
+}
+.contact__form {
+  display: flex;
+}
+.contact__form-inputs {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 0 0.125rem var(--primary-shadow-color), 0 0 0 0.25rem var(--primary-shadow-color);
+  overflow: hidden;
+  transition: var(--all-transitions);
+}
+.contact__form-inputs:hover {
+  box-shadow: 0 0 0 0.25rem var(--primary-highlight-color), 0 0 0.5rem 0 var(--secondary-highlight-color), 0 0 0.75rem 0 var(--secondary-highlight-color);
+}
+.contact__form-input {
+  background-color: transparent;
+  border: none;
+  color: var(--text-color);
+  padding: 0.75rem;
+}
+.contact__form-input:invalid {
+  text-shadow: 0 0 0.25rem var(--invalid-color), 0 0 0.5rem var(--invalid-color);
+}
+.contact__form-input:valid {
+  text-shadow: 0 0 0.25rem var(--primary-highlight-color), 0 0 0.5rem var(--primary-highlight-color);
+}
+.contact__form-input::placeholder {
+  color: var(--secondary-highlight-color);
+  font-weight: 600;
+}
+.contact__form-button {
+  background-color: var(--button-color);
+  border: 0.0625rem solid var(--button-color);
+  border-radius: 0;
+  color: var(--button-text-color);
+  text-shadow: 0 0 0.125rem var(--primary-highlight-color);
+  font-weight: 700;
+  padding: 0 2em;
+  transition: var(--all-transitions);
+}
+.contact__form-button--active, .contact__form-button:hover {
+  background-color: var(--button-color-active);
+}
+
+/*# sourceMappingURL=contact.css.map */

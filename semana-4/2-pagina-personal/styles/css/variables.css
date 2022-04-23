@@ -10,6 +10,7 @@
   --button-text-color: #000;
   --primary-highlight-color: #61dafb;
   --secondary-highlight-color: #ffd700;
+  --invalid-color: #dc143c;
   --padding-section: 4rem 0;
   --padding-container: 0 2rem;
   --max-width-container: 1024px;
