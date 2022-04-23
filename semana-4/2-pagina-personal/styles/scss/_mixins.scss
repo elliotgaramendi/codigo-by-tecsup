@@ -6,6 +6,12 @@
   gap: $gap;
 }
 
+@mixin container {
+  max-width: 1024px;
+  margin: auto;
+  padding: var(--padding-container);
+}
+
 @mixin button($padding: 0.25em 1em, $font-weight: 700, $border-radius: 0.5rem) {
   background-color: var(--button-color);
   border: 0.0625rem solid var(--button-color);

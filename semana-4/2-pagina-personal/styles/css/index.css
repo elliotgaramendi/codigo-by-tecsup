@@ -3,6 +3,7 @@
 @import url(./profile.css);
 @import url(./experiences.css);
 @import url(./projects.css);
+@import url(./skills.css);
 
 .body {
   background-color: var(--primary-theme-color);
