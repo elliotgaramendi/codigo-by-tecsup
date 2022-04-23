@@ -107,7 +107,7 @@
 
   &__info-link {
     text-decoration: none;
-    @include button(0.5rem 1.5rem, 800, var(--border-radius));
+    @include button(0.5rem 1.5rem, 700, var(--border-radius));
   }
 
   &__figure {
