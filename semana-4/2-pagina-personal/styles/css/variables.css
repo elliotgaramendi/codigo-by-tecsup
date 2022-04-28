@@ -17,3 +17,9 @@
   --border-radius: 0.5rem;
   --all-transitions: all 0.25s;
 }
+
+@media (min-width: 854px) {
+  :root {
+    --padding-container: 0 0.75em;
+  }
+}
