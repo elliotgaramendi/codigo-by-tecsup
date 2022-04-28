@@ -18,6 +18,7 @@
 }
 
 .hero__image-container {
+  display: flex;
   max-width: 256px;
   border-radius: 50%;
   overflow: hidden;
