@@ -43,7 +43,7 @@ const header = () => {
     element.addEventListener('click', closeMenu);
   });
 
-  if (localStorage.getItem('darkMode') === 'true') {
+  if (localStorage.getItem('darkMode') === 'true' || localStorage.getItem('darkMode') === null) {
     document.querySelector('.body').classList.remove('body--light');
     headerNavThemeIconContainer.classList.remove('header-nav__theme-icon-container--active');
   } else {
