@@ -272,6 +272,10 @@
   animation-delay: -1;
 }
 
+.main {
+  width: 100%;
+}
+
 .momazos {
   position: relative;
   background-image: url("https://fondosmil.com/fondo/57521.jpg");
@@ -326,7 +330,6 @@
   gap: 2rem;
 }
 
-/*  */
 .momazos__meme {
   display: flex;
   flex-direction: column;
