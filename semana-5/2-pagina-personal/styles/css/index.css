@@ -5,6 +5,7 @@
 @import url(./projects.css);
 @import url(./skills.css);
 @import url(./contact.css);
+@import url(./footer.css);
 
 .body {
   background-color: var(--primary-theme-color);
