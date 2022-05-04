@@ -1,4 +1,4 @@
-class Producto {
+export class Producto {
 
   static contadorProducto = 0;
 
