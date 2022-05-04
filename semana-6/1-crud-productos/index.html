@@ -37,34 +37,37 @@
         </section>
         <section class="col-md-4">
           <h2 class="text-center">Crear producto</h2>
-          <form class="py-2" id="formCalculadora">
+          <form class="py-2" id="formProducto">
             <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="nombre" placeholder="Nombre" />
+              <input type="text" class="form-control" name="nombre" placeholder="Nombre" required
+                value="Impresora 3D" />
               <label for="nombre">Nombre</label>
             </div>
 
             <div class="form-floating mb-3">
-              <input type="number" class="form-control" id="precio" placeholder="Precio" />
+              <input type="number" class="form-control" name="precio" placeholder="Precio" required value="5000" />
               <label for="precio">Precio</label>
             </div>
 
             <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="marca" placeholder="Marca" />
+              <input type="text" class="form-control" name="marca" placeholder="Marca" required value="EPSON" />
               <label for="marca">Marca</label>
             </div>
 
             <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="categoria" placeholder="Categoría" />
+              <input type="text" class="form-control" name="categoria" placeholder="Categoría" required
+                value="Tecnología" />
               <label for="categoria">Categoría</label>
             </div>
 
             <div class="form-floating mb-3">
-              <input type="number" class="form-control" id="stock" placeholder="Stock" />
+              <input type="number" class="form-control" name="stock" placeholder="Stock" required value="5" />
               <label for="stock">Stock</label>
             </div>
 
             <button type="submit" class="btn btn-primary w-100 mb-3">Crear</button>
           </form>
+          <div class="badge bg-danger w-100" id="contenedorError"></div>
         </section>
       </div>
     </section>
