@@ -2,6 +2,7 @@ export class Producto {
 
   static contadorProducto = 0;
 
+  _id;
   _nombre;
   _precio;
   _marca;
@@ -15,6 +16,10 @@ export class Producto {
     this._marca = marca;
     this._categoria = categoria;
     this._stock = stock;
+  }
+
+  get id() {
+    return this._id;
   }
 
   get nombre() {
