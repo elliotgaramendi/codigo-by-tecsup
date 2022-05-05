@@ -3,10 +3,10 @@
 let productos = [
   new Producto('Laptop', 8000, 'MSI', 'Tecnología', 10),
   new Producto('Desktop', 4000, 'Lenovo', 'Tecnología', 15),
-  new Producto('Monitor', 2000, 'BenQ', 'Tecnología', 20),
-  new Producto('Impresora 3D', 2000, 'EPSON', 'Tecnología', 5),
-  new Producto('Redmi Note', 2000, 'Xiaomi', 'Tecnología', 50),
-  new Producto('Cargador', 2000, 'Huawei', 'Tecnología', 100)
+  new Producto('Monitor', 1500, 'BenQ', 'Tecnología', 20),
+  new Producto('Impresora 3D', 3000, 'EPSON', 'Tecnología', 5),
+  new Producto('Redmi Note 10', 1800, 'Xiaomi', 'Tecnología', 50),
+  new Producto('Cargador', 100, 'Huawei', 'Tecnología', 100)
 ];
 
 const readProducts = () => {
@@ -58,6 +58,7 @@ const readProduct = (productId) => {
 
   formTitle.innerHTML = 'Editar producto';
   formButton.innerHTML = 'Editar';
+  documentFormProducto['id'].value = id;
   documentFormProducto['nombre'].value = nombre;
   documentFormProducto['precio'].value = precio;
   documentFormProducto['marca'].value = marca;
@@ -82,8 +83,7 @@ const documentReady = () => {
   const formProducto = document.querySelector('#formProducto');
   const contenedorError = document.querySelector('#contenedorError');
 
-  const createProduct = (e) => {
-    e.preventDefault();
+  const createProduct = () => {
     const documentFormProducto = document.forms['formProducto'];
     const nombre = documentFormProducto['nombre'].value;
     const precio = documentFormProducto['precio'].value;
@@ -104,8 +104,18 @@ const documentReady = () => {
     }
   };
 
+  const submitProduct = (e) => {
+    e.preventDefault();
+    const id = document.getElementById('formId').value;
+    if (id === '') {
+      createProduct();
+    } else {
+      console.log('Editar');
+    }
+  };
+
   readProducts();
-  formProducto.addEventListener('submit', createProduct);
+  formProducto.addEventListener('submit', submitProduct);
 };
 
 document.addEventListener('DOMContentLoaded', documentReady);
