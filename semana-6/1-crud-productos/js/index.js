@@ -1,14 +1,55 @@
 'use strict';
-import { Producto } from "./Producto.js";
+// import { Producto } from "./Producto.js";
+const productos = [
+  new Producto('Laptop', 8000, 'MSI', 'Tecnología', 10),
+  new Producto('Desktop', 4000, 'Lenovo', 'Tecnología', 15),
+  new Producto('Monitor', 2000, 'BenQ', 'Tecnología', 20),
+  new Producto('Impresora 3D', 2000, 'EPSON', 'Tecnología', 5),
+  new Producto('Redmi Note', 2000, 'Xiaomi', 'Tecnología', 50),
+  new Producto('Cargador', 2000, 'Huawei', 'Tecnología', 100)
+];
+
+const readProducts = () => {
+  const tBodyProducto = document.querySelector('#tBodyProducto');
+  tBodyProducto.innerHTML = '';
+
+  productos.forEach((element) => {
+    const { id, nombre, precio, marca, categoria, stock } = element;
+    tBodyProducto.innerHTML += `
+      <tr>
+        <th>${id}</th>
+        <td>${nombre}</td>
+        <td>${precio.toLocaleString('es-PE', { style: 'currency', currency: 'PEN', minimumFractionDigits: 2 })}</td>
+        <td>${marca}</td>
+        <td>${categoria}</td>
+        <td>${stock}</td>
+        <td>
+          <button
+            class="bg-success rounded border-0 p-0"
+          >
+            ✏
+          </button>
+          <button
+            class="bg-danger rounded border-0 p-0"
+            onclick="deleteProducto(${id})"
+          >
+            🗑
+          </button>
+        </td>
+      </tr>
+    `
+  });
+};
+
+const deleteProducto = (id) => {
+  const index = productos.findIndex((element) => {
+    return element.id === id;
+  });
+  productos.splice(index, 1);
+  readProducts();
+}
 
 const documentReady = () => {
-  const productos = [
-    new Producto('Laptop', 8000, 'MSI', 'Tecnología', 10),
-    new Producto('Desktop', 4000, 'Lenovo', 'Tecnología', 15),
-    new Producto('Monitor', 2000, 'BenQ', 'Tecnología', 20)
-  ];
-
-  const tBodyProducto = document.querySelector('#tBodyProducto');
   const formProducto = document.querySelector('#formProducto');
   const contenedorError = document.querySelector('#contenedorError');
 
@@ -32,24 +73,6 @@ const documentReady = () => {
       documentFormProducto['stock'].value = '';
       readProducts();
     }
-  };
-
-  const readProducts = () => {
-    tBodyProducto.innerHTML = '';
-
-    productos.forEach((element) => {
-      const { id, nombre, precio, marca, categoria, stock } = element;
-      tBodyProducto.innerHTML += `
-        <tr>
-          <th>${id}</th>
-          <td>${nombre}</td>
-          <td>${precio.toLocaleString('es-PE', { style: 'currency', currency: 'PEN', minimumFractionDigits: 2 })}</td>
-          <td>${marca}</td>
-          <td>${categoria}</td>
-          <td>${stock}</td>
-        </tr>
-      `
-    });
   };
 
   readProducts();
