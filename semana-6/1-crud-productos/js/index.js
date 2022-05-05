@@ -12,28 +12,6 @@ const documentReady = () => {
   const formProducto = document.querySelector('#formProducto');
   const contenedorError = document.querySelector('#contenedorError');
 
-  let product = {
-    nombre: '',
-    precio: '',
-    marca: '',
-    categoria: '',
-    stock: ''
-  };
-
-  const handleInput = (e) => {
-    product = {
-      ...product,
-      [e.target.name]: e.target.value
-    }
-    console.log(product);
-  };
-
-  formProducto['nombre'].addEventListener('input', handleInput);
-  formProducto['precio'].addEventListener('input', handleInput);
-  formProducto['marca'].addEventListener('input', handleInput);
-  formProducto['categoria'].addEventListener('input', handleInput);
-  formProducto['stock'].addEventListener('input', handleInput);
-
   productos.forEach((element) => {
     const { id, nombre, precio, marca, categoria, stock } = element;
     tBodyProducto.innerHTML += `
@@ -61,8 +39,8 @@ const documentReady = () => {
     if ([nombre.trim(), precio.trim(), marca.trim(), categoria.trim(), stock.trim()].includes('')) {
       contenedorError.innerHTML = 'Completar todos los campos';
     } else {
-      contenedorError.innerHTML = '';
-      alert('Producto creado');
+      productos.push(new Producto(nombre, precio, marca, categoria, stock));
+      console.log(productos);
     }
   };
 
