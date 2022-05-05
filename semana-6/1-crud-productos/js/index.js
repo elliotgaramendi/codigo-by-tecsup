@@ -25,7 +25,11 @@ const documentReady = () => {
       contenedorError.innerHTML = 'Completar todos los campos';
     } else {
       productos.push(new Producto(nombre, +precio, marca, categoria, +stock));
-      console.log(productos);
+      documentFormProducto['nombre'].value = '';
+      documentFormProducto['precio'].value = '';
+      documentFormProducto['marca'].value = '';
+      documentFormProducto['categoria'].value = '';
+      documentFormProducto['stock'].value = '';
       readProducts();
     }
   };
