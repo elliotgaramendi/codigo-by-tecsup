@@ -9,6 +9,31 @@ let productos = [
   new Producto('Cargador', 100, 'Huawei', 'Tecnología', 100)
 ];
 
+const contenedorError = document.querySelector('#contenedorError');
+
+const createProduct = () => {
+  const documentFormProducto = document.forms['formProducto'];
+  const nombre = documentFormProducto['nombre'].value;
+  const precio = documentFormProducto['precio'].value;
+  const marca = documentFormProducto['marca'].value;
+  const categoria = documentFormProducto['categoria'].value;
+  const stock = documentFormProducto['stock'].value;
+
+  if ([nombre.trim(), precio.trim(), marca.trim(), categoria.trim(), stock.trim()].includes('')) {
+    contenedorError.innerHTML = 'Completar todos los campos';
+  } else {
+    productos.push(new Producto(nombre, +precio, marca, categoria, +stock));
+    // productos = [...productos, new Producto(nombre, +precio, marca, categoria, +stock)];
+    // Limpiar formulario
+    documentFormProducto['nombre'].value = '';
+    documentFormProducto['precio'].value = '';
+    documentFormProducto['marca'].value = '';
+    documentFormProducto['categoria'].value = '';
+    documentFormProducto['stock'].value = '';
+    readProducts();
+  }
+};
+
 const readProducts = () => {
   const tBodyProducto = document.querySelector('#tBodyProducto');
   tBodyProducto.innerHTML = '';
@@ -67,11 +92,11 @@ const readProduct = (productId) => {
 }
 
 const deleteProduct = (id) => {
-  // const index = productos.findIndex((element) => {
-  //   return element.id === id;
-  // });
-  // productos.splice(index, 1);
   if (confirm('¿Está seguro que desea eliminarlo?')) {
+    // const index = productos.findIndex((element) => {
+    //   return element.id === id;
+    // });
+    // productos.splice(index, 1);
     productos = productos.filter((element) => {
       return element.id !== id;
     });
@@ -81,28 +106,6 @@ const deleteProduct = (id) => {
 
 const documentReady = () => {
   const formProducto = document.querySelector('#formProducto');
-  const contenedorError = document.querySelector('#contenedorError');
-
-  const createProduct = () => {
-    const documentFormProducto = document.forms['formProducto'];
-    const nombre = documentFormProducto['nombre'].value;
-    const precio = documentFormProducto['precio'].value;
-    const marca = documentFormProducto['marca'].value;
-    const categoria = documentFormProducto['categoria'].value;
-    const stock = documentFormProducto['stock'].value;
-
-    if ([nombre.trim(), precio.trim(), marca.trim(), categoria.trim(), stock.trim()].includes('')) {
-      contenedorError.innerHTML = 'Completar todos los campos';
-    } else {
-      productos.push(new Producto(nombre, +precio, marca, categoria, +stock));
-      documentFormProducto['nombre'].value = '';
-      documentFormProducto['precio'].value = '';
-      documentFormProducto['marca'].value = '';
-      documentFormProducto['categoria'].value = '';
-      documentFormProducto['stock'].value = '';
-      readProducts();
-    }
-  };
 
   const submitProduct = (e) => {
     e.preventDefault();
