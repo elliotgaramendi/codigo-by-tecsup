@@ -26,6 +26,7 @@ const readProducts = () => {
         <td>
           <button
             class="bg-success rounded border-0 p-0"
+            onclick="readProduct(${id})"
           >
             ✏
           </button>
@@ -41,6 +42,29 @@ const readProducts = () => {
   });
 };
 
+const readProduct = (productId) => {
+  const documentFormProducto = document.querySelector('#formProducto');
+  const formTitle = document.querySelector('#formTitle');
+  const formButton = document.querySelector('#formButton');
+
+  const producto = productos.find((element) => {
+    return element.id === productId;
+  });
+  // const producto = productos.filter((element) => {
+  //   return element.id === productId;
+  // });
+  const { id, nombre, precio, marca, categoria, stock } = producto;
+  // const { id, nombre, precio, marca, categoria, stock } = producto[0];
+
+  formTitle.innerHTML = 'Editar producto';
+  formButton.innerHTML = 'Editar';
+  documentFormProducto['nombre'].value = nombre;
+  documentFormProducto['precio'].value = precio;
+  documentFormProducto['marca'].value = marca;
+  documentFormProducto['categoria'].value = categoria;
+  documentFormProducto['stock'].value = stock;
+}
+
 const deleteProduct = (id) => {
   // const index = productos.findIndex((element) => {
   //   return element.id === id;
@@ -52,7 +76,7 @@ const deleteProduct = (id) => {
     });
     readProducts();
   }
-}
+};
 
 const documentReady = () => {
   const formProducto = document.querySelector('#formProducto');
@@ -82,6 +106,6 @@ const documentReady = () => {
 
   readProducts();
   formProducto.addEventListener('submit', createProduct);
-}
+};
 
 document.addEventListener('DOMContentLoaded', documentReady);
