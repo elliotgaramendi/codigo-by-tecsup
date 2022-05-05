@@ -1,6 +1,6 @@
 'use strict';
 // import { Producto } from "./Producto.js";
-const productos = [
+let productos = [
   new Producto('Laptop', 8000, 'MSI', 'Tecnología', 10),
   new Producto('Desktop', 4000, 'Lenovo', 'Tecnología', 15),
   new Producto('Monitor', 2000, 'BenQ', 'Tecnología', 20),
@@ -31,7 +31,7 @@ const readProducts = () => {
           </button>
           <button
             class="bg-danger rounded border-0 p-0"
-            onclick="deleteProducto(${id})"
+            onclick="deleteProduct(${id})"
           >
             🗑
           </button>
@@ -41,12 +41,17 @@ const readProducts = () => {
   });
 };
 
-const deleteProducto = (id) => {
-  const index = productos.findIndex((element) => {
-    return element.id === id;
-  });
-  productos.splice(index, 1);
-  readProducts();
+const deleteProduct = (id) => {
+  // const index = productos.findIndex((element) => {
+  //   return element.id === id;
+  // });
+  // productos.splice(index, 1);
+  if (confirm('¿Está seguro que desea eliminarlo?')) {
+    productos = productos.filter((element) => {
+      return element.id !== id;
+    });
+    readProducts();
+  }
 }
 
 const documentReady = () => {
