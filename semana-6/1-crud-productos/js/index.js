@@ -12,21 +12,6 @@ const documentReady = () => {
   const formProducto = document.querySelector('#formProducto');
   const contenedorError = document.querySelector('#contenedorError');
 
-  productos.forEach((element) => {
-    const { id, nombre, precio, marca, categoria, stock } = element;
-    tBodyProducto.innerHTML += `
-      <tr>
-        <th>${id}</th>
-        <td>${nombre}</td>
-        <td>${precio.toLocaleString('es-PE', { style: 'currency', currency: 'PEN', minimumFractionDigits: 2 })}</td>
-        <td>${marca}</td>
-        <td>${categoria}</td>
-        <td>${stock}</td>
-      </tr>
-    `
-  });
-
-  // Create
   const createProduct = (e) => {
     e.preventDefault();
     const documentFormProducto = document.forms['formProducto'];
@@ -39,11 +24,31 @@ const documentReady = () => {
     if ([nombre.trim(), precio.trim(), marca.trim(), categoria.trim(), stock.trim()].includes('')) {
       contenedorError.innerHTML = 'Completar todos los campos';
     } else {
-      productos.push(new Producto(nombre, precio, marca, categoria, stock));
+      productos.push(new Producto(nombre, +precio, marca, categoria, +stock));
       console.log(productos);
+      readProducts();
     }
   };
 
+  const readProducts = () => {
+    tBodyProducto.innerHTML = '';
+
+    productos.forEach((element) => {
+      const { id, nombre, precio, marca, categoria, stock } = element;
+      tBodyProducto.innerHTML += `
+        <tr>
+          <th>${id}</th>
+          <td>${nombre}</td>
+          <td>${precio.toLocaleString('es-PE', { style: 'currency', currency: 'PEN', minimumFractionDigits: 2 })}</td>
+          <td>${marca}</td>
+          <td>${categoria}</td>
+          <td>${stock}</td>
+        </tr>
+      `
+    });
+  };
+
+  readProducts();
   formProducto.addEventListener('submit', createProduct);
 }
 
