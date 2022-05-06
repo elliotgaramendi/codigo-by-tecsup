@@ -50,14 +50,6 @@
     0 0 0.5rem var(--primary-highlight-color);
 }
 
-.header-nav__menu-icon-checkbox {
-  display: none;
-}
-
-.header-nav__menu-icon-checkbox:checked+.header-nav__menu-link-list {
-  left: 0;
-}
-
 .header-nav__menu-link-list {
   position: fixed;
   top: 4rem;
@@ -74,6 +66,10 @@
   background-color: var(--secondary-shadow-color);
   list-style: none;
   transition: var(--all-transitions);
+}
+
+.header-nav__menu-link-list--open {
+  left: 0;
 }
 
 .header-nav__menu-link-item {
