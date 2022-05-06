@@ -9,7 +9,33 @@ let productos = [
   new Producto('Cargador', 100, 'Huawei', 'Tecnología', 100)
 ];
 
-const contenedorError = document.querySelector('#contenedorError');
+const contenedorAlerta = document.querySelector('#contenedorAlerta');
+let timeoutId = 0;
+
+const showAlert = (type, content) => {
+  clearTimeout(timeoutId);
+  contenedorAlerta.classList.remove('bg-primary');
+  contenedorAlerta.classList.remove('bg-success');
+  contenedorAlerta.classList.remove('bg-danger');
+  switch (type) {
+    case 'primary':
+      contenedorAlerta.classList.add('bg-primary');
+      break;
+    case 'success':
+      contenedorAlerta.classList.add('bg-success');
+      break;
+    case 'danger':
+      contenedorAlerta.classList.add('bg-danger');
+      break;
+    default:
+      contenedorAlerta.classList.add('bg-primary');
+      break;
+  }
+  contenedorAlerta.innerHTML = content;
+  timeoutId = setTimeout(() => {
+    contenedorAlerta.innerHTML = '';
+  }, 5000);
+};
 
 const getFormData = () => {
   const documentFormProducto = document.forms['formProducto'];
@@ -47,12 +73,12 @@ const resetForm = () => {
 const createProduct = () => {
   const { nombre, precio, marca, categoria, stock } = getFormData();
   if (validateForm()) {
-    contenedorError.innerHTML = 'Completar todos los campos';
+    showAlert('danger', 'Completar todos los campos');
   } else {
     productos = [...productos, new Producto(nombre, +precio, marca, categoria, +stock)];
-
     resetForm();
     readProducts();
+    showAlert('primary', 'Registro creado');
   }
 };
 
@@ -87,6 +113,7 @@ const readProducts = () => {
       </tr>
     `
   });
+  showAlert('primary', 'Registros leídos');
 };
 
 const readProduct = (productId) => {
@@ -107,7 +134,8 @@ const readProduct = (productId) => {
   documentFormProducto['marca'].value = marca;
   documentFormProducto['categoria'].value = categoria;
   documentFormProducto['stock'].value = stock;
-}
+  showAlert('primary', 'Registro leído');
+};
 
 const updateProduct = () => {
   const { id, nombre, precio, marca, categoria, stock } = getFormData();
@@ -115,7 +143,7 @@ const updateProduct = () => {
   const formButton = document.querySelector('#formButton');
 
   if (validateForm()) {
-    contenedorError.innerHTML = 'Completar todos los campos';
+    showAlert('danger', 'Completar todos los campos');
   } else {
     productos = productos.map((element) => {
       if (element.id !== +id) {
@@ -134,6 +162,7 @@ const updateProduct = () => {
     formTitle.innerHTML = 'Crear producto';
     formButton.innerHTML = 'Crear';
     readProducts();
+    showAlert('success', 'Registro actualizado');
   }
 };
 
@@ -143,6 +172,7 @@ const deleteProduct = (id) => {
       return element.id !== id;
     });
     readProducts();
+    showAlert('danger', 'Registro eliminado');
   }
 };
 
