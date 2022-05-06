@@ -3,10 +3,10 @@
 let productos = [
   new Producto('Laptop', 8000, 'MSI', 'Tecnología', 10),
   new Producto('Desktop', 4000, 'Lenovo', 'Tecnología', 15),
-  new Producto('Monitor', 1500, 'BenQ', 'Tecnología', 20),
-  new Producto('Impresora 3D', 3000, 'EPSON', 'Tecnología', 5),
-  new Producto('Redmi Note 10', 1800, 'Xiaomi', 'Tecnología', 50),
-  new Producto('Cargador', 100, 'Huawei', 'Tecnología', 100)
+  // new Producto('Monitor', 1500, 'BenQ', 'Tecnología', 20),
+  // new Producto('Impresora 3D', 3000, 'EPSON', 'Tecnología', 5),
+  // new Producto('Redmi Note 10', 1800, 'Xiaomi', 'Tecnología', 50),
+  // new Producto('Cargador', 100, 'Huawei', 'Tecnología', 100)
 ];
 
 const contenedorError = document.querySelector('#contenedorError');
@@ -91,6 +91,45 @@ const readProduct = (productId) => {
   documentFormProducto['stock'].value = stock;
 }
 
+const updateProduct = () => {
+  const documentFormProducto = document.forms['formProducto'];
+  const formTitle = document.querySelector('#formTitle');
+  const formButton = document.querySelector('#formButton');
+  const id = documentFormProducto['id'].value;
+  const nombre = documentFormProducto['nombre'].value;
+  const precio = documentFormProducto['precio'].value;
+  const marca = documentFormProducto['marca'].value;
+  const categoria = documentFormProducto['categoria'].value;
+  const stock = documentFormProducto['stock'].value;
+
+  if ([nombre.trim(), precio.trim(), marca.trim(), categoria.trim(), stock.trim()].includes('')) {
+    contenedorError.innerHTML = 'Completar todos los campos';
+  } else {
+    productos = productos.map((element) => {
+      if (element.id !== +id) {
+        return element;
+      } else {
+        element.nombre = nombre;
+        element.precio = +precio;
+        element.marca = marca;
+        element.categoria = categoria;
+        element.stock = +stock;
+        return element;
+      }
+    });
+    console.log(productos);
+    documentFormProducto['id'].value = '';
+    documentFormProducto['nombre'].value = '';
+    documentFormProducto['precio'].value = '';
+    documentFormProducto['marca'].value = '';
+    documentFormProducto['categoria'].value = '';
+    documentFormProducto['stock'].value = '';
+    formTitle.innerHTML = 'Crear producto';
+    formButton.innerHTML = 'Crear';
+    readProducts();
+  }
+};
+
 const deleteProduct = (id) => {
   if (confirm('¿Está seguro que desea eliminarlo?')) {
     // const index = productos.findIndex((element) => {
@@ -113,7 +152,7 @@ const documentReady = () => {
     if (id === '') {
       createProduct();
     } else {
-      console.log('Editar');
+      updateProduct();
     }
   };
 
