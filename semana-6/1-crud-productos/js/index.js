@@ -11,6 +11,16 @@ let productos = [
 
 const contenedorError = document.querySelector('#contenedorError');
 
+const resetForm = () => {
+  const documentFormProducto = document.forms['formProducto'];
+  documentFormProducto['id'].value = '';
+  documentFormProducto['nombre'].value = '';
+  documentFormProducto['precio'].value = '';
+  documentFormProducto['marca'].value = '';
+  documentFormProducto['categoria'].value = '';
+  documentFormProducto['stock'].value = '';
+};
+
 const createProduct = () => {
   // 1
   const documentFormProducto = document.forms['formProducto'];
@@ -27,11 +37,7 @@ const createProduct = () => {
     productos = [...productos, new Producto(nombre, +precio, marca, categoria, +stock)];
 
     // 3
-    documentFormProducto['nombre'].value = '';
-    documentFormProducto['precio'].value = '';
-    documentFormProducto['marca'].value = '';
-    documentFormProducto['categoria'].value = '';
-    documentFormProducto['stock'].value = '';
+    resetForm();
     readProducts();
   }
 };
@@ -119,12 +125,7 @@ const updateProduct = () => {
     });
 
     // 3
-    documentFormProducto['id'].value = '';
-    documentFormProducto['nombre'].value = '';
-    documentFormProducto['precio'].value = '';
-    documentFormProducto['marca'].value = '';
-    documentFormProducto['categoria'].value = '';
-    documentFormProducto['stock'].value = '';
+    resetForm();
     formTitle.innerHTML = 'Crear producto';
     formButton.innerHTML = 'Crear';
     readProducts();
