@@ -11,6 +11,18 @@ let productos = [
 
 const contenedorError = document.querySelector('#contenedorError');
 
+const getFormData = () => {
+  const documentFormProducto = document.forms['formProducto'];
+  const id = documentFormProducto['id'].value;
+  const nombre = documentFormProducto['nombre'].value;
+  const precio = documentFormProducto['precio'].value;
+  const marca = documentFormProducto['marca'].value;
+  const categoria = documentFormProducto['categoria'].value;
+  const stock = documentFormProducto['stock'].value;
+
+  return ({ id, nombre, precio, marca, categoria, stock });
+};
+
 const validateForm = () => {
   const documentFormProducto = document.forms['formProducto'];
   const nombre = documentFormProducto['nombre'].value;
@@ -33,21 +45,12 @@ const resetForm = () => {
 };
 
 const createProduct = () => {
-  // 1
-  const documentFormProducto = document.forms['formProducto'];
-  const nombre = documentFormProducto['nombre'].value;
-  const precio = documentFormProducto['precio'].value;
-  const marca = documentFormProducto['marca'].value;
-  const categoria = documentFormProducto['categoria'].value;
-  const stock = documentFormProducto['stock'].value;
-
-  // 2
+  const { nombre, precio, marca, categoria, stock } = getFormData();
   if (validateForm()) {
     contenedorError.innerHTML = 'Completar todos los campos';
   } else {
     productos = [...productos, new Producto(nombre, +precio, marca, categoria, +stock)];
 
-    // 3
     resetForm();
     readProducts();
   }
@@ -107,18 +110,10 @@ const readProduct = (productId) => {
 }
 
 const updateProduct = () => {
-  // 1
-  const documentFormProducto = document.forms['formProducto'];
+  const { id, nombre, precio, marca, categoria, stock } = getFormData();
   const formTitle = document.querySelector('#formTitle');
   const formButton = document.querySelector('#formButton');
-  const id = documentFormProducto['id'].value;
-  const nombre = documentFormProducto['nombre'].value;
-  const precio = documentFormProducto['precio'].value;
-  const marca = documentFormProducto['marca'].value;
-  const categoria = documentFormProducto['categoria'].value;
-  const stock = documentFormProducto['stock'].value;
 
-  // 2
   if (validateForm()) {
     contenedorError.innerHTML = 'Completar todos los campos';
   } else {
@@ -135,7 +130,6 @@ const updateProduct = () => {
       }
     });
 
-    // 3
     resetForm();
     formTitle.innerHTML = 'Crear producto';
     formButton.innerHTML = 'Crear';
