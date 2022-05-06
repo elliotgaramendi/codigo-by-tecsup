@@ -3,15 +3,16 @@
 let productos = [
   new Producto('Laptop', 8000, 'MSI', 'Tecnología', 10),
   new Producto('Desktop', 4000, 'Lenovo', 'Tecnología', 15),
-  // new Producto('Monitor', 1500, 'BenQ', 'Tecnología', 20),
-  // new Producto('Impresora 3D', 3000, 'EPSON', 'Tecnología', 5),
-  // new Producto('Redmi Note 10', 1800, 'Xiaomi', 'Tecnología', 50),
-  // new Producto('Cargador', 100, 'Huawei', 'Tecnología', 100)
+  new Producto('Monitor', 1500, 'BenQ', 'Tecnología', 20),
+  new Producto('Impresora 3D', 3000, 'EPSON', 'Tecnología', 5),
+  new Producto('Redmi Note 10', 1800, 'Xiaomi', 'Tecnología', 50),
+  new Producto('Cargador', 100, 'Huawei', 'Tecnología', 100)
 ];
 
 const contenedorError = document.querySelector('#contenedorError');
 
 const createProduct = () => {
+  // 1
   const documentFormProducto = document.forms['formProducto'];
   const nombre = documentFormProducto['nombre'].value;
   const precio = documentFormProducto['precio'].value;
@@ -19,12 +20,13 @@ const createProduct = () => {
   const categoria = documentFormProducto['categoria'].value;
   const stock = documentFormProducto['stock'].value;
 
+  // 2
   if ([nombre.trim(), precio.trim(), marca.trim(), categoria.trim(), stock.trim()].includes('')) {
     contenedorError.innerHTML = 'Completar todos los campos';
   } else {
-    productos.push(new Producto(nombre, +precio, marca, categoria, +stock));
-    // productos = [...productos, new Producto(nombre, +precio, marca, categoria, +stock)];
-    // Limpiar formulario
+    productos = [...productos, new Producto(nombre, +precio, marca, categoria, +stock)];
+
+    // 3
     documentFormProducto['nombre'].value = '';
     documentFormProducto['precio'].value = '';
     documentFormProducto['marca'].value = '';
@@ -75,11 +77,7 @@ const readProduct = (productId) => {
   const producto = productos.find((element) => {
     return element.id === productId;
   });
-  // const producto = productos.filter((element) => {
-  //   return element.id === productId;
-  // });
   const { id, nombre, precio, marca, categoria, stock } = producto;
-  // const { id, nombre, precio, marca, categoria, stock } = producto[0];
 
   formTitle.innerHTML = 'Editar producto';
   formButton.innerHTML = 'Editar';
@@ -92,6 +90,7 @@ const readProduct = (productId) => {
 }
 
 const updateProduct = () => {
+  // 1
   const documentFormProducto = document.forms['formProducto'];
   const formTitle = document.querySelector('#formTitle');
   const formButton = document.querySelector('#formButton');
@@ -102,6 +101,7 @@ const updateProduct = () => {
   const categoria = documentFormProducto['categoria'].value;
   const stock = documentFormProducto['stock'].value;
 
+  // 2
   if ([nombre.trim(), precio.trim(), marca.trim(), categoria.trim(), stock.trim()].includes('')) {
     contenedorError.innerHTML = 'Completar todos los campos';
   } else {
@@ -117,7 +117,8 @@ const updateProduct = () => {
         return element;
       }
     });
-    console.log(productos);
+
+    // 3
     documentFormProducto['id'].value = '';
     documentFormProducto['nombre'].value = '';
     documentFormProducto['precio'].value = '';
@@ -132,10 +133,6 @@ const updateProduct = () => {
 
 const deleteProduct = (id) => {
   if (confirm('¿Está seguro que desea eliminarlo?')) {
-    // const index = productos.findIndex((element) => {
-    //   return element.id === id;
-    // });
-    // productos.splice(index, 1);
     productos = productos.filter((element) => {
       return element.id !== id;
     });
