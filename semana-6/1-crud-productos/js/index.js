@@ -11,6 +11,17 @@ let productos = [
 
 const contenedorError = document.querySelector('#contenedorError');
 
+const validateForm = () => {
+  const documentFormProducto = document.forms['formProducto'];
+  const nombre = documentFormProducto['nombre'].value;
+  const precio = documentFormProducto['precio'].value;
+  const marca = documentFormProducto['marca'].value;
+  const categoria = documentFormProducto['categoria'].value;
+  const stock = documentFormProducto['stock'].value;
+
+  return [nombre.trim(), precio.trim(), marca.trim(), categoria.trim(), stock.trim()].includes('');
+};
+
 const resetForm = () => {
   const documentFormProducto = document.forms['formProducto'];
   documentFormProducto['id'].value = '';
@@ -31,7 +42,7 @@ const createProduct = () => {
   const stock = documentFormProducto['stock'].value;
 
   // 2
-  if ([nombre.trim(), precio.trim(), marca.trim(), categoria.trim(), stock.trim()].includes('')) {
+  if (validateForm()) {
     contenedorError.innerHTML = 'Completar todos los campos';
   } else {
     productos = [...productos, new Producto(nombre, +precio, marca, categoria, +stock)];
@@ -108,7 +119,7 @@ const updateProduct = () => {
   const stock = documentFormProducto['stock'].value;
 
   // 2
-  if ([nombre.trim(), precio.trim(), marca.trim(), categoria.trim(), stock.trim()].includes('')) {
+  if (validateForm()) {
     contenedorError.innerHTML = 'Completar todos los campos';
   } else {
     productos = productos.map((element) => {
