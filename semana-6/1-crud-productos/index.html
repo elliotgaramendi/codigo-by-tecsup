@@ -10,8 +10,8 @@
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
 </head>
 
-<body>
-  <header class="fixed-top bg-primary text-light text-center">
+<body class="bg-dark bg-opacity-75 text-light">
+  <header class="fixed-top bg-dark text-center">
     <h1>CRUD Productos</h1>
   </header>
   <main class="py-5">
@@ -19,7 +19,7 @@
       <div class="row pt-4">
         <section class="col-md-8">
           <h2 class="text-center">Listado de productos</h2>
-          <table class="table table-striped table-hover table-sm">
+          <table class="table table-dark table-striped table-hover table-sm">
             <thead>
               <tr>
                 <th scope="col">#</th>
@@ -36,7 +36,7 @@
         </section>
         <section class="col-md-4">
           <h2 class="text-center" id="formTitle">Crear producto</h2>
-          <form class="py-2" id="formProducto">
+          <form class="bg-dark text-dark rounded p-4" id="formProducto">
             <div class="form-floating mb-3" style="display: none;">
               <input type="number" class="form-control" name="id" placeholder="Id" id="formId" readonly />
               <label for="id">Id</label>
@@ -67,7 +67,7 @@
               <label for="stock">Stock</label>
             </div>
 
-            <button type="submit" class="btn btn-primary w-100 mb-3" id="formButton">Crear</button>
+            <button type="submit" class="btn btn-primary w-100" id="formButton">Crear</button>
           </form>
           <div class="badge w-100" id="contenedorAlerta"></div>
         </section>
