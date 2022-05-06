@@ -167,13 +167,44 @@ const updateProduct = () => {
 };
 
 const deleteProduct = (id) => {
-  if (confirm('¿Está seguro que desea eliminarlo?')) {
-    productos = productos.filter((element) => {
-      return element.id !== id;
-    });
-    readProducts();
-    showAlert('danger', 'Registro eliminado');
-  }
+  const swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+      confirmButton: 'btn btn-success mx-2',
+      cancelButton: 'btn btn-danger mx-2'
+    },
+    buttonsStyling: false
+  });
+
+  swalWithBootstrapButtons.fire({
+    title: '¿Está seguro?',
+    text: "¡No podrás revertir esto!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: '¡Sí, elimínalo!',
+    cancelButtonText: '¡No, cancélalo!',
+    reverseButtons: true
+  }).then((result) => {
+    if (result.isConfirmed) {
+      productos = productos.filter((element) => {
+        return element.id !== id;
+      });
+      readProducts();
+      showAlert('danger', 'Registro eliminado');
+      swalWithBootstrapButtons.fire(
+        '¡Eliminado!',
+        'Tu registro ha sido eliminado.',
+        'success'
+      );
+    } else if (
+      result.dismiss === Swal.DismissReason.cancel
+    ) {
+      swalWithBootstrapButtons.fire(
+        'Cancelado',
+        'Tu registro está seguro',
+        'error'
+      );
+    }
+  });
 };
 
 const documentReady = () => {
