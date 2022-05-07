@@ -62,7 +62,7 @@
 }
 
 .footer-nav__credits-author {
-  color: var(--primary-highlight);
+  color: var(--primary-highlight-color);
   text-decoration: none;
 }
 
