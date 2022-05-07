@@ -48,3 +48,27 @@
     0 0 0.125rem var(--primary-highlight-color),
     0 0 0.25rem var(--primary-highlight-color);
 }
+
+.main {
+  width: 100%;
+}
+
+.dashboards {
+  padding: var(--padding-section);
+}
+
+.dashboards__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: var(--max-width-container);
+  margin: auto;
+  padding: var(--padding-container);
+}
+
+.dashboards__title {
+  font-size: 2rem;
+  text-shadow: 0 0 0.25rem var(--primary-highlight-color);
+  margin: 0;
+}
