@@ -12,9 +12,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="./css/index.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"
-    integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body class="body">
@@ -31,55 +28,17 @@
         <section class="dashboard-models">
           <div class="dashboard-models__container">
             <h2 class="dashboard-models__title">Modelos</h2>
-            <!-- <canvas id="dashboardModelsChart" class="dashboard-models__chart"></canvas> -->
-            <canvas id="myChart"></canvas>
+            <canvas id="dashboardModelsChart" class="dashboard-models__chart"></canvas>
           </div>
         </section>
       </div>
     </section>
   </main>
-  <script>
-    const ctx = document.getElementById('myChart').getContext('2d');
-    const myChart = new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['Joseph', 'Brian', 'Fher', 'Jimmy', 'Cristopher', 'Jair'],
-        datasets: [{
-          label: '# de votos',
-          data: [8, 10, 5, 5, 2, 3],
-          backgroundColor: [
-            '#fff8',
-            '#0008',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(153, 102, 255, 0.2)',
-            'rgba(255, 159, 64, 0.2)'
-          ],
-          borderColor: [
-            '#fff',
-            '#000',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
-          ],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          }
-        },
-        plugins: {
-          legend: {
-            position: 'bottom'
-          }
-        }
-      }
-    });
-  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"
+    integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="./js/index.js" type="module"></script>
 </body>
 
 </html>
