@@ -7,8 +7,18 @@
   background-color: var(--secondary-shadow-color);
 }
 
+.header--scroll {
+  background-color: var(--primary-theme-color);
+  box-shadow: 0 0.125rem 0.125rem 0 var(--primary-shadow-color);
+}
+
 .header-nav {
   padding: 0.5em 0;
+  transition: var(--all-transitions);
+}
+
+.header-nav--scroll {
+  padding: 0.25em 0;
 }
 
 .header-nav__container {
@@ -131,7 +141,7 @@
     flex-direction: row;
     gap: 1.5rem;
     list-style: none;
-    background-color: transparent;
+    background-image: none;
   }
 
   .header-nav__menu-link-item--close-absolute {
