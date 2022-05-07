@@ -13,7 +13,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding: 0.5em 0;
+  padding: 0.75em 0;
   background-color: var(--secondary-shadow-color);
 }
 
@@ -76,6 +76,7 @@
 .dashboard-models {
   background-color: var(--secondary-theme-color);
   border-radius: var(--border-radius);
+  width: 50%;
 }
 
 .dashboard-models__container {
