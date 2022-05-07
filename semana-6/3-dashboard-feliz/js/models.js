@@ -1,16 +1,24 @@
 import { getColorsData } from "../helpers/helper.js";
-import { allData } from "../utils/allData.js";
 
-export const models = () => {
+export const models = (allData) => {
   // Chart.defaults.color = '#fff';
 
-  console.log(allData);
+  // const uniqueModels = [...new Set(allData.map(element => element.model))];
+  const uniqueModels = allData.reduce((previous, current) => {
+    const exist = previous.find(element => element === current.model);
+    if (exist === undefined) {
+      previous.push(current.model);
+    }
+    return previous;
+  }, []);
+
+  const amountsModels = uniqueModels.map(model => allData.filter(element => element.model === model).length);
 
   const dashboardModelsChart = document.getElementById('dashboardModelsChart');
   const data = {
-    labels: ['JavaScript', 'HTML', 'CSS'],
+    labels: uniqueModels,
     datasets: [{
-      data: [60, 50, 50],
+      data: amountsModels,
       borderColor: getColorsData(),
       backgroundColor: getColorsData(40)
     }]
@@ -19,7 +27,7 @@ export const models = () => {
   const options = {
     plugins: {
       legend: {
-        position: 'bottom'
+        position: 'left'
       }
     }
   }
