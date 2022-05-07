@@ -1,7 +1,10 @@
 import { getColorsData } from "../helpers/helper.js";
+import { allData } from "../utils/allData.js";
 
 export const models = () => {
   // Chart.defaults.color = '#fff';
+
+  console.log(allData);
 
   const dashboardModelsChart = document.getElementById('dashboardModelsChart');
   const data = {
