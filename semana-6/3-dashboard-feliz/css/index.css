@@ -72,3 +72,23 @@
   text-shadow: 0 0 0.25rem var(--primary-highlight-color);
   margin: 0;
 }
+
+.dashboard-models {
+  background-color: var(--secondary-theme-color);
+  border-radius: var(--border-radius);
+}
+
+.dashboard-models__container {
+  padding: 1rem;
+}
+
+.dashboard-models__title {
+  font-size: 1.5rem;
+  text-align: center;
+  text-shadow: 0 0 0.25rem var(--primary-highlight-color);
+  margin: 0;
+}
+
+.dashboard-models__chart {
+  width: 100%;
+}
