@@ -1,5 +1,8 @@
 @import url(./variables.css);
 
 .body {
+  background-color: var(--primary-theme-color);
+  color: var(--text-color);
   font-family: 'Poppins', sans-serif;
+  margin: 0;
 }
