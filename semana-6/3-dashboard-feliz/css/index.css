@@ -28,14 +28,14 @@
 
 .header__title-logo {
   font-size: 1rem;
+  color: var(--primary-highlight-color);
   margin: 0;
   transition: var(--all-transitions);
 }
 
 .header__title-logo:hover {
   text-shadow:
-    0 0 0.125rem var(--primary-highlight-color),
-    0 0 0.25rem var(--primary-highlight-color);
+    0 0 0.0625rem var(--secondary-highlight-color);
 }
 
 .header__slogan {
