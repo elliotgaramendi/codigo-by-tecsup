@@ -16,7 +16,7 @@
 
 .body--light {
   --primary-theme-color: #fff;
-  --secondary-theme-color: #f5f5f5;
+  --secondary-theme-color: #eee;
   --text-color: #000;
   --primary-shadow-color: #2228;
   --secondary-shadow-color: rgba(255, 255, 255, 0.875);

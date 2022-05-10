@@ -8,6 +8,18 @@ const header = () => {
   const headerNavMenuCloseIcon = document.getElementById('headerNavMenuCloseIcon');
   const headerNavMenuLinkList = document.querySelector('.header-nav__menu-link-list');
   const headerNavMenuLinkItems = document.querySelectorAll('.header-nav__menu-link-item');
+  const headerNavMenuLinks = document.querySelectorAll('.header-nav__menu-link');
+
+  const intersectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const id = entry.target.getAttribute('id');
+      const navLink = document.querySelector(`.header-nav__menu-link[href="#${id}"]`);
+      if (entry.isIntersecting) {
+        document.querySelector('.header-nav__menu-link--active')?.classList.remove('header-nav__menu-link--active');
+        navLink.classList.add('header-nav__menu-link--active');
+      }
+    });
+  }, { rootMargin: '-75% 0px -25% 0px' });
 
   const documentScroll = () => {
     header.classList.toggle('header--scroll', window.scrollY > 0);
@@ -42,6 +54,13 @@ const header = () => {
     headerNavThemeIconContainer.classList.add('header-nav__theme-icon-container--active');
   }
 
+  headerNavMenuLinks.forEach((element) => {
+    const hash = element.getAttribute('href');
+    const target = document.querySelector(hash);
+    if (target) {
+      intersectionObserver.observe(target);
+    }
+  });
   document.addEventListener('scroll', documentScroll);
   headerNavThemeIconContainer.addEventListener('click', toggleMenu);
   headerNavMenuIcon.addEventListener('click', openMenu);
