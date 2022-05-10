@@ -16,7 +16,7 @@
   min-height: 100vh;
   overflow: hidden;
 }
-.profile::after {
+.profile::before {
   content: "";
   position: absolute;
   left: 0;
