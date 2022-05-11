@@ -33,20 +33,36 @@ const documentReady = () => {
   //   return (n1 * n2);
   // });
 
-  let resultadoAsyn = 0;
+  // let resultadoAsyn = 0;
+  // const operarNumerosCallbackAsync = (numero1, numero2, callback) => {
+  //   setTimeout(() => {
+  //     callback(numero1, numero2);
+  //   }, 1000);
+  // };
 
-  const operarNumerosCallbackAsync = (numero1, numero2, callback) => {
-    setTimeout(() => {
-      callback(numero1, numero2);
-    }, 1000);
+  // operarNumerosCallbackAsync(8, 5, (n1, n2) => {
+  //   resultadoAsyn = n1 * n2;
+  //   console.log(resultadoAsyn);
+  // });
+  // console.log(resultadoAsyn);
+
+  const operarNumerosCallbackAsyncPromises = (numero1, numero2, callback) => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(callback(numero1, numero2));
+      }, 1000);
+    });
   };
-  
-  operarNumerosCallbackAsync(8, 5, (n1, n2) => {
-    resultadoAsyn = n1 * n2;
+
+  let resultadoAsyn = 0;
+  const promesa = operarNumerosCallbackAsyncPromises(8, 5, (n1, n2) => {
+    return n1 + n2;
+  }).then((response) => {
+    resultadoAsyn = response;
     console.log(resultadoAsyn);
   });
+  console.log(promesa);
   console.log(resultadoAsyn);
-
 };
 
 document.addEventListener('DOMContentLoaded', documentReady);
