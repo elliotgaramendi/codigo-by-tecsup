@@ -74,15 +74,28 @@ const documentReady = async () => {
   // console.log(comida);
 
   // Callback
-  const saludar = () => {
-    console.log('Hola');
-  };
+  // const saludar = () => {
+  //   console.log('Hola');
+  // };
 
-  const ejecutarCallback = (callback) => {
-    callback();
-  };
+  // const ejecutarCallback = (callback) => {
+  //   callback();
+  // };
 
   ejecutarCallback(saludar);
+
+  const mandarMensaje1 = (fn) => {
+    setTimeout(() => {
+      console.log('Vamo a calmarno');
+      fn();
+    }, 1000);
+  };
+
+  const mandarMensaje2 = () => {
+    console.log('-Pikachu sorprendido-');
+  };
+
+  mandarMensaje1(mandarMensaje2);
 };
 
 document.addEventListener('DOMContentLoaded', documentReady);
