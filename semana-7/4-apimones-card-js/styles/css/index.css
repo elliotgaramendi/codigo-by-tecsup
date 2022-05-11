@@ -3,6 +3,7 @@
 @import url(./spinner.css);
 @import url(./header.css);
 @import url(./card.css);
+@import url(./card-dom.css);
 @import url(./footer.css);
 
 .body {

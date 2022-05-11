@@ -1,10 +1,12 @@
 'use strict';
+import card from './card.js';
 import header from './header.js';
 import loader from './loader.js';
 
 const documentReady = async () => {
   loader();
   header();
+  card();
 
   // const objectPerson = {
   //   name: 'Elliot',
@@ -98,44 +100,44 @@ const documentReady = async () => {
   // const comida = await operarDatos();
   // console.log(comida);
 
-  const datos = [
-    {
-      "name": "Pikachu",
-      "src": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png"
-    },
-    {
-      "name": "Charizard",
-      "src": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png"
-    },
-    {
-      "name": "Venusaur",
-      "src": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png"
-    },
-    {
-      "name": "Vamo a calmarno",
-      "src": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png"
-    },
-    {
-      "name": "Dragonite Mensajero",
-      "src": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/149.png"
-    }
-  ];
+  // const datos = [
+  //   {
+  //     "name": "Pikachu",
+  //     "src": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png"
+  //   },
+  //   {
+  //     "name": "Charizard",
+  //     "src": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png"
+  //   },
+  //   {
+  //     "name": "Venusaur",
+  //     "src": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png"
+  //   },
+  //   {
+  //     "name": "Vamo a calmarno",
+  //     "src": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png"
+  //   },
+  //   {
+  //     "name": "Dragonite Mensajero",
+  //     "src": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/149.png"
+  //   }
+  // ];
 
   // const getDatos = () => {
   //   return datos;
   // };
 
-  const getDatos = () => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (datos.length) {
-          resolve(datos);
-        } else {
-          reject(new Error('No existen datos'));
-        }
-      }, 2000);
-    });
-  };
+  // const getDatos = () => {
+  //   return new Promise((resolve, reject) => {
+  //     setTimeout(() => {
+  //       if (datos.length) {
+  //         resolve(datos);
+  //       } else {
+  //         reject(new Error('No existen datos'));
+  //       }
+  //     }, 2000);
+  //   });
+  // };
 
   // document.getElementById('spinner').classList.remove('spinner--hidden');
   // const respuesta = getDatos()
@@ -150,18 +152,18 @@ const documentReady = async () => {
   //   });
   // console.log(respuesta);
 
-  document.getElementById('spinner').classList.remove('spinner--hidden');
-  const fetchApi = async () => {
-    try {
-      const data = await getDatos();
-      console.log(data);
-    } catch (error) {
-      console.log(error);
-    } finally {
-      document.getElementById('spinner').classList.add('spinner--hidden');
-    }
-  };
-  fetchApi();
+  // document.getElementById('spinner').classList.remove('spinner--hidden');
+  // const fetchApi = async () => {
+  //   try {
+  //     const data = await getDatos();
+  //     console.log(data);
+  //   } catch (error) {
+  //     console.log(error);
+  //   } finally {
+  //     document.getElementById('spinner').classList.add('spinner--hidden');
+  //   }
+  // };
+  // fetchApi();
 };
 
 document.addEventListener('DOMContentLoaded', documentReady);

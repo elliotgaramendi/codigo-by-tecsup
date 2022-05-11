@@ -1,0 +1,21 @@
+.card__pokemon {
+  background-color: var(--secondary-theme-color);
+  padding: 1rem;
+  border-radius: 1rem;
+  max-width: 256px;
+}
+
+.card__pokemon-name {
+  color: var(--primary-text-color);
+  text-align: center;
+  margin: 0;
+}
+
+.card__pokemon-image-container {
+  margin: 0;
+  width: 100%;
+}
+
+.card__pokemon-image {
+  width: 100%;
+}
