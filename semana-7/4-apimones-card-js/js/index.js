@@ -6,25 +6,47 @@ const documentReady = () => {
   loader();
   header();
 
-  const objectPerson = {
-    name: 'Elliot',
-    goal: 'Ser un gran programador frontend',
-    married: false,
-    years: 26
+  // const objectPerson = {
+  //   name: 'Elliot',
+  //   goal: 'Ser un gran programador frontend',
+  //   married: false,
+  //   years: 26
+  // };
+
+  // const objectPersonJson = `{
+  //   "name": "Elliot",
+  //   "goal": "Ser un gran programador frontend",
+  //   "married": false,
+  //   "years": 26
+  // }`;
+
+  // console.log(objectPerson);
+  // console.log(objectPersonJson);
+
+  // console.log(JSON.stringify(objectPerson));
+  // console.log(JSON.parse(objectPersonJson));
+
+  // const operarNumerosCallback = (numero1, numero2, callback) => {
+  //   return callback(numero1, numero2);
+  // };
+  // const resultado = operarNumerosCallback(8, 5, (n1, n2) => {
+  //   return (n1 * n2);
+  // });
+
+  let resultadoAsyn = 0;
+
+  const operarNumerosCallbackAsync = (numero1, numero2, callback) => {
+    setTimeout(() => {
+      callback(numero1, numero2);
+    }, 1000);
   };
+  
+  operarNumerosCallbackAsync(8, 5, (n1, n2) => {
+    resultadoAsyn = n1 * n2;
+    console.log(resultadoAsyn);
+  });
+  console.log(resultadoAsyn);
 
-  const objectPersonJson = `{
-    "name": "Elliot",
-    "goal": "Ser un gran programador frontend",
-    "married": false,
-    "years": 26
-  }`;
-
-  console.log(objectPerson);
-  console.log(objectPersonJson);
-
-  console.log(JSON.stringify(objectPerson));
-  console.log(JSON.parse(objectPersonJson));
 };
 
 document.addEventListener('DOMContentLoaded', documentReady);
