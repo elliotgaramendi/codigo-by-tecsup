@@ -2,7 +2,7 @@
 import header from './header.js';
 import loader from './loader.js';
 
-const documentReady = () => {
+const documentReady = async () => {
   loader();
   header();
 
@@ -63,6 +63,15 @@ const documentReady = () => {
   });
   console.log(promesa);
   console.log(resultadoAsyn);
+
+  const operarDatos = async () => {
+    const response = await operarNumerosCallbackAsyncPromises(8, 5, (n1, n2) => {
+      return n1 + n2;
+    });
+    return response;
+  };
+  const comida = await operarDatos();
+  console.log(comida);
 };
 
 document.addEventListener('DOMContentLoaded', documentReady);
