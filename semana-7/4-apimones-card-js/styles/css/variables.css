@@ -1,0 +1,35 @@
+:root {
+  scroll-behavior: smooth;
+  --primary-theme-color: #20232a;
+  --secondary-theme-color: #282c34;
+  --primary-text-color: #fff;
+  --secondary-text-color: #aaa;
+  --primary-shadow-color: #8888;
+  --secondary-shadow-color: #eee8;
+  --button-color: #61dafb;
+  --button-color-active: #fff;
+  --button-text-color: #000;
+  --primary-highlight-color: #61dafb;
+  --secondary-highlight-color: #ffd700;
+  --invalid-color: #dc143c;
+  --padding-section: 4rem 0;
+  --padding-container: 0 2rem;
+  --max-width-container: 1024px;
+  --border-radius: 0.5rem;
+  --all-transitions: all 0.25s;
+}
+
+.body--light {
+  --primary-theme-color: #fff;
+  --secondary-theme-color: #f5f5f5;
+  --primary-text-color: #000;
+  --secondary-text-color: #555;
+  --primary-shadow-color: #8888;
+  --secondary-shadow-color: #1118;
+}
+
+@media (min-width: 854px) {
+  :root {
+    --padding-container: 0 0.75em;
+  }
+}

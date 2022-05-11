@@ -1,32 +1,55 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Semana | Base 2 by Web 4B</title>
-  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+  <title>PokeApi Card</title>
+  <link rel="stylesheet" href="./styles/css/index.css" />
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
 
-  <link rel="stylesheet" href="../styles/css/styles.css" />
-  <link rel="stylesheet" href="../styles/css/header.css" />
-  <link rel="stylesheet" href="../styles/css/week-slider.css" />
-  <link rel="stylesheet" href="../styles/css/footer.css" />
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap"
+    rel="stylesheet" />
 </head>
 
-<body class="body animate__animated animate__fadeIn">
+<body class="body">
+
+  <section class="loader" id="loader">
+    <div class="loader__wave"></div>
+    <div class="loader__wave"></div>
+    <div class="loader__wave"></div>
+    <div class="loader__wave"></div>
+    <div class="loader__wave"></div>
+    <div class="loader__wave"></div>
+    <div class="loader__wave"></div>
+    <div class="loader__wave"></div>
+    <div class="loader__wave"></div>
+    <div class="loader__wave"></div>
+  </section>
+
   <header class="header">
     <nav class="header-nav">
       <div class="header-nav__container">
-        <div class="header-nav__link-container">
-          <a href="../" class="header-nav__link-logo-container">
-            <img src="../img/logo-base-2.png" alt="Logo Web" class="header-nav__link-logo" />
-          </a>
+        <a href="#profile" class="header-nav__link-logo-container">
+          <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png" alt="Logo Web"
+            class="header-nav__link-logo" />
+        </a>
+        <div class="header-nav__theme-menu-container">
+          <button class="header-nav__theme-icon-container" id="headerNavThemeIconContainer">
+            <span class="header-nav__theme-icon">🌚</span>
+            <span class="header-nav__theme-icon">🌞</span>
+          </button>
+          <figure class="header-nav__menu-icon-container" id="headerNavMenuIconContainer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff" class="header-nav__menu-icon">
+              <path d="M4 6h16v2H4zm4 5h12v2H8zm5 5h7v2h-7z"></path>
+            </svg>
+          </figure>
           <ul class="header-nav__menu-link-list">
             <li class="header-nav__menu-link-item">
-              <a href="../index.html#learningWeeks" class="header-nav__menu-link">Semanas</a>
+              <a href="#card" class="header-nav__menu-link">Card</a>
             </li>
             <li class="header-nav__menu-link-item">
               <a href="https://www.linkedin.com/in/elliotgaramendi/"
@@ -47,58 +70,12 @@
             </li>
           </ul>
         </div>
-        <div class="header-nav__theme-menu-container">
-          <button class="header-nav__theme-icon-container" id="headerNavThemeIconContainer">
-            <span class="header-nav__theme-icon">🌚</span>
-            <span class="header-nav__theme-icon">🌞</span>
-          </button>
-          <figure class="header-nav__menu-icon-container" id="headerNavMenuIconContainer">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff" class="header-nav__menu-icon">
-              <path d="M4 6h16v2H4zm4 5h12v2H8zm5 5h7v2h-7z"></path>
-            </svg>
-          </figure>
-        </div>
       </div>
     </nav>
   </header>
 
   <main class="main">
-    <section class="learning-week" id="learningWeek">
-      <div class="learning-week__container">
-        <div class="learning-week__slider-container">
-          <ul class="learning-week__slider-list">
-            <li class="learning-week__slider-item">
-              <img src="../img/s6-2.png" alt="Página Personal" class="learning-week__slider-item-image">
-              <a href="./2-pagina-personal/" class="learning-week__slider-item-title">
-                Página Personal
-              </a>
-            </li>
-            <li class="learning-week__slider-item">
-              <img src="../img/s7-4.png" alt="Apimones Card" class="learning-week__slider-item-image">
-              <a href="./4-apimones-card-js/" class="learning-week__slider-item-title">
-                Apimones Card
-              </a>
-            </li>
-            <li class="learning-week__slider-item">
-              <img src="../img/s6-2.png" alt="Página Personal" class="learning-week__slider-item-image">
-              <a href="./2-pagina-personal/" class="learning-week__slider-item-title">
-                Página Personal
-              </a>
-            </li>
-            <li class="learning-week__slider-item">
-              <img src="../img/s7-4.png" alt="Apimones Card" class="learning-week__slider-item-image">
-              <a href="./4-apimones-card-js/" class="learning-week__slider-item-title">
-                Apimones Card
-              </a>
-            </li>
-          </ul>
-          <button class="learning-week__slider-button learning-week__slider-button--left"
-            id="sliderSliderButtonLeft">&#60;</button>
-          <button class="learning-week__slider-button learning-week__slider-button--right"
-            id="sliderSliderButtonRight">&#62;</button>
-        </div>
-      </div>
-    </section>
+    <article class="card" id="card"></article>
   </main>
 
   <footer class="footer">
@@ -145,8 +122,7 @@
       </div>
     </nav>
   </footer>
-
-  <script src="../js/week.js" type="module"></script>
+  <script src="./js/index.js" type="module"></script>
 </body>
 
 </html>
