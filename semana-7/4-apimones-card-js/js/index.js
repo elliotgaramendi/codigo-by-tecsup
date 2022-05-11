@@ -133,10 +133,11 @@ const documentReady = async () => {
         } else {
           reject(new Error('No existen datos'));
         }
-      }, 1500);
+      }, 2000);
     });
   };
 
+  document.getElementById('spinner').classList.remove('spinner--hidden');
   const respuesta = getDatos()
     .then((response) => {
       console.log(response);
@@ -145,7 +146,7 @@ const documentReady = async () => {
       console.log(error);
     })
     .finally(() => {
-      console.log('Se consultó al API de Apimones');
+      document.getElementById('spinner').classList.add('spinner--hidden');
     });
   console.log(respuesta);
 
