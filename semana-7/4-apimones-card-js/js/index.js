@@ -46,32 +46,43 @@ const documentReady = async () => {
   // });
   // console.log(resultadoAsyn);
 
-  const operarNumerosCallbackAsyncPromises = (numero1, numero2, callback) => {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(callback(numero1, numero2));
-      }, 1000);
-    });
+  // const operarNumerosCallbackAsyncPromises = (numero1, numero2, callback) => {
+  //   return new Promise((resolve) => {
+  //     setTimeout(() => {
+  //       resolve(callback(numero1, numero2));
+  //     }, 1000);
+  //   });
+  // };
+
+  // let resultadoAsyn = 0;
+  // const promesa = operarNumerosCallbackAsyncPromises(8, 5, (n1, n2) => {
+  //   return n1 + n2;
+  // }).then((response) => {
+  //   resultadoAsyn = response;
+  //   console.log(resultadoAsyn);
+  // });
+  // console.log(promesa);
+  // console.log(resultadoAsyn);
+
+  // const operarDatos = async () => {
+  //   const response = await operarNumerosCallbackAsyncPromises(8, 5, (n1, n2) => {
+  //     return n1 + n2;
+  //   });
+  //   return response;
+  // };
+  // const comida = await operarDatos();
+  // console.log(comida);
+
+  // Callback
+  const saludar = () => {
+    console.log('Hola');
   };
 
-  let resultadoAsyn = 0;
-  const promesa = operarNumerosCallbackAsyncPromises(8, 5, (n1, n2) => {
-    return n1 + n2;
-  }).then((response) => {
-    resultadoAsyn = response;
-    console.log(resultadoAsyn);
-  });
-  console.log(promesa);
-  console.log(resultadoAsyn);
-
-  const operarDatos = async () => {
-    const response = await operarNumerosCallbackAsyncPromises(8, 5, (n1, n2) => {
-      return n1 + n2;
-    });
-    return response;
+  const ejecutarCallback = (callback) => {
+    callback();
   };
-  const comida = await operarDatos();
-  console.log(comida);
+
+  ejecutarCallback(saludar);
 };
 
 document.addEventListener('DOMContentLoaded', documentReady);
