@@ -137,19 +137,31 @@ const documentReady = async () => {
     });
   };
 
-  document.getElementById('spinner').classList.remove('spinner--hidden');
-  const respuesta = getDatos()
-    .then((response) => {
-      console.log(response);
-    })
-    .catch((error) => {
-      console.log(error);
-    })
-    .finally(() => {
-      document.getElementById('spinner').classList.add('spinner--hidden');
-    });
-  console.log(respuesta);
+  // document.getElementById('spinner').classList.remove('spinner--hidden');
+  // const respuesta = getDatos()
+  //   .then((response) => {
+  //     console.log(response);
+  //   })
+  //   .catch((error) => {
+  //     console.log(error);
+  //   })
+  //   .finally(() => {
+  //     document.getElementById('spinner').classList.add('spinner--hidden');
+  //   });
+  // console.log(respuesta);
 
+  document.getElementById('spinner').classList.remove('spinner--hidden');
+  const fetchApi = async () => {
+    try {
+      const data = await getDatos();
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      document.getElementById('spinner').classList.add('spinner--hidden');
+    }
+  };
+  fetchApi();
 };
 
 document.addEventListener('DOMContentLoaded', documentReady);
