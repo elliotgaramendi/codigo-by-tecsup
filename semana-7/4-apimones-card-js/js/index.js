@@ -26,12 +26,37 @@ const documentReady = async () => {
   // console.log(JSON.stringify(objectPerson));
   // console.log(JSON.parse(objectPersonJson));
 
+  // const saludar = () => {
+  //   console.log('Hola');
+  // };
+
+  // const ejecutarCallback = (callback) => {
+  //   callback();
+  // };
+
+  // ejecutarCallback(saludar);
+
   // const operarNumerosCallback = (numero1, numero2, callback) => {
   //   return callback(numero1, numero2);
   // };
   // const resultado = operarNumerosCallback(8, 5, (n1, n2) => {
   //   return (n1 * n2);
   // });
+
+  // console.log(resultado);
+
+  // const mandarMensaje1 = (fn) => {
+  //   setTimeout(() => {
+  //     console.log('Vamo a calmarno');
+  //     fn();
+  //   }, 1000);
+  // };
+
+  // const mandarMensaje2 = () => {
+  //   console.log('-Pikachu sorprendido-');
+  // };
+
+  // mandarMensaje1(mandarMensaje2);
 
   // let resultadoAsyn = 0;
   // const operarNumerosCallbackAsync = (numero1, numero2, callback) => {
@@ -73,29 +98,7 @@ const documentReady = async () => {
   // const comida = await operarDatos();
   // console.log(comida);
 
-  // Callback
-  // const saludar = () => {
-  //   console.log('Hola');
-  // };
 
-  // const ejecutarCallback = (callback) => {
-  //   callback();
-  // };
-
-  ejecutarCallback(saludar);
-
-  const mandarMensaje1 = (fn) => {
-    setTimeout(() => {
-      console.log('Vamo a calmarno');
-      fn();
-    }, 1000);
-  };
-
-  const mandarMensaje2 = () => {
-    console.log('-Pikachu sorprendido-');
-  };
-
-  mandarMensaje1(mandarMensaje2);
 };
 
 document.addEventListener('DOMContentLoaded', documentReady);
