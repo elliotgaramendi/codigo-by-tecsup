@@ -99,6 +99,9 @@
   height: 2rem;
   cursor: pointer;
   margin: 0;
+  padding: 0;
+  background-color: transparent;
+  border: 0;
 }
 
 .header-nav__menu-icon {
