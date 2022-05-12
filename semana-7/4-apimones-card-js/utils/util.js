@@ -7,9 +7,10 @@ export const setLoading = (state) => {
 };
 
 // export const fetchApi = () => {
+//   const inicio = performance.now();
 //   setLoading(true);
-//   fetch('http://127.0.0.1:5500/semana-7/4-apimones-card-js/json/pokeapi-api-v2-pokemon-151.json')
-//   // fetch('https://pokeapi.co/api/v2/pokemon/151')
+//   // fetch('http://127.0.0.1:5500/semana-7/4-apimones-card-js/json/pokeapi-api-v2-pokemon-151.json')
+//   fetch('https://pokeapi.co/api/v2/pokemon/151')
 //     .then((response) => {
 //       return response.json();
 //     })
@@ -21,24 +22,28 @@ export const setLoading = (state) => {
 //     })
 //     .finally(() => {
 //       setLoading(false);
+//       const final = performance.now();
+//       console.log(`Tiempo de ejecución: ${final - inicio}ms`)
 //     });
 // };
 
 export const fetchApi = (url) => {
+  const inicio = performance.now();
   setLoading(true);
-  fetch(url)
+  return fetch(url, { method: 'GET' })
     .then((response) => {
       return response.json();
     })
     .then((data) => {
-      console.log(data);
       return data;
     })
     .catch((error) => {
-      console.log(error)
+      return error;
     })
     .finally(() => {
       setLoading(false);
+      const final = performance.now();
+      console.log(`Tiempo de ejecución: ${final - inicio}ms`)
     });
 };
 
