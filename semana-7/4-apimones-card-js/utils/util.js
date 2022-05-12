@@ -47,34 +47,34 @@ export const setLoading = (state) => {
 //     });
 // };
 
-export const fetchApi = async (url) => {
-  const inicio = performance.now();
+// export const fetchApi = async (url) => {
+//   const inicio = performance.now();
+//   try {
+//     setLoading(true);
+//     const response = await fetch(url, { method: 'GET' });
+//     const data = await response.json();
+//     return data;
+//   } catch (error) {
+//     return error;
+//   } finally {
+//     setLoading(false);
+//     const final = performance.now();
+//     console.log(`Tiempo de ejecución: ${final - inicio}ms`);
+//   }
+// };
+
+export const fetchApi = async (url, method) => {
   try {
     setLoading(true);
-    const response = await fetch(url, { method: 'GET' });
+    const response = await fetch(url, { method });
     const data = await response.json();
     return data;
   } catch (error) {
     return error;
   } finally {
     setLoading(false);
-    const final = performance.now();
-    console.log(`Tiempo de ejecución: ${final - inicio}ms`);
   }
 };
-
-// // export const fetchApi = async (url) => {
-// //   setLoading(true);
-// //   try {
-// //     const response = await fetch(url, { method: 'GET' });
-// //     const data = await response.json();
-// //     return data;
-// //   } catch (error) {
-// //     console.log(error);
-// //   } finally {
-// //     setLoading(false);
-// //   }
-// // };
 
 // export const fetchApi = async (...urls) => {
 //   setLoading(true);

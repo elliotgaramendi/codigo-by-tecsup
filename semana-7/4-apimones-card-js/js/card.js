@@ -10,8 +10,16 @@ const card = async () => {
   // const data = await fetchApi('https://pokeapi.co/api/v2/pokemon/151');
   // console.log(data);
 
-  const data = await fetchApi('https://pokeapi.co/api/v2/pokemon/151');
-  console.log(data);
+  // const data = await fetchApi('https://pokeapi.co/api/v2/pokemon/151');
+  // console.log(data);
+
+  const inicio = performance.now();
+  const data1 = await fetchApi('https://pokeapi.co/api/v2/pokemon/151', 'GET');
+  const data2 = await fetchApi('https://raw.githubusercontent.com/ElliotXLeo/bootcamp-frontend-t-g-15/develop/semana-7/4-apimones-card-js/json/pokeapi-api-v2-pokemon-151.json', 'GET');
+  console.log(data1);
+  console.log(data2);
+  const final = performance.now();
+  console.log(`Tiempo de ejecución: ${final - inicio}ms`);
 
   // const pokemonLocal = document.getElementById('pokemonLocal');
   // const pokemonRemote = document.getElementById('pokemonRemote');
