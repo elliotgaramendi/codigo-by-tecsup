@@ -2,8 +2,8 @@
 @import url(./loader.css);
 @import url(./spinner.css);
 @import url(./header.css);
-@import url(./card.css);
-@import url(./card-dom.css);
+@import url(./pokemons.css);
+@import url(./pokemon.css);
 @import url(./footer.css);
 
 .body {
@@ -22,6 +22,7 @@
 }
 
 .main {
-  width: 100%;
-  margin: auto 0;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
 }

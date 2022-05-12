@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PokeApi Card</title>
+  <title>Apimones Card</title>
   <link rel="stylesheet" href="./styles/css/index.css" />
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -32,7 +33,7 @@
   <header class="header">
     <nav class="header-nav">
       <div class="header-nav__container">
-        <a href="#profile" class="header-nav__link-logo-container">
+        <a href="#card" class="header-nav__link-logo-container">
           <img
             src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png"
             alt="Logo Web" class="header-nav__link-logo" />
@@ -76,12 +77,23 @@
 
   <main class="main">
     <section class="spinner spinner--hidden" id="spinner">
-      <div class="spinner-container">
-        <div class="spinner__double-bounce1"></div>
-        <div class="spinner__double-bounce2"></div>
+      <div class="spinner__container">
+        <div class="spinner__circle spinner__circle--1"></div>
+        <div class="spinner__circle spinner__circle--2"></div>
       </div>
     </section>
-    <article class="card" id="card"></article>
+
+    <section class="pokemons">
+      <div class="pokemons__container">
+        <h1 class="pokemons__title">Apimones Card</h1>
+        <article class="pokemon pokemon--local" id="pokemonLocal">
+          <h2 class="pokemon__title">Local API</h2>
+        </article>
+        <article class="pokemon pokemon--remote" id="pokemonRemote">
+          <h2 class="pokemon__title">Remote API</h2>
+        </article>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
@@ -114,7 +126,7 @@
             </a>
           </li>
           <li class="footer-nav__link-item">
-            <a href="https://nextjs-react-portafolio-fc.vercel.app" class="footer-nav__link">
+            <a href="https://elliotxleo.github.io/portafolio-web-elgs/" class="footer-nav__link">
               <img src="https://i.postimg.cc/65TVxg9t/world-globe.png" alt="Página Personal"
                 class="footer-nav__link-image" />
             </a>

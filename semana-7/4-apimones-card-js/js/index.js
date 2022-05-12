@@ -3,7 +3,7 @@ import card from './card.js';
 import header from './header.js';
 import loader from './loader.js';
 
-const documentReady = async () => {
+const documentReady = () => {
   loader();
   header();
   card();

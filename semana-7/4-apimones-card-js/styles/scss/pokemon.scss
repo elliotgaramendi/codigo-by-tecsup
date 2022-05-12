@@ -1,9 +1,24 @@
-.card {
+.pokemon {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
 
-  &__container {
+  &--local {
+    grid-area: pokemon-local;
+  }
+
+  &--remote {
+    grid-area: pokemon-remote;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 1.25rem;
+  }
+
+  &__card {
     background-color: var(--secondary-theme-color);
     max-width: 20rem;
     border-radius: 1rem;
@@ -25,8 +40,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
-    padding-bottom: 2rem;
+    gap: 0.25rem;
+    padding-bottom: 1rem;
   }
 
   &__body-image-container {
@@ -34,9 +49,9 @@
     background-color: var(--primary-theme-color);
     border-radius: 50%;
     overflow: hidden;
-    width: 10rem;
-    height: 10rem;
-    margin: -5rem 0 0 0;
+    width: 14rem;
+    height: 14rem;
+    margin: -7rem 0 0 0;
     transition: var(--all-transitions);
   }
 
@@ -47,27 +62,30 @@
   }
 
   &__body-title {
-    margin: 0;
+    text-transform: capitalize;
     font-size: 1.5rem;
+    margin: 0;
   }
 
-  &__body-title-id {
+  &__body-id {
+    font-size: 1rem;
+    font-weight: 100;
+    margin: 0;
+  }
+
+  &__body-types {
     color: var(--secondary-text-color);
     font-weight: 200;
-  }
-
-  &__body-paragraph {
-    color: var(--secondary-text-color);
-    font-weight: 300;
-    font-size: 1.25rem;
+    text-transform: capitalize;
     margin: 0;
   }
 
   &__footer {
-    display: flex;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.5rem;
     border-top: 0.125rem solid var(--primary-shadow-color);
-    padding: 2rem 0;
+    padding: 1rem;
   }
 
   &__footer-stats {
@@ -76,15 +94,17 @@
   }
 
   &__footer-stats-base {
-    font-size: 1.125rem;
+    font-size: 1rem;
     font-weight: 500;
     text-align: center;
     margin: 0;
   }
 
   &__footer-stats-name {
+    font-size: 0.75rem;
     font-weight: 300;
     text-align: center;
+    text-transform: capitalize;
     margin: 0;
   }
 }
