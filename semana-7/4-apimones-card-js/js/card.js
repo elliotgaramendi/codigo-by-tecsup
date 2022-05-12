@@ -1,13 +1,12 @@
 // import { fetchApi, renderCard } from "../utils/util.js";
 // import { renderPokemon } from "../utils/util.js";
 
-import { setLoading } from "../utils/util.js";
+import { fetchApi, setLoading } from "../utils/util.js";
 
 const card = async () => {
 
-  setLoading(true);
-  setTimeout(() => setLoading(false), 5000);
-
+  fetchApi();
+  
   // const pokemonLocal = document.getElementById('pokemonLocal');
   // const pokemonRemote = document.getElementById('pokemonRemote');
 

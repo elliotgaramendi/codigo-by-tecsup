@@ -6,6 +6,24 @@ export const setLoading = (state) => {
   }
 };
 
+export const fetchApi = () => {
+  setLoading(true);
+  fetch('http://127.0.0.1:5500/semana-7/4-apimones-card-js/json/pokeapi-api-v2-pokemon-151.json')
+  // fetch('https://pokeapi.co/api/v2/pokemon/151')
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      console.log(data);
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+    .finally(() => {
+      setLoading(false);
+    });
+};
+
 // // export const fetchApi = async (url) => {
 // //   setLoading(true);
 // //   try {
