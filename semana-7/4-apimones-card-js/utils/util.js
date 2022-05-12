@@ -76,25 +76,41 @@ export const setLoading = (state) => {
 //   }
 // };
 
+// export const fetchApi = async (...urls) => {
+//   setLoading(true);
+//   // const promises = urls.map(url => fetch(url).then(response => response.json()).then(data => data));
+//   const promises = urls.map((url) => {
+//     return fetch(url)
+//       .then((response) => {
+//         return response.json();
+//       })
+//       .then((data) => {
+//         return data;
+//       })
+//       .catch((error) => {
+//         return error;
+//       })
+//       .finally(() => {
+//         setLoading(false);
+//       });
+//   });
+//   return Promise.all(promises);
+// };
+
 export const fetchApi = async (...urls) => {
-  setLoading(true);
-  // const promises = urls.map(url => fetch(url).then(response => response.json()).then(data => data));
-  const promises = urls.map((url) => {
-    return fetch(url)
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        return data;
-      })
-      .catch((error) => {
-        return error;
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  });
-  return Promise.all(promises);
+  try {
+    setLoading(true);
+    const promises = urls.map(async (url) => {
+      const response = await fetch(url, { method: 'GET' });
+      const data = await response.json();
+      return data;
+    });
+    return Promise.all(promises);
+  } catch (error) {
+    return error;
+  } finally {
+    setLoading(false);
+  }
 };
 
 export const renderPokemon = (domElement, pokemon) => {
