@@ -23,28 +23,44 @@ export const setLoading = (state) => {
 //     .finally(() => {
 //       setLoading(false);
 //       const final = performance.now();
-//       console.log(`Tiempo de ejecución: ${final - inicio}ms`)
+//       console.log(`Tiempo de ejecución: ${final - inicio}ms`);
 //     });
 // };
 
-export const fetchApi = (url) => {
+// export const fetchApi = (url) => {
+//   const inicio = performance.now();
+//   setLoading(true);
+//   return fetch(url, { method: 'GET' })
+//     .then((response) => {
+//       return response.json();
+//     })
+//     .then((data) => {
+//       return data;
+//     })
+//     .catch((error) => {
+//       return error;
+//     })
+//     .finally(() => {
+//       setLoading(false);
+//       const final = performance.now();
+//       console.log(`Tiempo de ejecución: ${final - inicio}ms`);
+//     });
+// };
+
+export const fetchApi = async (url) => {
   const inicio = performance.now();
-  setLoading(true);
-  return fetch(url, { method: 'GET' })
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-      return data;
-    })
-    .catch((error) => {
-      return error;
-    })
-    .finally(() => {
-      setLoading(false);
-      const final = performance.now();
-      console.log(`Tiempo de ejecución: ${final - inicio}ms`)
-    });
+  try {
+    setLoading(true);
+    const response = await fetch(url, { method: 'GET' });
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    return error;
+  } finally {
+    setLoading(false);
+    const final = performance.now();
+    console.log(`Tiempo de ejecución: ${final - inicio}ms`);
+  }
 };
 
 // // export const fetchApi = async (url) => {

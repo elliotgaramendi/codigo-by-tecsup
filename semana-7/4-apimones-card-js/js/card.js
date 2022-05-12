@@ -7,6 +7,9 @@ const card = async () => {
 
   // fetchApi();
 
+  // const data = await fetchApi('https://pokeapi.co/api/v2/pokemon/151');
+  // console.log(data);
+
   const data = await fetchApi('https://pokeapi.co/api/v2/pokemon/151');
   console.log(data);
 
