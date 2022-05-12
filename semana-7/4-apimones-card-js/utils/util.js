@@ -1,10 +1,10 @@
-// export const setLoading = (state) => {
-//   if (state) {
-//     document.getElementById('spinner').classList.remove('spinner--hidden');
-//   } else {
-//     document.getElementById('spinner').classList.add('spinner--hidden');
-//   }
-// };
+export const setLoading = (state) => {
+  if (state) {
+    document.getElementById('spinner').classList.add('spinner--show');
+  } else {
+    document.getElementById('spinner').classList.remove('spinner--show');
+  }
+};
 
 // // export const fetchApi = async (url) => {
 // //   setLoading(true);

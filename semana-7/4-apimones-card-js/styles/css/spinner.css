@@ -15,13 +15,15 @@
   align-items: center;
   justify-content: center;
   transition: var(--all-transitions);
-  height: auto;
-}
-
-.spinner--hidden {
   opacity: 0;
   pointer-events: none;
   height: 0;
+}
+
+.spinner--show {
+  opacity: 1;
+  pointer-events: auto;
+  height: auto;
 }
 
 .spinner__container {

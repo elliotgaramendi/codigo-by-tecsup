@@ -1,13 +1,18 @@
 // import { fetchApi, renderCard } from "../utils/util.js";
 // import { renderPokemon } from "../utils/util.js";
 
+import { setLoading } from "../utils/util.js";
+
 const card = async () => {
+
+  setLoading(true);
+  setTimeout(() => setLoading(false), 5000);
 
   // const pokemonLocal = document.getElementById('pokemonLocal');
   // const pokemonRemote = document.getElementById('pokemonRemote');
-  
+
   // const [localData, remoteData] = await fetchApi('https://elliotxleo.github.io/api-json-public/json/pokeapi-api-v2-pokemon-25.json', 'https://pokeapi.co/api/v2/pokemon/25');
-  
+
   // renderCard(pokemonLocal, localData);
   // renderCard(pokemonRemote, remoteData);
 
