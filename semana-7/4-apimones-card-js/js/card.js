@@ -5,7 +5,8 @@ import { fetchApi, setLoading } from "../utils/util.js";
 
 const card = async () => {
 
-  fetchApi();
+  // fetchApi();
+  fetchApi('http://127.0.0.1:5500/semana-7/4-apimones-card-js/json/pokeapi-api-v2-pokemon-151.json');
   
   // const pokemonLocal = document.getElementById('pokemonLocal');
   // const pokemonRemote = document.getElementById('pokemonRemote');
