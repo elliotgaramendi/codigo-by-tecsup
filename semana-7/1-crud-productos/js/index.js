@@ -1,16 +1,38 @@
 'use strict';
 // import { Producto } from "./Producto.js";
-let productos = [
+/* let productos = [
   new Producto('Laptop', 8000, 'MSI', 'Tecnología', 10),
   new Producto('Desktop', 4000, 'Lenovo', 'Tecnología', 15),
   new Producto('Monitor', 1500, 'BenQ', 'Tecnología', 20),
   new Producto('Impresora 3D', 3000, 'EPSON', 'Tecnología', 5),
   new Producto('Redmi Note 10', 1800, 'Xiaomi', 'Tecnología', 50),
   new Producto('Cargador', 100, 'Huawei', 'Tecnología', 100)
-];
+]; */
 
+let productos = [];
 const contenedorAlerta = document.querySelector('#contenedorAlerta');
 let timeoutId = 0;
+const dataBase = 'crud-productos';
+const idProduct = 'crud-productos-id';
+
+const generateId = () => {
+  // if (localStorage.getItem(dataBase)) {
+  //   productos = JSON.parse(localStorage.getItem(dataBase));
+  //   const ids = productos.length ? productos.map(element => element._id) : [0];
+  //   console.log(ids);
+  //   return Math.max(...ids) + 1
+  // } else {
+  //   return 1;
+  // }
+  if (localStorage.getItem(idProduct)) {
+    let id = +localStorage.getItem(idProduct);
+    localStorage.setItem(idProduct, ++id);
+    return id;
+  } else {
+    localStorage.setItem(idProduct, 1);
+    return 1;
+  }
+};
 
 const showAlert = (type, content) => {
   clearTimeout(timeoutId);
@@ -75,7 +97,8 @@ const createProduct = () => {
   if (validateForm()) {
     showAlert('danger', 'Completar todos los campos');
   } else {
-    productos = [...productos, new Producto(nombre, +precio, marca, categoria, +stock)];
+    productos = [...productos, new Producto(generateId(), nombre, +precio, marca, categoria, +stock)];
+    localStorage.setItem(dataBase, JSON.stringify(productos));
     resetForm();
     readProducts();
     showAlert('primary', 'Registro creado');
@@ -85,27 +108,26 @@ const createProduct = () => {
 const readProducts = () => {
   const tBodyProducto = document.querySelector('#tBodyProducto');
   tBodyProducto.innerHTML = '';
-
   productos.forEach((element) => {
-    const { id, nombre, precio, marca, categoria, stock } = element;
+    const { _id, _nombre, _precio, _marca, _categoria, _stock } = element;
     tBodyProducto.innerHTML += `
       <tr>
-        <th>${id}</th>
-        <td>${nombre}</td>
-        <td>${precio.toLocaleString('es-PE', { style: 'currency', currency: 'PEN', minimumFractionDigits: 2 })}</td>
-        <td>${marca}</td>
-        <td>${categoria}</td>
-        <td>${stock}</td>
+        <th>${_id}</th>
+        <td>${_nombre}</td>
+        <td>${_precio.toLocaleString('es-PE', { style: 'currency', currency: 'PEN', minimumFractionDigits: 2 })}</td>
+        <td>${_marca}</td>
+        <td>${_categoria}</td>
+        <td>${_stock}</td>
         <td>
           <button
             class="bg-success rounded border-0 p-0"
-            onclick="readProduct(${id})"
+            onclick="readProduct(${_id})"
           >
             ✏
           </button>
           <button
             class="bg-danger rounded border-0 p-0"
-            onclick="deleteProduct(${id})"
+            onclick="deleteProduct(${_id})"
           >
             🗑
           </button>
@@ -157,7 +179,7 @@ const updateProduct = () => {
         return element;
       }
     });
-
+    // guardar estado actual de productos en la base de datos
     resetForm();
     formTitle.innerHTML = 'Crear producto';
     formButton.innerHTML = 'Crear';
@@ -172,7 +194,6 @@ const deleteProduct = (id) => {
       confirmButton: 'btn btn-success mx-2',
       cancelButton: 'btn btn-danger mx-2'
     },
-    buttonsStyling: false
   });
 
   swalWithBootstrapButtons.fire({
@@ -188,6 +209,7 @@ const deleteProduct = (id) => {
       productos = productos.filter((element) => {
         return element.id !== id;
       });
+      // guardar estado actual de productos en la base de datos
       readProducts();
       showAlert('danger', 'Registro eliminado');
       swalWithBootstrapButtons.fire(
@@ -220,7 +242,13 @@ const documentReady = () => {
     }
   };
 
-  readProducts();
+  if (localStorage.getItem(dataBase)) {
+    productos = JSON.parse(localStorage.getItem(dataBase));
+    readProducts();
+  } else {
+    localStorage.setItem(dataBase, JSON.stringify(productos));
+  }
+
   formProducto.addEventListener('submit', submitProduct);
 };
 

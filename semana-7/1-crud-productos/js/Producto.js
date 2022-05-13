@@ -1,7 +1,7 @@
 // export class Producto {
 class Producto {
 
-  static contadorProducto = 0;
+  // static contadorProducto = 0;
 
   _id;
   _nombre;
@@ -10,8 +10,9 @@ class Producto {
   _categoria;
   _stock;
 
-  constructor(nombre, precio, marca, categoria, stock) {
-    this._id = ++Producto.contadorProducto;
+  constructor(id, nombre, precio, marca, categoria, stock) {
+    // this._id = ++Producto.contadorProducto;
+    this._id = id;
     this._nombre = nombre;
     this._precio = precio;
     this._marca = marca;
