@@ -1,5 +1,4 @@
-// export class Pokemon {
-class Pokemon {
+export class Pokemon {
   _id;
   _nombre;
   _tipo;

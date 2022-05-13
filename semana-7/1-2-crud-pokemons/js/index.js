@@ -1,18 +1,13 @@
 'use strict';
+
+import { Pokemon } from "./Pokemon.js";
+
 const pokemonsData = 'crud-pokemons';
 let pokemons = [];
 const contenedorAlerta = document.querySelector('#contenedorAlerta');
 let timeoutId = 0;
 
 const generateId = () => {
-  // if (localStorage.getItem(pokemonsData)) {
-  //   pokemons = JSON.parse(localStorage.getItem(dataBase));
-  //   const ids = pokemons.length ? pokemons.map(element => element._id) : [0];
-  //   console.log(ids);
-  //   return Math.max(...ids) + 1
-  // } else {
-  //   return 1;
-  // }
   if (localStorage.getItem('crud-pokemons-id')) {
     let id = +localStorage.getItem('crud-pokemons-id');
     localStorage.setItem('crud-pokemons-id', ++id);
@@ -22,8 +17,6 @@ const generateId = () => {
     return 1;
   }
 };
-
-generateId();
 
 const showAlert = (type, content) => {
   clearTimeout(timeoutId);
@@ -91,37 +84,103 @@ const readPokemons = () => {
   tBodyPokemon.innerHTML = '';
   pokemons.forEach((element) => {
     const { _id, _nombre, _tipo, _hp, _ataque, _especial, _urlImagen } = element;
-    tBodyPokemon.innerHTML += `
-      <tr>
-        <th>${_id}</th>
-        <td>${_nombre}</td>
-        <td>${_tipo}</td>
-        <td>${_hp}</td>
-        <td>${_ataque}</td>
-        <td>${_especial}</td>
-        <td style="max-width: 128px;">
-          <img
-            class="img-fluid"
-            src="${_urlImagen}"
-            alt="${_nombre}"
-          />
-        </td>
-        <td>
-          <button
-            class="bg-success rounded border-0 p-0"
-            onclick="readPokemon(${_id})"
-          >
-            ✏
-          </button>
-          <button
-            class="bg-danger rounded border-0 p-0"
-            onclick="deletePokemon(${_id})"
-          >
-            🗑
-          </button>
-        </td>
-      </tr>
-    `;
+
+    const fragment = document.createDocumentFragment();
+    const tableRow = document.createElement('tr');
+
+    const tHId = document.createElement('th');
+    tHId.textContent = _id;
+
+    const tDNombre = document.createElement('td');
+    tDNombre.textContent = _nombre;
+
+    const tDTipo = document.createElement('td');
+    tDTipo.textContent = _tipo;
+
+    const tDHp = document.createElement('td');
+    tDHp.textContent = _hp;
+
+    const tDAtaque = document.createElement('td');
+    tDAtaque.textContent = _ataque;
+
+    const tDEspecial = document.createElement('td');
+    tDEspecial.textContent = _especial;
+
+    const tDUrlImage = document.createElement('td');
+    tDUrlImage.style.maxWidth = '128px'
+
+    const tDUrlImageImg = document.createElement('img');
+    tDUrlImageImg.setAttribute('src', _urlImagen);
+    tDUrlImageImg.setAttribute('alt', _nombre);
+    tDUrlImageImg.classList.add('img-fluid');
+
+    tDUrlImage.appendChild(tDUrlImageImg);
+
+    const tDActions = document.createElement('td');
+
+    const tDButtonRead = document.createElement('button');
+    tDButtonRead.textContent = '✏';
+    tDButtonRead.addEventListener('click', () => readPokemon(_id));
+    tDButtonRead.classList.add('bg-success');
+    tDButtonRead.classList.add('rounded');
+    tDButtonRead.classList.add('border-0');
+    tDButtonRead.classList.add('mx-1');
+    tDButtonRead.classList.add('p-0');
+
+    const tDButtonDelete = document.createElement('button');
+    tDButtonDelete.textContent = '🗑';
+    tDButtonDelete.addEventListener('click', () => deletePokemon(_id));
+    tDButtonDelete.classList.add('bg-danger');
+    tDButtonDelete.classList.add('rounded');
+    tDButtonDelete.classList.add('border-0');
+    tDButtonDelete.classList.add('mx-1');
+    tDButtonDelete.classList.add('p-0');
+
+    tDActions.appendChild(tDButtonRead);
+    tDActions.appendChild(tDButtonDelete);
+
+    tableRow.appendChild(tHId);
+    tableRow.appendChild(tDNombre);
+    tableRow.appendChild(tDTipo);
+    tableRow.appendChild(tDHp);
+    tableRow.appendChild(tDAtaque);
+    tableRow.appendChild(tDEspecial);
+    tableRow.appendChild(tDUrlImage);
+    tableRow.appendChild(tDActions);
+    fragment.appendChild(tableRow);
+    tBodyPokemon.appendChild(fragment);
+
+    // tBodyPokemon.innerHTML += `
+    //   <tr>
+    //     <th>${_id}</th>
+    //     <td>${_nombre}</td>
+    //     <td>${_tipo}</td>
+    //     <td>${_hp}</td>
+    //     <td>${_ataque}</td>
+    //     <td>${_especial}</td>
+    //     <td style="max-width: 128px;">
+    //       <img
+    //         class="img-fluid"
+    //         src="${_urlImagen}"
+    //         alt="${_nombre}"
+    //       />
+    //     </td>
+    //     <td>
+    //       <button
+    //         class="bg-success rounded border-0 p-0"
+    //         onclick="readPokemon(${_id})"
+    //       >
+    //         ✏
+    //       </button>
+    //       <button
+    //         class="bg-danger rounded border-0 p-0"
+    //         onclick="deletePokemon(${_id})"
+    //       >
+    //         🗑
+    //       </button>
+    //     </td>
+    //   </tr>
+    // `;
   });
   showAlert('bg-primary', 'Registros leídos');
 };
