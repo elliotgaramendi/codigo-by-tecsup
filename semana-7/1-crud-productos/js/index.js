@@ -208,9 +208,9 @@ const deleteProduct = (id) => {
   }).then((result) => {
     if (result.isConfirmed) {
       productos = productos.filter((element) => {
-        return element.id !== id;
+        return element._id !== id;
       });
-      // guardar estado actual de productos en la base de datos
+      localStorage.setItem(dataBase, JSON.stringify(productos));
       readProducts();
       showAlert('danger', 'Registro eliminado');
       swalWithBootstrapButtons.fire(
