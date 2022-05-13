@@ -144,18 +144,19 @@ const readProduct = (productId) => {
   const formButton = document.querySelector('#formButton');
 
   const producto = productos.find((element) => {
-    return element.id === productId;
+    return element._id === productId;
   });
-  const { id, nombre, precio, marca, categoria, stock } = producto;
+
+  const { _id, _nombre, _precio, _marca, _categoria, _stock } = producto;
 
   formTitle.innerHTML = 'Editar producto';
   formButton.innerHTML = 'Editar';
-  documentFormProducto['id'].value = id;
-  documentFormProducto['nombre'].value = nombre;
-  documentFormProducto['precio'].value = precio;
-  documentFormProducto['marca'].value = marca;
-  documentFormProducto['categoria'].value = categoria;
-  documentFormProducto['stock'].value = stock;
+  documentFormProducto['id'].value = _id;
+  documentFormProducto['nombre'].value = _nombre;
+  documentFormProducto['precio'].value = _precio;
+  documentFormProducto['marca'].value = _marca;
+  documentFormProducto['categoria'].value = _categoria;
+  documentFormProducto['stock'].value = _stock;
   showAlert('primary', 'Registro leído');
 };
 
