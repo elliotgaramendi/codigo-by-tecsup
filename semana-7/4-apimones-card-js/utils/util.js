@@ -80,7 +80,7 @@ export const setLoading = (state) => {
 //   setLoading(true);
 //   // const promises = urls.map(url => fetch(url).then(response => response.json()).then(data => data));
 //   const promises = urls.map((url) => {
-//     return fetch(url)
+//     return fetch(url, { method: 'GET' })
 //       .then((response) => {
 //         return response.json();
 //       })

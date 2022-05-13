@@ -31,7 +31,6 @@ const card = async () => {
   renderPokemon(pokemonLocal, localData);
   renderPokemon(pokemonRemote, remotedata);
 
-
   // fetch('https://elliotxleo.github.io/api-json-public/json/pokeapi-api-v2-pokemon-25.json')
   //   .then((response) => {
   //     return response.json();
