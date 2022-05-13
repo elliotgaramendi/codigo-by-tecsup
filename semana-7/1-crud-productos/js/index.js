@@ -169,18 +169,18 @@ const updateProduct = () => {
     showAlert('danger', 'Completar todos los campos');
   } else {
     productos = productos.map((element) => {
-      if (element.id !== +id) {
+      if (element._id !== +id) {
         return element;
       } else {
-        element.nombre = nombre;
-        element.precio = +precio;
-        element.marca = marca;
-        element.categoria = categoria;
-        element.stock = +stock;
+        element._nombre = nombre;
+        element._precio = +precio;
+        element._marca = marca;
+        element._categoria = categoria;
+        element._stock = +stock;
         return element;
       }
     });
-    // guardar estado actual de productos en la base de datos
+    localStorage.setItem(dataBase, JSON.stringify(productos));
     resetForm();
     formTitle.innerHTML = 'Crear producto';
     formButton.innerHTML = 'Crear';
