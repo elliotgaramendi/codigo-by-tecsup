@@ -1,10 +1,10 @@
-import logo from './assets/img/logo.png';
 import './App.css';
+import Header from './components/sections/Header';
 
 function App() {
   return (
     <>
-      <img src={logo} alt="logo" className="body__img animate__animated animate__fadeIn" />
+      <Header />
       <h1 className="body__title animate__animated animate__fadeIn">Sin E Spoiler</h1>
     </>
   );
