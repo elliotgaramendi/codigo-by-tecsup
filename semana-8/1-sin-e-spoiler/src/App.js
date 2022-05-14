@@ -4,8 +4,8 @@ import './App.css';
 function App() {
   return (
     <>
-      <img src={logo} alt="logo" />
-      <h1>Sin E Spoiler</h1>
+      <img src={logo} alt="logo" className="body__img"/>
+      <h1 className="body__title">Sin E Spoiler</h1>
     </>
   );
 }
