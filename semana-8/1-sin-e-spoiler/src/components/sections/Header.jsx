@@ -1,4 +1,5 @@
 import logo from '../../assets/img/logo.png';
+import '../../styles/css/Header.css';
 
 const Header = () => {
   return (
@@ -34,7 +35,7 @@ const Header = () => {
           </div>
           <div className="header-nav__form-theme-menu-container">
             <form className="header-nav__form">
-              <input type="search" placeholder="Película" />
+              <input type="search" placeholder="Película" className="header-nav__form-input" required/>
             </form>
             <button className="header-nav__theme-icon-container" id="headerNavThemeIconContainer">
               <span className="header-nav__theme-icon">🌚</span>

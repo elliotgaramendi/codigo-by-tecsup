@@ -1,9 +1,3 @@
-.body__img {
-  display: flex;
-  width: 50%;
-  margin: auto;
-}
-.body__title {
-  text-align: center;
-  margin: 0;
+.main {
+  padding: var(--padding-section);
 }

@@ -5,7 +5,9 @@ function App() {
   return (
     <>
       <Header />
-      <h1 className="body__title animate__animated animate__fadeIn">Sin E Spoiler</h1>
+      <main className="main">
+        <h1 className="body__title animate__animated animate__fadeIn">Sin E Spoiler</h1>
+      </main>
     </>
   );
 }
