@@ -26,6 +26,8 @@
   font-family: 'Roboto Mono', monospace;
   margin: 0;
   transition: var(--all-transitions);
+
+  min-height: 200vh;
 }
 
 .body--light {
