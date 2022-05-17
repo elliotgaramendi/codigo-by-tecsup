@@ -1,7 +1,9 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import '../styles/css/Movies.css';
 
 const Movies = () => {
+  const [data, setData] = useState({});
+
   useEffect(() => {
     const fetchApi = async () => {
       const endpoint = `${process.env.REACT_APP_URL}/discover/movie`;
@@ -15,7 +17,7 @@ const Movies = () => {
       try {
         const response = await fetch(endpoint, options);
         const data = await response.json();
-        console.log(data);
+        setData(data);
       } catch (error) {
         console.log(error);
       }
@@ -28,6 +30,29 @@ const Movies = () => {
       <section className="movies">
         <div className="movies__container">
           <h1 className="movies__title">🎥 Movies 🎥</h1>
+          <ul className="movies__movie-list">
+            {
+              data.results?.map((element) => {
+                const { id, poster_path, title } = element;
+                const imageEndpoint = `https://image.tmdb.org/t/p/w300${poster_path}`;
+                return (
+                  <li
+                    key={id}
+                    className="movies__movie-item"
+                  >
+                    <figure className="movies__movie-poster-container">
+                      <img
+                        src={imageEndpoint}
+                        alt={title}
+                        className="movies__movie-poster"
+                      />
+                    </figure>
+                    <h2 className="movies__movie-title">{title}</h2>
+                  </li>
+                );
+              })
+            }
+          </ul>
         </div>
       </section>
     </main>
