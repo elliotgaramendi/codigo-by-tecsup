@@ -1,12 +1,18 @@
+import { useEffect, useRef } from 'react';
 import logo from '../../assets/img/logo.png';
 import '../../styles/css/Header.css';
 
 const Header = () => {
+  const headerNavThemeIconContainer = useRef();
 
   const documentReady = () => {
-
     const header = document.querySelector('.header');
     const headerNav = document.querySelector('.header-nav');
+
+    const headerNavMenuIconContainer = document.getElementById('headerNavMenuIconContainer');
+    const headerNavMenuCloseIconContainer = document.getElementById('headerNavMenuCloseIconContainer');
+    const headerNavMenuLinkList = document.querySelector('.header-nav__menu-link-list');
+    const headerNavMenuLinks = document.querySelectorAll('.header-nav__menu-link');
 
     const documentScroll = () => {
       const { scrollY } = window;
@@ -14,10 +20,44 @@ const Header = () => {
       headerNav.classList.toggle('header-nav--scroll', scrollY > 0);
     };
 
+    const openMenu = () => {
+      headerNavMenuLinkList.classList.add('header-nav__menu-link-list--open');
+    };
+
+    const closeMenu = () => {
+      headerNavMenuLinkList.classList.remove('header-nav__menu-link-list--open');
+    };
+
     document.addEventListener('scroll', documentScroll);
+    headerNavMenuIconContainer.addEventListener('click', openMenu);
+    headerNavMenuCloseIconContainer.addEventListener('click', closeMenu);
+    headerNavMenuLinks.forEach((element) => {
+      element.addEventListener('click', closeMenu);
+    });
+  };
+  window.addEventListener('load', documentReady);
+
+  const toggleTheme = () => {
+    const body = document.querySelector('.body');
+    body.classList.toggle('body--light');
+    headerNavThemeIconContainer.current.classList.toggle('header-nav__theme-icon-container--active');
+
+    if (body.classList.contains('body--light')) {
+      localStorage.setItem('darkMode', false);
+    } else {
+      localStorage.setItem('darkMode', true);
+    }
   };
 
-  window.addEventListener('load', documentReady);
+  useEffect(() => {
+    if (localStorage.getItem('darkMode') === 'true' || localStorage.getItem('darkMode') === null) {
+      document.querySelector('.body').classList.remove('body--light');
+      headerNavThemeIconContainer.current.classList.remove('header-nav__theme-icon-container--active');
+    } else {
+      document.querySelector('.body').classList.add('body--light');
+      headerNavThemeIconContainer.current.classList.add('header-nav__theme-icon-container--active');
+    }
+  }, []);
 
   return (
     <header className="header animate__animated animate__fadeIn">
@@ -54,7 +94,11 @@ const Header = () => {
             <form className="header-nav__form">
               <input type="search" placeholder="Película" className="header-nav__form-input" required />
             </form>
-            <button className="header-nav__theme-icon-container" id="headerNavThemeIconContainer">
+            <button
+              className="header-nav__theme-icon-container"
+              ref={headerNavThemeIconContainer}
+              onClick={toggleTheme}
+            >
               <span className="header-nav__theme-icon">🌚</span>
               <span className="header-nav__theme-icon">🌞</span>
             </button>
