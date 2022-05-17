@@ -1,9 +1,27 @@
+import { useEffect } from 'react';
 import '../styles/css/Movies.css';
 
 const Movies = () => {
-
-  console.log(process.env.REACT_APP_URL);
-  console.log(process.env.REACT_APP_API_TOKEN);
+  useEffect(() => {
+    const fetchApi = async () => {
+      const endpoint = `${process.env.REACT_APP_URL}/discover/movie`;
+      const options = {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${process.env.REACT_APP_API_TOKEN}`,
+          'Content-Type': 'application/json;charset=utf-8'
+        }
+      };
+      try {
+        const response = await fetch(endpoint, options);
+        const data = await response.json();
+        console.log(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchApi();
+  }, []);
 
   return (
     <main className="main">
