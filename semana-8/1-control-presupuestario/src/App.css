@@ -1,38 +1,133 @@
-.App {
+.body {
+  background: linear-gradient(to right, #004e92, #000428);
+  font-family: sans-serif;
+}
+
+.header {
+  text-align: center;
+  color: var(--text-color);
+  margin: 2rem 0;
+}
+
+.header__name {
+  color: var(--gold);
+}
+
+.alert p {
+  margin-bottom: 0;
+}
+
+.contenido {
+  padding: 1rem;
+}
+
+.contenido-principal {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.presupuesto p {
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
+.presupuesto p span {
+  font-weight: normal;
+}
+
+h1 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: lighter;
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+}
+
+h2 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 100;
+  color: #004e92;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.campo {
+  margin-bottom: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.error {
+  text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* .alert {
+  position: relative;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 0.1rem solid transparent;
+  border-radius: .25rem;
+}
+
+.alert-primary {
+  color: #004085;
+  background-color: #cce5ff;
+  border-color: #b8daff;
+}
+
+.alert-success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.alert-danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.alert-warning {
+  color: #856404;
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+} */
+
+.gastos {
+  margin-bottom: 2rem;
+}
+
+.gastos-realizados {
+  margin-bottom: 1rem;
+}
+
+.gastos-realizados li {
+  list-style: none;
+  margin-bottom: 0rem;
+  border-bottom: 0.1rem solid #e1e1e1;
+  padding: 0.5rem 0;
+}
+
+.gastos-realizados li:last-of-type {
+  margin-bottom: 0;
+}
+
+.gastos-realizados li p {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin: 0;
+}
+
+.gastos-realizados li p .gasto {
+  background-color: #004085;
+  padding: 0.25rem;
   color: white;
+  border-radius: 0.5rem;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-color);
 }
