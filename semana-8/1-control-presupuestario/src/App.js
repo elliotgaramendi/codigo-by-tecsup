@@ -17,7 +17,9 @@ function App() {
       <Header
         company={company}
       />
-      <img src={logo} className="App-logo" alt="logo" />
+      <main className="main">
+        <img src={logo} className="main__logo" alt="logo" />
+      </main>
       <Footer
         currentDateYear={currentDateYear}
         author={author}

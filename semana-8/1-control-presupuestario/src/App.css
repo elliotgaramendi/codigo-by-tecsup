@@ -1,7 +1,13 @@
-.body {
-  background-image: linear-gradient(to right, #004e92, #000428);
-  color: var(--primary-text-color);
-  font-family: 'Roboto Mono', monospace;
+.main {
+  grid-area: main;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.main__logo {
+  width: 50%;
 }
 
 .header {
@@ -10,11 +16,12 @@
   text-align: center;
   gap: 0.5rem;
   padding: 2rem 0;
+  grid-area: header;
 }
 
 .header__name {
   font-weight: 500;
-  color: var(--gold);
+  color: var(--secondary-highlight-color);
   margin: 0;
 }
 
@@ -121,6 +128,7 @@
 }
 
 .footer {
+  grid-area: footer;
   text-align: center;
 }
 
