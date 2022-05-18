@@ -3,7 +3,7 @@ const Header = ({ company }) => {
   return (
     <header className="header">
       <h2 className="header__name">{name}</h2>
-      <h1>{slogan}</h1>
+      <h1 className="header__slogan">{slogan}</h1>
     </header>
   );
 };

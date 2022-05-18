@@ -1,17 +1,27 @@
 .body {
-  background: linear-gradient(to right, #004e92, #000428);
-  font-family: sans-serif;
+  background-image: linear-gradient(to right, #004e92, #000428);
+  color: var(--primary-text-color);
+  font-family: 'Roboto Mono', monospace;
 }
 
 .header {
   display: flex;
   flex-direction: column;
+  text-align: center;
   gap: 0.5rem;
-  margin: 2rem 0;
+  padding: 2rem 0;
 }
 
 .header__name {
+  font-weight: 500;
   color: var(--gold);
+  margin: 0;
+}
+
+.header__slogan {
+  font-weight: 300;
+  font-size: 1.25rem;
+  margin: 0;
 }
 
 .alert p {
@@ -35,25 +45,6 @@
 
 .presupuesto p span {
   font-weight: normal;
-}
-
-h1 {
-  font-family: 'Raleway', sans-serif;
-  font-weight: lighter;
-  color: white;
-  text-align: center;
-  font-size: 2rem;
-  margin: 0;
-}
-
-h2 {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 100;
-  color: #004e92;
-  margin-bottom: 2rem;
-  font-size: 1.5rem;
-  text-align: center;
-  margin: 0;
 }
 
 .campo {
@@ -132,5 +123,4 @@ h2 {
 .footer {
   text-align: center;
   font-size: 0.8rem;
-  color: var(--text-color);
 }
