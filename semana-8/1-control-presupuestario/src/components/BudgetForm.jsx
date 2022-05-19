@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const BudgetForm = ({ setBudget, setBudgetForm }) => {
+const BudgetForm = ({ setBudget, setRemaining, setBudgetForm }) => {
 
   const [budgetInput, setbudgetInput] = useState(0);
 
@@ -8,6 +8,7 @@ const BudgetForm = ({ setBudget, setBudgetForm }) => {
     e.preventDefault();
     if (+budgetInput > 0) {
       setBudget(budgetInput);
+      setRemaining(budgetInput);
       setBudgetForm(false);
     } else {
       alert('El presupuesto debe ser mayor a cero');

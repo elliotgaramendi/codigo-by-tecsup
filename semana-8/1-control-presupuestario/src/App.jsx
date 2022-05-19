@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import { useState } from 'react';
 import BudgetForm from './components/BudgetForm';
+import BudgetSummary from './components/BudgetSummary';
 
 function App() {
   const company = {
@@ -14,6 +15,7 @@ function App() {
   const author = 'ELGS';
 
   const [budget, setBudget] = useState(0);
+  const [remaining, setRemaining] = useState(0);
   const [budgetForm, setBudgetForm] = useState(true);
 
   return (
@@ -25,18 +27,24 @@ function App() {
         <section className="budget">
           <div className="budget__container">
             <div className="budget__budget">
-              <h2 className="budget__title">Presupuesto</h2>
               {
                 budgetForm ?
                   (
-                    <BudgetForm
-                      setBudget={setBudget}
-                      setBudgetForm={setBudgetForm}
-                    />
+                    <>
+                      <h2 className="budget__title">💰 Presupuesto 💰</h2>
+                      <BudgetForm
+                        setBudget={setBudget}
+                        setRemaining={setRemaining}
+                        setBudgetForm={setBudgetForm}
+                      />
+                    </>
                   )
                   :
                   (
-                    <h2 className="budget__title">{budget}</h2>
+                    <BudgetSummary
+                      budget={budget}
+                      remaining={remaining}
+                    />
                   )
               }
             </div>

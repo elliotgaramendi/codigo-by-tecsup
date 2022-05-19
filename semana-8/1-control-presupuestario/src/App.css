@@ -2,9 +2,16 @@ html {
   --primary-theme-color: #004e92;
   --secondary-theme-color: #000428;
   --primary-text-color: #fff;
-  --primary-highlight-color: #004e92;
+  --secondary-text-color: #aaa;
+  --primary-shadow-color: #8888;
+  --secondary-shadow-color: #eee8;
+  --button-color: #0068c4;
+  --button-color-active: #000428;
+  --button-text-color: #fff;
+  --primary-highlight-color: #0068c4;
   --secondary-highlight-color: #ffd700;
   --primary-card-color: #f5f5f5;
+  --primary-card-text-color: #000428;
   --invalid-color: #dc143c;
   --padding-container: 0 2rem;
   --max-width-container: 1024px;
@@ -33,7 +40,7 @@ html {
 }
 
 .header__name {
-  font-weight: 500;
+  font-weight: 600;
   color: var(--secondary-highlight-color);
   margin: 0;
 }
@@ -66,7 +73,8 @@ html {
   border-radius: 1rem;
 }
 
-.budget__title {
+.budget__title,
+.budget-summary__title {
   color: var(--primary-highlight-color);
   font-weight: 600;
   font-size: 1.5rem;
@@ -107,10 +115,10 @@ html {
 }
 
 .budget__form-button {
-  background-color: var(--primary-highlight-color);
+  background-color: var(--button-color);
   border: none;
   border-radius: var(--border-radius);
-  color: var(--primary-text-color);
+  color: var(--button-text-color);
   font-weight: 700;
   padding: 0.5rem;
   cursor: pointer;
@@ -118,7 +126,30 @@ html {
 }
 
 .budget__form-button:hover {
-  filter: brightness(90%);
+  background-color: var(--button-color-active);
+}
+
+.budget-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.budget-summary__budget {
+  background-color: var(--primary-highlight-color);
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  margin: 0;
+  padding: 1rem;
+}
+
+.budget-summary__remaining {
+  background-color: var(--secondary-highlight-color);
+  border-radius: var(--border-radius);
+  color: var(--primary-card-text-color);
+  font-weight: 500;
+  margin: 0;
+  padding: 1rem;
 }
 
 .alert p {

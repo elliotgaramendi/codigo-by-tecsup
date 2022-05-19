@@ -2,9 +2,16 @@ html {
   --primary-theme-color: #004e92;
   --secondary-theme-color: #000428;
   --primary-text-color: #fff;
-  --primary-highlight-color: #004e92;
+  --secondary-text-color: #aaa;
+  --primary-shadow-color: #8888;
+  --secondary-shadow-color: #eee8;
+  --button-color: #0068c4;
+  --button-color-active: #fff;
+  --button-text-color: #000;
+  --primary-highlight-color: #0068c4;
   --secondary-highlight-color: #ffd700;
   --primary-card-color: #f5f5f5;
+  --primary-card-text-color: #000428;
   --invalid-color: #dc143c;
   --padding-container: 0 2rem;
   --max-width-container: 1024px;
