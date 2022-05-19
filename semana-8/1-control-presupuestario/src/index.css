@@ -4,6 +4,12 @@ html {
   --primary-text-color: #fff;
   --primary-highlight-color: #004e92;
   --secondary-highlight-color: #ffd700;
+  --primary-card-color: #f5f5f5;
+  --invalid-color: #dc143c;
+  --padding-container: 0 2rem;
+  --max-width-container: 1024px;
+  --border-radius: 0.5rem;
+  --all-transitions: all 0.25s;
 }
 
 .body {

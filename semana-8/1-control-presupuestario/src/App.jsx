@@ -25,7 +25,7 @@ function App() {
         <section className="budget">
           <div className="budget__container">
             <div className="budget__budget">
-              <h2 className="budget__budget-title">Presupuesto</h2>
+              <h2 className="budget__title">Presupuesto</h2>
               {
                 budgetForm ?
                   (
@@ -36,7 +36,7 @@ function App() {
                   )
                   :
                   (
-                    <h2>{budget}</h2>
+                    <h2 className="budget__title">{budget}</h2>
                   )
               }
             </div>

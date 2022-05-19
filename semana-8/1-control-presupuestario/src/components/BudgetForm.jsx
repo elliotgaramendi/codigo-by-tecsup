@@ -22,10 +22,11 @@ const BudgetForm = ({ setBudget, setBudgetForm }) => {
       <input
         type="number"
         placeholder="Presupuesto"
+        className="budget__form-input"
         onChange={(e) => setbudgetInput(e.target.value)}
         required
       />
-      <button>Registrar</button>
+      <button className="budget__form-button">Registrar</button>
     </form>
   );
 }
