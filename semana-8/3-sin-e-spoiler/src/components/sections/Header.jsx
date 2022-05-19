@@ -3,39 +3,18 @@ import logo from '../../assets/img/logo.png';
 import '../../styles/css/Header.css';
 
 const Header = () => {
+  const header = useRef();
+  const headerNav = useRef();
+  const headerNavMenuLinkList = useRef();
   const headerNavThemeIconContainer = useRef();
 
-  const documentReady = () => {
-    const header = document.querySelector('.header');
-    const headerNav = document.querySelector('.header-nav');
-
-    const headerNavMenuIconContainer = document.getElementById('headerNavMenuIconContainer');
-    const headerNavMenuCloseIconContainer = document.getElementById('headerNavMenuCloseIconContainer');
-    const headerNavMenuLinkList = document.querySelector('.header-nav__menu-link-list');
-    const headerNavMenuLinks = document.querySelectorAll('.header-nav__menu-link');
-
-    const documentScroll = () => {
-      const { scrollY } = window;
-      header.classList.toggle('header--scroll', scrollY > 0);
-      headerNav.classList.toggle('header-nav--scroll', scrollY > 0);
-    };
-
-    const openMenu = () => {
-      headerNavMenuLinkList.classList.add('header-nav__menu-link-list--open');
-    };
-
-    const closeMenu = () => {
-      headerNavMenuLinkList.classList.remove('header-nav__menu-link-list--open');
-    };
-
-    document.addEventListener('scroll', documentScroll);
-    headerNavMenuIconContainer.addEventListener('click', openMenu);
-    headerNavMenuCloseIconContainer.addEventListener('click', closeMenu);
-    headerNavMenuLinks.forEach((element) => {
-      element.addEventListener('click', closeMenu);
-    });
+  const documentScroll = () => {
+    const { scrollY } = window;
+    header.current.classList.toggle('header--scroll', scrollY > 0);
+    headerNav.current.classList.toggle('header-nav--scroll', scrollY > 0);
   };
-  window.addEventListener('load', documentReady);
+
+  document.addEventListener('scroll', documentScroll);
 
   const toggleTheme = () => {
     const body = document.querySelector('.body');
@@ -49,6 +28,14 @@ const Header = () => {
     }
   };
 
+  const openMenu = () => {
+    headerNavMenuLinkList.current.classList.add('header-nav__menu-link-list--open');
+  };
+
+  const closeMenu = () => {
+    headerNavMenuLinkList.current.classList.remove('header-nav__menu-link-list--open');
+  };
+
   useEffect(() => {
     if (localStorage.getItem('darkMode') === 'true' || localStorage.getItem('darkMode') === null) {
       document.querySelector('.body').classList.remove('body--light');
@@ -60,15 +47,27 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="header animate__animated animate__fadeIn">
-      <nav className="header-nav">
+    <header
+      className="header animate__animated animate__fadeIn"
+      ref={header}
+    >
+      <nav
+        className="header-nav"
+        ref={headerNav}
+      >
         <div className="header-nav__container">
           <div className="header-nav__link-menu-container">
             <a href="/" className="header-nav__link-logo-container">
               <img src={logo} alt="Logo Web" className="header-nav__link-logo body__img" />
             </a>
-            <ul className="header-nav__menu-link-list">
-              <li className="header-nav__menu-link-item">
+            <ul
+              className="header-nav__menu-link-list"
+              ref={headerNavMenuLinkList}
+            >
+              <li
+                className="header-nav__menu-link-item"
+                onClick={closeMenu}
+              >
                 <a href="/" className="header-nav__menu-link">Estrenos</a>
               </li>
               <li className="header-nav__menu-link-item">
@@ -76,8 +75,10 @@ const Header = () => {
                   className="header-nav__menu-link header-nav__menu-link--active" target="_blank"
                   rel="noopener noreferrer">Elliot</a>
               </li>
-              <li className="header-nav__menu-link-item header-nav__menu-close-icon-container"
-                id="headerNavMenuCloseIconContainer">
+              <li
+                className="header-nav__menu-link-item header-nav__menu-close-icon-container"
+                onClick={closeMenu}
+              >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff"
                   className="header-nav__menu-close-icon">
                   <path
@@ -102,7 +103,10 @@ const Header = () => {
               <span className="header-nav__theme-icon">🌚</span>
               <span className="header-nav__theme-icon">🌞</span>
             </button>
-            <button className="header-nav__menu-icon-container" id="headerNavMenuIconContainer">
+            <button
+              className="header-nav__menu-icon-container"
+              onClick={openMenu}
+            >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff" className="header-nav__menu-icon">
                 <path d="M4 6h16v2H4zm4 5h12v2H8zm5 5h7v2h-7z"></path>
               </svg>
