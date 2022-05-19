@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import { useState } from 'react';
 import BudgetForm from './components/BudgetForm';
 import BudgetSummary from './components/BudgetSummary';
+import BudgetExpenditures from './components/BudgetExpenditures';
 
 function App() {
   const company = {
@@ -41,10 +42,13 @@ function App() {
                   )
                   :
                   (
-                    <BudgetSummary
-                      budget={budget}
-                      remaining={remaining}
-                    />
+                    <>
+                      <BudgetExpenditures />
+                      <BudgetSummary
+                        budget={budget}
+                        remaining={remaining}
+                      />
+                    </>
                   )
               }
             </div>

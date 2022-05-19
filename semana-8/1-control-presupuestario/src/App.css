@@ -67,7 +67,7 @@ html {
 .budget__budget {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
   background-color: var(--primary-card-color);
   padding: 2rem;
   border-radius: 1rem;
@@ -82,13 +82,15 @@ html {
   margin: 0;
 }
 
-.budget__form {
+.budget__form,
+.budget-summary__form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.budget__form-input {
+.budget__form-input,
+.budget-summary__form-input {
   background-color: transparent;
   border: 0.0625rem solid var(--primary-theme-color);
   border-radius: 0.25rem;
@@ -98,23 +100,27 @@ html {
   transition: var(--all-transitions);
 }
 
-.budget__form-input:invalid {
+.budget__form-input:invalid,
+.budget-summary__form-input:invalid {
   text-shadow:
     0 0 0.0625rem var(--invalid-color),
     0 0 0.125rem var(--invalid-color);
 }
 
-.budget__form-input:valid {
+.budget__form-input:valid,
+.budget-summary__form-input:valid {
   text-shadow:
     0 0 0.125rem var(--primary-highlight-color),
     0 0 0.25rem var(--primary-highlight-color);
 }
 
-.budget__form-input::placeholder {
+.budget__form-input::placeholder,
+.budget-summary__form-input::placeholder {
   color: var(--primary-theme-color);
 }
 
-.budget__form-button {
+.budget__form-button,
+.budget-summary__form-button {
   background-color: var(--button-color);
   border: none;
   border-radius: var(--border-radius);
@@ -152,8 +158,13 @@ html {
   padding: 1rem;
 }
 
-.alert p {
-  margin-bottom: 0;
+.alert {
+  background-color: var(--invalid-color);
+  border-radius: var(--border-radius);
+  font-size: 0.75rem;
+  font-weight: 300;
+  text-align: center;
+  padding: 0.5rem;
 }
 
 .contenido {
