@@ -1,3 +1,12 @@
+html {
+  --primary-theme-color: #004e92;
+  --secondary-theme-color: #000428;
+  --primary-text-color: #fff;
+  --primary-highlight-color: #004e92;
+  --secondary-highlight-color: #ffd700;
+  --primary-card-color: #f5f5f5;
+}
+
 .main {
   grid-area: main;
   display: flex;
@@ -31,18 +40,29 @@
   margin: 0;
 }
 
+.budget__budget {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: var(--primary-card-color);
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.budget__budget-title {
+  color: var(--primary-highlight-color);
+  font-weight: 600;
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 0;
+}
+
 .alert p {
   margin-bottom: 0;
 }
 
 .contenido {
   padding: 1rem;
-}
-
-.contenido-principal {
-  background-color: white;
-  padding: 2rem;
-  border-radius: 1rem;
 }
 
 .presupuesto p {

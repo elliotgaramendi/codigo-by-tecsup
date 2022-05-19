@@ -24,20 +24,22 @@ function App() {
       <main className="main">
         <section className="budget">
           <div className="budget__container">
-            <h2>Presupuesto</h2>
-            {
-              budgetForm ?
-                (
-                  <BudgetForm
-                    setBudget={setBudget}
-                    setBudgetForm={setBudgetForm}
-                  />
-                )
-                :
-                (
-                  <h2>{budget}</h2>
-                )
-            }
+            <div className="budget__budget">
+              <h2 className="budget__budget-title">Presupuesto</h2>
+              {
+                budgetForm ?
+                  (
+                    <BudgetForm
+                      setBudget={setBudget}
+                      setBudgetForm={setBudgetForm}
+                    />
+                  )
+                  :
+                  (
+                    <h2>{budget}</h2>
+                  )
+              }
+            </div>
           </div>
         </section>
       </main>
