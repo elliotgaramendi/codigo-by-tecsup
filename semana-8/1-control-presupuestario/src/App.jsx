@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import BudgetForm from './components/BudgetForm';
 import BudgetSummary from './components/BudgetSummary';
 import BudgetExpenseForm from './components/BudgetExpenseForm';
+import BudgetExpenses from './components/BudgetExpenses';
 
 function App() {
   const company = {
@@ -65,21 +66,9 @@ function App() {
                         budget={budget}
                         remaining={remaining}
                       />
-                      <section className="expenses">
-                        <h2 className="expenses__title">Listado</h2>
-                        <ul className="expenses__expense-list">
-                          {
-                            expenses.map((element) => {
-                              return (
-                                <li
-                                  key={`${element.concept}${element.value}`}
-                                  className="expenses__expense-item"
-                                >{element.concept}: {element.value}</li>
-                              );
-                            })
-                          }
-                        </ul>
-                      </section>
+                      <BudgetExpenses
+                        expenses={expenses}
+                      />
                     </>
                   )
               }

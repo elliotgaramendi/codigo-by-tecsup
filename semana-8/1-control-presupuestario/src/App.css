@@ -140,7 +140,8 @@ html {
 
 .budget-summary,
 .expense-form,
-.budget-summary {
+.budget-summary,
+.expenses {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -173,10 +174,30 @@ html {
 }
 
 .expenses__expense-list {
-  color: var(--secondary-theme-color);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: var(--primary-card-text-color);
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.expenses__expense-item {}
+.expenses__expense-item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 0.0625rem solid var(--primary-theme-color);
+}
+
+.expenses__expense-concept {
+  font-weight: 500;
+  margin: 0;
+}
+
+.expenses__expense-value {
+  font-weight: 600;
+  margin: 0;
+}
 
 .contenido {
   padding: 1rem;
