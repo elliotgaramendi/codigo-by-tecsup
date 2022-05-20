@@ -1,7 +1,7 @@
 import './App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import BudgetForm from './components/BudgetForm';
 import BudgetSummary from './components/BudgetSummary';
 import BudgetExpenseForm from './components/BudgetExpenseForm';
@@ -19,6 +19,20 @@ function App() {
   const [remaining, setRemaining] = useState(0);
   const [budgetForm, setBudgetForm] = useState(true);
   const [expense, setExpense] = useState({});
+  const [expenses, setExpenses] = useState([]);
+
+  useEffect(() => {
+    console.log('useEffect');
+    if (expense.value) {
+      console.log('expense.value');
+      setExpenses([
+        ...expenses,
+        expense
+      ]);
+      setRemaining(remaining - expense.value);
+      setExpense({});
+    }
+  }, [expense]);
 
   return (
     <>
@@ -51,12 +65,20 @@ function App() {
                         budget={budget}
                         remaining={remaining}
                       />
-                      <section className='budget-expenses'>
-                        <h2 className="budget-expense__title">Listado</h2>
-                        <div>
-                          <h4 className="budget__title">{expense.concept}</h4>
-                          <h4 className="budget__title">{expense.value}</h4>
-                        </div>
+                      <section className="expenses">
+                        <h2 className="expenses__title">Listado</h2>
+                        <ul className="expenses__expense-list">
+                          {
+                            expenses.map((element) => {
+                              return (
+                                <li
+                                  key={`${element.concept}${element.value}`}
+                                  className="expenses__expense-item"
+                                >{element.concept}: {element.value}</li>
+                              );
+                            })
+                          }
+                        </ul>
                       </section>
                     </>
                   )

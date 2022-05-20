@@ -75,7 +75,8 @@ html {
 
 .budget__title,
 .budget-summary__title,
-.budget-expense__title {
+.budget-expense__title,
+.expenses__title {
   color: var(--primary-highlight-color);
   font-weight: 600;
   font-size: 1.5rem;
@@ -168,6 +169,10 @@ html {
   font-weight: 300;
   text-align: center;
   padding: 0.5rem;
+}
+
+.expenses__expense-list {
+  color: var(--secondary-theme-color);
 }
 
 .contenido {
