@@ -2,7 +2,10 @@ import { useState } from "react";
 
 const BudgetExpenseForm = ({ setExpense }) => {
 
-  const [formExpense, setFormExpense] = useState({});
+  const [formExpense, setFormExpense] = useState({
+    concept: '',
+    value: ''
+  });
   const [alert, setAlert] = useState(false);
   const { concept, value } = formExpense;
 
@@ -17,6 +20,10 @@ const BudgetExpenseForm = ({ setExpense }) => {
     e.preventDefault();
     if (concept.trim() !== '' && value > 0) {
       setExpense(formExpense);
+      setFormExpense({
+        concept: '',
+        value: ''
+      });
       setAlert(false);
     } else {
       setAlert(true);
@@ -35,6 +42,7 @@ const BudgetExpenseForm = ({ setExpense }) => {
           placeholder="Concepto"
           className="expense-form__form-input"
           name="concept"
+          value={concept}
           onChange={handleChange}
           required
         />
@@ -43,6 +51,7 @@ const BudgetExpenseForm = ({ setExpense }) => {
           placeholder="Valor"
           className="expense-form__form-input"
           name="value"
+          value={value}
           onChange={handleChange}
           required
         />
