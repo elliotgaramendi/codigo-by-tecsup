@@ -65,8 +65,9 @@ html {
 }
 
 .budget__budget {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, min(100%, 256px));
+  justify-content: center;
   gap: 2rem;
   background-color: var(--primary-card-color);
   padding: 2rem;
@@ -138,6 +139,7 @@ html {
   background-color: var(--button-color-active);
 }
 
+.budget__budget-card,
 .budget-summary,
 .expense-form,
 .budget-summary,
