@@ -1,15 +1,14 @@
 import { useState } from "react";
 
-const BudgetExpenditures = () => {
+const BudgetExpenseForm = ({ setExpense }) => {
 
-  const [expense, setExpense] = useState({});
-  const [expendituresForm, setExpendituresForm] = useState({});
+  const [formExpense, setFormExpense] = useState({});
   const [alert, setAlert] = useState(false);
-  const { concept, value } = expendituresForm;
+  const { concept, value } = formExpense;
 
   const handleChange = (e) => {
-    setExpendituresForm({
-      ...expendituresForm,
+    setFormExpense({
+      ...formExpense,
       [e.target.name]: e.target.value
     });
   };
@@ -17,7 +16,7 @@ const BudgetExpenditures = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (concept.trim() !== '' && value > 0) {
-      setExpense(expendituresForm);
+      setExpense(formExpense);
       setAlert(false);
     } else {
       setAlert(true);
@@ -25,16 +24,16 @@ const BudgetExpenditures = () => {
   };
 
   return (
-    <section className="budget-summary">
-      <h2 className="budget-summary__title">💸 Gastos 💸</h2>
+    <section className="budget-expense">
+      <h2 className="budget-expense__title">💸 Gasto 💸</h2>
       <form
-        className="budget-summary__form"
+        className="budget-expense__form"
         onSubmit={handleSubmit}
       >
         <input
           type="text"
           placeholder="Concepto"
-          className="budget-summary__form-input"
+          className="budget-expense__form-input"
           name="concept"
           onChange={handleChange}
           required
@@ -42,17 +41,13 @@ const BudgetExpenditures = () => {
         <input
           type="number"
           placeholder="Valor"
-          className="budget-summary__form-input"
+          className="budget-expense__form-input"
           name="value"
           onChange={handleChange}
           required
         />
-        <button className="budget-summary__form-button">Registrar</button>
+        <button className="budget-expense__form-button">Registrar</button>
       </form>
-      <div>
-        <h4 className="budget__title">{expense.concept}</h4>
-        <h4 className="budget__title">{expense.value}</h4>
-      </div>
       {
         alert
         &&
@@ -64,4 +59,4 @@ const BudgetExpenditures = () => {
   );
 }
 
-export default BudgetExpenditures;
+export default BudgetExpenseForm;

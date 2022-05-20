@@ -74,7 +74,8 @@ html {
 }
 
 .budget__title,
-.budget-summary__title {
+.budget-summary__title,
+.budget-expense__title {
   color: var(--primary-highlight-color);
   font-weight: 600;
   font-size: 1.5rem;
@@ -83,14 +84,14 @@ html {
 }
 
 .budget__form,
-.budget-summary__form {
+.budget-expense__form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
 .budget__form-input,
-.budget-summary__form-input {
+.budget-expense__form-input {
   background-color: transparent;
   border: 0.0625rem solid var(--primary-theme-color);
   border-radius: 0.25rem;
@@ -101,26 +102,26 @@ html {
 }
 
 .budget__form-input:invalid,
-.budget-summary__form-input:invalid {
+.budget-expense__form-input:invalid {
   text-shadow:
     0 0 0.0625rem var(--invalid-color),
     0 0 0.125rem var(--invalid-color);
 }
 
 .budget__form-input:valid,
-.budget-summary__form-input:valid {
+.budget-expense__form-input:valid {
   text-shadow:
     0 0 0.125rem var(--primary-highlight-color),
     0 0 0.25rem var(--primary-highlight-color);
 }
 
 .budget__form-input::placeholder,
-.budget-summary__form-input::placeholder {
+.budget-expense__form-input::placeholder {
   color: var(--primary-theme-color);
 }
 
 .budget__form-button,
-.budget-summary__form-button {
+.budget-expense__form-button {
   background-color: var(--button-color);
   border: none;
   border-radius: var(--border-radius);
@@ -131,11 +132,13 @@ html {
   transition: var(--all-transitions);
 }
 
-.budget__form-button:hover {
+.budget__form-button:hover,
+.budget-expense__form-button:hover {
   background-color: var(--button-color-active);
 }
 
-.budget-summary {
+.budget-summary,
+.budget-expense {
   display: flex;
   flex-direction: column;
   gap: 1rem;

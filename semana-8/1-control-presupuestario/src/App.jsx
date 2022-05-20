@@ -4,7 +4,7 @@ import Footer from './components/Footer';
 import { useState } from 'react';
 import BudgetForm from './components/BudgetForm';
 import BudgetSummary from './components/BudgetSummary';
-import BudgetExpenditures from './components/BudgetExpenditures';
+import BudgetExpenseForm from './components/BudgetExpenseForm';
 
 function App() {
   const company = {
@@ -18,6 +18,7 @@ function App() {
   const [budget, setBudget] = useState(0);
   const [remaining, setRemaining] = useState(0);
   const [budgetForm, setBudgetForm] = useState(true);
+  const [expense, setExpense] = useState({});
 
   return (
     <>
@@ -43,11 +44,20 @@ function App() {
                   :
                   (
                     <>
-                      <BudgetExpenditures />
+                      <BudgetExpenseForm
+                        setExpense={setExpense}
+                      />
                       <BudgetSummary
                         budget={budget}
                         remaining={remaining}
                       />
+                      <section className='budget-expenses'>
+                        <h2 className="budget-expense__title">Listado</h2>
+                        <div>
+                          <h4 className="budget__title">{expense.concept}</h4>
+                          <h4 className="budget__title">{expense.value}</h4>
+                        </div>
+                      </section>
                     </>
                   )
               }
