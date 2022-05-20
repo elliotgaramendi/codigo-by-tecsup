@@ -24,16 +24,16 @@ const BudgetExpenseForm = ({ setExpense }) => {
   };
 
   return (
-    <section className="budget-expense">
-      <h2 className="budget-expense__title">💸 Gasto 💸</h2>
+    <section className="expense-form">
+      <h2 className="expense-form__title">💸 Gasto 💸</h2>
       <form
-        className="budget-expense__form"
+        className="expense-form__form"
         onSubmit={handleSubmit}
       >
         <input
           type="text"
           placeholder="Concepto"
-          className="budget-expense__form-input"
+          className="expense-form__form-input"
           name="concept"
           onChange={handleChange}
           required
@@ -41,12 +41,12 @@ const BudgetExpenseForm = ({ setExpense }) => {
         <input
           type="number"
           placeholder="Valor"
-          className="budget-expense__form-input"
+          className="expense-form__form-input"
           name="value"
           onChange={handleChange}
           required
         />
-        <button className="budget-expense__form-button">Registrar</button>
+        <button className="expense-form__form-button">Registrar</button>
       </form>
       {
         alert
