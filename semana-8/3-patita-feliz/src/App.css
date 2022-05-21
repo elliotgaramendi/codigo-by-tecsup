@@ -15,6 +15,11 @@
   color: var(--gold);
 }
 
+.header__slogan {
+  text-transform: none;
+  font-size: 0.75rem;
+}
+
 h1,
 h2,
 h3 {
