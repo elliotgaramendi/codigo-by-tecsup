@@ -39,6 +39,14 @@ function App() {
     setAppointment(appointment);
   };
 
+  const submitAppointment = (appointment) => {
+    if (appointment._id === '') {
+      createAppointment(appointment);
+    } else {
+      console.log('Editar');
+    }
+  };
+
   return (
     <>
       <Header
@@ -48,7 +56,7 @@ function App() {
         <section className="container">
           <div className="row justify-content-between gap-4">
             <AppointmentsForm
-              createAppointment={createAppointment}
+              submitAppointment={submitAppointment}
               appointment={appointment}
             />
             <AppointmentsAppointments
