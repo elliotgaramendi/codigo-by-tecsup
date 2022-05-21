@@ -7,7 +7,16 @@ import AppointmentsAppointments from './components/appointments/AppointmentsAppo
 
 function App() {
 
-  const [appointments, setAppointments] = useState([]);
+  const [appointments, setAppointments] = useState([
+    {
+      _id: 'a1',
+      mascota: 'Chocolate',
+      propietario: 'Elliot',
+      fecha: '2020-05-21',
+      hora: '11:11',
+      sintomas: 'Ladra mucho'
+    }
+  ]);
 
   const company = {
     name: 'Patita Feliz',
@@ -20,6 +29,13 @@ function App() {
       ...appointments,
       appointment
     ]);
+  };
+
+  const readAppointment = (id) => {
+    const appointment = appointments.find((element) => {
+      return element._id === id;
+    });
+    return appointment;
   };
 
   return (
