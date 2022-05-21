@@ -1,38 +1,109 @@
-.App {
+.body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-image: linear-gradient(-225deg, #A445B2 0%, #D41872 52%, #FF0066 100%);
+  min-height: 100%;
+}
+
+.header {
   text-align: center;
+  color: var(--text-color);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header__name {
+  color: var(--gold);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1,
+h2,
+h3 {
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Staatliches', cursive;
+  letter-spacing: 0.1rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.lista-citas .media {
+  border-bottom: 0.1rem solid #e1e1e1;
+  padding-bottom: 3rem;
+}
+
+.lista-citas .media:last-of-type {
+  border-bottom: 0;
+}
+
+.lista-citas .media-body p {
+  margin: 0;
+}
+
+.lista-citas .media-body span {
+  font-weight: bold;
+}
+
+label {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+input[type="date"],
+input[type="time"] {
+  height: 2rem;
+  padding: 0.5em 0.75em;
+  background-color: #fff;
+  border: 0.1rem solid #D1D1D1;
+  border-radius: 0.25rem;
+  box-shadow: none;
+  box-sizing: border-box;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cita {
+  padding: 2rem;
+  background: white;
+  border-radius: 1rem;
+  color: black;
+  margin: 1rem 0;
+}
+
+.cita p {
+  font-weight: bold;
+  margin-bottom: .8rem;
+}
+
+.cita p span {
+  font-weight: normal;
+}
+
+.cita:first-of-type {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.cita:last-of-type {
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.button.eliminar,
+.button.eliminar:hover {
+  background-color: #c10059;
+  color: white;
+  margin-top: 2rem;
+}
+
+.alerta-error {
+  background-color: white;
+  color: red;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: 'Staatliches', cursive;
+  border-radius: 1rem;
+}
+
+.footer {
+  text-align: center;
+  color: var(--text-color);
 }
