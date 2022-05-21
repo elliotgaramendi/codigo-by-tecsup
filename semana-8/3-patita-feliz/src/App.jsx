@@ -28,7 +28,7 @@ function App() {
       />
       <main className="py-3">
         <section className="container">
-          <div className="row">
+          <div className="row justify-content-between gap-4">
             <AppointmentsForm
               createAppointment={createAppointment}
             />

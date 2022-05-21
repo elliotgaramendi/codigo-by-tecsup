@@ -38,10 +38,10 @@ const AppointmentsForm = ({ createAppointment }) => {
   };
 
   return (
-    <section className="d-flex flex-column col-md-4">
+    <section className="d-flex flex-column gap-3 col-md-4">
       <h3 className="text-center" id="formTitle">🐱Generar cita🐱</h3>
       <form
-        className="text-dark rounded p-4"
+        className="text-dark rounded"
         onSubmit={handleSubmit}
       >
         <div className="text-dark form-floating mb-3" style={{ display: "none" }}>
