@@ -3,6 +3,7 @@ import './App.css';
 import AppointmentsForm from './components/appointments/AppointmentsForm';
 import Header from './components/sections/Header';
 import { v4 as uuidv4 } from 'uuid';
+import AppointmentsAppointments from './components/appointments/AppointmentsAppointments';
 
 function App() {
 
@@ -31,6 +32,9 @@ function App() {
           <div className="row justify-content-between gap-4">
             <AppointmentsForm
               createAppointment={createAppointment}
+            />
+            <AppointmentsAppointments
+              appointments={appointments}
             />
           </div>
         </section>
