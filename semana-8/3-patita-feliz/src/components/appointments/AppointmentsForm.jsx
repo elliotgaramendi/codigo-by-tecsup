@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const AppointmentsForm = () => {
+const AppointmentsForm = ({ createAppointment }) => {
 
   const [formAppointment, setFormAppointment] = useState({
     mascota: '',
@@ -25,6 +25,7 @@ const AppointmentsForm = () => {
     if ([mascota.trim(), propietario.trim(), fecha.trim(), hora.trim(), sintomas.trim()].includes('')) {
       setAlert(true);
     } else {
+      createAppointment(formAppointment);
       setFormAppointment({
         mascota: '',
         propietario: '',
