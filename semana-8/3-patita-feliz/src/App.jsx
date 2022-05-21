@@ -14,6 +14,7 @@ function App() {
   };
 
   const createAppointment = (appointment) => {
+    appointment.id = uuidv4();
     setAppointments([
       ...appointments,
       appointment
