@@ -11,7 +11,7 @@ const AppointmentsAppointments = ({ appointments }) => {
               appointments.map((appointment) => {
                 return (
                   <AppointmentsAppointment
-                    key={appointment.id}
+                    key={appointment._id}
                     appointment={appointment}
                   />
                 );

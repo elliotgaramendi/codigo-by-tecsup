@@ -1,11 +1,10 @@
 const AppointmentsAppointment = ({ appointment }) => {
 
-  const { id, mascota, propietario, fecha, hora, sintomas } = appointment;
+  const { _id, mascota, propietario, fecha, hora, sintomas } = appointment;
   const urlWhatsapp = 'https://wa.me/51997045329?text=Confirmo%20mi%20cita: ';
 
   return (
     <li
-      key={id}
       className="d-flex flex-column gap-2 list-group-item list-group-item-action p-3"
       aria-current="true"
     >
