@@ -1,4 +1,4 @@
-const AppointmentsAppointment = ({ appointment }) => {
+const AppointmentsAppointment = ({ appointment, readAppointment }) => {
 
   const { _id, mascota, propietario, fecha, hora, sintomas } = appointment;
   const urlWhatsapp = 'https://wa.me/51997045329?text=Confirmo%20mi%20cita: ';
@@ -24,7 +24,13 @@ const AppointmentsAppointment = ({ appointment }) => {
           >
             Confirmar
           </a>
-          <button type="button" className="btn btn-warning btn-sm">Editar</button>
+          <button
+            type="button"
+            className="btn btn-warning btn-sm"
+            onClick={() => readAppointment(_id)}
+          >
+            Editar
+          </button>
           <button type="button" className="btn btn-danger btn-sm">Eliminar</button>
         </div>
       </div>

@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const AppointmentsForm = ({ createAppointment }) => {
+const AppointmentsForm = ({ appointment, createAppointment }) => {
 
   const [formAppointment, setFormAppointment] = useState({
     mascota: '',
@@ -37,9 +37,22 @@ const AppointmentsForm = ({ createAppointment }) => {
     }
   };
 
+  useEffect(() => {
+    if (appointment._id) {
+      const { _id, mascota, propietario, fecha, hora, sintomas } = appointment;
+      setFormAppointment({
+        mascota,
+        propietario,
+        fecha,
+        hora,
+        sintomas
+      });
+    }
+  }, [appointment]);
+
   return (
     <section className="d-flex flex-column gap-3 col-md-4">
-      <h3 className="text-center" id="formTitle">🐱Generar cita🐱</h3>
+      <h3 className="text-center" id="formTitle">🐱{appointment._id ? 'Editar' : 'Crear'} cita🐱</h3>
       <form
         className="text-dark rounded"
         onSubmit={handleSubmit}
@@ -124,7 +137,7 @@ const AppointmentsForm = ({ createAppointment }) => {
           type="submit"
           className="btn btn-primary w-100"
         >
-          Crear
+          {appointment._id ? 'Editar' : 'Crear'}
         </button>
       </form>
       {

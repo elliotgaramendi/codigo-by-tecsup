@@ -7,6 +7,7 @@ import AppointmentsAppointments from './components/appointments/AppointmentsAppo
 
 function App() {
 
+  const [appointment, setAppointment] = useState({});
   const [appointments, setAppointments] = useState([
     {
       _id: 'a1',
@@ -35,7 +36,7 @@ function App() {
     const appointment = appointments.find((element) => {
       return element._id === id;
     });
-    return appointment;
+    setAppointment(appointment);
   };
 
   return (
@@ -48,9 +49,11 @@ function App() {
           <div className="row justify-content-between gap-4">
             <AppointmentsForm
               createAppointment={createAppointment}
+              appointment={appointment}
             />
             <AppointmentsAppointments
               appointments={appointments}
+              readAppointment={readAppointment}
             />
           </div>
         </section>
