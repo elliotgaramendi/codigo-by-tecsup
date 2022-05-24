@@ -39,11 +39,19 @@ function App() {
     setAppointment(appointment);
   };
 
-  const submitAppointment = (appointment) => {
+  const updateAppointment = (appointment) => {
+    const updatedAppointments = appointments.map((element) => {
+      return appointment._id === element._id ? appointment : element;
+    });
+    setAppointments(updatedAppointments);
+    setAppointment({});
+  };
+
+  const submitAppointmentsForm = (appointment) => {
     if (appointment._id === '') {
       createAppointment(appointment);
     } else {
-      console.log('Editar');
+      updateAppointment(appointment);
     }
   };
 
@@ -56,7 +64,7 @@ function App() {
         <section className="container">
           <div className="row justify-content-between gap-4">
             <AppointmentsForm
-              submitAppointment={submitAppointment}
+              submitAppointmentsForm={submitAppointmentsForm}
               appointment={appointment}
             />
             <AppointmentsAppointments
