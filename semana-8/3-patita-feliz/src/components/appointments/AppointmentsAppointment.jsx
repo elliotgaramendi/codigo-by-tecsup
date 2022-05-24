@@ -1,4 +1,4 @@
-const AppointmentsAppointment = ({ appointment, readAppointment }) => {
+const AppointmentsAppointment = ({ appointment, readAppointment, deleteAppointment }) => {
 
   const { _id, mascota, propietario, fecha, hora, sintomas } = appointment;
   const urlWhatsapp = 'https://wa.me/51997045329?text=Confirmo%20mi%20cita: ';
@@ -31,7 +31,13 @@ const AppointmentsAppointment = ({ appointment, readAppointment }) => {
           >
             Editar
           </button>
-          <button type="button" className="btn btn-danger btn-sm">Eliminar</button>
+          <button
+            type="button"
+            className="btn btn-danger btn-sm"
+            onClick={() => deleteAppointment(_id)}
+          >
+            Eliminar
+          </button>
         </div>
       </div>
     </li>

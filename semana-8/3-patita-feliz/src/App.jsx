@@ -47,6 +47,13 @@ function App() {
     setAppointment({});
   };
 
+  const deleteAppointment = (id) => {
+    setAppointments(appointments.filter((element) => {
+      return element._id !== id;
+    }));
+    setAppointment({});
+  };
+
   const submitAppointmentsForm = (appointment) => {
     if (appointment._id === '') {
       createAppointment(appointment);
@@ -70,6 +77,7 @@ function App() {
             <AppointmentsAppointments
               appointments={appointments}
               readAppointment={readAppointment}
+              deleteAppointment={deleteAppointment}
             />
           </div>
         </section>
