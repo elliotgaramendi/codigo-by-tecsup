@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import AppointmentsForm from './components/appointments/AppointmentsForm';
 import Header from './components/sections/Header';
 import { v4 as uuidv4 } from 'uuid';
 import AppointmentsAppointments from './components/appointments/AppointmentsAppointments';
+import { showToast } from './utils/sweetalert';
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
       ...appointments,
       appointment
     ]);
+    showToast('success', 'Creado');
   };
 
   const readAppointment = (id) => {
@@ -37,6 +39,7 @@ function App() {
       return element._id === id;
     });
     setAppointment(appointment);
+    showToast('info', 'Leído');
   };
 
   const updateAppointment = (appointment) => {
@@ -45,6 +48,7 @@ function App() {
     });
     setAppointments(updatedAppointments);
     setAppointment({});
+    showToast('warning', 'Actualizado');
   };
 
   const deleteAppointment = (id) => {
@@ -61,6 +65,10 @@ function App() {
       updateAppointment(appointment);
     }
   };
+
+  useEffect(() => {
+    showToast('success', 'Leídos');
+  }, []);
 
   return (
     <>
