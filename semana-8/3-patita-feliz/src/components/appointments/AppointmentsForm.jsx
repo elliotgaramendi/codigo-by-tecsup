@@ -55,7 +55,7 @@ const AppointmentsForm = ({ appointment, submitAppointmentsForm }) => {
 
   return (
     <section className="d-flex flex-column gap-3 col-md-4">
-      <h3 className="text-center" id="formTitle">🐱{appointment._id ? 'Editar' : 'Crear'} cita🐱</h3>
+      <h3 className="text-light text-center m-0" id="formTitle">🐱{appointment._id ? 'Editar' : 'Crear'} cita🐱</h3>
       <form
         className="text-dark rounded"
         onSubmit={handleSubmit}
@@ -138,7 +138,7 @@ const AppointmentsForm = ({ appointment, submitAppointmentsForm }) => {
         </div>
         <button
           type="submit"
-          className="btn btn-primary w-100"
+          className="btn btn-info w-100 fw-bold"
         >
           {appointment._id ? 'Editar' : 'Crear'}
         </button>

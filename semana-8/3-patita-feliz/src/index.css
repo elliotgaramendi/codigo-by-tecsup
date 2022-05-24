@@ -1,5 +1,8 @@
-html {
-  min-height: 100%;
-  --gold: #ffd700;
-  --text-color: #ffffff;
+.root {
+  min-height: 100vh;
+}
+
+.body {
+  background-image: linear-gradient(to right, #5558da, #5fd1f9);
+  margin: 0;
 }
