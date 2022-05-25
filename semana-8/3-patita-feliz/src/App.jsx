@@ -8,8 +8,10 @@ import { showToast } from './utils/sweetalert';
 
 function App() {
 
+  let localStorageAppointments = JSON.parse(localStorage.getItem('appointmentsData')) ?? [];
+
   const [appointment, setAppointment] = useState({});
-  const [appointments, setAppointments] = useState([]);
+  const [appointments, setAppointments] = useState(localStorageAppointments);
 
   const company = {
     name: 'Patita Feliz',
@@ -23,15 +25,6 @@ function App() {
       appointment
     ]);
     showToast('success', 'Creado');
-  };
-
-  const readAppointments = () => {
-    if (localStorage.getItem('appointmentsData')) {
-      setAppointments(JSON.parse(localStorage.getItem('appointmentsData')));
-    } else {
-      localStorage.setItem('appointmentsData', JSON.stringify(appointments));
-    }
-    showToast('success', 'Leídos');
   };
 
   const readAppointment = (id) => {
@@ -67,8 +60,8 @@ function App() {
   };
 
   useEffect(() => {
-    readAppointments();
-  }, []);
+    localStorage.setItem('appointmentsData', JSON.stringify(appointments));
+  }, [appointments]);
 
   return (
     <>
