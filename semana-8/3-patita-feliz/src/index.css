@@ -1,8 +1,10 @@
-.root {
-  min-height: 100vh;
-}
-
 .body {
   background-image: linear-gradient(to right, #5558da, #5fd1f9);
   margin: 0;
+}
+
+.root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
