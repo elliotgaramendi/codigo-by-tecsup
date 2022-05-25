@@ -42,7 +42,7 @@ const AppointmentsAppointment = ({ appointment, readAppointment, deleteAppointme
 
   return (
     <li
-      className="d-flex flex-column gap-2 list-group-item list-group-item-action p-3"
+      className="d-flex flex-column gap-2 list-group-item list-group-item-action p-3 animate__animated animate__fadeInUp"
       aria-current="true"
     >
       <div className="d-flex align-items-center justify-content-between">

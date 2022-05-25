@@ -54,7 +54,7 @@ const AppointmentsForm = ({ appointment, submitAppointmentsForm }) => {
   }, [appointment]);
 
   return (
-    <section className="d-flex flex-column gap-3 col-md-4">
+    <section className="d-flex flex-column gap-3 col-md-4 animate__animated animate__fadeInLeft">
       <h3 className="text-light text-center m-0" id="formTitle">🐱{appointment._id ? 'Editar' : 'Crear'} cita🐱</h3>
       <form
         className="text-dark rounded"

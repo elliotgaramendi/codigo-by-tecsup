@@ -25,6 +25,7 @@ Aplicación web donde puedes administrar citas mediante un CRUD y podrás confir
       <th>CSS</th>
       <th>JavaScript</th>
       <th>Bootstrap</th>
+      <th>Animate.css</th>
       <th>SweetAler2</th>
     </tr>
   </thead>
@@ -47,6 +48,10 @@ Aplicación web donde puedes administrar citas mediante un CRUD y podrás confir
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/1200px-Bootstrap_logo.svg.png"
           width="100%" />
+      </td>
+      <td>
+          <img
+            src="https://i.postimg.cc/mkp40CNs/animate-css.png" width="100%" />
       </td>
       <td>
         <img

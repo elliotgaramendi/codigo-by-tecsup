@@ -2,7 +2,7 @@ import AppointmentsAppointment from "./AppointmentsAppointment";
 
 const AppointmentsAppointments = ({ appointments, readAppointment, deleteAppointment }) => {
   return (
-    <section className="d-flex flex-column gap-3 col-md-6">
+    <section className="d-flex flex-column gap-3 col-md-6 animate__animated animate__fadeInRight">
       <h3 className="text-light text-center m-0">🐶 Citas 🐶</h3>
       <ul className="list-group">
         {
