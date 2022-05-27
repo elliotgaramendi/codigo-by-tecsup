@@ -10,7 +10,7 @@ const PokemonsLayout = () => {
       <Header
         applicationName={applicationName}
       />
-      <main className="text-center pt-16 pb-8">
+      <main className="pt-16 pb-8">
         <Outlet />
       </main>
       <footer className="mt-auto text-center">
