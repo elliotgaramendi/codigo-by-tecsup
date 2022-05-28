@@ -1,21 +1,31 @@
 import * as yup from 'yup';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import usePokemons from '../../hooks/usePokemons';
+import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 const PokemonsForm = () => {
+  const { id } = useParams();
+  const { createPokemon, pokemon } = usePokemons();
+  const [formPokemon, setformPokemon] = useState({
+    name: '',
+    type: '',
+    hp: '',
+    attack: '',
+    special: '',
+    image: {}
+  });
 
-  const { createPokemon } = usePokemons();
+  useEffect(() => {
+    if (id && pokemon._id) {
+      setformPokemon(pokemon);
+    }
+  }, [id, pokemon]);
 
   return (
     <Formik
-      initialValues={{
-        name: '',
-        type: '',
-        hp: '',
-        attack: '',
-        special: '',
-        image: {}
-      }}
+      initialValues={formPokemon}
+      enableReinitialize
       validationSchema={yup.object({
         name: yup.string().required('El nombre es requerido'),
         type: yup.string().required('El tipo es requerido'),
@@ -60,14 +70,14 @@ const PokemonsForm = () => {
               name="image"
               className="bg-zinc-800 rounded p-2 text-sm cursor-pointer file:bg-white file:border-0 file:rounded file:font-semibold file:mr-2 file:p-1 file:px-2 file:cursor-pointer file:transition-colors hover:file:bg-zinc-300"
               onChange={(e) => setFieldValue('image', e.currentTarget.files[0])}
-              required
+              required={id ? false : true}
             />
             <button
               type="submit"
               className="bg-cyan-300 rounded-md text-black font-semibold p-2 transition-colors hover:bg-white disabled:bg-white/50 disabled:cursor-progress"
               disabled={isSubmitting}
             >
-              {isSubmitting ? 'Loading 💭' : 'Enviar'}
+              {isSubmitting ? 'Loading 💭' : id ? 'Editar' : ' Crear'}
             </button>
           </Form>
         );
