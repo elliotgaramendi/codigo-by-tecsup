@@ -1,3 +1,4 @@
+import { Toaster } from 'react-hot-toast';
 import {
   Routes,
   Route,
@@ -14,6 +15,7 @@ import PokemonsUpdate from './pages/pokemons/PokemonsUpdate';
 function App() {
   return (
     <PokemonsProvider>
+      <Toaster />
       <Routes>
         <Route path="/" element={<Navigate to="/pokemons" replace={true} />} />
         <Route path="/pokemons" element={<PokemonsLayout />}>
