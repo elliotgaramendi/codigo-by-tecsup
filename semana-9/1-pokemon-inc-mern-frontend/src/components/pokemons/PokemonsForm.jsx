@@ -1,7 +1,11 @@
 import * as yup from 'yup';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
+import usePokemons from '../../hooks/usePokemons';
 
 const PokemonsForm = () => {
+
+  const { createPokemon } = usePokemons();
+
   return (
     <Formik
       initialValues={{
@@ -19,8 +23,8 @@ const PokemonsForm = () => {
         attack: yup.string().required('El ataque es requerido'),
         special: yup.string().required('El especial es requerido')
       })}
-      onSubmit={(values, actions) => {
-        console.log(values);
+      onSubmit={async (values, actions) => {
+        await createPokemon(values);
         actions.setSubmitting(false);
         actions.resetForm();
       }}
