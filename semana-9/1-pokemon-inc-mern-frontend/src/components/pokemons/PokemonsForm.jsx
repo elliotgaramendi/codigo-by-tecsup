@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 
 const PokemonsForm = () => {
   const { id } = useParams();
-  const { createPokemon, pokemon } = usePokemons();
+  const { submitPokemonsForm, pokemon } = usePokemons();
   const [formPokemon, setformPokemon] = useState({
     name: '',
     type: '',
@@ -34,7 +34,7 @@ const PokemonsForm = () => {
         special: yup.string().required('El especial es requerido')
       })}
       onSubmit={async (values, actions) => {
-        await createPokemon(values);
+        await submitPokemonsForm(values);
         actions.setSubmitting(false);
         actions.resetForm();
       }}

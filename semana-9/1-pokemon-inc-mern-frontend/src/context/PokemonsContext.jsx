@@ -59,6 +59,14 @@ export const PokemonsProvider = ({ children }) => {
     }
   };
 
+  const submitPokemonsForm = async (pokemon) => {
+    if (pokemon._id === undefined) {
+      await createPokemon(pokemon);
+    } else {
+      console.log('Editar');
+    }
+  };
+
   useEffect(() => {
     readPokemons();
   }, []);
@@ -68,8 +76,7 @@ export const PokemonsProvider = ({ children }) => {
       value={{
         pokemon,
         pokemons,
-        setPokemons,
-        createPokemon,
+        submitPokemonsForm,
         readPokemon
       }}
     >
