@@ -1,6 +1,7 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { showToast } from "../utils/reactHotToast";
 
 export const PokemonsContext = createContext();
 
@@ -27,9 +28,10 @@ export const PokemonsProvider = ({ children }) => {
       };
       const { data } = await axios(options);
       setPokemons([...pokemons, data]);
+      showToast('😎', 'Creado');
       navigate('/pokemons');
     } catch (error) {
-      console.log(error.response.data.message);
+      showToast('❌', error.response.data.message);
     }
   };
 
@@ -42,7 +44,7 @@ export const PokemonsProvider = ({ children }) => {
       const { data } = await axios(options);
       setPokemons(data);
     } catch (error) {
-      console.log(error.response.data.message);
+      showToast('❌', error.response.data.message);
     }
   };
 
@@ -54,8 +56,9 @@ export const PokemonsProvider = ({ children }) => {
       };
       const { data } = await axios(options);
       setPokemon(data);
+      showToast('📚', 'Leído');
     } catch (error) {
-      console.log(error.response.data.message);
+      showToast('❌', error.response.data.message);
     }
   };
 
@@ -77,9 +80,10 @@ export const PokemonsProvider = ({ children }) => {
       setPokemons(pokemons.map((pokemon) => {
         return pokemon._id === data._id ? data : pokemon;
       }));
+      showToast('📝', 'Actualizado');
       navigate('/pokemons');
     } catch (error) {
-      console.log(error.response.data.message);
+      showToast('❌', error.response.data.message);
     }
   };
 
@@ -91,9 +95,9 @@ export const PokemonsProvider = ({ children }) => {
       };
       const { data } = await axios(options);
       setPokemons(pokemons.filter(pokemon => pokemon._id !== _id));
-      console.log(data);
+      showToast('🗑', data.message);
     } catch (error) {
-      console.log(error.response.data.message);
+      showToast('❌', error.response.data.message);
     }
   };
 
