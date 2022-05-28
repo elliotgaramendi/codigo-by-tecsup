@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
+import usePokemons from "../../hooks/usePokemons";
 
 const PokemonsCard = ({ pokemon }) => {
   const { _id, name, type, hp, attack, special, image } = pokemon;
+  const { deletePokemon } = usePokemons();
 
   return (
     <div
@@ -25,6 +27,7 @@ const PokemonsCard = ({ pokemon }) => {
         </Link>
         <button
           className="bg-rose-500 rounded-md text-white font-medium px-3 py-1 transition-colors hover:bg-rose-600"
+          onClick={() => deletePokemon(_id)}
         >
           Eliminar
         </button>
