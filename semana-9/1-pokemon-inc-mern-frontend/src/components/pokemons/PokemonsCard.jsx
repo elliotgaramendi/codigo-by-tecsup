@@ -1,9 +1,48 @@
+import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import usePokemons from "../../hooks/usePokemons";
 
 const PokemonsCard = ({ pokemon }) => {
   const { _id, name, type, hp, attack, special, image } = pokemon;
   const { deletePokemon } = usePokemons();
+
+  const handleDelete = (_id) => {
+    toast(
+      (t) => {
+        return (
+          <div className="flex flex-col gap-2">
+            <h5 className="text-lg font-medium text-center">¿Desea eliminarlo?</h5>
+            <div className="flex gap-2">
+              <button
+                className="bg-rose-500 rounded-md text-white font-medium px-3 py-1 transition-colors hover:bg-rose-600"
+                onClick={() => {
+                  deletePokemon(_id);
+                  toast.dismiss(t.id);
+                }}
+              >
+                Eliminar
+              </button>
+              <button
+                className="bg-cyan-300 rounded-md text-black font-medium px-3 py-1 transition-colors hover:bg-white"
+                onClick={() => toast.dismiss(t.id)}
+              >
+                Cancelar
+              </button>
+            </div>
+          </div>
+        );
+      },
+      {
+        icon: '😢',
+        style: {
+          backgroundColor: '#20232a',
+          borderRadius: '1rem',
+          boxShadow: '0 0 0 0.125rem #8888, 0 0 0 0.25rem #8888',
+          color: '#fff'
+        }
+      }
+    );
+  };
 
   return (
     <div
@@ -27,7 +66,7 @@ const PokemonsCard = ({ pokemon }) => {
         </Link>
         <button
           className="bg-rose-500 rounded-md text-white font-medium px-3 py-1 transition-colors hover:bg-rose-600"
-          onClick={() => deletePokemon(_id)}
+          onClick={() => handleDelete(_id)}
         >
           Eliminar
         </button>
