@@ -1,5 +1,5 @@
 import axios from "axios";
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export const PokemonsContext = createContext();
@@ -31,6 +31,23 @@ export const PokemonsProvider = ({ children }) => {
       console.log(error.response.data.message);
     }
   };
+
+  const readPokemons = async () => {
+    try {
+      const options = {
+        method: 'GET',
+        url: `${process.env.REACT_APP_POKEMON_INC_MERN_API_URL}/pokemons`
+      };
+      const { data } = await axios(options);
+      setPokemons(data);
+    } catch (error) {
+      console.log(error.response.data.message);
+    }
+  };
+
+  useEffect(() => {
+    readPokemons();
+  }, []);
 
   return (
     <PokemonsContext.Provider
