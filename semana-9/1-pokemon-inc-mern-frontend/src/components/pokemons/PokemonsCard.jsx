@@ -10,7 +10,7 @@ const PokemonsCard = ({ pokemon }) => {
       <figure className="w-32 h-32">
         <img src={image.url} alt={name} className="w-full h-full object-cover" />
       </figure>
-      <div className="flex flex-col gap-1">
+      <div className="flex flex-col gap-1 text-center">
         <p className="text-zinc-400 text-sm font-thin">Hp: {hp}</p>
         <h5 className="text-white text-xl font-medium">{name}</h5>
         <p className="text-zinc-400 text-sm font-extralight">{type}</p>

@@ -59,11 +59,35 @@ export const PokemonsProvider = ({ children }) => {
     }
   };
 
+  const updatePokemon = async (pokemon) => {
+    try {
+      const form = new FormData();
+      for (const key in pokemon) {
+        form.append(key, pokemon[key]);
+      }
+      const options = {
+        method: 'PUT',
+        heders: {
+          'Content-Type': 'multipart/form-data'
+        },
+        data: form,
+        url: `${process.env.REACT_APP_POKEMON_INC_MERN_API_URL}/pokemons/${pokemon._id}`
+      };
+      const { data } = await axios(options);
+      setPokemons(pokemons.map((pokemon) => {
+        return pokemon._id === data._id ? data : pokemon;
+      }));
+      navigate('/pokemons');
+    } catch (error) {
+      console.log(error.response.data.message);
+    }
+  };
+
   const submitPokemonsForm = async (pokemon) => {
     if (pokemon._id === undefined) {
       await createPokemon(pokemon);
     } else {
-      console.log('Editar');
+      await updatePokemon(pokemon);
     }
   };
 
