@@ -19,11 +19,13 @@ const PokemonsForm = () => {
         attack: yup.string().required('El ataque es requerido'),
         special: yup.string().required('El especial es requerido')
       })}
-      onSubmit={(values) => {
+      onSubmit={(values, actions) => {
         console.log(values);
+        actions.setSubmitting(false);
+        actions.resetForm();
       }}
     >
-      {({ handleSubmit }) => {
+      {({ handleSubmit, setFieldValue, isSubmitting }) => {
         return (
           <Form
             onSubmit={handleSubmit}
@@ -49,8 +51,20 @@ const PokemonsForm = () => {
               <Field name="special" type="text" placeholder="Especial" className="bg-zinc-800 rounded p-2" />
               <ErrorMessage name="special" component="span" className="text-rose-500 text-sm text-center" />
             </div>
-            <input type="file" className="bg-zinc-800 rounded p-2 text-sm cursor-pointer file:bg-white file:border-0 file:rounded file:font-semibold file:mr-2 file:p-1 file:px-2 file:cursor-pointer file:transition-colors hover:file:bg-zinc-300" />
-            <button type="submit" className="bg-cyan-300 rounded-md text-black font-semibold p-2 transition-colors hover:bg-white">Enviar</button>
+            <input
+              type="file"
+              name="image"
+              className="bg-zinc-800 rounded p-2 text-sm cursor-pointer file:bg-white file:border-0 file:rounded file:font-semibold file:mr-2 file:p-1 file:px-2 file:cursor-pointer file:transition-colors hover:file:bg-zinc-300"
+              onChange={(e) => setFieldValue('image', e.currentTarget.files[0])}
+              required
+            />
+            <button
+              type="submit"
+              className="bg-cyan-300 rounded-md text-black font-semibold p-2 transition-colors hover:bg-white disabled:bg-white/50 disabled:cursor-progress"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? 'Loading 💭' : 'Enviar'}
+            </button>
           </Form>
         );
       }}
