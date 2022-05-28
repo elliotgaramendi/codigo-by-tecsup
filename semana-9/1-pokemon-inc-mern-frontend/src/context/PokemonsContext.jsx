@@ -8,6 +8,7 @@ export const PokemonsProvider = ({ children }) => {
 
   const navigate = useNavigate();
 
+  const [pokemon, setPokemon] = useState({});
   const [pokemons, setPokemons] = useState([]);
 
   const createPokemon = async (pokemon) => {
@@ -45,6 +46,19 @@ export const PokemonsProvider = ({ children }) => {
     }
   };
 
+  const readPokemon = async (_id) => {
+    try {
+      const options = {
+        method: 'GET',
+        url: `${process.env.REACT_APP_POKEMON_INC_MERN_API_URL}/pokemons/${_id}`
+      };
+      const { data } = await axios(options);
+      setPokemon(data);
+    } catch (error) {
+      console.log(error.response.data.message);
+    }
+  };
+
   useEffect(() => {
     readPokemons();
   }, []);
@@ -52,9 +66,11 @@ export const PokemonsProvider = ({ children }) => {
   return (
     <PokemonsContext.Provider
       value={{
+        pokemon,
         pokemons,
         setPokemons,
-        createPokemon
+        createPokemon,
+        readPokemon
       }}
     >
       {children}
