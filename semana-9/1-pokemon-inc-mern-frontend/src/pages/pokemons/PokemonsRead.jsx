@@ -8,7 +8,7 @@ const PokemonsRead = () => {
   return (
     <section className="py-8">
       <div className="flex flex-col gap-8 container mx-auto px-8 md:px-4">
-        <h2 className="text-yellow-400 text-3xl text-center font-bold">{pokemons.length ? `Pokémons ${pokemons.length}` : 'No hay Pokémons registrados'}</h2>
+        <h2 className="text-yellow-400 text-3xl text-center font-bold">{pokemons.length ? `Pokémons (${pokemons.length})` : 'No hay Pokémons registrados'}</h2>
         <div className="grid justify-items-center gap-8 md:grid-cols-3">
           {
             pokemons.length ? (

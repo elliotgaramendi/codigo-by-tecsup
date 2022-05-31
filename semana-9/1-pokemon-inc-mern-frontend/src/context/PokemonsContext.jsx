@@ -9,11 +9,13 @@ export const PokemonsProvider = ({ children }) => {
 
   const navigate = useNavigate();
 
+  const [loading, setLoading] = useState(false);
   const [pokemon, setPokemon] = useState({});
   const [pokemons, setPokemons] = useState([]);
 
   const createPokemon = async (pokemon) => {
     try {
+      setLoading(true);
       const form = new FormData();
       for (const key in pokemon) {
         form.append(key, pokemon[key]);
@@ -32,11 +34,14 @@ export const PokemonsProvider = ({ children }) => {
       navigate('/pokemons');
     } catch (error) {
       showToast('❌', error.response.data.message);
+    } finally {
+      setLoading(false);
     }
   };
 
   const readPokemons = async () => {
     try {
+      setLoading(true);
       const options = {
         method: 'GET',
         url: `${process.env.REACT_APP_POKEMON_INC_MERN_API_URL}/pokemons`
@@ -45,11 +50,14 @@ export const PokemonsProvider = ({ children }) => {
       setPokemons(data);
     } catch (error) {
       showToast('❌', error.response.data.message);
+    } finally {
+      setLoading(false);
     }
   };
 
   const readPokemon = async (_id) => {
     try {
+      setLoading(true);
       const options = {
         method: 'GET',
         url: `${process.env.REACT_APP_POKEMON_INC_MERN_API_URL}/pokemons/${_id}`
@@ -59,11 +67,14 @@ export const PokemonsProvider = ({ children }) => {
       showToast('📚', 'Leído');
     } catch (error) {
       showToast('❌', error.response.data.message);
+    } finally {
+      setLoading(false);
     }
   };
 
   const updatePokemon = async (pokemon) => {
     try {
+      setLoading(true);
       const form = new FormData();
       for (const key in pokemon) {
         form.append(key, pokemon[key]);
@@ -84,11 +95,14 @@ export const PokemonsProvider = ({ children }) => {
       navigate('/pokemons');
     } catch (error) {
       showToast('❌', error.response.data.message);
+    } finally {
+      setLoading(false);
     }
   };
 
   const deletePokemon = async (_id) => {
     try {
+      setLoading(true);
       const options = {
         method: 'DELETE',
         url: `${process.env.REACT_APP_POKEMON_INC_MERN_API_URL}/pokemons/${_id}`
@@ -98,6 +112,8 @@ export const PokemonsProvider = ({ children }) => {
       showToast('🗑', data.message);
     } catch (error) {
       showToast('❌', error.response.data.message);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -116,6 +132,7 @@ export const PokemonsProvider = ({ children }) => {
   return (
     <PokemonsContext.Provider
       value={{
+        loading,
         pokemon,
         pokemons,
         submitPokemonsForm,
