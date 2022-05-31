@@ -8,6 +8,7 @@ import {
 import './App.css';
 import { PokemonsProvider } from './context/PokemonsContext';
 import PokemonsLayout from './layouts/PokemonsLayout';
+import Landings404Page from './pages/landings/Landings404Page';
 import PokemonsCreate from './pages/pokemons/PokemonsCreate';
 import PokemonsRead from './pages/pokemons/PokemonsRead';
 import PokemonsUpdate from './pages/pokemons/PokemonsUpdate';
@@ -23,7 +24,7 @@ function App() {
           <Route path=":id" element={<PokemonsUpdate />} />
           <Route index element={<PokemonsRead />} />
         </Route>
-        <Route path="*" element={<h2>404</h2>} />
+        <Route path="*" element={<Landings404Page />} />
       </Routes>
     </PokemonsProvider>
   );
