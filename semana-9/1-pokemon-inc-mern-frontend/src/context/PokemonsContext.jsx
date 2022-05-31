@@ -20,7 +20,7 @@ export const PokemonsProvider = ({ children }) => {
       }
       const options = {
         method: 'POST',
-        heders: {
+        headers: {
           'Content-Type': 'multipart/form-data'
         },
         data: form,
@@ -70,7 +70,7 @@ export const PokemonsProvider = ({ children }) => {
       }
       const options = {
         method: 'PUT',
-        heders: {
+        headers: {
           'Content-Type': 'multipart/form-data'
         },
         data: form,
