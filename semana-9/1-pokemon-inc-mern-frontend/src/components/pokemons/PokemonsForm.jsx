@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 const PokemonsForm = () => {
   const { id } = useParams();
   const { submitPokemonsForm, pokemon } = usePokemons();
-  const [formPokemon, setformPokemon] = useState({
+  const [formPokemon, setFormPokemon] = useState({
     name: '',
     type: '',
     hp: '',
@@ -18,7 +18,7 @@ const PokemonsForm = () => {
 
   useEffect(() => {
     if (id && pokemon._id) {
-      setformPokemon(pokemon);
+      setFormPokemon(pokemon);
     }
   }, [id, pokemon]);
 
