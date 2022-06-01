@@ -6,7 +6,7 @@ const Header = ({ applicationName }) => {
       <nav className="py-4">
         <div className="flex items-center justify-between container mx-auto px-8 md:px-4">
           <Link
-            to=""
+            to="/pokemons"
             className="text-cyan-300 text-2xl font-black transition-colors hover:text-white"
           >
             {applicationName}

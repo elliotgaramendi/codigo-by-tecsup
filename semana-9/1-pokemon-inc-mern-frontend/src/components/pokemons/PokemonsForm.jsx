@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 
 const PokemonsForm = () => {
   const { id } = useParams();
-  const { submitPokemonsForm, pokemon } = usePokemons();
+  const { pokemon, submitPokemonsForm } = usePokemons();
   const [formPokemon, setFormPokemon] = useState({
     name: '',
     type: '',
@@ -77,7 +77,7 @@ const PokemonsForm = () => {
               className="bg-cyan-300 rounded-md text-black font-semibold p-2 transition-colors hover:bg-white disabled:bg-white/50 disabled:cursor-progress"
               disabled={isSubmitting}
             >
-              {isSubmitting ? 'Loading 💭' : id ? 'Editar' : ' Crear'}
+              {isSubmitting ? 'Loading 💭' : id ? 'Editar' : 'Crear'}
             </button>
           </Form>
         );

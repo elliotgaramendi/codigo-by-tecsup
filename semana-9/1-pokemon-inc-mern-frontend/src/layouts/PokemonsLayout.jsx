@@ -8,7 +8,7 @@ const PokemonsLayout = () => {
 
   const { loading } = usePokemons();
 
-  const applicationName = "PokémonInc";
+  const applicationName = "PokémonsInc";
 
   const credits = {
     year: new Date().getFullYear(),

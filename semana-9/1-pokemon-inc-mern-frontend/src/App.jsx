@@ -4,7 +4,6 @@ import {
   Route,
   Navigate
 } from 'react-router-dom';
-
 import './App.css';
 import { PokemonsProvider } from './context/PokemonsContext';
 import PokemonsLayout from './layouts/PokemonsLayout';

@@ -1,16 +1,16 @@
 const Loader = () => {
   return (
-    <section class="loader loader--sm loader--transparent" id="loader">
-      <div class="loader__wave loader__wave--sm"></div>
-      <div class="loader__wave loader__wave--sm"></div>
-      <div class="loader__wave loader__wave--sm"></div>
-      <div class="loader__wave loader__wave--sm"></div>
-      <div class="loader__wave loader__wave--sm"></div>
-      <div class="loader__wave loader__wave--sm"></div>
-      <div class="loader__wave loader__wave--sm"></div>
-      <div class="loader__wave loader__wave--sm"></div>
-      <div class="loader__wave loader__wave--sm"></div>
-      <div class="loader__wave loader__wave--sm"></div>
+    <section className="loader loader--sm loader--transparent">
+      <div className="loader__wave loader__wave--sm"></div>
+      <div className="loader__wave loader__wave--sm"></div>
+      <div className="loader__wave loader__wave--sm"></div>
+      <div className="loader__wave loader__wave--sm"></div>
+      <div className="loader__wave loader__wave--sm"></div>
+      <div className="loader__wave loader__wave--sm"></div>
+      <div className="loader__wave loader__wave--sm"></div>
+      <div className="loader__wave loader__wave--sm"></div>
+      <div className="loader__wave loader__wave--sm"></div>
+      <div className="loader__wave loader__wave--sm"></div>
     </section>
   );
 }
