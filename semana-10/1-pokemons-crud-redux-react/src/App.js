@@ -6,8 +6,10 @@ import {
 import './App.css';
 import PokemonsLayout from './layouts/Pokemonslayout';
 import PokemonsCreate from './pages/pokemons/PokemonsCreate';
+import store from './redux/store';
 
 function App() {
+  console.log(store.getState());
   return (
     <Routes>
       <Route path="/" element={<Navigate to="/pokemons" replace={true} />} />
