@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@redux-devtools/extension": "^3.2.2",
+    "axios": "^0.27.2",
     "formik": "^2.2.9",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
