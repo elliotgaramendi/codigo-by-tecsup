@@ -1,6 +1,7 @@
 import { composeWithDevTools } from "@redux-devtools/extension";
-import { createStore } from "redux";
+import { applyMiddleware, createStore } from "redux";
+import thunk from "redux-thunk";
 import pokemonsReducers from "./reducers/pokemonsReducers";
 
-const store = createStore(pokemonsReducers, composeWithDevTools());
+const store = createStore(pokemonsReducers, composeWithDevTools(applyMiddleware(thunk)));
 export default store;
