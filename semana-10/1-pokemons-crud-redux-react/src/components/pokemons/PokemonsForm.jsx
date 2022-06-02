@@ -19,7 +19,6 @@ const PokemonsForm = () => {
         attack: yup.string().required('El ataque es requerido'),
         special: yup.string().required('El especial es requerido')
       })}
-      enableReinitialize
       onSubmit={async (values, actions) => {
         console.log(values);
         actions.setSubmitting(false);
