@@ -3,7 +3,6 @@ import {
   Route,
   Navigate
 } from 'react-router-dom';
-
 import './App.css';
 import PokemonsLayout from './layouts/Pokemonslayout';
 import PokemonsCreate from './pages/pokemons/PokemonsCreate';
