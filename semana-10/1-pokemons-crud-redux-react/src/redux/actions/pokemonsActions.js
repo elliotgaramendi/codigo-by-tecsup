@@ -1,3 +1,4 @@
+import axiosInstance from "../../configs/axiosInstance";
 import {
   FETCH_CREATE_POKEMON_ERROR,
   FETCH_CREATE_POKEMON_REQUEST,
@@ -20,10 +21,23 @@ const fetchCreatePokemonError = (error) => ({
 });
 
 export const fetchCreatePokemon = (pokemon) => {
-  return ((dispatch) => {
+  return (async (dispatch) => {
     dispatch(fetchCreatePokemonRequest());
     try {
-      dispatch(fetchCreatePokemonSuccess(pokemon));
+      const form = new FormData();
+      for (const key in pokemon) {
+        form.append(key, pokemon[key]);
+      }
+      const options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        },
+        data: form,
+        url: `/pokemons`
+      };
+      const { data } = await axiosInstance(options);
+      dispatch(fetchCreatePokemonSuccess(data));
     } catch (error) {
       dispatch(fetchCreatePokemonError(error));
     }

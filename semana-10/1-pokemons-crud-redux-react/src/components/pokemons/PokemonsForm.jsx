@@ -2,8 +2,10 @@ import * as yup from 'yup';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { useDispatch } from 'react-redux';
 import { fetchCreatePokemon } from '../../redux/actions/pokemonsActions';
+import { useNavigate } from 'react-router-dom';
 
 const PokemonsForm = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   return (
@@ -24,9 +26,10 @@ const PokemonsForm = () => {
         special: yup.string().required('El especial es requerido')
       })}
       onSubmit={async (values, actions) => {
-        dispatch(fetchCreatePokemon(values));
+        await dispatch(fetchCreatePokemon(values));
         actions.setSubmitting(false);
         actions.resetForm();
+        navigate('/pokemons');
       }}
     >
       {({ handleSubmit, setFieldValue, isSubmitting }) => {
