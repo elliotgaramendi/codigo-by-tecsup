@@ -40,6 +40,9 @@ export const fetchCreatePokemon = (pokemon) => {
       dispatch(fetchCreatePokemonSuccess(data));
     } catch (error) {
       dispatch(fetchCreatePokemonError(error));
+      setTimeout(() => {
+        dispatch(fetchCreatePokemonError({}));
+      }, 5000);
     }
   });
 };

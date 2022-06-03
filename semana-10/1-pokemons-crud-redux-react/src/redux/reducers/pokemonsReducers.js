@@ -21,6 +21,7 @@ const pokemonsReducers = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
+        error: {},
         pokemons: [...state.pokemons, action.payload]
       };
     case FETCH_CREATE_POKEMON_ERROR:
