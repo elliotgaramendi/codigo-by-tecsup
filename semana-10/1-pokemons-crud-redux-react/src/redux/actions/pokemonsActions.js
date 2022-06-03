@@ -9,7 +9,10 @@ import {
   FETCH_READ_POKEMONS_SUCCESS,
   FETCH_READ_POKEMON_ERROR,
   FETCH_READ_POKEMON_REQUEST,
-  FETCH_READ_POKEMON_SUCCESS
+  FETCH_READ_POKEMON_SUCCESS,
+  FETCH_UPDATE_POKEMON_ERROR,
+  FETCH_UPDATE_POKEMON_REQUEST,
+  FETCH_UPDATE_POKEMON_SUCCESS
 } from "../types/pokemonsTypes";
 
 const fetchCreatePokemonRequest = (loading) => ({
@@ -119,6 +122,49 @@ export const fetchReadPokemon = (_id) => {
       dispatch(fetchReadPokemonError(error));
       setTimeout(() => {
         dispatch(fetchReadPokemonError({}));
+      }, 5000);
+    }
+  });
+};
+
+const fetchUpdatePokemonRequest = (loading) => ({
+  type: FETCH_UPDATE_POKEMON_REQUEST,
+  payload: loading
+});
+
+const fetchUpdatePokemonSuccess = (pokemon) => ({
+  type: FETCH_UPDATE_POKEMON_SUCCESS,
+  payload: pokemon
+});
+
+const fetchUpdatePokemonError = (error) => ({
+  type: FETCH_UPDATE_POKEMON_ERROR,
+  payload: error
+});
+
+export const fetchUpdatePokemon = (pokemon) => {
+  return (async (dispatch) => {
+    dispatch(fetchUpdatePokemonRequest(true));
+    try {
+      const form = new FormData();
+      for (const key in pokemon) {
+        form.append(key, pokemon[key]);
+      }
+      const options = {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        },
+        data: form,
+        url: `/pokemons/${pokemon._id}`
+      };
+      const { data } = await axiosInstance(options);
+      dispatch(fetchUpdatePokemonSuccess(data));
+      showToast('warnign', 'Pokémon actualizado');
+    } catch (error) {
+      dispatch(fetchUpdatePokemonError(error));
+      setTimeout(() => {
+        dispatch(fetchUpdatePokemonError({}));
       }, 5000);
     }
   });
