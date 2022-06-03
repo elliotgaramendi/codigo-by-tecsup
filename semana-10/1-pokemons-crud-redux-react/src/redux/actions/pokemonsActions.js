@@ -160,7 +160,7 @@ export const fetchUpdatePokemon = (pokemon) => {
       };
       const { data } = await axiosInstance(options);
       dispatch(fetchUpdatePokemonSuccess(data));
-      showToast('warnign', 'Pokémon actualizado');
+      showToast('warning', 'Pokémon actualizado');
     } catch (error) {
       dispatch(fetchUpdatePokemonError(error));
       setTimeout(() => {

@@ -1,7 +1,7 @@
 import * as yup from 'yup';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchCreatePokemon } from '../../redux/actions/pokemonsActions';
+import { fetchCreatePokemon, fetchUpdatePokemon } from '../../redux/actions/pokemonsActions';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
@@ -39,7 +39,11 @@ const PokemonsForm = () => {
         special: yup.string().required('El especial es requerido')
       })}
       onSubmit={async (values, actions) => {
-        await dispatch(fetchCreatePokemon(values));
+        if (id === undefined) {
+          await dispatch(fetchCreatePokemon(values));
+        } else {
+          await dispatch(fetchUpdatePokemon(values));
+        }
         actions.setSubmitting(false);
         actions.resetForm();
         navigate('/pokemons');
@@ -76,14 +80,14 @@ const PokemonsForm = () => {
               name="image"
               className="bg-zinc-800 rounded p-2 text-sm cursor-pointer file:bg-white file:border-0 file:rounded file:font-semibold file:mr-2 file:p-1 file:px-2 file:cursor-pointer file:transition-colors hover:file:bg-zinc-300"
               onChange={(e) => setFieldValue('image', e.currentTarget.files[0])}
-              required
+              required={id ? false : true}
             />
             <button
               type="submit"
               className="bg-cyan-300 rounded-md text-black font-semibold p-2 transition-colors hover:bg-white disabled:bg-white/50 disabled:cursor-progress"
               disabled={isSubmitting}
             >
-              {isSubmitting ? 'Loading 💭' : 'Enviar'}
+              {isSubmitting ? 'Loading 💭' : id ? 'Editar' : ' Crear'}
             </button>
           </Form>
         );
