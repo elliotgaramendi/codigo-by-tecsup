@@ -27,6 +27,6 @@ const Header = ({ applicationName }) => {
       </nav>
     </header>
   );
-}
+};
 
 export default Header;

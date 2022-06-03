@@ -22,6 +22,6 @@ const PokemonsUpdate = () => {
       </div>
     </section>
   );
-}
+};
 
 export default PokemonsUpdate;

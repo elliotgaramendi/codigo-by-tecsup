@@ -13,6 +13,6 @@ const Loader = () => {
       <div className="loader__wave loader__wave--sm"></div>
     </section>
   );
-}
+};
 
 export default Loader;
