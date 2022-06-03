@@ -1,4 +1,5 @@
 import axiosInstance from "../../configs/axiosInstance";
+import { showToast } from "../../utils/sweetalert";
 import {
   FETCH_CREATE_POKEMON_ERROR,
   FETCH_CREATE_POKEMON_REQUEST,
@@ -38,6 +39,7 @@ export const fetchCreatePokemon = (pokemon) => {
       };
       const { data } = await axiosInstance(options);
       dispatch(fetchCreatePokemonSuccess(data));
+      showToast('success', 'Pokémon Creado');
     } catch (error) {
       dispatch(fetchCreatePokemonError(error));
       setTimeout(() => {
