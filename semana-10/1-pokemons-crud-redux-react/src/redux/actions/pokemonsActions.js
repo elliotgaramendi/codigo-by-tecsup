@@ -6,7 +6,10 @@ import {
   FETCH_CREATE_POKEMON_SUCCESS,
   FETCH_READ_POKEMONS_ERROR,
   FETCH_READ_POKEMONS_REQUEST,
-  FETCH_READ_POKEMONS_SUCCESS
+  FETCH_READ_POKEMONS_SUCCESS,
+  FETCH_READ_POKEMON_ERROR,
+  FETCH_READ_POKEMON_REQUEST,
+  FETCH_READ_POKEMON_SUCCESS
 } from "../types/pokemonsTypes";
 
 const fetchCreatePokemonRequest = (loading) => ({
@@ -42,7 +45,7 @@ export const fetchCreatePokemon = (pokemon) => {
       };
       const { data } = await axiosInstance(options);
       dispatch(fetchCreatePokemonSuccess(data));
-      showToast('success', 'Pokémon Creado');
+      showToast('success', 'Pokémon creado');
     } catch (error) {
       dispatch(fetchCreatePokemonError(error));
       setTimeout(() => {
@@ -81,6 +84,41 @@ export const fetchReadPokemons = () => {
       dispatch(fetchReadPokemonsError(error));
       setTimeout(() => {
         dispatch(fetchReadPokemonsError({}));
+      }, 5000);
+    }
+  });
+};
+
+const fetchReadPokemonRequest = (loading) => ({
+  type: FETCH_READ_POKEMON_REQUEST,
+  payload: loading
+});
+
+const fetchReadPokemonSuccess = (pokemon) => ({
+  type: FETCH_READ_POKEMON_SUCCESS,
+  payload: pokemon
+});
+
+const fetchReadPokemonError = (error) => ({
+  type: FETCH_READ_POKEMON_ERROR,
+  payload: error
+});
+
+export const fetchReadPokemon = (_id) => {
+  return (async (dispatch) => {
+    dispatch(fetchReadPokemonRequest(true));
+    try {
+      const options = {
+        method: 'GET',
+        url: `/pokemons/${_id}`
+      };
+      const { data } = await axiosInstance(options);
+      dispatch(fetchReadPokemonSuccess(data));
+      showToast('info', 'Pokémon leído');
+    } catch (error) {
+      dispatch(fetchReadPokemonError(error));
+      setTimeout(() => {
+        dispatch(fetchReadPokemonError({}));
       }, 5000);
     }
   });
