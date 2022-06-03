@@ -1,23 +1,36 @@
 import * as yup from 'yup';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { fetchCreatePokemon } from '../../redux/actions/pokemonsActions';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 const PokemonsForm = () => {
+  const { id } = useParams();
   const navigate = useNavigate();
+
+  const { pokemon } = useSelector(state => state);
   const dispatch = useDispatch();
+
+  const [formPokemon, setFormPokemon] = useState({
+    name: '',
+    type: '',
+    hp: '',
+    attack: '',
+    special: '',
+    image: {}
+  });
+
+  useEffect(() => {
+    if (id && pokemon._id) {
+      setFormPokemon(pokemon);
+    }
+  }, [id, pokemon]);
 
   return (
     <Formik
-      initialValues={{
-        name: '',
-        type: '',
-        hp: '',
-        attack: '',
-        special: '',
-        image: {}
-      }}
+      initialValues={formPokemon}
+      enableReinitialize
       validationSchema={yup.object({
         name: yup.string().required('El nombre es requerido'),
         type: yup.string().required('El tipo es requerido'),
