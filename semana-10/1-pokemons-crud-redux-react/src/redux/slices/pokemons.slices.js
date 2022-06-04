@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import axiosInstance from "../../configs/axiosInstance";
 import { showError } from "../../utils/myAlert";
 import { showToast } from "../../utils/sweetalert";
+import { showAlert } from "./alerts.slices";
 
 const initialState = {
   loading: false,
@@ -177,10 +178,10 @@ export const fetchReadPokemons = () => {
       };
       const { data } = await axiosInstance(options);
       dispatch(fetchReadPokemonsSuccess(data));
-      // dispatch(showAlert({
-      //   name: "Pokémons",
-      //   message: "Pokémons leídos"
-      // }));
+      dispatch(showAlert({
+        name: "Pokémons",
+        message: "Pokémons leídos"
+      }));
     } catch (error) {
       dispatch(showError(error, fetchReadPokemonsError));
     }

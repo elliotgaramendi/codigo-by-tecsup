@@ -1,15 +1,15 @@
 import { useSelector } from "react-redux";
 import PokemonsCard from "../../components/pokemons/PokemonsCard";
-// import Alert from "../../components/sections/Alert";
+import Alert from "../../components/sections/Alert";
 
 const PokemonsRead = () => {
   const { pokemons } = useSelector(state => state.pokemons);
-  // const { alert } = useSelector(state => state.alerts);
+  const { alert } = useSelector(state => state.alerts);
 
   return (
     <section className="py-8">
       <div className="flex flex-col gap-8 container mx-auto px-8 md:px-4">
-        {/* {alert.message && <Alert alert={alert} />} */}
+        {alert.message && <Alert alert={alert} />}
         <h2 className="text-yellow-400 text-3xl text-center font-bold">{pokemons.length ? `Pokémons (${pokemons.length})` : 'No hay Pokémons registrados'}</h2>
         <div className="grid justify-items-center gap-8 md:grid-cols-3">
           {
