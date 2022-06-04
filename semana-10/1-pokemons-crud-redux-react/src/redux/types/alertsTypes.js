@@ -1,1 +1,1 @@
-const ADD_ALERT = 'ADD_ALERT';
+export const ADD_ALERT = 'ADD_ALERT';
