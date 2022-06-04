@@ -1,18 +1,17 @@
-import { useParams } from "react-router-dom";
-import { useEffect } from "react";
+// import { useParams } from "react-router-dom";
+// import { useEffect } from "react";
 import PokemonsForm from "../../components/pokemons/PokemonsForm";
-import { useDispatch } from "react-redux";
-import { fetchReadPokemon } from "../../redux/actions/pokemonsActions";
+// import { useDispatch } from "react-redux";
 
 const PokemonsUpdate = () => {
-  const { id } = useParams();
+  // const { id } = useParams();
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(fetchReadPokemon(id));
-    // eslint-disable-next-line
-  }, [id]);
+  // useEffect(() => {
+  //   dispatch(fetchReadPokemon(id));
+  //   // eslint-disable-next-line
+  // }, [id]);
 
   return (
     <section className="py-8">

@@ -38,7 +38,7 @@ const pokemonsSlices = createSlice({
   }
 });
 
-export const {
+const {
   fetchCreatePokemonRequest,
   fetchCreatePokemonSuccess,
   fetchCreatePokemonError
