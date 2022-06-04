@@ -9,7 +9,7 @@ const PokemonsForm = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const { pokemon } = useSelector(state => state);
+  const { pokemon } = useSelector(state => state.pokemons);
   const dispatch = useDispatch();
 
   const [formPokemon, setFormPokemon] = useState({

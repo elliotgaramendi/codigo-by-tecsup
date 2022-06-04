@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import PokemonsCard from "../../components/pokemons/PokemonsCard";
 
 const PokemonsRead = () => {
-  const { pokemons } = useSelector(state => state);
+  const { pokemons } = useSelector(state => state.pokemons);
 
   return (
     <section className="py-8">

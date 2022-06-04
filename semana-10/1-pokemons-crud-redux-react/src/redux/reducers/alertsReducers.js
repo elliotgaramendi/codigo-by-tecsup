@@ -12,7 +12,7 @@ const alertsReducers = (state = initialState, action) => {
         alert: action.payload
       };
     default:
-      break;
+      return state;
   }
 };
 

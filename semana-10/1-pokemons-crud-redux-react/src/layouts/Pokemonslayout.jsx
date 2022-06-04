@@ -7,7 +7,7 @@ import Loader from "../components/sections/Loader";
 import { fetchReadPokemons } from "../redux/actions/pokemonsActions";
 
 const PokemonsLayout = () => {
-  const { loading, error } = useSelector(state => state);
+  const { loading, error } = useSelector(state => state.pokemons);
   const dispatch = useDispatch();
 
   const applicationName = "PokémonsCRUD";
