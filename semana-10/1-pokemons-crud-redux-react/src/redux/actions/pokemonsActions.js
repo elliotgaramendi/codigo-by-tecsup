@@ -18,7 +18,7 @@ import {
   FETCH_UPDATE_POKEMON_REQUEST,
   FETCH_UPDATE_POKEMON_SUCCESS
 } from "../types/pokemonsTypes";
-import { addAlert } from "./alertsActions";
+import { addAlert, resetAlert } from "./alertsActions";
 
 const fetchCreatePokemonRequest = (loading) => ({
   type: FETCH_CREATE_POKEMON_REQUEST,
@@ -90,7 +90,7 @@ export const fetchReadPokemons = () => {
         message: 'Pokémons leídos'
       }));
       setTimeout(() => {
-        dispatch(addAlert({}));
+        dispatch(resetAlert({}));
       }, 5000);
     } catch (error) {
       dispatch(showError(error, fetchReadPokemonsError));
