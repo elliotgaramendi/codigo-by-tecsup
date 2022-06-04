@@ -1,4 +1,5 @@
 import axiosInstance from "../../configs/axiosInstance";
+import { showError } from "../../utils/myAlert";
 import { showToast } from "../../utils/sweetalert";
 import {
   FETCH_CREATE_POKEMON_ERROR,
@@ -53,10 +54,7 @@ const fetchCreatePokemon = (pokemon) => {
       dispatch(fetchCreatePokemonSuccess(data));
       showToast('success', 'Pokémon creado');
     } catch (error) {
-      dispatch(fetchCreatePokemonError(error));
-      setTimeout(() => {
-        dispatch(fetchCreatePokemonError({}));
-      }, 5000);
+      dispatch(showError(error, fetchCreatePokemonError));
     }
   });
 };
@@ -87,10 +85,7 @@ export const fetchReadPokemons = () => {
       const { data } = await axiosInstance(options);
       dispatch(fetchReadPokemonsSuccess(data));
     } catch (error) {
-      dispatch(fetchReadPokemonsError(error));
-      setTimeout(() => {
-        dispatch(fetchReadPokemonsError({}));
-      }, 5000);
+      dispatch(showError(error, fetchReadPokemonsError));
     }
   });
 };
@@ -122,10 +117,7 @@ export const fetchReadPokemon = (_id) => {
       dispatch(fetchReadPokemonSuccess(data));
       showToast('info', 'Pokémon leído');
     } catch (error) {
-      dispatch(fetchReadPokemonError(error));
-      setTimeout(() => {
-        dispatch(fetchReadPokemonError({}));
-      }, 5000);
+      dispatch(showError(error, fetchReadPokemonError));
     }
   });
 };
@@ -165,10 +157,7 @@ const fetchUpdatePokemon = (pokemon) => {
       dispatch(fetchUpdatePokemonSuccess(data));
       showToast('warning', 'Pokémon actualizado');
     } catch (error) {
-      dispatch(fetchUpdatePokemonError(error));
-      setTimeout(() => {
-        dispatch(fetchUpdatePokemonError({}));
-      }, 5000);
+      dispatch(showError(error, fetchUpdatePokemonError));
     }
   });
 };
@@ -200,10 +189,7 @@ export const fetchDeletePokemon = (_id) => {
       dispatch(fetchDeletePokemonSuccess(_id));
       showToast('error', data.message);
     } catch (error) {
-      dispatch(fetchDeletePokemonError(error));
-      setTimeout(() => {
-        dispatch(fetchDeletePokemonError({}));
-      }, 5000);
+      dispatch(showError(error, fetchDeletePokemonError));
     }
   });
 };
