@@ -98,6 +98,28 @@ const pokemonsSlices = createSlice({
         loading: false,
         error: action.payload
       };
+    },
+    fetchDeletePokemonRequest(state, action) {
+      return {
+        ...state,
+        loading: action.payload
+      };
+    },
+    fetchDeletePokemonSuccess(state, action) {
+      return {
+        ...state,
+        loading: false,
+        error: {},
+        pokemon: {},
+        pokemons: state.pokemons.filter(pokemon => pokemon._id !== action.payload)
+      };
+    },
+    fetchDeletePokemonError(state, action) {
+      return {
+        ...state,
+        loading: false,
+        error: action.payload
+      };
     }
   }
 });
@@ -114,7 +136,10 @@ const {
   fetchReadPokemonSuccess,
   fetchUpdatePokemonError,
   fetchUpdatePokemonRequest,
-  fetchUpdatePokemonSuccess
+  fetchUpdatePokemonSuccess,
+  fetchDeletePokemonError,
+  fetchDeletePokemonRequest,
+  fetchDeletePokemonSuccess
 } = pokemonsSlices.actions;
 
 const fetchCreatePokemon = (pokemon) => {
@@ -200,6 +225,23 @@ const fetchUpdatePokemon = (pokemon) => {
       showToast('warning', 'Pokémon actualizado');
     } catch (error) {
       dispatch(showError(error, fetchUpdatePokemonError));
+    }
+  });
+};
+
+export const fetchDeletePokemon = (_id) => {
+  return (async (dispatch) => {
+    dispatch(fetchDeletePokemonRequest(true));
+    try {
+      const options = {
+        method: 'DELETE',
+        url: `/pokemons/${_id}`
+      };
+      const { data } = await axiosInstance(options);
+      dispatch(fetchDeletePokemonSuccess(_id));
+      showToast('error', data.message);
+    } catch (error) {
+      dispatch(showError(error, fetchDeletePokemonError));
     }
   });
 };
