@@ -18,7 +18,7 @@ import {
   FETCH_UPDATE_POKEMON_REQUEST,
   FETCH_UPDATE_POKEMON_SUCCESS
 } from "../types/pokemonsTypes";
-import { addAlert, resetAlert } from "./alertsActions";
+import { showAlert } from "./alertsActions";
 
 const fetchCreatePokemonRequest = (loading) => ({
   type: FETCH_CREATE_POKEMON_REQUEST,
@@ -85,13 +85,10 @@ export const fetchReadPokemons = () => {
       };
       const { data } = await axiosInstance(options);
       dispatch(fetchReadPokemonsSuccess(data));
-      dispatch(addAlert({
+      dispatch(showAlert({
         name: 'Pokémons',
         message: 'Pokémons leídos'
       }));
-      setTimeout(() => {
-        dispatch(resetAlert({}));
-      }, 5000);
     } catch (error) {
       dispatch(showError(error, fetchReadPokemonsError));
     }
