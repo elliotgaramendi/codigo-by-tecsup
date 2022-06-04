@@ -1,7 +1,45 @@
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+import { fetchDeletePokemon } from "../../redux/actions/pokemonsActions";
 
 const PokemonsCard = ({ pokemon }) => {
+  const dispatch = useDispatch();
   const { _id, name, type, hp, attack, special, image } = pokemon;
+
+  const handleDelete = () => {
+    Swal.fire({
+      title: '¿Está seguro?',
+      text: "¡No podrás revertir esto!",
+      icon: 'warning',
+      background: '#20232a',
+      color: '#fff',
+      showCancelButton: true,
+      confirmButtonColor: '#61dafb80',
+      cancelButtonColor: '#dc143c',
+      confirmButtonText: '¡Sí, elimínalo!',
+      cancelButtonText: '¡No, cancélalo!',
+      reverseButtons: true,
+      timer: 5000
+    }).then((result) => {
+      if (result.isConfirmed) {
+        dispatch(fetchDeletePokemon(_id));
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        Swal.fire(
+          {
+            title: 'Cancelado',
+            text: 'Tu registro está seguro',
+            icon: 'error',
+            background: '#20232a',
+            color: '#fff',
+            confirmButtonColor: '#61dafb80',
+            confirmButtonText: 'Cerrar',
+            timer: 2500
+          }
+        );
+      }
+    });
+  };
 
   return (
     <div
@@ -25,6 +63,7 @@ const PokemonsCard = ({ pokemon }) => {
         </Link>
         <button
           className="bg-rose-500 rounded-md text-white font-medium px-3 py-1 transition-colors hover:bg-rose-600"
+          onClick={() => handleDelete(_id)}
         >
           Eliminar
         </button>
