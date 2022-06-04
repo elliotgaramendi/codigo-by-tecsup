@@ -4,6 +4,9 @@ import {
   FETCH_CREATE_POKEMON_ERROR,
   FETCH_CREATE_POKEMON_REQUEST,
   FETCH_CREATE_POKEMON_SUCCESS,
+  FETCH_DELETE_POKEMON_ERROR,
+  FETCH_DELETE_POKEMON_REQUEST,
+  FETCH_DELETE_POKEMON_SUCCESS,
   FETCH_READ_POKEMONS_ERROR,
   FETCH_READ_POKEMONS_REQUEST,
   FETCH_READ_POKEMONS_SUCCESS,
@@ -165,6 +168,41 @@ const fetchUpdatePokemon = (pokemon) => {
       dispatch(fetchUpdatePokemonError(error));
       setTimeout(() => {
         dispatch(fetchUpdatePokemonError({}));
+      }, 5000);
+    }
+  });
+};
+
+const fetchDeletePokemonRequest = (loading) => ({
+  type: FETCH_DELETE_POKEMON_REQUEST,
+  payload: loading
+});
+
+const fetchDeletePokemonSuccess = (_id) => ({
+  type: FETCH_DELETE_POKEMON_SUCCESS,
+  payload: _id
+});
+
+const fetchDeletePokemonError = (error) => ({
+  type: FETCH_DELETE_POKEMON_ERROR,
+  payload: error
+});
+
+export const fetchDeletePokemon = (_id) => {
+  return (async (dispatch) => {
+    dispatch(fetchDeletePokemonRequest(true));
+    try {
+      const options = {
+        method: 'DELETE',
+        url: `/pokemons/${_id}`
+      };
+      const { data } = await axiosInstance(options);
+      dispatch(fetchDeletePokemonSuccess(_id));
+      showToast('error', data.message);
+    } catch (error) {
+      dispatch(fetchDeletePokemonError(error));
+      setTimeout(() => {
+        dispatch(fetchDeletePokemonError({}));
       }, 5000);
     }
   });
