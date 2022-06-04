@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
 import Alert from "../components/sections/Alert";
+import Footer from "../components/sections/Footer";
 import Header from "../components/sections/Header";
 import Loader from "../components/sections/Loader";
 import { fetchReadPokemons } from "../redux/actions/pokemonsActions";
@@ -11,6 +12,11 @@ const PokemonsLayout = () => {
   const dispatch = useDispatch();
 
   const applicationName = "PokémonsCRUD";
+
+  const credits = {
+    year: new Date().getFullYear(),
+    author: 'ELGS'
+  };
 
   useEffect(() => {
     dispatch(fetchReadPokemons());
@@ -27,9 +33,9 @@ const PokemonsLayout = () => {
       <main className="pt-16 pb-8">
         <Outlet />
       </main>
-      <footer className="mt-auto text-center">
-        ELGS
-      </footer>
+      <Footer
+        credits={credits}
+      />
     </>
   );
 };
