@@ -76,6 +76,28 @@ const pokemonsSlices = createSlice({
         loading: false,
         error: action.payload
       };
+    },
+    fetchUpdatePokemonRequest(state, action) {
+      return {
+        ...state,
+        loading: action.payload
+      };
+    },
+    fetchUpdatePokemonSuccess(state, action) {
+      return {
+        ...state,
+        loading: false,
+        error: {},
+        pokemon: {},
+        pokemons: state.pokemons.map(pokemon => pokemon._id === action.payload._id ? action.payload : pokemon)
+      };
+    },
+    fetchUpdatePokemonError(state, action) {
+      return {
+        ...state,
+        loading: false,
+        error: action.payload
+      };
     }
   }
 });
@@ -89,10 +111,13 @@ const {
   fetchReadPokemonsSuccess,
   fetchReadPokemonError,
   fetchReadPokemonRequest,
-  fetchReadPokemonSuccess
+  fetchReadPokemonSuccess,
+  fetchUpdatePokemonError,
+  fetchUpdatePokemonRequest,
+  fetchUpdatePokemonSuccess
 } = pokemonsSlices.actions;
 
-export const fetchCreatePokemon = (pokemon) => {
+const fetchCreatePokemon = (pokemon) => {
   return (async (dispatch) => {
     dispatch(fetchCreatePokemonRequest(true));
     try {
@@ -150,6 +175,41 @@ export const fetchReadPokemon = (_id) => {
       showToast('info', 'Leído');
     } catch (error) {
       dispatch(showError(error, fetchReadPokemonError));
+    }
+  });
+};
+
+const fetchUpdatePokemon = (pokemon) => {
+  return (async (dispatch) => {
+    dispatch(fetchUpdatePokemonRequest(true));
+    try {
+      const form = new FormData();
+      for (const key in pokemon) {
+        form.append(key, pokemon[key]);
+      }
+      const options = {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        },
+        data: form,
+        url: `/pokemons/${pokemon._id}`
+      };
+      const { data } = await axiosInstance(options);
+      dispatch(fetchUpdatePokemonSuccess(data));
+      showToast('warning', 'Pokémon actualizado');
+    } catch (error) {
+      dispatch(showError(error, fetchUpdatePokemonError));
+    }
+  });
+};
+
+export const fetchSubmitPokemonsForm = (pokemon) => {
+  return (async (dispatch) => {
+    if (pokemon._id === undefined) {
+      await dispatch(fetchCreatePokemon(pokemon));
+    } else {
+      await dispatch(fetchUpdatePokemon(pokemon));
     }
   });
 };
