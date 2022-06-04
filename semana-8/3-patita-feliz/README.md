@@ -1,6 +1,6 @@
 # [Patita Feliz R](https://patita-feliz-r.netlify.app) | [<img src="https://i.postimg.cc/dtPYcvbM/youtube.png" alt="YouTube" height="20px"/>](https://www.youtube.com/channel/UCE9whBrtYnLWrpzwk6z_JUA) | [<img src="https://i.postimg.cc/5NBMxTJX/github.png" alt="GitHub" height="20px"/>](https://github.com/ElliotXLeo) | [<img src="https://i.postimg.cc/J7BLFtdc/linkedin.png" alt="Linkedin" height="20px"/>](https://www.linkedin.com/in/elliotgaramendi/) | [<img src="https://i.postimg.cc/sfJtqS4W/instagram.png" alt="Instagram" height="20px"/>](https://www.instagram.com/elliotgaramendi/) | [<img src="https://i.postimg.cc/7YHyZXZX/facebook.png" alt="Facebook" height="20px"/>](https://www.facebook.com/elliotgaramendi) | [<img src="https://i.postimg.cc/65TVxg9t/world-globe.png" alt="Portafolio Web" height="20px"/>](https://elliotxleo.github.io/portafolio-web-elgs/)
 
-[![Patita Feliz R](https://i.postimg.cc/gJtMnC05/patita-feliz-r.png)](https://patita-feliz-r.netlify.app)
+[![Patita Feliz R](https://i.postimg.cc/gJtMnC05/patita-feliz-react.png)](https://patita-feliz-r.netlify.app)
 
 ## 📜 Resumen 📜
 Aplicación web donde puedes administrar citas mediante un CRUD y podrás confirmarlas.
