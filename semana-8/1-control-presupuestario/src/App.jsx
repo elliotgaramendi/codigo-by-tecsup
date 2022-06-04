@@ -48,7 +48,7 @@ function App() {
                 budgetForm ?
                   (
                     <div className="budget__budget-card">
-                      <h2 className="budget__title">💰 Presupuesto 💰</h2>
+                      <h2 className="budget__title" data-testid="titulo">💰 Presupuesto 💰</h2>
                       <BudgetForm
                         setBudget={setBudget}
                         setRemaining={setRemaining}
