@@ -55,6 +55,27 @@ const pokemonsSlices = createSlice({
         loading: false,
         error: action.payload
       };
+    },
+    fetchReadPokemonRequest(state, action) {
+      return {
+        ...state,
+        loading: action.payload
+      };
+    },
+    fetchReadPokemonSuccess(state, action) {
+      return {
+        ...state,
+        loading: false,
+        error: {},
+        pokemon: action.payload
+      };
+    },
+    fetchReadPokemonError(state, action) {
+      return {
+        ...state,
+        loading: false,
+        error: action.payload
+      };
     }
   }
 });
@@ -65,7 +86,10 @@ const {
   fetchCreatePokemonSuccess,
   fetchReadPokemonsError,
   fetchReadPokemonsRequest,
-  fetchReadPokemonsSuccess
+  fetchReadPokemonsSuccess,
+  fetchReadPokemonError,
+  fetchReadPokemonRequest,
+  fetchReadPokemonSuccess
 } = pokemonsSlices.actions;
 
 export const fetchCreatePokemon = (pokemon) => {
@@ -109,6 +133,23 @@ export const fetchReadPokemons = () => {
       // }));
     } catch (error) {
       dispatch(showError(error, fetchReadPokemonsError));
+    }
+  });
+};
+
+export const fetchReadPokemon = (_id) => {
+  return (async (dispatch) => {
+    dispatch(fetchReadPokemonRequest(true));
+    try {
+      const options = {
+        method: 'GET',
+        url: `/pokemons/${_id}`
+      };
+      const { data } = await axiosInstance(options);
+      dispatch(fetchReadPokemonSuccess(data));
+      showToast('info', 'Leído');
+    } catch (error) {
+      dispatch(showError(error, fetchReadPokemonError));
     }
   });
 };
