@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axiosInstance from "../../configs/axiosInstance";
 import { showError } from "../../utils/myAlert";
+import { showToast } from "../../utils/sweetalert";
 
 const initialState = {
   loading: false,
@@ -13,13 +14,13 @@ const pokemonsSlices = createSlice({
   name: 'pokemons',
   initialState,
   reducers: {
-    fetchReadPokemonsRequest(state, action) {
+    fetchCreatePokemonRequest(state, action) {
       return {
         ...state,
         loading: action.payload
       };
     },
-    fetchReadPokemonsSuccess(state, action) {
+    fetchCreatePokemonSuccess(state, action) {
       return {
         ...state,
         loading: false,
@@ -27,7 +28,7 @@ const pokemonsSlices = createSlice({
         pokemons: [...state.pokemons, action.payload]
       };
     },
-    fetchReadPokemonsError(state, action) {
+    fetchCreatePokemonError(state, action) {
       return {
         ...state,
         loading: false,
@@ -38,27 +39,32 @@ const pokemonsSlices = createSlice({
 });
 
 export const {
-  fetchReadPokemonsError,
-  fetchReadPokemonsRequest,
-  fetchReadPokemonsSuccess
+  fetchCreatePokemonRequest,
+  fetchCreatePokemonSuccess,
+  fetchCreatePokemonError
 } = pokemonsSlices.actions;
 
-export const fetchReadPokemons = () => {
+export const fetchCreatePokemon = (pokemon) => {
   return (async (dispatch) => {
-    dispatch(fetchReadPokemonsRequest(true));
+    dispatch(fetchCreatePokemonRequest(true));
     try {
+      const form = new FormData();
+      for (const key in pokemon) {
+        form.append(key, pokemon[key]);
+      }
       const options = {
-        method: 'GET',
+        method: 'POST',
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        },
+        data: form,
         url: `/pokemons`
       };
       const { data } = await axiosInstance(options);
-      dispatch(fetchReadPokemonsSuccess(data));
-      // dispatch(showAlert({
-      //   name: 'Pokémons',
-      //   message: 'Pokémons leídos'
-      // }));
+      dispatch(fetchCreatePokemonSuccess(data));
+      showToast('success', 'Pokémon creado');
     } catch (error) {
-      dispatch(showError(error, fetchReadPokemonsError));
+      dispatch(showError(error, fetchCreatePokemonError));
     }
   });
 };
