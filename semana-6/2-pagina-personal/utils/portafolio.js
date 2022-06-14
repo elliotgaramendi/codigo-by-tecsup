@@ -600,8 +600,8 @@ export const projects = [
     "technologies": "HTML, CSS, JavaScript",
     "about": "Bootcamp de Desarrollo Web Frontend donde se aprenderá temas como git, lógica de programación, HTML, CSS, JS, Bootstrap, Sass, Node, React, Firebase, Redux y Testing.",
     "image": "https://i.postimg.cc/kg2k7v3P/lp-b2-w-4b-elgs.png",
-    "urlDemo": "https://elliotxleo.github.io/bootcamp-frontend-t-g-15/",
-    "urlCode": "https://github.com/ElliotXLeo/bootcamp-frontend-t-g-15",
+    "urlDemo": "https://elliotxleo.github.io/bootcamp-frontend-t-g15/",
+    "urlCode": "https://github.com/ElliotXLeo/bootcamp-frontend-t-g15",
     "main": 0
   },
   {

@@ -14,20 +14,20 @@ const card = async () => {
 
   // const inicio = performance.now();
   // const data1 = await fetchApi('https://pokeapi.co/api/v2/pokemon/151', 'GET');
-  // const data2 = await fetchApi('https://raw.githubusercontent.com/ElliotXLeo/bootcamp-frontend-t-g-15/develop/semana-7/4-apimones-card-js/json/pokeapi-api-v2-pokemon-151.json', 'GET');
+  // const data2 = await fetchApi('https://raw.githubusercontent.com/ElliotXLeo/bootcamp-frontend-t-g15/develop/semana-7/4-apimones-card-js/json/pokeapi-api-v2-pokemon-151.json', 'GET');
   // console.log(data1);
   // console.log(data2);
   // const final = performance.now();
   // console.log(`Tiempo de ejecución: ${final - inicio}ms`);
 
   // const inicio = performance.now();
-  // const [localData, remotedata] = await fetchApi('https://raw.githubusercontent.com/ElliotXLeo/bootcamp-frontend-t-g-15/develop/semana-7/4-apimones-card-js/json/pokeapi-api-v2-pokemon-151.json', 'https://pokeapi.co/api/v2/pokemon/151');
+  // const [localData, remotedata] = await fetchApi('https://raw.githubusercontent.com/ElliotXLeo/bootcamp-frontend-t-g15/develop/semana-7/4-apimones-card-js/json/pokeapi-api-v2-pokemon-151.json', 'https://pokeapi.co/api/v2/pokemon/151');
   // console.log(localData);
   // console.log(remotedata);
   // const final = performance.now();
   // console.log(`Tiempo de ejecución: ${final - inicio}ms`);
 
-  const [localData, remotedata] = await fetchApi('https://raw.githubusercontent.com/ElliotXLeo/bootcamp-frontend-t-g-15/develop/semana-7/4-apimones-card-js/json/pokeapi-api-v2-pokemon-151.json', 'https://pokeapi.co/api/v2/pokemon/151');
+  const [localData, remotedata] = await fetchApi('https://raw.githubusercontent.com/ElliotXLeo/bootcamp-frontend-t-g15/develop/semana-7/4-apimones-card-js/json/pokeapi-api-v2-pokemon-151.json', 'https://pokeapi.co/api/v2/pokemon/151');
   renderPokemon(pokemonLocal, localData);
   renderPokemon(pokemonRemote, remotedata);
 
