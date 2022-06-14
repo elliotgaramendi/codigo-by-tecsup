@@ -1,0 +1,140 @@
+@import 'animations';
+@import 'mixins';
+
+.profile {
+  position: relative;
+  @include d-flex-fd-ai-jc-g(column, center, center);
+  background-image: url(https://i.postimg.cc/brSKyMR4/react-01-01.png);
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  overflow: hidden;
+
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 6rem;
+    background-image: linear-gradient(transparent, var(--primary-theme-color));
+  }
+
+  &__container {
+    display: grid;
+
+    gap: 2rem;
+    max-width: var(--max-width-container);
+    margin: auto;
+    padding: var(--padding-container);
+
+    @include desktop() {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__info {
+    @include d-flex-fd-ai-jc-g(column, stretch, center, 1rem);
+    background-color: var(--secondary-shadow-color);
+    border-radius: var(--border-radius);
+    box-shadow:
+      0 0 0 0.125rem var(--primary-shadow-color),
+      0 0 0 0.25rem var(--primary-shadow-color);
+    padding: 1rem;
+    text-align: center;
+    transition: var(--all-transitions);
+
+    &:hover {
+      box-shadow:
+        0 0 0 0.25rem var(--primary-highlight-color),
+        0 0 0.5rem 0 var(--secondary-highlight-color),
+        0 0 0.75rem 0 var(--secondary-highlight-color);
+    }
+
+    @include desktop() {
+      gap: 1.25rem;
+      padding: 2rem;
+      text-align: start;
+    }
+  }
+
+  &__info-title {
+    font-size: 1.125rem;
+    margin: 0;
+  }
+
+  &__info-subtitle {
+    font-size: 1.25rem;
+    margin: 0;
+  }
+
+  &__info-description {
+    display: none;
+
+    @include desktop() {
+      display: flex;
+      margin: 0;
+    }
+  }
+
+  &__info-link-container {
+    @include d-flex-fd-ai-jc-g(row, center, center, 1rem);
+
+    @include desktop() {
+      justify-content: start;
+    }
+  }
+
+  &__info-link {
+    text-decoration: none;
+    @include button(0.5rem 1.5rem, 700, var(--border-radius));
+  }
+
+  &__figure {
+    @include d-flex-fd-ai-jc-g(column, center, center);
+  }
+
+  &__figure-image-container {
+    position: relative;
+    display: flex;
+    max-width: 256px;
+    margin: 0;
+
+    @include desktop() {
+      max-width: 360px;
+    }
+  }
+
+  &__figure-image {
+    border-radius: 50%;
+    width: 100%;
+    transition: var(--all-transitions);
+
+    &:hover {
+      box-shadow:
+        0 0 0.25rem 0 var(--primary-highlight-color),
+        0 0 0.5rem 0 var(--primary-highlight-color);
+    }
+  }
+
+  &__figure-tech-one {
+    @include decorator(100%, 50%, 25%);
+    animation-delay: -1s;
+  }
+
+  &__figure-tech-two {
+    @include decorator(50%, 0, 25%);
+    animation-delay: -0.75s;
+  }
+
+  &__figure-tech-three {
+    @include decorator(50%, 100%, 25%);
+    animation-delay: -0.5s;
+  }
+
+  &__figure-tech-four {
+    @include decorator(0, 50%, 25%);
+    animation-delay: -0.25s;
+  }
+}

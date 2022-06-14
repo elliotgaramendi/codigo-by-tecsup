@@ -1,0 +1,113 @@
+.learning-weeks {
+  padding: var(--padding-section);
+}
+
+.learning-weeks__container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: var(--max-width-container);
+  margin: auto;
+  padding: var(--padding-container);
+}
+
+.learning-weeks__title {
+  text-align: center;
+  text-shadow:
+    0 0 0.125rem var(--primary-highlight),
+    0 0 0.25rem var(--primary-highlight),
+    0 0 0.375rem var(--primary-highlight),
+    0 0 0.5rem var(--primary-highlight);
+  margin: 0;
+}
+
+.learning-weeks__slider-container {
+  position: relative;
+  box-shadow:
+    0 0 0 0.125rem var(--primary-shadow-color),
+    0 0 0 0.25rem var(--primary-shadow-color);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  transition: var(--all-transitions);
+}
+
+.learning-weeks__slider-container:hover {
+  box-shadow:
+    0 0 0 0.125rem var(--primary-highlight),
+    0 0 0 0.25rem var(--primary-highlight),
+    0 0 0.5rem 0 var(--secondary-highlight),
+    0 0 0.75rem 0 var(--secondary-highlight);
+  border-radius: var(--border-radius);
+}
+
+.learning-weeks__slider-list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.learning-weeks__slider-item {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.learning-weeks__slider-item-image {
+  width: 100%;
+}
+
+.learning-weeks__slider-item-title {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  width: 80%;
+  transform: translate(-50%, -50%);
+  font-size: 0.875rem;
+  text-align: center;
+  text-shadow:
+    0 0 0.125rem var(--primary-highlight),
+    0 0 0.25rem var(--primary-highlight);
+  text-decoration: none;
+  color: var(--text-color);
+  background-color: var(--secondary-shadow-color);
+  border-radius: var(--border-radius);
+  padding: 0.5em;
+}
+
+.learning-weeks__slider-button {
+  position: absolute;
+  top: 50%;
+  width: 2rem;
+  height: 2rem;
+  transform: translateY(-50%);
+  background-color: var(--secondary-shadow-color);
+  border: none;
+  border-radius: 50%;
+  color: var(--text-color);
+  font-family: monospace;
+  font-size: 1.5rem;
+  font-weight: 800;
+  padding: 0;
+  cursor: pointer;
+  transition: var(--all-transitions);
+}
+
+.learning-weeks__slider-button:hover {
+  background-color: var(--button-color-active);
+  color: var(--button-text-color);
+}
+
+.learning-weeks__slider-button--left {
+  left: 1rem;
+}
+
+.learning-weeks__slider-button--right {
+  right: 1rem;
+}
+
+@media (min-width: 854px) {
+  .learning-weeks__slider-item-title {
+    font-size: 1.5rem;
+  }
+}

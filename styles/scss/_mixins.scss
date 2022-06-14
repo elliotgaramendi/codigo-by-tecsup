@@ -1,0 +1,50 @@
+@mixin container {
+  max-width: 1024px;
+  margin: auto;
+  padding: var(--padding-container);
+}
+
+@mixin d-flex-fd-ai-jc-g($flex-direction: row, $align-items: stretch, $justify-content: stretch, $gap: 0) {
+  display: flex;
+  flex-direction: $flex-direction;
+  align-items: $align-items;
+  justify-content: $justify-content;
+  gap: $gap;
+}
+
+@mixin d-grid-gtc-g($grid-template-columns: 1, $gap: 0) {
+  display: grid;
+  grid-template-columns: repeat($grid-template-columns, 1fr);
+  gap: $gap;
+}
+
+@mixin button($padding: 0.25em 1em, $font-weight: 700, $border-radius: 0.5rem) {
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+  padding: $padding;
+  font-weight: $font-weight;
+  border: 0.125rem solid var(--button-color);
+  border-radius: $border-radius;
+  transition: var(--all-transitions);
+
+  &--active,
+  &:hover {
+    background-color: var(--button-color-active);
+  }
+}
+
+@mixin decorator($top: 0, $left: 0, $width: 100%, $transform: translate(-50%, -50%)) {
+  display: flex;
+  position: absolute;
+  top: $top;
+  left: $left;
+  width: $width;
+  transform: $transform;
+  margin: 0;
+}
+
+@mixin desktop() {
+  @media (min-width: 854px) {
+    @content;
+  }
+}

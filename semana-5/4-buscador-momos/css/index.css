@@ -1,0 +1,411 @@
+@keyframes bubbleUp {
+  0% {
+    top: 100vh;
+    opacity: 0;
+  }
+
+  25% {
+    transform: translate(4rem, 0);
+  }
+
+  50% {
+    opacity: 0.75;
+  }
+
+  100% {
+    top: 0;
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+}
+
+:root {
+  scroll-behavior: smooth;
+  --primary-theme-color: #03718d;
+  --secondary-theme-color: #20f8ff;
+  --text-color: #fff;
+
+  --button-color: #03718d;
+  --button-color-active: #2a9d8f;
+  --button-text-color: #fff;
+
+  --primary-shadow-color: #8888;
+  --secondary-shadow-color: #21242c80;
+  --primary-highlight-color: #61dafb;
+  --secondary-highlight-color: #ffd700;
+  --invalid-color: #dc143c;
+  --padding-section: 4rem 0;
+  --padding-container: 0 2rem;
+  --max-width-container: 1024px;
+  --border-radius: 0.5rem;
+  --all-transitions: all 0.25s;
+}
+
+.body {
+  background: linear-gradient(to right, var(--primary-theme-color), var(--secondary-theme-color));
+  color: var(--text-color);
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+}
+
+.header {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.header-nav {
+  padding: 0.5em 0;
+}
+
+.header-nav__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--max-width-container);
+  margin: auto;
+  padding: var(--padding-container);
+}
+
+.header-nav__link-logo-container {
+  display: flex;
+  height: 3rem;
+}
+
+.header-nav__link-logo {
+  height: 100%;
+}
+
+.header-nav__menu-link-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transition: var(--all-transitions);
+}
+
+.header-nav__menu-link-item {
+  display: flex;
+}
+
+.header-nav__menu-link {
+  background-color: var(--button-color);
+  border-radius: var(--border-radius);
+  color: var(--button-text-color);
+  text-shadow: 0 0 0.125rem var(--primary-highlight-color);
+  font-weight: 700;
+  padding: 0.5em 1.5em;
+  text-decoration: none;
+  transition: var(--all-transitions);
+}
+
+.header-nav__menu-link:hover,
+.header-nav__menu-link--active {
+  background-color: var(--button-color-active);
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2.5rem;
+  background-image: linear-gradient(transparent, var(--primary-theme-color));
+}
+
+.hero__container {
+  display: grid;
+  gap: 2rem;
+  max-width: var(--max-width-container);
+  margin: auto;
+  padding: var(--padding-container);
+}
+
+.hero__info {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: var(--secondary-shadow-color);
+  border-radius: var(--border-radius);
+  box-shadow:
+    0 0 0 0.125rem var(--primary-shadow-color),
+    0 0 0 0.25rem var(--primary-shadow-color);
+  padding: 1rem;
+  text-align: center;
+  transition: var(--all-transitions);
+}
+
+.hero__info:hover {
+  box-shadow:
+    0 0 0 0.125rem var(--primary-highlight-color),
+    0 0 0 0.25rem var(--primary-highlight-color),
+    0 0 0.5rem 0 var(--secondary-highlight-color),
+    0 0 0.75rem 0 var(--secondary-highlight-color);
+}
+
+.hero__info-title {
+  font-size: 1.125rem;
+  margin: 0;
+}
+
+.hero__info-link {
+  align-self: center;
+  background-color: var(--button-color);
+  border-radius: var(--border-radius);
+  color: var(--button-text-color);
+  font-weight: 700;
+  text-shadow: 0 0 0.125rem var(--primary-highlight-color);
+  text-decoration: none;
+  padding: 0.5em 1.5em;
+  transition: var(--all-transitions);
+}
+
+.hero__info-link:hover,
+.hero__info-link--active {
+  background-color: var(--button-color-active);
+}
+
+.hero__figure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero__figure-image-container {
+  display: flex;
+  max-width: 256px;
+  margin: 0;
+}
+
+.hero__figure-image {
+  width: 100%;
+  transition: var(--all-transitions);
+}
+
+.hero__bubble-container {
+  background-color: transparent;
+}
+
+.hero__bubble {
+  position: absolute;
+  background-image: url("https://emojitool.com/img/apple/ios-13.3/face-with-tears-of-joy-1683.png");
+  background-size: cover;
+  animation: bubbleUp 3s linear infinite;
+}
+
+.hero__bubble:nth-child(1) {
+  width: 5rem;
+  height: 5rem;
+  left: 10%;
+  animation-delay: -3s;
+}
+
+.hero__bubble:nth-child(2) {
+  width: 7.5rem;
+  height: 7.5rem;
+  left: 20%;
+  animation-delay: -2.5s;
+}
+
+.hero__bubble:nth-child(3) {
+  width: 2.5rem;
+  height: 2.5rem;
+  left: 30;
+  animation-delay: -2s;
+}
+
+.hero__bubble:nth-child(4) {
+  width: 5rem;
+  height: 5rem;
+  left: 40%;
+  animation-delay: -1.5s;
+}
+
+.hero__bubble:nth-child(5) {
+  width: 7.5rem;
+  height: 7.5rem;
+  left: 50%;
+  animation-delay: -1s;
+}
+
+.hero__bubble:nth-child(6) {
+  width: 2.5rem;
+  height: 2.5rem;
+  left: 60%;
+  animation-delay: -0.5;
+}
+
+.hero__bubble:nth-child(7) {
+  width: 5rem;
+  height: 5rem;
+  left: 70%;
+  animation-delay: 0;
+}
+
+.hero__bubble:nth-child(8) {
+  width: 7.5rem;
+  height: 7.5rem;
+  left: 80%;
+  animation-delay: -0.5;
+}
+
+.hero__bubble:nth-child(9) {
+  width: 2.5rem;
+  height: 2.5rem;
+  left: 90%;
+  animation-delay: -1;
+}
+
+.main {
+  width: 100%;
+}
+
+.momazos {
+  position: relative;
+  background-image: url("https://fondosmil.com/fondo/57521.jpg");
+  background-size: cover;
+  min-height: 100vh;
+  padding: var(--padding-section);
+  box-sizing: border-box;
+}
+
+.momazos::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2.5rem;
+  background-image: linear-gradient(var(--primary-theme-color), transparent);
+}
+
+.momazos__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: var(--max-width-container);
+  margin: auto;
+  padding: var(--padding-container);
+}
+
+.momazos__title {
+  margin: 0;
+}
+
+.momazos__buscador {
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 0 0.125rem var(--primary-shadow-color), 0 0 0 0.25rem var(--primary-shadow-color);
+  /* background-color: transparent; */
+  padding: 0.75rem;
+  transition: var(--all-transitions);
+}
+
+.momazos__buscador:hover {
+  box-shadow:
+    0 0 0 0.25rem var(--primary-highlight-color),
+    0 0 0.5rem 0 var(--secondary-highlight-color),
+    0 0 0.75rem 0 var(--secondary-highlight-color);
+}
+
+.momazos__meme-container {
+  display: grid;
+  gap: 2rem;
+}
+
+.momazos__meme {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background-color: var(--secondary-shadow-color);
+  border-radius: var(--border-radius);
+  box-shadow:
+    0 0 0 0.125rem var(--primary-shadow-color),
+    0 0 0 0.25rem var(--primary-shadow-color);
+  overflow: hidden;
+  transition: var(--all-transitions);
+}
+
+.momazos__meme-image-container {
+  display: flex;
+  margin: 0;
+  overflow: hidden;
+}
+
+.momazos__meme-image {
+  width: 100%;
+  transition: var(--all-transitions);
+}
+
+.momazos__meme-image:hover {
+  transform: scale(1.15);
+}
+
+.momazos__meme-title {
+  font-size: 2rem;
+  text-align: center;
+  padding: 0 1rem;
+  margin: 0;
+}
+
+.momazos__meme-button {
+  align-self: center;
+  background-color: var(--button-color);
+  border-radius: var(--border-radius);
+  color: var(--button-text-color);
+  text-shadow: 0 0 0.125rem var(--primary-highlight-color);
+  font-weight: 700;
+  margin-top: auto;
+  margin-bottom: 1rem;
+  padding: 0.5em 1.5em;
+  text-decoration: none;
+  transition: var(--all-transitions);
+}
+
+.momazos__meme-button:hover {
+  background-color: var(--button-color-active);
+}
+
+@media (min-width: 854px) {
+  :root {
+    --padding-container: 0 0.75em;
+  }
+
+  .hero__container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero__info {
+    padding: 2rem;
+    text-align: start;
+  }
+
+  .hero__info-title {
+    font-size: 1.25rem;
+  }
+
+  .hero__figure-image-container {
+    max-width: 360px;
+  }
+
+  .momazos__meme-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

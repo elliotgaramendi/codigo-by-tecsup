@@ -1,0 +1,39 @@
+$theme-color: #fff;
+$text-color: #000;
+$highlight-color-1: #61dafb;
+$inverse-theme-color: #20232a;
+$inverse-text-color: #fff;
+$padding-container: 0 1rem + 1rem;
+
+@mixin texto-hero($ancho-texto: 400) {
+  font-weight: $ancho-texto;
+  letter-spacing: 0.1rem;
+  margin: 0;
+  text: {
+    align: center;
+    transform: uppercase;
+    shadow: 0.5rem 0.5rem 0.5rem $highlight-color-1, 1rem 1rem 1rem $highlight-color-1;
+  }
+}
+
+.hero {
+  background-color: $theme-color;
+  color: $text-color;
+  padding: $padding-container;
+}
+
+.hero {
+  &__title {
+    @include texto-hero($ancho-texto: 600);
+  }
+
+  &__paragraph {
+    @include texto-hero();
+  }
+}
+
+@media (min-width: 854px) {
+  .hero {
+    font-size: 2rem;
+  }
+}

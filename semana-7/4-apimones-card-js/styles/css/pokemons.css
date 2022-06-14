@@ -1,0 +1,34 @@
+.pokemons {
+  padding: var(--padding-section);
+}
+
+.pokemons__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: var(--max-width-container);
+  margin: auto;
+  padding: var(--padding-container);
+}
+
+.pokemons__title {
+  grid-area: pokemons-title;
+  text-align: center;
+  font-size: 2rem;
+  margin: 0;
+}
+
+@media (min-width: 854px) {
+  .pokemons__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      'pokemons-title pokemons-title'
+      'pokemon-local pokemon-remote';
+  }
+
+  .pokemons__title {
+    grid-area: pokemons-title;
+  }
+}

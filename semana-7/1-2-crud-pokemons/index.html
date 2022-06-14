@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRUD Pokémons</title>
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+</head>
+
+<body class="bg-dark bg-opacity-75 text-light d-flex flex-column justify-content-between" style="min-height: 100vh;">
+  <header class="fixed-top bg-dark text-center">
+    <h1 class="fs-4 m-0 p-2">CRUD Pokémons</h1>
+  </header>
+  <main class="pt-5 pb-3">
+    <section class="container">
+      <div class="row">
+        <section class="col-md-8">
+          <h3 class="text-center">Listado de Pokémons</h3>
+          <div class="table-responsive">
+            <table class="table table-dark table-striped table-hover align-middle">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Tipo</th>
+                  <th scope="col">Hp</th>
+                  <th scope="col">Ataque</th>
+                  <th scope="col">Especial</th>
+                  <th scope="col">Imagen</th>
+                  <th scope="col">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="tBodyPokemon"></tbody>
+            </table>
+          </div>
+        </section>
+        <section class="col-md-4">
+          <h3 class="text-center" id="formTitle">Crear Pokémon</h3>
+          <form class="bg-dark text-dark rounded p-4" id="formPokemon">
+            <div class="form-floating mb-3" style="display: none;">
+              <input type="number" class="form-control" name="id" placeholder="Id" id="formId" readonly />
+              <label for="id">Id</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" name="nombre" placeholder="Nombre" required />
+              <label for="nombre">Nombre</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" name="tipo" placeholder="Tipo" required />
+              <label for="tipo">Tipo</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="number" class="form-control" name="hp" placeholder="Hp" required />
+              <label for="hp">Hp</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" name="ataque" placeholder="Ataque" required />
+              <label for="ataque">Ataque</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" name="especial" placeholder="Especial" required />
+              <label for="especial">Especial</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" name="url-imagen" placeholder="Url Imagen" required />
+              <label for="url-imagen">Url Imagen</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100" id="formButton">Crear</button>
+          </form>
+          <div class="badge w-100" id="contenedorAlerta"></div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-dark text-light text-center p-2">
+    <h6 class="m-0">
+      Desarrollado por Elliot Garamendi
+    </h6>
+  </footer>
+
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="./js/index.js" type="module"></script>
+</body>
+
+</html>

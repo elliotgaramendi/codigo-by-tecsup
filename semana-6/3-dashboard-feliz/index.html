@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Feliz</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="./css/index.css" />
+</head>
+
+<body class="body">
+  <header class="header">
+    <div class="header__container">
+      <h1 class="header__title-logo">Dashboard Feliz</h1>
+      <p class="header__slogan">Los mejores</p>
+    </div>
+  </header>
+  <main class="main">
+    <section class="dashboards">
+      <div class="dashboards__container">
+        <h2 class="dashboards__title">Gráficos</h2>
+        <section class="dashboard-models">
+          <div class="dashboard-models__container">
+            <h2 class="dashboard-models__title">Modelos</h2>
+            <canvas id="dashboardModelsChart" class="dashboard-models__chart"></canvas>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"
+    integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="./js/index.js" type="module"></script>
+</body>
+
+</html>

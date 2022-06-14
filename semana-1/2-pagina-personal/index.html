@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Elliot Garamendi Desarrollador de tus sueños</title>
+  <meta name="title" content="Elliot Garamendi Desarrollador de tus sueños" />
+  <meta name="description"
+    content="Web Personal Responsiva donde el profesional detalla lo más relevante de su carrera." />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://elliotxleo.github.io/bootcamp-frontend-t/semana-1/2-pagina-personal/" />
+  <meta property="og:title" content="Elliot Garamendi Desarrollador de tus sueños" />
+  <meta property="og:description"
+    content="Web Personal Responsiva donde el profesional detalla lo más relevante de su carrera." />
+  <meta property="og:image"
+    content="https://elliotxleo.github.io/bootcamp-frontend-t-g15/semana-1/2-pagina-personal/img/portada-elliot-garamendi.png" />
+
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://elliotxleo.github.io/bootcamp-frontend-t/semana-1/2-pagina-personal/" />
+  <meta property="twitter:title" content="Elliot Garamendi Desarrollador de tus sueños" />
+  <meta property="twitter:description"
+    content="Web Personal Responsiva donde el profesional detalla lo más relevante de su carrera." />
+  <meta property="twitter:image"
+    content="https://elliotxleo.github.io/bootcamp-frontend-t-g15/semana-1/2-pagina-personal/img/portada-elliot-garamendi.png" />
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="#">
+        <img src="./img/logo-elliotgaramendi.jpg" alt="Logo Elliot Garamendi" width="64px" />
+      </a>
+      <ul>
+        <li><a href="#">Perfil</a></li>
+        <li><a href="#">Experiencia</a></li>
+        <li><a href="#">Habilidades</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <article>
+      <div>
+        <h1>Elliot Garamendi. Desarrollador de tus sueños</h1>
+        <p>
+          Estudiante de Ingeniería de Software perteneciente a los primeros puestos. Apasionado del autoaprendizaje con
+          el sueño de crecer en el Desarrollo Web Frontend con la biblioteca React. Asimismo, amo compartir los
+          conocimientos adquiridos día a día mediante la docencia.
+        </p>
+        <div>
+          <button>CV</button>
+          <button>Portafolio</button>
+        </div>
+      </div>
+      <figure>
+        <img src="./img/perfil-elliotgaramendi.jpg" alt="Elliot Garamendi" width="320px" />
+      </figure>
+    </article>
+
+    <section>
+      <h2>Experiencia</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>N</th>
+            <th>Empresa</th>
+            <th>Cargo</th>
+            <th>Funciones</th>
+            <th>Periodo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Mandü</td>
+            <td>Software Engineer Trainee</td>
+            <td>
+              <ul>
+                <li>Mantenimiento web: Actualización de diseño, optimización y adición de funcionalidades.</li>
+                <li>Maquetación web de diseños del Figma en Laravel.</li>
+              </ul>
+            </td>
+            <td>
+              octubre 2021, presente
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>DRIVEN</td>
+            <td>Frontend Developer Junior</td>
+            <td>
+              <ul>
+                <li>Desarrollo de aplicaciones e-commerce con VTEX IO y React bajo el marco de trabajo Scrum.</li>
+                <li>Maquetación web de diseños del Figma en React esencialmente con CSS.</li>
+              </ul>
+            </td>
+            <td>
+              septiembre 2021, presente
+            </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Idat</td>
+            <td>Docente</td>
+            <td>
+              <ul>
+                <li>Curso: Diseño y Desarrollo Web: HTML, CSS, JavaScript, Bootstrap, jQuery, PHP y MySQL.</li>
+                <li>Desarrollo de proyectos y materiales para el aprendizaje teórico y práctico de los alumnos.</li>
+              </ul>
+            </td>
+            <td>
+              junio 2021, presente
+            </td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Tata Consultancy Services</td>
+            <td>Trainee de Sistemas</td>
+            <td>
+              <ul>
+                <li>Testing de código en GeneXus, AS/400, HTML, CSS, JavaScript, Java, VB, SQL.</li>
+                <li>Desarrollo de casos de prueba y ejecución de pruebas funcionales.</li>
+              </ul>
+            </td>
+            <td>
+              diciembre 2020, marzo 2021
+            </td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Canvia</td>
+            <td>Practicante Pre Profesional de Sistemas</td>
+            <td>
+              <ul>
+                <li>Desarrollo de admin’s con React y conexión con API’s para el control de los bot’s de RPA.</li>
+                <li>Desarrollo de flujos automatizados con Power Automate, bajo el marco de trabajo Scrum.</li>
+              </ul>
+            </td>
+            <td>
+              marzo 2020, diciembre 2020
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Contacto</h2>
+      <form action="/">
+        <input type="text" placeholder="Nombre" name="nombre" required />
+        <hr />
+        <input type="email" placeholder="Correo" name="email" required />
+        <hr />
+        <input type="number" id="celular" placeholder="Celular" name="celular" min="900000000" max="999999999"
+          required />
+        <hr />
+        <textarea placeholder="Mensaje" name="mensaje" cols="30" rows="10" required></textarea>
+        <hr />
+        <label for="proyecto">Sueño a realizar</label>
+        <select name="proyecto" id="proyecto" required>
+          <option value="primaria">Landing Page</option>
+          <option value="primaria">Web Page</option>
+          <option value="primaria">e-commerce</option>
+          <option value="inicial">Aplicación empresarial</option>
+        </select>
+        <hr />
+        <h4>Plan</h4>
+        <input type="radio" name="plan" id="pro" value="pro" required />
+        <label for="pro">Pro</label>
+        <input type="radio" name="plan" id="medium" value="medium" required />
+        <label for="medium">Medio</label>
+        <input type="radio" name="plan" id="basic" value="basic" required />
+        <label for="basic">Básico</label>
+        <p>Por favor indica qué plan deseas</p>
+        <hr />
+        <h4>Secciones adicionales</h4>
+        <input type="checkbox" name="upgrade" id="seo" value="seo" />
+        <label for="css">SEO</label>
+        <input type="checkbox" name="upgrade" id="design" value="design" />
+        <label for="javascript">Diseño</label>
+        <input type="checkbox" name="upgrade" id="marketing" value="marketing" />
+        <label for="html">Marketing</label>
+        <hr />
+        <button>Empieza a soñar</button>
+      </form>
+    </section>
+
+    <footer>
+      <nav>
+        <ul>
+          <li>
+            <a href="https://www.linkedin.com/in/elliotgaramendi/">
+              <img src="https://i.postimg.cc/J7BLFtdc/linkedin.png" alt="LinkedIn" width="32px" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/elliotgaramendi/">
+              <img src="https://i.postimg.cc/sfJtqS4W/instagram.png" alt="Instagram" width="32px" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/elliotgaramendi">
+              <img src="https://i.postimg.cc/7YHyZXZX/facebook.png" alt="Facebook" width="32px" />
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/ElliotXLeo">
+              <img src="https://i.postimg.cc/5NBMxTJX/github.png" alt="GitHub" width="32px" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/channel/UCE9whBrtYnLWrpzwk6z_JUA">
+              <img src="https://i.postimg.cc/dtPYcvbM/youtube.png" alt="YouTube" width="32px" />
+            </a>
+          </li>
+          <li>
+            <a href="https://nextjs-react-portafolio-fc.vercel.app">
+              <img src="https://i.postimg.cc/65TVxg9t/world-globe.png" alt="Página Personal" width="32px" />
+            </a>
+          </li>
+        </ul>
+        <p>🦄Copyright &copy; 2022 <a href="#">Elliot Garamendi.</a> Todos los derechos reservados.🦄</p>
+      </nav>
+    </footer>
+  </main>
+</body>
+
+</html>

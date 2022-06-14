@@ -1,0 +1,35 @@
+@import url(./variables.css);
+@import url(./header.css);
+@import url(./profile.css);
+@import url(./experiences.css);
+@import url(./projects.css);
+@import url(./skills.css);
+@import url(./contact.css);
+
+.body {
+  background-color: var(--primary-theme-color);
+  color: var(--text-color);
+  font-family: 'Roboto Mono', monospace;
+  margin: 0;
+}
+
+.main {
+  width: 100%;
+}
+
+.wave-separator {
+  width: 100%;
+}
+
+.wave-separator--r-180deg {
+  transform: rotate(180deg);
+}
+
+.wave-separator__wave-container {
+  display: flex;
+  margin: 0;
+}
+
+.wave-separator__wave {
+  width: 100%;
+}

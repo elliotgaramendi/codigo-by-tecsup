@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Momazos 2022</title>
+  <meta name="title" content="Momazos 2022" />
+  <meta name="description" content="Los verdaderos momos :V" />
+  <link rel="stylesheet" href="./css/index.css" />
+  <link rel="shortcut icon" href="./favicon.ico">
+</head>
+
+<body class="body">
+  <header class="header">
+    <nav class="header-nav">
+      <div class="header-nav__container">
+        <a href="#hero" class="header-nav__link-logo-container">
+          <img src="./img/logo.png" alt="Logo de Momazos" class="header-nav__link-logo" />
+        </a>
+        <ul class="header-nav__menu-link-list">
+          <li class="header-nav__menu-link-item">
+            <a href="#momazos" class="header-nav__menu-link">Momazos</a>
+          </li>
+          <li class="header-nav__menu-link-item">
+            <a href="https://www.linkedin.com/in/elliotgaramendi/"
+              class="header-nav__menu-link header-nav__menu-link--active" target="_blank"
+              rel="noopener noreferrer">Elliot</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="hero" id="hero">
+      <div class="hero__container">
+        <div class="hero__info">
+          <h1 class="hero__info-title">¡El mejor contenido de memes y momazos del año!</h1>
+          <a href="#momazos" class="hero__info-link hero__info-link--active">Buscar memes</a>
+        </div>
+        <div class="hero__figure">
+          <figure class="hero__figure-image-container">
+            <img src="./img/meme.png" alt="Meme" class="hero__figure-image" />
+          </figure>
+        </div>
+      </div>
+      <div class="hero__bubble-container">
+
+        <div class="hero__bubble"></div>
+        <div class="hero__bubble"></div>
+        <div class="hero__bubble"></div>
+        <div class="hero__bubble"></div>
+        <div class="hero__bubble"></div>
+        <div class="hero__bubble"></div>
+        <div class="hero__bubble"></div>
+        <div class="hero__bubble"></div>
+        <div class="hero__bubble"></div>
+      </div>
+    </section>
+
+    <section class="momazos" id="momazos">
+      <div class="momazos__container">
+        <h2 class="momazos__title">Busca tu meme favorito</h2>
+        <input class="momazos__buscador" type="text" placeholder='Ponte las pilas crag' id="momazosBuscador" required />
+        <div class="momazos__meme-container" id="momazosMemeContainer"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./js/index.js" type="module"></script>
+</body>
+
+</html>

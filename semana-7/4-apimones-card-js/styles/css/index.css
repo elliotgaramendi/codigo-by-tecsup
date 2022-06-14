@@ -1,0 +1,28 @@
+@import url(./variables.css);
+@import url(./loader.css);
+@import url(./spinner.css);
+@import url(./header.css);
+@import url(./pokemons.css);
+@import url(./pokemon.css);
+@import url(./footer.css);
+
+.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: 'Roboto Mono', monospace;
+  background-color: var(--primary-theme-color);
+  background-image: url('../../img/bg-pattern-top.svg'), url('../../img/bg-pattern-bottom.svg');
+  background-repeat: no-repeat, no-repeat;
+  background-position: right 50vw bottom 50vh, left 50vw top 50vh;
+  color: var(--primary-text-color);
+  margin: 0;
+  min-height: 100vh;
+  transition: var(--all-transitions);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}

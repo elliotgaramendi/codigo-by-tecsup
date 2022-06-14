@@ -1,0 +1,43 @@
+@import './mixins';
+
+.skills {
+  padding: var(--padding-section);
+
+  &__container {
+    @include d-flex-fd-ai-jc-g(column, center, center, 2rem);
+    @include container;
+  }
+
+  &__title {
+    font-size: 2rem;
+    text-shadow: 0 0 0.25rem var(--primary-highlight-color);
+    margin: 0;
+  }
+
+  &__skills-list {
+    @include d-flex-fd-ai-jc-g(row, center, center, 1rem);
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__skills-item {
+    background-color: var(--secondary-theme-color);
+    border-radius: 1rem;
+    font-weight: 700;
+    padding: 0.5em 1em;
+    box-shadow:
+      0 0 0 0.125rem var(--primary-shadow-color),
+      0 0 0 0.25rem var(--primary-shadow-color);
+    transition: var(--all-transitions);
+
+    &:hover {
+      box-shadow:
+        0 0 0 0.25rem var(--primary-highlight-color),
+        0 0 0.5rem 0 var(--secondary-highlight-color),
+        0 0 0.75rem 0 var(--secondary-highlight-color);
+      transform: scale(1.125);
+    }
+  }
+}

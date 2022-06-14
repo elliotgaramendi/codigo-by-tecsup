@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apimones Card</title>
+  <link rel="stylesheet" href="./styles/css/index.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body class="body">
+
+  <section class="loader" id="loader">
+    <div class="loader__wave"></div>
+    <div class="loader__wave"></div>
+    <div class="loader__wave"></div>
+    <div class="loader__wave"></div>
+    <div class="loader__wave"></div>
+    <div class="loader__wave"></div>
+    <div class="loader__wave"></div>
+    <div class="loader__wave"></div>
+    <div class="loader__wave"></div>
+    <div class="loader__wave"></div>
+  </section>
+
+  <header class="header">
+    <nav class="header-nav">
+      <div class="header-nav__container">
+        <a href="#card" class="header-nav__link-logo-container">
+          <img
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png"
+            alt="Logo Web" class="header-nav__link-logo" />
+        </a>
+        <div class="header-nav__theme-menu-container">
+          <button class="header-nav__theme-icon-container" id="headerNavThemeIconContainer">
+            <span class="header-nav__theme-icon">🌚</span>
+            <span class="header-nav__theme-icon">🌞</span>
+          </button>
+          <button class="header-nav__menu-icon-container" id="headerNavMenuIconContainer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff" class="header-nav__menu-icon">
+              <path d="M4 6h16v2H4zm4 5h12v2H8zm5 5h7v2h-7z"></path>
+            </svg>
+          </button>
+          <ul class="header-nav__menu-link-list">
+            <li class="header-nav__menu-link-item">
+              <a href="#card" class="header-nav__menu-link">Card</a>
+            </li>
+            <li class="header-nav__menu-link-item">
+              <a href="https://www.linkedin.com/in/elliotgaramendi/"
+                class="header-nav__menu-link header-nav__menu-link--active" target="_blank"
+                rel="noopener noreferrer">Elliot</a>
+            </li>
+            <li class="header-nav__menu-link-item header-nav__menu-close-icon-container"
+              id="headerNavMenuCloseIconContainer">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff"
+                class="header-nav__menu-close-icon">
+                <path
+                  d="M9.172 16.242 12 13.414l2.828 2.828 1.414-1.414L13.414 12l2.828-2.828-1.414-1.414L12 10.586 9.172 7.758 7.758 9.172 10.586 12l-2.828 2.828z">
+                </path>
+                <path
+                  d="M12 22c5.514 0 10-4.486 10-10S17.514 2 12 2 2 6.486 2 12s4.486 10 10 10zm0-18c4.411 0 8 3.589 8 8s-3.589 8-8 8-8-3.589-8-8 3.589-8 8-8z">
+                </path>
+              </svg>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="spinner" id="spinner">
+      <div class="spinner__container">
+        <div class="spinner__circle spinner__circle--1"></div>
+        <div class="spinner__circle spinner__circle--2"></div>
+      </div>
+    </section>
+
+    <section class="pokemons">
+      <div class="pokemons__container">
+        <h1 class="pokemons__title">Apimones Card</h1>
+        <article class="pokemon pokemon--local" id="pokemonLocal">
+          <h2 class="pokemon__title">Local API</h2>
+        </article>
+        <article class="pokemon pokemon--remote" id="pokemonRemote">
+          <h2 class="pokemon__title">Remote API</h2>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <nav class="footer-nav">
+      <div class="footer-nav-container">
+        <ul class="footer-nav__link-list">
+          <li class="footer-nav__link-item">
+            <a href="https://www.linkedin.com/in/elliotgaramendi/" class="footer-nav__link">
+              <img src="https://i.postimg.cc/J7BLFtdc/linkedin.png" alt="LinkedIn" class="footer-nav__link-image" />
+            </a>
+          </li>
+          <li class="footer-nav__link-item">
+            <a href="https://www.instagram.com/elliotgaramendi/" class="footer-nav__link">
+              <img src="https://i.postimg.cc/sfJtqS4W/instagram.png" alt="Instagram" class="footer-nav__link-image" />
+            </a>
+          </li>
+          <li class="footer-nav__link-item">
+            <a href="https://www.facebook.com/elliotgaramendi" class="footer-nav__link">
+              <img src="https://i.postimg.cc/7YHyZXZX/facebook.png" alt="Facebook" class="footer-nav__link-image" />
+            </a>
+          </li>
+          <li class="footer-nav__link-item">
+            <a href="https://github.com/ElliotXLeo" class="footer-nav__link">
+              <img src="https://i.postimg.cc/5NBMxTJX/github.png" alt="GitHub" class="footer-nav__link-image" />
+            </a>
+          </li>
+          <li class="footer-nav__link-item">
+            <a href="https://www.youtube.com/channel/UCE9whBrtYnLWrpzwk6z_JUA" class="footer-nav__link">
+              <img src="https://i.postimg.cc/dtPYcvbM/youtube.png" alt="YouTube" class="footer-nav__link-image" />
+            </a>
+          </li>
+          <li class="footer-nav__link-item">
+            <a href="https://elliotxleo.github.io/portafolio-web-elgs/" class="footer-nav__link">
+              <img src="https://i.postimg.cc/65TVxg9t/world-globe.png" alt="Página Personal"
+                class="footer-nav__link-image" />
+            </a>
+          </li>
+        </ul>
+        <h2 class="footer-nav__credits">
+          🦄Copyright &copy; 2022 <a href="https://www.linkedin.com/in/elliotgaramendi/"
+            class="footer-nav__credits-author" target="_blank" rel="noreferrer">Elliot Garamendi.</a> Todos los derechos
+          reservados.🦄
+        </h2>
+      </div>
+    </nav>
+  </footer>
+  <script src="./js/index.js" type="module"></script>
+</body>
+
+</html>

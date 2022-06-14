@@ -1,0 +1,53 @@
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: scale(0.0);
+  }
+
+  50% {
+    transform: scale(1.0);
+  }
+}
+
+.spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--all-transitions);
+  opacity: 0;
+  pointer-events: none;
+  height: 0;
+}
+
+.spinner--show {
+  opacity: 1;
+  pointer-events: auto;
+  height: auto;
+}
+
+.spinner__container {
+  position: relative;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.spinner__circle {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--button-color);
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: bounce 2.0s infinite ease-in-out;
+}
+
+.spinner__circle--1 {
+  animation-delay: -1.0s;
+}
+
+.spinner__circle--2 {
+  animation-delay: -2.0s;
+}

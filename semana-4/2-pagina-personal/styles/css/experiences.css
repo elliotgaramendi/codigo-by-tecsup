@@ -1,0 +1,60 @@
+.experiences {
+  background-color: var(--secondary-theme-color);
+  padding: var(--padding-section);
+}
+
+.experiences__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: var(--max-width-container);
+  margin: auto;
+  padding: var(--padding-container);
+}
+
+.experiences__title {
+  font-size: 2rem;
+  text-shadow: 0 0 0.25rem var(--primary-highlight-color);
+  margin: 0;
+}
+
+.experiences__experiences-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.experiences__experiences-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.experiences__item-date {
+  text-shadow: 0 0 0.125rem var(--primary-highlight-color);
+  font-weight: 600;
+  margin: 0;
+}
+
+.experiences__item-company {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.experiences__item-role {
+  text-shadow: 0 0 0.125rem var(--primary-highlight-color);
+  font-weight: 400;
+  margin: 0;
+}
+
+.experiences__item-activities {
+  margin: 0;
+}
+
+.experiences__item-activity {
+  list-style: square;
+}

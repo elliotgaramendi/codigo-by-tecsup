@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  scroll-behavior: smooth;
+  --primary-theme-color: #20232a;
+  --secondary-theme-color: #282c34;
+  --text-color: #fff;
+  --primary-shadow-color: #8888;
+  --secondary-shadow-color: #21242c80;
+  --button-color: #61dafb;
+  --button-color-active: #fff;
+  --button-text-color: #000;
+  --primary-highlight: #61dafb;
+  --secondary-highlight: #ffd700;
+  --padding-section: 2em 0;
+  --padding-container: 0 2em;
+  --max-width-container: 1024px;
+  --border-radius: 0.5rem;
+  --all-transitions: all 0.25s;
+}
+
+.body {
+  background-color: var(--primary-theme-color);
+  color: var(--text-color);
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  transition: var(--all-transitions);
+}
+
+.body--light {
+  --primary-theme-color: #fff;
+  --secondary-theme-color: #f5f5f5;
+  --text-color: #000;
+  --primary-shadow-color: #2228;
+  --secondary-shadow-color: hsla(0, 0%, 100%, 0.875);
+}
+
+.main {
+  width: 100%;
+}
+
+@media (min-width: 854px) {
+  :root {
+    --padding-container: 0 0.75rem;
+  }
+}

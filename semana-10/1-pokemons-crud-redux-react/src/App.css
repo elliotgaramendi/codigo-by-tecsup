@@ -1,0 +1,51 @@
+/* --primary-theme-color zinc-800 */
+/* --secondary-theme-color zinc-700 */
+/* --primary-text-color white */
+/* --secondary-text-color zinc-400 */
+/* --primary-shadow-color: zinc-500/50; */
+/* --secondary-shadow-color: zinc-100/50; */
+/* --primary-button-color cyan-300 */
+/* --primary-button-color-active white */
+/* --primary-button-text-color black */
+/* --primary-highlight-color cyan-300 */
+/* --secondary-highlight-color yellow-400 */
+/* --invalid-color rose-500 */
+
+/* --primary-theme-color: white; */
+/* --secondary-theme-color: zinc-100; */
+/* --primary-text-color: black; */
+/* --secondary-text-color: zinc-600; */
+/* --primary-shadow-color: zinc-500/50;; */
+/* --secondary-shadow-color: zinc-900/50; */
+
+.colored-toast.swal2-icon-success {
+  background-color: #a5dc86 !important;
+}
+
+.colored-toast.swal2-icon-error {
+  background-color: #f27474 !important;
+}
+
+.colored-toast.swal2-icon-warning {
+  background-color: #f8bb86 !important;
+}
+
+.colored-toast.swal2-icon-info {
+  background-color: #3fc3ee !important;
+}
+
+.colored-toast.swal2-icon-question {
+  background-color: #87adbd !important;
+}
+
+.colored-toast .swal2-title {
+  color: white;
+}
+
+.colored-toast .swal2-close {
+  color: white;
+}
+
+.colored-toast .swal2-html-container {
+  color: white;
+}

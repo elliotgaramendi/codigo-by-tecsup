@@ -1,0 +1,128 @@
+@keyframes float-polygon {
+  100% {
+    transform: translateY(1.5rem);
+  }
+}
+
+.l-404-page {
+  background-color: #20232a;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: monospace;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.l-404-page__container {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  gap: 2rem;
+  max-width: 1024px;
+  margin: auto;
+  padding: 0 2rem;
+}
+
+.l-404-page__image-container {
+  display: flex;
+  flex-direction: column;
+  width: 256px;
+  height: 336px;
+  margin: 0;
+}
+
+.l-404-page__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.l-404-page__message-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.l-404-page__message-title {
+  font-size: 4rem;
+  color: white;
+  margin: 0;
+}
+
+.l-404-page__message-paragraph {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.l-404-page__message-link-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.l-404-page__message-link {
+  background-color: #61dafb;
+  border-radius: 0.5rem;
+  color: #000;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 0.5rem 1.5rem;
+  transition: all 0.25s;
+  cursor: pointer;
+}
+
+.l-404-page__message-link:hover,
+.l-404-page__message-link--active {
+  background: #fff;
+}
+
+#l404PagePolygon1,
+#l404PagePolygon2,
+#l404PagePolygon3,
+#l404PagePolygon4,
+#l404PagePolygon4,
+#l404PagePolygon5 {
+  animation: float-polygon 1s infinite ease-in-out alternate;
+}
+
+#l404PagePolygon2 {
+  animation-delay: -.4s;
+}
+
+#l404PagePolygon3 {
+  animation-delay: -.3s;
+}
+
+#l404PagePolygon4 {
+  animation-delay: -.2s;
+}
+
+#l404PagePolygon5 {
+  animation-delay: -.1s;
+}
+
+@media (min-width: 854px) {
+  .l-404-page__container {
+    grid-template-columns: 1.5fr 1fr;
+    padding: 0 0.75rem;
+  }
+
+  .l-404-page__message-container {
+    gap: 1rem;
+  }
+
+  .l-404-page__message-title {
+    font-size: 5rem;
+  }
+
+  .l-404-page__message-paragraph {
+    font-size: 2.5rem;
+  }
+
+  .l-404-page__message-link {
+    font-size: 1.25rem;
+  }
+}

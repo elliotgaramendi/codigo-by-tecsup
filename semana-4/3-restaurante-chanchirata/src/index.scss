@@ -1,0 +1,290 @@
+:root {
+  --primary-theme-color: #20232a;
+  --secondary-theme-color: #282c34;
+  --text-color: #fff;
+  --shadow-color: #999;
+  --button-color: #282c34;
+  --button-text-color: #fff;
+  --button-color-active: #ffd700;
+  --button-text-color-active: #000;
+  --primary-highlight: #61dafb;
+  --secondary-highlight: #ffd700;
+  --padding-container: 0 2rem;
+  --border-radius: 1rem;
+  --all-transitions: all 0.25s;
+}
+
+@mixin container {
+  max-width: 1024px;
+  margin: auto;
+  padding: var(--padding-container);
+}
+
+@mixin d-flex-fd-ai-jc-g($flex-direction: row, $align-items: stretch, $justify-content: stretch, $gap: 0) {
+  display: flex;
+  flex-direction: $flex-direction;
+  align-items: $align-items;
+  justify-content: $justify-content;
+  gap: $gap;
+}
+
+@mixin button($padding: 0.5rem 1rem, $font-weight: 700, $border-radius: 0.5rem) {
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+  padding: $padding;
+  font-weight: $font-weight;
+  border-radius: $border-radius;
+  transition: var(--all-transitions);
+
+  &--active,
+  &:hover {
+    background-color: var(--button-color-active);
+    color: var(--button-text-color-active);
+  }
+}
+
+@mixin decorator($top: 0, $left: 0, $width: 100%, $transform: translate(-50%, -50%)) {
+  display: flex;
+  position: absolute;
+  z-index: -1;
+  top: $top;
+  left: $left;
+  width: $width;
+  transform: $transform;
+  margin: 0;
+}
+
+@mixin desktop() {
+  @media (min-width: 854px) {
+    @content;
+  }
+}
+
+.body {
+  background-color: var(--primary-theme-color);
+  color: var(--text-color);
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.header-nav {
+  padding: 0.5rem 0;
+
+  &__link-logo-container {
+    font-size: 2rem;
+    text-decoration: none;
+  }
+  &__menu-icon-container {
+    border: none;
+    padding: 0;
+    background-color: inherit;
+    height: 2rem;
+    cursor: pointer;
+
+    @include desktop() {
+      display: none;
+    }
+  }
+  &__menu-icon {
+    height: 100%;
+  }
+  &__link-list {
+    @include d-flex-fd-ai-jc-g(column, center, center, 2rem);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top, var(--primary-theme-color), var(--secondary-theme-color));
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    pointer-events: none;
+    list-style: none;
+    transition: var(--all-transitions);
+
+    &--open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    @include desktop() {
+      @include d-flex-fd-ai-jc-g(row, center, center, 1rem);
+      position: static;
+      background-image: none;
+      opacity: 1;
+      width: auto;
+      pointer-events: auto;
+    }
+  }
+  &__link-item {
+    display: flex;
+
+    &--close-icon-container {
+      position: absolute;
+      top: 1rem;
+      right: 2rem;
+      height: 2rem;
+      cursor: pointer;
+
+      @include desktop() {
+        display: none;
+      }
+    }
+  }
+  &__link {
+    text-decoration: none;
+    @include button(0.5rem 1rem, 700, 1rem);
+  }
+  &__close-icon {
+    height: 100%;
+  }
+}
+.header-nav-container {
+  @include d-flex-fd-ai-jc-g(row, center, space-between, 0);
+  @include container();
+}
+.hero {
+  @include d-flex-fd-ai-jc-g(row, center, center, 0);
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+
+  &__message {
+    @include d-flex-fd-ai-jc-g(column, stretch, center, 1rem);
+    text-align: center;
+
+    @include desktop() {
+      text-align: start;
+      gap: 2rem;
+    }
+  }
+  &__message-title {
+    font-weight: 800;
+    margin: 0;
+  }
+  &__message-subtitle {
+    font-weight: 400;
+    margin: 0;
+  }
+  &__message-paragraph {
+    font-weight: 300;
+    margin: 0;
+  }
+  &__message-shopping-container {
+    @include d-flex-fd-ai-jc-g(row, center, center, 2rem);
+
+    @include desktop() {
+      justify-content: stretch;
+    }
+  }
+  &__message-cheapest-price-container {
+    @include d-flex-fd-ai-jc-g(column, flex-start, center, 0);
+  }
+  &__message-cheapest-price {
+    &--normal {
+      color: var(--shadow-color);
+      text-decoration: line-through;
+      font-weight: 500;
+    }
+    &--offer {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+  }
+  &__message-buy-button {
+    text-decoration: none;
+    font-size: 1.125rem;
+    @include button(1rem 1.5rem, 800, 1.5rem);
+  }
+  &__figure {
+    display: flex;
+  }
+  &__figure-image-container {
+    display: flex;
+    max-width: 256px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0;
+
+    @include desktop() {
+      max-width: 640px;
+    }
+  }
+  &__figure-image {
+    width: 100%;
+  }
+  &__rise-container {
+    @include decorator($top: 0, $left: 0, $width: 50%, $transform: translate(-50%, -50%));
+    @include desktop() {
+      @include decorator($top: -5%, $left: 5%, $width: 25%, $transform: translate(-50%, -50%));
+    }
+  }
+
+  &__rise {
+    width: 100%;
+  }
+
+  &__arrow-container {
+    @include decorator($top: 50%, $left: 10%, $width: 50%, $transform: translate(-50%, -50%));
+    @include desktop() {
+      @include decorator($top: 100%, $left: 10%, $width: 50%, $transform: translate(-50%, -50%));
+    }
+  }
+
+  &__arrow {
+    width: 100%;
+  }
+
+  &__bubbles-container {
+    @include decorator($top: 50%, $left: 105%, $width: 50%, $transform: translate(-50%, -50%) rotate(180deg));
+    @include desktop() {
+      @include decorator($top: -5%, $left: 50%, $width: 25%, $transform: translate(-50%, -50%) rotate(90deg));
+    }
+  }
+
+  &__bubbles {
+    width: 100%;
+  }
+
+  &__blob-container {
+    @include decorator($top: 100%, $left: 50%, $width: 100%, $transform: translate(-50%, -50%));
+    @include desktop() {
+      @include decorator($top: 80%, $left: 100%, $width: 100%, $transform: translate(-50%, -50%));
+    }
+  }
+
+  &__blob {
+    width: 100%;
+  }
+
+  &__asterisk-container {
+    @include decorator($top: 100%, $left: 50%, $width: 50%, $transform: translate(-50%, -50%));
+    @include desktop() {
+      @include decorator($top: 80%, $left: 100%, $width: 50%, $transform: translate(-50%, -50%));
+    }
+  }
+
+  &__asterisk {
+    width: 100%;
+  }
+}
+.hero-container {
+  @include d-flex-fd-ai-jc-g(column, center, center, 2rem);
+  @include container();
+
+  @include desktop() {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.main {
+  @include d-flex-fd-ai-jc-g(column, stretch, stretch, 0);
+}

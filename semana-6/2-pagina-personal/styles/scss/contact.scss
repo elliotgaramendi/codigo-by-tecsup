@@ -1,0 +1,73 @@
+@import './mixins';
+
+:root {
+  scroll-behavior: smooth;
+  --primary-theme-color: #20232a;
+  --secondary-theme-color: #282c34;
+  --text-color: #fff;
+  --primary-shadow-color: #8888;
+  --secondary-shadow-color: #21242c80;
+  --button-color: #61dafb;
+  --button-color-active: #fff;
+  --button-text-color: #000;
+  --primary-highlight-color: #61dafb;
+  --secondary-highlight-color: #ffd700;
+  --invalid-color: #dc143c;
+  --padding-section: 4rem 0;
+  --padding-container: 0 2rem;
+  --max-width-container: 1024px;
+  --border-radius: 0.5rem;
+  --all-transitions: all 0.25s;
+}
+
+.contact {
+  padding: var(--padding-section);
+  background-color: var(--secondary-theme-color);
+
+  &__container {
+    @include d-flex-fd-ai-jc-g(column, center, center, 2rem);
+    @include container;
+  }
+
+  &__title {
+    @include title;
+  }
+
+  &__form {
+    display: flex;
+  }
+
+  &__form-inputs {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    @include box-shadow;
+  }
+
+  &__form-input {
+    background-color: transparent;
+    border: none;
+    color: var(--text-color);
+    padding: 0.75rem;
+
+    &:invalid {
+      text-shadow:
+        0 0 0.25rem var(--invalid-color),
+        0 0 0.5rem var(--invalid-color);
+    }
+
+    &:valid {
+      text-shadow:
+        0 0 0.25rem var(--primary-highlight-color),
+        0 0 0.5rem var(--primary-highlight-color);
+    }
+
+    &::placeholder {
+      color: var(--secondary-highlight-color);
+      font-weight: 600;
+    }
+  }
+
+  &__form-button {
+    @include button(0 2em, 700, 0);
+  }
+}

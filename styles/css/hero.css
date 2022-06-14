@@ -1,0 +1,172 @@
+@keyframes title-jump {
+  0% {
+    margin-top: 0;
+  }
+  100% {
+    margin-top: 1rem;
+  }
+}
+.hero {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  position: relative;
+  background-image: url(https://i.postimg.cc/brSKyMR4/react-01-01.png);
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 6rem;
+  background-image: linear-gradient(transparent, var(--primary-theme-color));
+}
+.hero__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1024px;
+  margin: auto;
+  padding: var(--padding-container);
+}
+@media (min-width: 854px) {
+  .hero__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6rem;
+  }
+}
+.hero__message {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  gap: 1rem;
+  text-align: center;
+  background-color: var(--secondary-shadow-color);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  box-sizing: border-box;
+  transition: var(--all-transitions);
+}
+@media (min-width: 854px) {
+  .hero__message {
+    padding: 2rem;
+    text-align: start;
+  }
+}
+.hero__message-title {
+  font-weight: 700;
+  margin: 0;
+}
+.hero__message-subtitle {
+  font-weight: 800;
+  margin: 0;
+}
+.hero__message-paragraph {
+  font-weight: 600;
+  display: none;
+}
+@media (min-width: 854px) {
+  .hero__message-paragraph {
+    display: flex;
+    margin: 0;
+  }
+}
+.hero__message-learning-button {
+  align-self: center;
+  text-decoration: none;
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+  padding: 0.75em 1.5em;
+  font-weight: 800;
+  border: 0.125rem solid var(--button-color);
+  border-radius: 1.5rem;
+  transition: var(--all-transitions);
+}
+.hero__message-learning-button--active, .hero__message-learning-button:hover {
+  background-color: var(--button-color-active);
+}
+@media (min-width: 854px) {
+  .hero__message-learning-button {
+    align-self: flex-start;
+  }
+}
+.hero__figure {
+  display: flex;
+  justify-content: center;
+}
+.hero__figure-image-container {
+  position: relative;
+  display: flex;
+  max-width: 256px;
+  margin: 0;
+}
+@media (min-width: 854px) {
+  .hero__figure-image-container {
+    max-width: 360px;
+  }
+}
+.hero__figure-image {
+  border-radius: 50%;
+  width: 100%;
+  transition: var(--all-transitions);
+}
+.hero__figure-image:hover {
+  box-shadow: 0 0 0.25rem 0 var(--primary-highlight), 0 0 0.5rem 0 var(--primary-highlight);
+}
+.hero__figure-html {
+  display: flex;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 25%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  animation: title-jump 1s ease-in-out -1s alternate infinite;
+  pointer-events: none;
+}
+.hero__figure-css {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 25%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  animation: title-jump 1s ease-in-out -0.75s alternate infinite;
+  pointer-events: none;
+}
+.hero__figure-javascript {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 25%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  animation: title-jump 1s ease-in-out -0.5s alternate infinite;
+  pointer-events: none;
+}
+.hero__figure-react {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 25%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  animation: title-jump 1s ease-in-out -0.25s alternate infinite;
+  pointer-events: none;
+}
+
+/*# sourceMappingURL=hero.css.map */

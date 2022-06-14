@@ -1,0 +1,101 @@
+:root {
+  scroll-behavior: smooth;
+  --primary-theme-color: #20232a;
+  --secondary-theme-color: #282c34;
+  --primary-text-color: #fff;
+  --secondary-text-color: #aaa;
+  --primary-shadow-color: #8888;
+  --secondary-shadow-color: #eee8;
+  --button-color: #61dafb;
+  --button-color-active: #fff;
+  --button-text-color: #000;
+  --primary-highlight-color: #61dafb;
+  --secondary-highlight-color: #ffd700;
+  --invalid-color: #dc143c;
+  --padding-section: 4rem 0;
+  --padding-container: 0 2rem;
+  --max-width-container: 1024px;
+  --border-radius: 0.5rem;
+  --all-transitions: all 0.25s;
+}
+
+.movies {
+  padding: var(--padding-section);
+}
+
+.movies__container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: var(--max-width-container);
+  margin: auto;
+  padding: var(--padding-container);
+}
+
+.movies__title {
+  font-size: 2rem;
+  text-align: center;
+  margin: 0;
+  text-shadow:
+    0 0 0.25rem var(--primary-highlight-color),
+    0 0 0.5rem var(--primary-highlight-color);
+}
+
+.movies__movie-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, min(100%, 220px));
+  justify-content: center;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.movies__movie-item {
+  display: flex;
+  flex-direction: column;
+  height: 410px;
+  border-radius: var(--border-radius);
+  box-shadow:
+    0 0 0 0.125rem var(--primary-shadow-color),
+    0 0 0 0.25rem var(--primary-shadow-color);
+  overflow: hidden;
+  transition: var(--all-transitions);
+}
+
+.movies__movie-item:hover {
+  filter: brightness(112.5%);
+  box-shadow:
+    0 0 0 0.25rem var(--primary-highlight-color),
+    0 0 0.5rem 0 var(--primary-highlight-color),
+    0 0 0.75rem 0 var(--primary-highlight-color);
+  transform: scale(1.05);
+}
+
+.movies__movie-poster-container {
+  display: flex;
+  background-color: var(--primary-shadow-color);
+  width: 100%;
+  max-width: 220px;
+  height: 330px;
+  margin: 0;
+}
+
+.movies__movie-poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.movies__movie-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-shadow:
+    0 0 0.25rem var(--primary-highlight-color),
+    0 0 0.5rem var(--primary-highlight-color);
+  margin: 0;
+}

@@ -5,14 +5,248 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bootcamp Frontend</title>
-  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="./styles/css/index.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <title>Base 2 by Web 4B | Los mejores diseños y desarrollos de páginas web en el Perú.</title>
+  <meta name="title" content="Los mejores diseños y desarrollos de páginas web en el Perú.">
+  <meta name="description"
+    content="El mejor lugar donde puedes aprender sobre desarrollo web. Asimismo, con Base 2 by Web 4B puedes hacer realidad ese sueño que tienes en mente. ¡Cambia tu vida!">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://elliotxleo.github.io/bootcamp-frontend-t-g15/">
+  <meta property="og:title" content="Los mejores diseños y desarrollos de páginas web en el Perú.">
+  <meta property="og:description"
+    content="El mejor lugar donde puedes aprender sobre desarrollo web. Asimismo, con Base 2 by Web 4B puedes hacer realidad ese sueño que tienes en mente. ¡Cambia tu vida!">
+  <meta property="og:image" content="https://i.postimg.cc/kg2k7v3P/lp-b2-w-4b-elgs.png">
+
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://elliotxleo.github.io/bootcamp-frontend-t-g15/">
+  <meta property="twitter:title" content="Los mejores diseños y desarrollos de páginas web en el Perú.">
+  <meta property="twitter:description"
+    content="El mejor lugar donde puedes aprender sobre desarrollo web. Asimismo, con Base 2 by Web 4B puedes hacer realidad ese sueño que tienes en mente. ¡Cambia tu vida!">
+  <meta property="twitter:image" content="https://i.postimg.cc/kg2k7v3P/lp-b2-w-4b-elgs.png">
+
 </head>
 
-<body>
-  <main>
-    <h1>Bootcamp Frontend</h1>
+<body class="body animate__animated animate__fadeIn">
+
+  <section class="spinner" id="spinner">
+    <div class="spinner__spinner">
+      <div class="spinner__spinner-bar spinner__spinner-bar--one"></div>
+      <div class="spinner__spinner-bar spinner__spinner-bar--two"></div>
+      <div class="spinner__spinner-bar spinner__spinner-bar--three"></div>
+      <div class="spinner__spinner-bar spinner__spinner-bar--four"></div>
+      <div class="spinner__spinner-bar spinner__spinner-bar--five"></div>
+    </div>
+  </section>
+
+  <header class="header">
+    <nav class="header-nav">
+      <div class="header-nav__container">
+        <div class="header-nav__link-container">
+          <a href="#hero" class="header-nav__link-logo-container">
+            <img src="./img/logo-base-2.png" alt="Logo Web" class="header-nav__link-logo" />
+          </a>
+          <ul class="header-nav__menu-link-list">
+            <li class="header-nav__menu-link-item">
+              <a href="#learningWeeks" class="header-nav__menu-link">Semanas</a>
+            </li>
+            <li class="header-nav__menu-link-item">
+              <a href="https://www.linkedin.com/in/elliotgaramendi/"
+                class="header-nav__menu-link header-nav__menu-link--active" target="_blank"
+                rel="noopener noreferrer">Elliot</a>
+            </li>
+            <li class="header-nav__menu-link-item header-nav__menu-close-icon-container"
+              id="headerNavMenuCloseIconContainer">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff"
+                class="header-nav__menu-close-icon">
+                <path
+                  d="M9.172 16.242 12 13.414l2.828 2.828 1.414-1.414L13.414 12l2.828-2.828-1.414-1.414L12 10.586 9.172 7.758 7.758 9.172 10.586 12l-2.828 2.828z">
+                </path>
+                <path
+                  d="M12 22c5.514 0 10-4.486 10-10S17.514 2 12 2 2 6.486 2 12s4.486 10 10 10zm0-18c4.411 0 8 3.589 8 8s-3.589 8-8 8-8-3.589-8-8 3.589-8 8-8z">
+                </path>
+              </svg>
+            </li>
+          </ul>
+        </div>
+        <div class="header-nav__theme-menu-container">
+          <button class="header-nav__theme-icon-container" id="headerNavThemeIconContainer">
+            <span class="header-nav__theme-icon">🌚</span>
+            <span class="header-nav__theme-icon">🌞</span>
+          </button>
+          <figure class="header-nav__menu-icon-container" id="headerNavMenuIconContainer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff" class="header-nav__menu-icon">
+              <path d="M4 6h16v2H4zm4 5h12v2H8zm5 5h7v2h-7z"></path>
+            </svg>
+          </figure>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main">
+    <article class="hero" id="hero">
+      <div class="hero__container">
+        <div class="hero__message">
+          <h2 class="hero__message-title">
+            Base 2 by Web 4B
+          </h2>
+          <h1 class="hero__message-subtitle">
+            Los mejores diseños y desarrollos de páginas web en el Perú.
+          </h1>
+          <p class="hero__message-paragraph">
+            El mejor lugar donde puedes aprender sobre desarrollo web. Asimismo, con Base 2 by Web 4B puedes hacer
+            realidad ese sueño que tienes en mente. ¡Cambia tu vida!
+          </p>
+          <a href="#learningWeeks" class="hero__message-learning-button">
+            ¡Aprender gratis!
+          </a>
+        </div>
+        <div class="hero__figure">
+          <figure class="hero__figure-image-container">
+            <img src="https://i.postimg.cc/bvJLLgZd/perfil-elliotgaramendi.jpg" alt="Imagen de portada"
+              class="hero__figure-image" />
+            <img src="https://i.postimg.cc/rF6WrLjr/html.png" alt="Logo de HTML" class="hero__figure-html" />
+            <img src="https://i.postimg.cc/mgSDG9F2/css.png" alt="Logo de CSS" class="hero__figure-css" />
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png"
+              alt="Logo de JavaScript" class="hero__figure-javascript" />
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png"
+              alt="Logo de React" class="hero__figure-react" />
+          </figure>
+        </div>
+      </div>
+    </article>
+
+    <section class="learning-weeks" id="learningWeeks">
+      <div class="learning-weeks__container">
+        <h2 class="learning-weeks__title">Semanas de aprendizaje</h2>
+        <div class="learning-weeks__slider-container">
+          <ul class="learning-weeks__slider-list">
+            <li class="learning-weeks__slider-item">
+              <img src="./img/s1-2.png" alt="Portada semana 1" class="learning-weeks__slider-item-image" />
+              <a href="./semana-1/" class="learning-weeks__slider-item-title">
+                Semana 1: HTML, git, gitHub, Formularios, Tablas, Metadata y Pensamiento Computacional
+              </a>
+            </li>
+            <li class="learning-weeks__slider-item">
+              <img src="./img/s2-1.png" alt="Portada semana 2" class="learning-weeks__slider-item-image" />
+              <a href="./semana-2/" class="learning-weeks__slider-item-title">
+                Semana 2: Fundamentos de CSS, Diagrama de flujo, Posicionamiento RWD y Diagramas de flujo con
+                estructuras repetitivas
+              </a>
+            </li>
+            <li class="learning-weeks__slider-item">
+              <img src="./img/s3-3.png" alt="Portada semana 3" class="learning-weeks__slider-item-image" />
+              <a href="./semana-3/" class="learning-weeks__slider-item-title">
+                Semana 3: CSS3 y Git Colaborativo
+              </a>
+            </li>
+            <li class="learning-weeks__slider-item">
+              <img src="./img/s4-1.png" alt="Portada semana 4" class="learning-weeks__slider-item-image" />
+              <a href="./semana-4/" class="learning-weeks__slider-item-title">
+                Semana 4: Bootstrap 5 y Preprocesador SASS
+              </a>
+            </li>
+            <li class="learning-weeks__slider-item">
+              <img src="./img/s5-4.png" alt="Portada semana 5" class="learning-weeks__slider-item-image" />
+              <a href="./semana-5/" class="learning-weeks__slider-item-title">
+                Semana 5: Introducción a Javascript
+              </a>
+            </li>
+            <li class="learning-weeks__slider-item">
+              <img src="./img/s6-1.png" alt="Portada semana 6" class="learning-weeks__slider-item-image">
+              <a href="./semana-6/" class="learning-weeks__slider-item-title">
+                Semana 6: Document Object Model, Introducción a ECMAscript 6, Librerías
+              </a>
+            </li>
+            <li class="learning-weeks__slider-item">
+              <img src="./img/s7-1-2.png" alt="Portada semana 7" class="learning-weeks__slider-item-image">
+              <a href="./semana-7/" class="learning-weeks__slider-item-title">
+                Semana 7: Referencia de la API Web, ECMAscript y Asincronía
+              </a>
+            </li>
+            <li class="learning-weeks__slider-item">
+              <img src="./img/s8-4.png" alt="Portada semana 8"
+                class="learning-weeks__slider-item-image">
+              <a href="./semana-8/" class="learning-weeks__slider-item-title">
+                Semana 8: Introducción a Node, Introducción a React
+              </a>
+            </li>
+            <li class="learning-weeks__slider-item">
+              <img src="https://i.postimg.cc/QtKFX0G9/pokemons-inc-mern-frontend.png" alt="Portada semana 9"
+                class="learning-weeks__slider-item-image">
+              <a href="./semana-9/" class="learning-weeks__slider-item-title">
+                Semana 9: React Router, Context - React y Introducción a Firebase
+              </a>
+            </li>
+            <li class="learning-weeks__slider-item">
+              <img src="https://i.postimg.cc/BvYqBcY3/pokemons-crud-redux-react.png" alt="Portada semana 10"
+                class="learning-weeks__slider-item-image">
+              <a href="./semana-10/" class="learning-weeks__slider-item-title">
+                Semana 10: Introducción a Redux, Introducción a Firebase y Testing en React
+              </a>
+            </li>
+          </ul>
+          <button class="learning-weeks__slider-button learning-weeks__slider-button--left"
+            id="sliderSliderButtonLeft">&#60;</button>
+          <button class="learning-weeks__slider-button learning-weeks__slider-button--right"
+            id="sliderSliderButtonRight">&#62;</button>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer class="footer">
+    <nav class="footer-nav">
+      <div class="footer-nav-container">
+        <ul class="footer-nav__link-list">
+          <li class="footer-nav__link-item">
+            <a href="https://www.linkedin.com/in/elliotgaramendi/" class="footer-nav__link">
+              <img src="https://i.postimg.cc/J7BLFtdc/linkedin.png" alt="LinkedIn" class="footer-nav__link-image" />
+            </a>
+          </li>
+          <li class="footer-nav__link-item">
+            <a href="https://www.instagram.com/elliotgaramendi/" class="footer-nav__link">
+              <img src="https://i.postimg.cc/sfJtqS4W/instagram.png" alt="Instagram" class="footer-nav__link-image" />
+            </a>
+          </li>
+          <li class="footer-nav__link-item">
+            <a href="https://www.facebook.com/elliotgaramendi" class="footer-nav__link">
+              <img src="https://i.postimg.cc/7YHyZXZX/facebook.png" alt="Facebook" class="footer-nav__link-image" />
+            </a>
+          </li>
+          <li class="footer-nav__link-item">
+            <a href="https://github.com/ElliotXLeo" class="footer-nav__link">
+              <img src="https://i.postimg.cc/5NBMxTJX/github.png" alt="GitHub" class="footer-nav__link-image" />
+            </a>
+          </li>
+          <li class="footer-nav__link-item">
+            <a href="https://www.youtube.com/channel/UCE9whBrtYnLWrpzwk6z_JUA" class="footer-nav__link">
+              <img src="https://i.postimg.cc/dtPYcvbM/youtube.png" alt="YouTube" class="footer-nav__link-image" />
+            </a>
+          </li>
+          <li class="footer-nav__link-item">
+            <a href="https://nextjs-react-portafolio-fc.vercel.app" class="footer-nav__link">
+              <img src="https://i.postimg.cc/65TVxg9t/world-globe.png" alt="Página Personal"
+                class="footer-nav__link-image" />
+            </a>
+          </li>
+        </ul>
+        <h2 class="footer-nav__credits">
+          🦄Copyright &copy; 2022 <a href="https://www.linkedin.com/in/elliotgaramendi/"
+            class="footer-nav__credits-author" target="_blank" rel="noreferrer">Elliot Garamendi.</a> Todos los derechos
+          reservados.🦄
+        </h2>
+      </div>
+    </nav>
+  </footer>
+
+  <script src="./js/index.js" type="module"></script>
 </body>
 
 </html>

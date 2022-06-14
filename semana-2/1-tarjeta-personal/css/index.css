@@ -1,0 +1,118 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  background-image: url(https://i.postimg.cc/brSKyMR4/react-01-01.png);
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  color: white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin: 0;
+}
+
+.header {
+  display: flex;
+}
+
+.header__image-container {
+  display: flex;
+  max-width: 256px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0;
+}
+
+.header__image {
+  width: 100%;
+}
+
+.main {
+  display: flex;
+}
+
+.article {
+  display: flex;
+}
+
+.article-container {
+  display: flex;
+  padding: 0 2em;
+}
+
+.article__card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background-color: #16181dbf;
+  max-width: 256px;
+  padding: 1em;
+  border-radius: 0.5rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.article__card-title {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.article__card-keywords {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.article__card-description {
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.article__card-description::before {
+  content: '📚';
+}
+
+.article__card-description::after {
+  content: '📚';
+}
+
+.footer {
+  display: flex;
+}
+
+.footer-nav {
+  display: flex;
+}
+
+.footer-nav-container {
+  display: flex;
+}
+
+.footer-nav__link-list {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-nav__link-item {
+  display: flex;
+}
+
+.footer-nav__link {
+  display: flex;
+  width: 1.75rem;
+  transition: all 0.25s;
+}
+
+.footer-nav__link:hover {
+  filter: brightness(150%);
+  transform: scale(1.25);
+}
+
+.footer-nav__link-image {
+  width: 100%;
+}
