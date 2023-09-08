@@ -23,7 +23,7 @@
             <a href="#experience">Experiencia</a>
           </li>
           <li>
-            <a href="#">Contacto</a>
+            <a href="#contact">Contacto</a>
           </li>
         </ul>
         <ul>
@@ -51,8 +51,8 @@
       </div>
     </nav>
   </header>
-  <hr />
   <main>
+    <hr />
     <article id="hero">
       <div>
         <div>
@@ -144,12 +144,90 @@
           <tfoot>
             <tr>
               <td colspan="5">
-                <a href="https://www.linkedin.com/in/elliotgaramendi/" target="_blank" rel="noopener noreferrer">Puede ver toda mi
+                <a href="https://www.linkedin.com/in/elliotgaramendi/" target="_blank" rel="noopener noreferrer">Puede
+                  ver toda mi
                   experiencia aquí.</a>
               </td>
             </tr>
           </tfoot>
         </table>
+      </div>
+    </section>
+    <hr />
+    <section id="contact">
+      <div>
+        <h2>Contacto</h2>
+        <h3>Cuéntanos sobre tu sueño y lo haremos realidad juntos</h3>
+        <form action="./">
+          <input type="text" name="name" placeholder="Nombre" required />
+          <br />
+          <br />
+          <input type="email" name="email" placeholder="Correo" required />
+          <br />
+          <br />
+          <input type="number" name="phone" placeholder="Celular" required />
+          <br />
+          <br />
+          <textarea name="message" cols="30" rows="10" placeholder="Mensaje" required></textarea>
+          <br />
+          <br />
+          <select name="dream" required>
+            <option value="">--- Sueño a realizar ----</option>
+            <option value="landing-page">Landing Page</option>
+            <option value="portfolio">Portfolio</option>
+            <option value="e-commerce">e-commerce</option>
+            <option value="e-learning">e-learning</option>
+            <option value="social-network">Red social</option>
+            <option value="blogs">Blogs</option>
+            <option value="foros">Foros</option>
+            <option value="news">Noticias</option>
+            <option value="gob">Gobierno</option>
+            <option value="bank">Banca</option>
+            <option value="bookings">Reservas</option>
+            <option value="goods">Bienes</option>
+            <option value="entretenimiento">Entretenimiento</option>
+            <option value="travel">Viajes</option>
+            <option value="health">Salud</option>
+            <option value="applications">Aplicaciones</option>
+          </select>
+          <br />
+          <br />
+          <h4>Plan</h4>
+          <input type="radio" name="plan" id="basic" value="basic" required />
+          <label for="basic">Básico </label>
+          <input type="radio" name="plan" id="standard" value="standard" required />
+          <label for="standard">Estándar</label>
+          <input type="radio" name="plan" id="advanced" value="advanced" required />
+          <label for="advanced">Avanzado</label>
+          <input type="radio" name="plan" id="custom" value="custom" required />
+          <label for="custom">Personalizada</label>
+          <input type="radio" name="plan" id="maintenance" value="maintenance" required />
+          <label for="maintenance">Mantenimiento</label>
+          <input type="radio" name="plan" id="updates" value="updates" required />
+          <label for="updates">Actualizaciones</label>
+          <input type="radio" name="plan" id="consulting" value="consulting" required />
+          <label for="consulting">Consultoría</label>
+          <input type="radio" name="plan" id="strategy" value="strategy" required />
+          <label for="strategy">Estrategia</label>
+          <br />
+          <br />
+          <h4>Tecnologías</h4>
+          <input type="checkbox" name="react" id="react" value="react" />
+          <label for="react">React</label>
+          <input type="checkbox" name="next" id="next" value="next" />
+          <label for="next">Next.js</label>
+          <input type="checkbox" name="seo" id="seo" value="seo" />
+          <label for="seo">SEO</label>
+          <input type="checkbox" name="ux-ui" id="ux-ui" value="ux-ui" />
+          <label for="ux-ui">UX/UI</label>
+          <input type="checkbox" name="wpo" id="wpo" value="wpo" />
+          <label for="wpo">Web Performance Optimization</label>
+          <input type="checkbox" name="google-analytics" id="google-analytics" value="google-analytics" />
+          <label for="google-analytics">Google Analytics</label>
+          <br />
+          <br />
+          <input type="submit" value="Registrar sueño" />
+        </form>
       </div>
     </section>
   </main>
