@@ -23,3 +23,13 @@
   font-size: var(--element-size);
   font-family: var(--primary-font-family);
 }
+
+.header {
+  position: fixed;
+  /* z-index: 25; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--light-primary-shadow-color);
+  box-shadow: 0 0 calc(var(--element-size) * 0.25) calc(var(--element-size) * 0.125) var(--primary-shadow-color);
+}
