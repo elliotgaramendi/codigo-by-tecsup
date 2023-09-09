@@ -1,35 +1,50 @@
+:root {
+  --primary-theme-color: #087ea4;
+  --primary-text-color: #f7f8f9;
+  --secondary-text-color: #bbb;
+  --primary-shadow-color: #ffffff80;
+  --light-primary-shadow-color: #00000080;
+  --primary-font-family: monospace;
+  --element-spacing: 32px;
+  --element-size: 16px;
+  --border-radius: 16px;
+}
+
 body {
   min-height: 100vh;
   margin: 0;
   background-image: url('https://i.postimg.cc/x9MyhM3D/react-system.webp');
   background-size: cover;
   background-position: center;
-  color: white;
-  font-family: monospace;
+  color: var(--primary-text-color);
+  font-family: var(--primary-font-family);
+  font-size: var(--element-size);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 main {
-  max-width: 320px;
-  padding: 16px;
-  margin: 16px;
-  background-color: rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(16px);
-  border-radius: 16px;
-  box-shadow: 0 0 4px 2px rgba(255, 255, 255, 0.5);
+  max-width: calc(var(--element-size) * 20);
+  padding: calc(var(--element-spacing) / 2);
+  margin: calc(var(--element-spacing) / 2);
+  background-color: var(--light-primary-shadow-color);
+  backdrop-filter: blur(var(--element-size));
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 calc(var(--element-size) * 0.25) calc(var(--element-size) * 0.125) var(--primary-shadow-color);
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: calc(var(--element-spacing) / 4);
 }
 
 img {
-  display: block;
+  width: calc(var(--element-size) * 12.5);
+  height: calc(var(--element-size) * 12.5);
   border-radius: 50%;
-  box-shadow: 0 0 8px 4px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 calc(var(--element-size) * 0.5) calc(var(--element-size) * 0.25) var(--primary-shadow-color);
+  display: block;
 }
 
 h1,
@@ -40,20 +55,20 @@ p {
 
 h2,
 span {
-  color: #bbb;
+  color: var(--secondary-text-color);
   font-weight: 400;
 }
 
 h1 {
-  font-size: 18px;
+  font-size: calc(var(--element-size) * 1.125);
 }
 
 h2 {
-  font-size: 16px;
+  font-size: var(--element-size);
 }
 
 p {
-  font-size: 14px;
+  font-size: calc(var(--element-size) * 0.875);
 }
 
 ul {
@@ -63,17 +78,18 @@ ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 8px;
+  gap: calc(var(--element-size) / 2);
 }
 
 .skill {
-  padding: 4px 16px;
-  border-radius: 16px;
-  background-color: #087ea4;
+  padding: 0.25em 1em;
+  border-radius: var(--border-radius);
+  background-color: var(--primary-theme-color);
+  font-size: calc(var(--element-size) * 0.75);
   font-weight: 700;
 }
 
 a {
-  font-size: 20px;
-  color: white;
+  color: var(--primary-text-color);
+  font-size: calc(var(--element-size) * 1.25);
 }
