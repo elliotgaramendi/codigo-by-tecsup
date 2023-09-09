@@ -15,3 +15,11 @@
   --border-radius: 16px;
   --transition-duration: 0.25s;
 }
+
+.body {
+  margin: 0;
+  background-color: var(--primary-background-color);
+  color: var(--primary-text-color);
+  font-size: var(--element-size);
+  font-family: var(--primary-font-family);
+}
