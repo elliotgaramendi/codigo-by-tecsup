@@ -1,7 +1,79 @@
 body {
+  min-height: 100vh;
+  margin: 0;
   background-image: url('https://i.postimg.cc/x9MyhM3D/react-system.webp');
   background-size: cover;
   background-position: center;
   color: white;
   font-family: monospace;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  max-width: 320px;
+  padding: 16px;
+  margin: 16px;
+  background-color: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(16px);
+  border-radius: 16px;
+  box-shadow: 0 0 4px 2px rgba(255, 255, 255, 0.5);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+img {
+  display: block;
+  border-radius: 50%;
+  box-shadow: 0 0 8px 4px rgba(255, 255, 255, 0.5);
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h2,
+span {
+  color: #bbb;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 18px;
+}
+
+h2 {
+  font-size: 16px;
+}
+
+p {
+  font-size: 14px;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.skill {
+  padding: 4px 16px;
+  border-radius: 16px;
+  background-color: #087ea4;
+  font-weight: 700;
+}
+
+a {
+  font-size: 20px;
+  color: white;
 }
