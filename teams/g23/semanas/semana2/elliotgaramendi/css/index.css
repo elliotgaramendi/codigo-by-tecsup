@@ -1,0 +1,17 @@
+:root {
+  --primary-theme-color: #087ea4;
+  --secondary-theme-color: #087ea4;
+  --primary-background-color: #16181d;
+  --secondary-background-color: #23272f;
+  --primary-text-color: #f7f8f9;
+  --secondary-text-color: #888;
+  --primary-shadow-color: #ffffff80;
+  --secondary-shadow-color: #ffffff40;
+  --light-primary-shadow-color: #00000080;
+  --primary-font-family: 'Source Code Pro', monospace;
+  --max-width: 1024px;
+  --element-spacing: 32px;
+  --element-size: 16px;
+  --border-radius: 16px;
+  --transition-duration: 0.25s;
+}
