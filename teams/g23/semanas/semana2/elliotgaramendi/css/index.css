@@ -71,3 +71,11 @@
   align-items: center;
   justify-content: space-between;
 }
+
+.flexbox--responsive {
+  flex-direction: column;
+
+  @media (width >=768px) {
+    flex-direction: row;
+  }
+}
