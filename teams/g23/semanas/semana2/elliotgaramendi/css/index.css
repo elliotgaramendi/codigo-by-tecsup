@@ -172,6 +172,14 @@
   }
 }
 
+.d-flex {
+  display: flex;
+}
+
+.d-none {
+  display: none;
+}
+
 .g-5xs {
   gap: calc(var(--element-spacing) * 0.25);
 }
@@ -198,4 +206,10 @@
 
 .g-md {
   gap: var(--element-spacing);
+}
+
+@media (width >=768px) {
+  .md\:d-block {
+    display: block;
+  }
 }
