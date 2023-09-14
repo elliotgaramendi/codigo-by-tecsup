@@ -8,11 +8,12 @@
   --primary-shadow-color: #ffffff80;
   --secondary-shadow-color: #ffffff40;
   --light-primary-shadow-color: #00000080;
+  --light-secondary-shadow-color: #00000040;
   --primary-font-family: 'Source Code Pro', monospace;
   --max-width: 1024px;
-  --element-spacing: 32px;
-  --element-size: 16px;
-  --border-radius: 16px;
+  --element-spacing: 2rem;
+  --element-size: 1rem;
+  --border-radius: 1rem;
   --transition-duration: 0.25s;
 }
 
@@ -45,13 +46,15 @@
   padding-top: calc(var(--element-spacing) * 2.5);
   padding-bottom: calc(var(--element-spacing) * 2.5);
   box-sizing: border-box;
+  background-image: radial-gradient(var(--light-secondary-shadow-color), var(--light-secondary-shadow-color));
 
   & .hero__images {
     position: relative;
   }
 
   & .hero__technologies {
-    all: unset;
+    padding: 0;
+    margin: 0;
     list-style: none;
     position: absolute;
     top: 0;
@@ -139,14 +142,14 @@
   }
 
   &.img--hero {
-    width: 256px;
-    height: 256px;
+    width: calc(var(--element-size) * 16);
+    height: calc(var(--element-size) * 16);
     border-radius: 50%;
   }
 
   &.img--technology {
-    width: 64px;
-    height: 64px;
+    width: calc(var(--element-size) * 4);
+    height: calc(var(--element-size) * 4);
   }
 }
 
