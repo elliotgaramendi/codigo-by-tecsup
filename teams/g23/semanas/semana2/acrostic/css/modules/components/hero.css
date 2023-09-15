@@ -5,6 +5,7 @@
 
   & .hero__title {
     font-size: calc(var(--element-size) * 2.5);
+    animation: beat 1s ease-in-out 0s infinite alternate;
   }
 
   & .hero__name {
