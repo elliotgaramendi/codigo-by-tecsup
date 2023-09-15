@@ -1,0 +1,70 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  background-image: radial-gradient(transparent, var(--primary-background-color));
+
+  & .hero__title {
+    font-size: calc(var(--element-size) * 2.5);
+  }
+
+  & .hero__name {
+    all: unset;
+    cursor: pointer;
+    display: flex;
+    gap: calc(var(--element-spacing) * 0.25);
+  }
+
+  & .hero__letter {
+    position: relative;
+
+    &:nth-child(1) {
+      color: var(--secondary-success-color);
+    }
+
+    &:nth-child(2) {
+      color: var(--secondary-info-color);
+    }
+
+    &:nth-child(3) {
+      color: var(--secondary-warning-color);
+    }
+
+    &:nth-child(4) {
+      color: var(--secondary-theme-color);
+    }
+
+    &:nth-child(5) {
+      color: var(--tertiary-info-color);
+    }
+
+    &:nth-child(6) {
+      color: var(--primary-success-color);
+    }
+
+    &:nth-child(7) {
+      color: var(--primary-info-color);
+    }
+
+    &:nth-child(8) {
+      color: var(--primary-warning-color);
+    }
+
+    &::before {
+      content: var(--letter);
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: scale(1.25);
+      filter: blur(calc(var(--element-size) * 0.25));
+    }
+
+    &::after {
+      content: var(--letter);
+      position: absolute;
+      top: 87.5%;
+      left: 0;
+      transform: rotateX(135deg);
+      filter: blur(calc(var(--element-size) * 0.125));
+    }
+  }
+}

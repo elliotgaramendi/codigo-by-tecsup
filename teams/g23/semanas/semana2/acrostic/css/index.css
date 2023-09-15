@@ -1,3 +1,5 @@
 @import url('./modules/variables/variables.css');
 @import url('./modules/layout/body.css');
 @import url('./modules/layout/container.css');
+@import url('./modules/components/hero.css');
+@import url('./modules/components/acrostic.css');
