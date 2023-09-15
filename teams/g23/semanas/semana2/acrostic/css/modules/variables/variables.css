@@ -1,0 +1,18 @@
+:root {
+  scroll-behavior: smooth;
+  --primary-theme-color: crimson;
+  --secondary-theme-color: magenta;
+  --primary-success-color: lightseagreen;
+  --secondary-success-color: aquamarine;
+  --primary-warning-color: gold;
+  --secondary-warning-color: yellow;
+  --primary-info-color: royalblue;
+  --secondary-info-color: dodgerblue;
+  --tertiary-info-color: cyan;
+  --primary-background-color: #16181d;
+  --primary-text-color: white;
+  --primary-font-family: monospace;
+  --max-width: 1024px;
+  --element-spacing: 2rem;
+  --element-size: 1rem;
+}
