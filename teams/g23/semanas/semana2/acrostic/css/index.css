@@ -1,1 +1,3 @@
 @import url('./modules/variables/variables.css');
+@import url('./modules/layout/body.css');
+@import url('./modules/layout/container.css');
