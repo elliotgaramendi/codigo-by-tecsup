@@ -31,4 +31,12 @@
   margin: 0 auto;
 }
 
+.flexbox {
+  display: flex;
+}
+.flexbox.flexbox--centered-sides {
+  align-items: center;
+  justify-content: space-between;
+}
+
 /*# sourceMappingURL=index.css.map */
