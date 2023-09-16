@@ -1,7 +1,7 @@
 :root {
   --primary-background-color: #f7f8f9;
   --primary-text-color: #070809;
-  --primary-font-family: sans-serif;
+  --primary-font-family: "Open Sans", sans-serif;
   --element-size: 1rem;
 }
 
