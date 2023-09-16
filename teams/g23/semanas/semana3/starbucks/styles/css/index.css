@@ -1,10 +1,14 @@
 :root {
+  --primary-theme-color: #006241;
   --primary-background-color: #f7f8f9;
   --primary-text-color: #070809;
+  --dark-primary-text-color: #f7f8f9;
   --primary-shadow-color: #00000080;
   --primary-font-family: "Open Sans", sans-serif;
   --element-size: 1rem;
   --element-spacing: 2rem;
+  --border-radius: 1rem;
+  --transition-duration: 0.25s;
 }
 
 .body {
@@ -52,6 +56,20 @@
 .img.img--logo {
   width: calc(var(--element-size) * 3);
   height: calc(var(--element-size) * 3);
+}
+
+.button {
+  padding: 0.25em 1em;
+  border-radius: var(--border-radius);
+  color: inherit;
+  font-size: var(--element-size);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color var(--transition-duration), color var(--transition-duration);
+}
+.button:hover {
+  background-color: var(--primary-theme-color);
+  color: var(--dark-primary-text-color);
 }
 
 .d-flex {
