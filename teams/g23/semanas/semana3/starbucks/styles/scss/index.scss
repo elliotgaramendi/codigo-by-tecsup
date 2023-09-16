@@ -59,3 +59,7 @@
 .d-flex {
   display: flex;
 }
+
+.g-5xs {
+  gap: calc(var(--element-spacing) * 0.25);
+}
