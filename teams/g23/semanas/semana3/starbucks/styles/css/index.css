@@ -175,9 +175,21 @@
 .flexbox {
   display: flex;
 }
+.flexbox.flexbox--center {
+  place-items: center;
+  place-content: center;
+}
 .flexbox.flexbox--centered-sides {
   align-items: center;
   justify-content: space-between;
+}
+.flexbox .flexbox--responsive {
+  flex-direction: column;
+}
+@media (width >= 768px) {
+  .flexbox .flexbox--responsive {
+    flex-direction: row;
+  }
 }
 
 .g-layout {
