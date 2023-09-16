@@ -103,8 +103,17 @@
     pointer-events: none;
     transition: opacity var(--transition-duration);
 
+    @media (width >=768px) {
+      position: static;
+      background-color: initial;
+      opacity: 1;
+      pointer-events: auto;
+    }
+
     & .button {
-      color: var(--dark-primary-text-color);
+      @media (width <768px) {
+        color: var(--dark-primary-text-color);
+      }
     }
 
     &:target {
@@ -115,7 +124,6 @@
 }
 
 .card {
-
   & .card__body {
     display: flex;
     flex-direction: column;
@@ -209,7 +217,6 @@
       flex-direction: row;
     }
   }
-
 }
 
 .g-layout {
@@ -218,6 +225,12 @@
   &.g-layout--center {
     place-items: center;
     place-content: center;
+  }
+
+  @media (width >=768px) {
+    &.md\:g-layout--1fr-1fr {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 }
 
@@ -242,11 +255,11 @@
 }
 
 @media (width >=768px) {
-  .md\:d-block {
-    display: block;
+  .md\:d-none {
+    display: none;
   }
 
-  .md\:g-template-columns-1fr-1fr {
-    grid-template-columns: 1fr 1fr;
+  .md\:d-block {
+    display: block;
   }
 }
