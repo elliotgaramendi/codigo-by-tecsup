@@ -1,0 +1,14 @@
+:root {
+  --primary-background-color: #f7f8f9;
+  --primary-text-color: #070809;
+  --primary-font-family: sans-serif;
+  --element-size: 1rem;
+}
+
+.body {
+  margin: 0;
+  background-color: var(--primary-background-color);
+  color: var(--primary-text-color);
+  font-size: var(--element-size);
+  font-family: var(--primary-font-family);
+}
