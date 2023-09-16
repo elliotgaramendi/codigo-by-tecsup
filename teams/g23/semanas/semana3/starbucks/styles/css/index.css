@@ -54,4 +54,8 @@
   height: calc(var(--element-size) * 3);
 }
 
+.d-flex {
+  display: flex;
+}
+
 /*# sourceMappingURL=index.css.map */
