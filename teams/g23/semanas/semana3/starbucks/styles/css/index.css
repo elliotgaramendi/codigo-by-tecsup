@@ -39,4 +39,13 @@
   justify-content: space-between;
 }
 
+.img {
+  display: block;
+  object-fit: cover;
+}
+.img.img--logo {
+  width: calc(var(--element-size) * 3);
+  height: calc(var(--element-size) * 3);
+}
+
 /*# sourceMappingURL=index.css.map */
