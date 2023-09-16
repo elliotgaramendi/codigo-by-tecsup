@@ -2,6 +2,7 @@
   --primary-theme-color: #006241;
   --primary-background-color: #f7f8f9;
   --primary-text-color: #070809;
+  --secondary-text-color: #787878;
   --dark-primary-text-color: #f7f8f9;
   --primary-shadow-color: #00000080;
   --primary-font-family: 'Open Sans', sans-serif;
@@ -71,16 +72,35 @@
   }
 }
 
-h1,
-h2,
-p {
-  margin: 0;
-}
-
 .list {
   padding: 0;
   margin: 0;
   list-style: none;
+}
+
+.card {
+
+  & .card__body {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--element-spacing) * 0.25);
+  }
+
+  & .card__title {
+    margin: 0;
+    font-size: calc(var(--element-size) * 1.25);
+  }
+
+  & .card__subtitle {
+    margin: 0;
+    color: var(--secondary-text-color);
+    font-size: calc(var(--element-size) * 1.125);
+  }
+
+  & .card__text {
+    margin: 0;
+    font-size: var(--element-size);
+  }
 }
 
 .img {
