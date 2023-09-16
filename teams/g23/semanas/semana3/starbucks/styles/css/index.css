@@ -160,6 +160,10 @@
   place-content: center;
 }
 
+.d-none {
+  display: none;
+}
+
 .d-flex {
   display: flex;
 }
@@ -173,6 +177,9 @@
 }
 
 @media (width >= 768px) {
+  .md\:d-block {
+    display: block;
+  }
   .md\:g-template-columns-1fr-1fr {
     grid-template-columns: 1fr 1fr;
   }
