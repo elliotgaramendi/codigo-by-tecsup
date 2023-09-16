@@ -139,6 +139,16 @@
   }
 }
 
+.icon {
+  color: var(--primary-text-color);
+  font-size: calc(var(--element-size) * 2);
+  text-decoration: none;
+
+  i {
+    display: flex;
+  }
+}
+
 .img {
   display: block;
   object-fit: cover;

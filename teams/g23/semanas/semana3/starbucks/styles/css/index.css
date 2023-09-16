@@ -127,6 +127,15 @@
   font-size: var(--element-size);
 }
 
+.icon {
+  color: var(--primary-text-color);
+  font-size: calc(var(--element-size) * 2);
+  text-decoration: none;
+}
+.icon i {
+  display: flex;
+}
+
 .img {
   display: block;
   object-fit: cover;
