@@ -134,7 +134,7 @@
 }
 .button.button--active, .button:hover {
   background-color: var(--primary-theme-color);
-  box-shadow: 0 0 calc(var(--element-size) * 0.25) calc(var(--element-size) * 0.125) var(--primary-theme-color);
+  box-shadow: 0 0 calc(var(--element-size) * 0.125) calc(var(--element-size) * 0.0625) var(--primary-theme-color);
   color: var(--dark-primary-text-color);
 }
 
