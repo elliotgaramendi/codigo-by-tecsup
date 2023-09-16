@@ -1,3 +1,13 @@
+@keyframes beat {
+  from {
+    transform: scale(1)
+  }
+
+  to {
+    transform: scale(1.125)
+  }
+}
+
 :root {
   --primary-theme-color: #006241;
   --primary-background-color: #f7f8f9;
@@ -115,6 +125,7 @@
   &.img--cover {
     width: calc(var(--element-size) * 16);
     height: auto;
+    animation: beat 1s ease-in-out 0s infinite alternate;
   }
 }
 
