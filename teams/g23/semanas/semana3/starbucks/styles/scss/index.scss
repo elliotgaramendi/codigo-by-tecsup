@@ -4,6 +4,7 @@
   --primary-shadow-color: #00000080;
   --primary-font-family: 'Open Sans', sans-serif;
   --element-size: 1rem;
+  --element-spacing: 2rem;
 }
 
 .body {
@@ -16,4 +17,9 @@
 
 .header {
   box-shadow: 0 0 calc(var(--element-size) * 0.125) calc(var(--element-size) * 0.0625) var(--primary-shadow-color);
+}
+
+.nav {
+  padding-top: calc(var(--element-spacing) * 0.5);
+  padding-bottom: calc(var(--element-spacing) * 0.5);
 }
