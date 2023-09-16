@@ -91,6 +91,27 @@
   padding: 0;
   margin: 0;
   list-style: none;
+
+  &.list--header-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-shadow-color);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-duration);
+
+    & .button {
+      color: var(--dark-primary-text-color);
+    }
+
+    &:target {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
 }
 
 .card {
