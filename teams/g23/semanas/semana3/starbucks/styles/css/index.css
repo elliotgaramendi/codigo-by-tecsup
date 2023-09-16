@@ -14,10 +14,16 @@
   --dark-primary-text-color: #f7f8f9;
   --primary-shadow-color: #00000080;
   --primary-font-family: "Open Sans", sans-serif;
-  --element-size: 1rem;
+  --element-size: 0.875rem;
   --element-spacing: 2rem;
   --border-radius: 1rem;
   --transition-duration: 0.25s;
+}
+@media (width >= 768px) {
+  :root {
+    --element-size: 1rem;
+    --element-spacing: 1.75rem;
+  }
 }
 
 .body {
