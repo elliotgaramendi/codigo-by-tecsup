@@ -103,6 +103,10 @@
   width: calc(var(--element-size) * 3);
   height: calc(var(--element-size) * 3);
 }
+.img.img--cover {
+  width: calc(var(--element-size) * 16);
+  height: auto;
+}
 
 .button {
   padding: 0.25em 1em;
