@@ -161,6 +161,10 @@
   place-content: center;
 }
 
+.c-primary {
+  color: var(--primary-theme-color);
+}
+
 .d-none {
   display: none;
 }
