@@ -57,9 +57,9 @@
   position: absolute;
   z-index: -1;
   top: 0;
-  left: 100%;
-  width: 75vw;
-  height: 75vw;
+  left: 0;
+  width: 50vw;
+  height: 50vw;
   border-radius: 50%;
   transform: translate(-50%, -50%);
   background-color: var(--primary-theme-color);
@@ -70,9 +70,9 @@
   position: absolute;
   z-index: -1;
   top: 100%;
-  left: 0;
-  width: 75vw;
-  height: 75vw;
+  left: 100%;
+  width: 50vw;
+  height: 50vw;
   border-radius: 50%;
   transform: translate(-50%, -50%);
   background-color: var(--primary-theme-color);
@@ -160,6 +160,16 @@
 
 .g-5xs {
   gap: calc(var(--element-spacing) * 0.25);
+}
+
+.g-md {
+  gap: var(--element-spacing);
+}
+
+@media (width >= 768px) {
+  .md\:g-template-columns-1fr-1fr {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */
