@@ -1,6 +1,7 @@
 :root {
   --primary-background-color: #f7f8f9;
   --primary-text-color: #070809;
+  --primary-shadow-color: #00000080;
   --primary-font-family: 'Open Sans', sans-serif;
   --element-size: 1rem;
 }
@@ -11,4 +12,8 @@
   color: var(--primary-text-color);
   font-size: var(--element-size);
   font-family: var(--primary-font-family);
+}
+
+.header {
+  box-shadow: 0 0 calc(var(--element-size) * 0.125) calc(var(--element-size) * 0.0625) var(--primary-shadow-color);
 }
