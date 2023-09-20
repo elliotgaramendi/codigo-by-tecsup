@@ -9,7 +9,57 @@
 </head>
 
 <body>
-  <h1>Movies I Lo mejor del cine y entretenimiento</h1>
+  <header>
+    <nav class="py-4">
+      <div class="container px-4 mx-auto flex items-center justify-between">
+        <div class="flex items-center gap-4">
+          <a href="#" class="text-2xl font-black flex items-center gap-1 transition-colors hover:text-sky-600">
+            Movies
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="w-8 h-8">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M3.375 19.5h17.25m-17.25 0a1.125 1.125 0 01-1.125-1.125M3.375 19.5h1.5C5.496 19.5 6 18.996 6 18.375m-3.75 0V5.625m0 12.75v-1.5c0-.621.504-1.125 1.125-1.125m18.375 2.625V5.625m0 12.75c0 .621-.504 1.125-1.125 1.125m1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125m0 3.75h-1.5A1.125 1.125 0 0118 18.375M20.625 4.5H3.375m17.25 0c.621 0 1.125.504 1.125 1.125M20.625 4.5h-1.5C18.504 4.5 18 5.004 18 5.625m3.75 0v1.5c0 .621-.504 1.125-1.125 1.125M3.375 4.5c-.621 0-1.125.504-1.125 1.125M3.375 4.5h1.5C5.496 4.5 6 5.004 6 5.625m-3.75 0v1.5c0 .621.504 1.125 1.125 1.125m0 0h1.5m-1.5 0c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125m1.5-3.75C5.496 8.25 6 7.746 6 7.125v-1.5M4.875 8.25C5.496 8.25 6 8.754 6 9.375v1.5m0-5.25v5.25m0-5.25C6 5.004 6.504 4.5 7.125 4.5h9.75c.621 0 1.125.504 1.125 1.125m1.125 2.625h1.5m-1.5 0A1.125 1.125 0 0118 7.125v-1.5m1.125 2.625c-.621 0-1.125.504-1.125 1.125v1.5m2.625-2.625c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125M18 5.625v5.25M7.125 12h9.75m-9.75 0A1.125 1.125 0 016 10.875M7.125 12C6.504 12 6 12.504 6 13.125m0-2.25C6 11.496 5.496 12 4.875 12M18 10.875c0 .621-.504 1.125-1.125 1.125M18 10.875c0 .621.504 1.125 1.125 1.125m-2.25 0c.621 0 1.125.504 1.125 1.125m-12 5.25v-5.25m0 5.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125m-12 0v-1.5c0-.621-.504-1.125-1.125-1.125M18 18.375v-5.25m0 5.25v-1.5c0-.621.504-1.125 1.125-1.125M18 13.125v1.5c0 .621.504 1.125 1.125 1.125M18 13.125c0-.621.504-1.125 1.125-1.125M6 13.125v1.5c0 .621-.504 1.125-1.125 1.125M6 13.125C6 12.504 5.496 12 4.875 12m-1.5 0h1.5m-1.5 0c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125M19.125 12h1.5m0 0c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125m-17.25 0h1.5m14.25 0h1.5" />
+            </svg>
+          </a>
+          <ul
+            class="fixed top-0 right-0 bottom-0 left-0 bg-zinc-900/50 flex flex-col place-items-center place-content-center gap-4 opacity-0 pointer-events-none transition-opacity target:opacity-100 target:pointer-events-auto md:static md:bg-inherit md:flex-row md:opacity-100 md:pointer-events-auto"
+            id="headerMenu">
+            <li>
+              <a href="#" class="font-semibold transition-colors hover:text-sky-600">Movies</a>
+            </li>
+            <li>
+              <a href="#" class="font-semibold transition-colors hover:text-sky-600">Series</a>
+            </li>
+            <li>
+              <a href="#" class="font-semibold transition-colors hover:text-sky-600">Animes</a>
+            </li>
+          </ul>
+        </div>
+        <div class="flex items-center gap-2">
+          <form
+            class="fixed top-16 left-1/2 -translate-x-1/2 -translate-y-24 transition-transform target:translate-y-0 md:static md:transform-none md:target:transform-none"
+            id="headerSearchEngine">
+            <input type="search" placeholder="Nombre" class="py-1 px-4 rounded-2xl" />
+          </form>
+          <a href="#headerSearchEngine" class="md:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="w-8 h-8">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+            </svg>
+          </a>
+          <img src="https://i.postimg.cc/Y9zngjZV/elliot-garamendi-sonrisa.png" alt="Elliot Garamendi" width="32"
+            height="32" class="w-8 h-8 rounded-full shadow shadow-current transition-shadow hover:shadow-sky-500" />
+          <a href="#headerMenu" class="md:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="w8 h-8">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
 </body>
 
 </html>
