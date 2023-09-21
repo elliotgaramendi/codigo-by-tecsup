@@ -9,11 +9,11 @@
 </head>
 
 <body>
-  <header>
+  <header class="fixed z-20 top-0 left-0 w-full bg-zinc-900/75">
     <nav class="py-4">
       <div class="container px-4 mx-auto flex items-center justify-between">
         <div class="flex items-center gap-4">
-          <a href="#" class="text-2xl font-black flex items-center gap-1 transition-colors hover:text-sky-600">
+          <a href="#hero" class="text-2xl font-black flex items-center gap-1 transition-colors hover:text-sky-500">
             Movies
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
               stroke="currentColor" class="w-8 h-8">
@@ -25,19 +25,19 @@
             class="fixed top-0 right-0 bottom-0 left-0 bg-zinc-900/50 flex flex-col place-items-center place-content-center gap-4 opacity-0 pointer-events-none transition-opacity target:opacity-100 target:pointer-events-auto md:static md:bg-inherit md:flex-row md:opacity-100 md:pointer-events-auto"
             id="headerMenu">
             <li>
-              <a href="#" class="font-semibold transition-colors hover:text-sky-600">Movies</a>
+              <a href="#" class="font-semibold transition-colors hover:text-sky-500">Movies</a>
             </li>
             <li>
-              <a href="#" class="font-semibold transition-colors hover:text-sky-600">Series</a>
+              <a href="#" class="font-semibold transition-colors hover:text-sky-500">Series</a>
             </li>
             <li>
-              <a href="#" class="font-semibold transition-colors hover:text-sky-600">Animes</a>
+              <a href="#" class="font-semibold transition-colors hover:text-sky-500">Animes</a>
             </li>
           </ul>
         </div>
         <div class="flex items-center gap-2">
           <form
-            class="fixed top-16 left-1/2 -translate-x-1/2 -translate-y-24 transition-transform target:translate-y-0 md:static md:transform-none md:target:transform-none"
+            class="fixed top-16 left-1/2 -translate-x-1/2 -translate-y-24 transition-transform target:translate-y-4 md:static md:transform-none md:target:transform-none"
             id="headerSearchEngine">
             <input type="search" placeholder="Nombre" class="py-1 px-4 rounded-2xl" />
           </form>
@@ -60,6 +60,12 @@
       </div>
     </nav>
   </header>
+  <main>
+    <article class="relative min-h-screen" id="hero">
+      <img src="https://image.tmdb.org/t/p/original/b8hPBW0NJmiIVzvQjT3CwIpAdzl.jpg" alt="Movies"
+        class="absolute top-0 left-0 w-full h-full object-cover" />
+    </article>
+  </main>
 </body>
 
 </html>
