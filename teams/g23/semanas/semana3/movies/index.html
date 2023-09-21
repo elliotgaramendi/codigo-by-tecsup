@@ -61,9 +61,57 @@
     </nav>
   </header>
   <main>
-    <article class="relative min-h-screen" id="hero">
+    <article class="relative min-h-screen flex" id="hero">
       <img src="https://image.tmdb.org/t/p/original/b8hPBW0NJmiIVzvQjT3CwIpAdzl.jpg" alt="Movies"
-        class="absolute top-0 left-0 w-full h-full object-cover" />
+        class="absolute -z-10 top-0 left-0 w-full h-full object-cover opacity-50" />
+      <div class="container px-4 mx-auto flex items-center ">
+        <div class="flex flex-col gap-2 max-w-lg">
+          <h1 class="text-5xl font-black">Spirit: Un Corcel Indomable</h1>
+          <h2 class="text-3xl font-bold">La libertad en sus Patas</h2>
+          <p>
+            Spirit: El Corcel Indomable" es una película de animación sobre Spirit, un caballo mustang salvaje en el
+            Viejo Oeste de EE. UU. Lucha por su libertad, se une a Little Creek, un nativo americano, y enfrenta a
+            colonos que lo quieren. La película explora temas de libertad y resistencia en el siglo XIX en el Oeste
+            Americano.
+          </p>
+          <div>
+            <span
+              class="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">
+              DreamWorks
+            </span>
+            <span
+              class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">
+              Aventura
+            </span>
+            <span
+              class="bg-pink-100 text-pink-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-pink-900 dark:text-pink-300">
+              2002
+            </span>
+            <span
+              class="bg-gray-100 text-gray-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">
+              TMDB ⭐ 4.2
+            </span>
+          </div>
+          <div class="flex">
+            <button type="button"
+              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 flex items-center gap-1 transition-colors">
+              Ver
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                <path
+                  d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
+              </svg>
+            </button>
+            <button type="button"
+              class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 flex items-center gap-1 transition-colors">
+              Alternative
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                <path
+                  d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
     </article>
   </main>
 </body>
