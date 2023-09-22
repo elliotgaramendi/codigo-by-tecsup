@@ -9,6 +9,20 @@
 
 <body>
   <h1>Tabla Feliz</h1>
+
+  <script>
+    alert('Tabla Feliz');
+
+    let tableResult = '';
+    const table = prompt('¿Qué tabla de multiplicar desea generar?');
+    const limit = prompt('¿hasta qué número desea generar la tabla?');
+
+    for (let index = 0; index < limit; index++) {
+      tableResult = tableResult + table + ' x ' + (index + 1) + ': ' + (table * (index + 1) + '\n');
+    }
+
+    alert(tableResult);
+  </script>
 </body>
 
 </html>
