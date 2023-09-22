@@ -9,6 +9,23 @@
 
 <body>
   <h1>Login Feliz</h1>
+
+  <script>
+    const userData = 'admin';
+    const passwordData = '123456';
+    let user = '';
+    let password = '';
+
+    alert('Login Feliz');
+    user = prompt('Usuario');
+    password = prompt('Contraseña');
+
+    if (userData == user && passwordData == password) {
+      alert('Bienvenido');
+    } else {
+      alert('Credenciales incorrectas');
+    }
+  </script>
 </body>
 
 </html>
