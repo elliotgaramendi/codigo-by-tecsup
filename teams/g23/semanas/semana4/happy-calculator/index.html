@@ -9,6 +9,25 @@
 
 <body>
   <h1>Calculadora Feliz</h1>
+
+  <script>
+    const operations = {
+      "+": (a, b) => a + b,
+      "-": (a, b) => a - b,
+      "*": (a, b) => a * b,
+      "/": (a, b) => a / b
+    };
+
+    const number1 = +prompt('Ingrese número 1');
+    const operator = prompt('¿Qué operación desea realizar? suma (+), resta (-), multiplicación (*), división (/)');
+    const number2 = +prompt('Ingrese número 2');
+
+    if (isNaN(number1) || operator in operations == false | isNaN(number2)) {
+      alert('Valores no permitidos');
+    } else {
+      alert(`Resultado: ${operations[operator](number1, number2)}`);
+    }
+  </script>
 </body>
 
 </html>
