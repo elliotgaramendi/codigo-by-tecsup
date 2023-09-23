@@ -9,6 +9,29 @@
 
 <body>
   <h1>Promedio Feliz</h1>
+
+  <script>
+    alert('Promedio Feliz');
+
+    const averageNotes = (n1, n2, n3) => {
+      return (n1 + n2 + n3) / 3;
+    };
+
+    const courseStatus = average => average >= 13 ? 'aprobado' : 'desaprobado';
+
+    let response = '1';
+
+    while (response == '1') {
+      const note1 = +prompt('Ingrese nota 1');
+      const note2 = +prompt('Ingrese nota 2');
+      const note3 = +prompt('Ingrese nota 3');
+
+      const average = averageNotes(note1, note2, note3);
+      alert(`Promedio final: ${average} usted a ${courseStatus(average)}.`);
+
+      response = prompt('¿Usted desea promediar más notas? Sí (1) No (Otra tecla)');
+    }
+  </script>
 </body>
 
 </html>
