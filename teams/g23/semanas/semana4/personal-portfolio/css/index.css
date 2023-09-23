@@ -146,6 +146,14 @@
     pointer-events: initial;
   }
 
+  &.offcanvas--mobile {
+    @media (width >=768px) {
+      all: unset;
+      display: flex;
+      gap: calc(var(--element-spacing) * 0.5);
+    }
+  }
+
   & .offcanvas__close {
     position: absolute;
     top: calc(var(--element-spacing) * 0.75);
@@ -348,5 +356,9 @@
 @media (width >=768px) {
   .md\:d-block {
     display: block;
+  }
+
+  .md\:d-none {
+    display: none;
   }
 }
