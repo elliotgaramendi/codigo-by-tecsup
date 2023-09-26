@@ -21,7 +21,6 @@
 
       & .body__button {
         color: black;
-
       }
     }
   </style>
@@ -31,9 +30,26 @@
   <h1>Perdóname, ¿Quieres ser mi dúo dinámico?</h1>
   <img src="https://pbs.twimg.com/media/Fta2H2uXwAMKTo3.jpg" alt="" class="body__img" width="256" height="256" />
   <div>
-    <button class="body__button">🥰 Seamos el dúo dinámico 🥰</button>
-    <button class="body__button">😭 Nel Perro 😭</button>
+    <button class="body__button" id="yes">🥰 Seré tu Chukinuni 🥰</button>
+    <button class="body__button" id="no">😭 No Tilin 😭</button>
   </div>
+
+  <script>
+    const noButton = document.getElementById('no');
+    const yesButton = document.getElementById('yes');
+
+    noButton.addEventListener('mouseover', () => {
+      noButton.style.position = 'absolute';
+      noButton.style.top = Math.random() * window.innerHeight + 'px';
+      noButton.style.left = Math.random() * window.innerWidth + 'px';
+    });
+
+    yesButton.addEventListener('click', () => {
+      alert('💞 Ahora somos el dúo dinámico 💞');
+      alert('😱 ¿Quieres casarte conmigo? 😱');
+      window.location.href = 'https://www.youtube.com/watch?v=cd140cOms28&t=22s';
+    });
+  </script>
 </body>
 
 </html>
