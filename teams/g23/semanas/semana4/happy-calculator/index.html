@@ -13,14 +13,15 @@
   <main>
     <section class="py-4">
       <div class="container">
-        <form>
+        <form name="calculatorForm" class="mb-3">
           <h1 class="text-primary text-center mb-3">Calculadora Feliz</h1>
           <div class="form-floating mb-3">
             <input type="number" name="number1" placeholder="Numero 2" class="form-control" id="number1" required />
             <label for="number1">Numero 1</label>
           </div>
           <div class="form-floating">
-            <select class="form-select mb-3" id="operator" name="operator" aria-label="Floating label select example">
+            <select class="form-select mb-3" id="operator" name="operator" aria-label="Floating label select example"
+              required>
               <option selected value="">Seleccionar operador</option>
               <option value="+">+</option>
               <option value="-">-</option>
@@ -35,6 +36,7 @@
           </div>
           <button class="btn btn-primary w-100">Calcular</button>
         </form>
+        <div class="alert alert-primary text-center" role="alert" id="result"></div>
       </div>
     </section>
   </main>
@@ -47,15 +49,17 @@
       "/": (a, b) => a / b
     };
 
-    const number1 = +prompt('Ingrese número 1');
-    const operator = prompt('¿Qué operación desea realizar? suma (+), resta (-), multiplicación (*), división (/)');
-    const number2 = +prompt('Ingrese número 2');
+    const calculatorForm = document.forms['calculatorForm'];
 
-    if (isNaN(number1) || operator in operations == false | isNaN(number2)) {
-      alert('Valores no permitidos');
-    } else {
-      alert(`Resultado: ${operations[operator](number1, number2)}`);
-    }
+    calculatorForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const number1 = +calculatorForm['number1'].value;
+      const operator = calculatorForm['operator'].value;
+      const number2 = +calculatorForm['number2'].value;
+
+      const result = document.getElementById('result');
+      result.textContent = operations[operator](number1, number2);
+    });
   </script>
 </body>
 
