@@ -37,6 +37,7 @@
           <button class="btn btn-primary w-100">Calcular</button>
         </form>
         <div class="alert alert-primary text-center" role="alert" id="result"></div>
+        <span class="badge text-bg-danger w-100" id="error"></span>
       </div>
     </section>
   </main>
@@ -57,8 +58,13 @@
       const operator = calculatorForm['operator'].value;
       const number2 = +calculatorForm['number2'].value;
 
-      const result = document.getElementById('result');
-      result.textContent = operations[operator](number1, number2);
+      if (isNaN(number1) || operator === '' || isNaN(number2)) {
+        const error = document.getElementById('error');
+        error.textContent = 'Valores no permitidos';
+      } else {
+        const result = document.getElementById('result');
+        result.textContent = operations[operator](number1, number2);
+      }
     });
   </script>
 </body>
