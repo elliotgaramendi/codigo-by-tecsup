@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-bs-theme="dark">
 
 <head>
   <meta charset="UTF-8" />
@@ -10,7 +10,34 @@
 </head>
 
 <body>
-  <h1>Calculadora Feliz</h1>
+  <main>
+    <section class="py-4">
+      <div class="container">
+        <form>
+          <h1 class="text-primary text-center mb-3">Calculadora Feliz</h1>
+          <div class="form-floating mb-3">
+            <input type="number" name="number1" placeholder="Numero 2" class="form-control" id="number1" required />
+            <label for="number1">Numero 1</label>
+          </div>
+          <div class="form-floating">
+            <select class="form-select mb-3" id="operator" name="operator" aria-label="Floating label select example">
+              <option selected value="">Seleccionar operador</option>
+              <option value="+">+</option>
+              <option value="-">-</option>
+              <option value="*">*</option>
+              <option value="/">/</option>
+            </select>
+            <label for="operator">Operador</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="number" name="number2" placeholder="Numero 2" class="form-control" id="number2" required />
+            <label for="number2">Numero 2</label>
+          </div>
+          <button class="btn btn-primary w-100">Calcular</button>
+        </form>
+      </div>
+    </section>
+  </main>
 
   <script>
     const operations = {
