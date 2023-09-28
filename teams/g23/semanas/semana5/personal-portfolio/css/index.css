@@ -286,6 +286,20 @@
     --button-background-color: var(--primary-theme-color);
     --button-text-color: var(--primary-text-color);
   }
+
+  &.button--to-top {
+    position: fixed;
+    right: var(--element-spacing);
+    bottom: var(--element-spacing);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-duration);
+  }
+
+  &.button--show {
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
 
 .container {
