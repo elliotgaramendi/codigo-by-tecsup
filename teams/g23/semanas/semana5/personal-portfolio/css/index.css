@@ -32,11 +32,21 @@
   top: 0;
   left: 0;
   width: 100%;
+  transition: background-color var(--transition-duration), box-shadow var(--transition-duration);
+}
+
+.header--scroll {
   background-color: var(--light-primary-shadow-color);
   box-shadow: 0 0 calc(var(--element-size) * 0.25) calc(var(--element-size) * 0.125) var(--primary-shadow-color);
 }
 
 .nav {
+  padding-top: calc(var(--element-spacing) * 0.75);
+  padding-bottom: calc(var(--element-spacing) * 0.75);
+  transition: padding var(--transition-duration);
+}
+
+.nav--scroll {
   padding-top: calc(var(--element-spacing) * 0.5);
   padding-bottom: calc(var(--element-spacing) * 0.5);
 }
