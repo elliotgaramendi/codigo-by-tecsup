@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moonlight I Elliot Garamendi el mejor desarrollador web</title>
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="./css/index.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
+</head>
+
+<body class="body">
+  <header class="header">
+    <nav class="header-nav">
+      <div class="header-nav-container">
+        <a href="#hero" class="header-nav__logo-container">
+          <img src="./img/logo.webp" alt="Logo de la Web" class="header-nav__logo" width="48" height="48" />
+        </a>
+        <figure class="header-nav__menu-icon-container" id="headerNavMenuIconContainer">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff" class="header-nav__menu-icon">
+            <path d="M4 6h16v2H4zm4 5h12v2H8zm5 5h7v2h-7z"></path>
+          </svg>
+        </figure>
+        <ul class="header-nav__menu-link-list">
+          <li class="header-nav__menu-link-item">
+            <a href="#learning" class="header-nav__menu-link">Cursos</a>
+          </li>
+          <li class="header-nav__menu-link-item">
+            <a href="#learning" class="header-nav__menu-link">Nosotros</a>
+          </li>
+          <li class="header-nav__menu-link-item">
+            <a href="#learning" class="header-nav__menu-link">Contacto</a>
+          </li>
+          <li class="header-nav__menu-link-item">
+            <a href="https://www.linkedin.com/in/elliotgaramendi/"
+              class="header-nav__menu-link header-nav__menu-link--active" target="_blank"
+              rel="noopener noreferrer">Elliot</a>
+          </li>
+          <li class="header-nav__menu-link-item header-nav__menu-close-icon-container"
+            id="headerNavMenuCloseIconContainer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff" class="header-nav__menu-close-icon">
+              <path
+                d="M9.172 16.242 12 13.414l2.828 2.828 1.414-1.414L13.414 12l2.828-2.828-1.414-1.414L12 10.586 9.172 7.758 7.758 9.172 10.586 12l-2.828 2.828z">
+              </path>
+              <path
+                d="M12 22c5.514 0 10-4.486 10-10S17.514 2 12 2 2 6.486 2 12s4.486 10 10 10zm0-18c4.411 0 8 3.589 8 8s-3.589 8-8 8-8-3.589-8-8 3.589-8 8-8z">
+              </path>
+            </svg>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="hero" id="hero">
+      <div class="hero__container">
+        <h1 class="hero__title">Aprenda programación web con React</h1>
+        <a href="#learning" class="hero__learn-button hero__learn-button--active">¡Aprender!</a>
+      </div>
+      <figure class="hero__stars-image-container">
+        <img src="./img/hero-stars.png" alt="Estrellas de fondo" class="hero__stars-image" />
+      </figure>
+      <figure class="hero__moon-image-container">
+        <img src="./img/hero-moon.png" alt="Estrellas de fondo" class="hero__moon-image" />
+      </figure>
+      <figure class="hero__mountains-behind-image-container">
+        <img src="./img/hero-mountains-behind.png" alt="Estrellas de fondo" class="hero__mountains-behind-image" />
+      </figure>
+      <figure class="hero__mountains-front-image-container">
+        <img src="./img/hero-mountains-front.png" alt="Estrellas de fondo" class="hero__mountains-front-image" />
+      </figure>
+    </section>
+
+    <section class="learning" id="learning">
+      <div class="learning__container">
+        <h2 class="learning__topic-title">Introducción a React</h2>
+        <p class="learning__paragraph">
+          Todo lo necesario y esencial de React, (Create React App, JSX, Components, Props, State, Conditional
+          Rendering, Basic Hooks, Styled Components y más)
+        </p>
+        <div class="learning__topics">
+          <div class="learning__topic">
+            <div class="learning__topic-icon-container">
+              <img src="./img/code.svg" alt="Ícono de etiqueta" class="learning__topic-icon" />
+            </div>
+            <h3 class="learning__topic-title">JSX</h3>
+            <p class="learning__topic-paragraph">
+              Extensión de la sintaxis de JavaScript. Recomendamos usarlo con React para describir cómo debería ser la
+              interfaz de usuario.
+            </p>
+          </div>
+
+          <div class="learning__topic">
+            <div class="learning__topic-icon-container">
+              <img src="./img/shapes.svg" alt="Ícono de componentes" class="learning__topic-icon" />
+            </div>
+            <h3 class="learning__topic-title">Components</h3>
+            <p class="learning__topic-paragraph">
+              Es un elemento de software visual que tiene su propio estado, recibe unas propiedades e implementa su
+              propia lógica de renderizado.
+            </p>
+          </div>
+
+          <div class="learning__topic">
+            <div class="learning__topic-icon-container">
+              <img src="./img/paint.svg" alt="Ícono de estilos" class="learning__topic-icon" />
+            </div>
+            <h3 class="learning__topic-title">Styled Components</h3>
+            <p class="learning__topic-paragraph">
+              Alternativa de mejorar CSS para diseñar componentes en React
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>
