@@ -1,29 +1,68 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-bs-theme="dark">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Registro Feliz</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 </head>
 
 <body>
-  <h1>Registro Feliz</h1>
-
+  <section class="py-4">
+    <div class="container">
+      <form name="registroForm" class="d-flex flex-column gap-4">
+        <h1 class="text-center">Registro Feliz</h1>
+        <div class="input-group has-validation position-relative mb-2">
+          <span class="input-group-text" style="width: 48px;">@</span>
+          <div id="nameContainer" class="form-floating">
+            <input type="text" name="user" class="form-control" id="user" placeholder="User" required>
+            <label for="user">User</label>
+          </div>
+          <div class="invalid-feedback position-absolute top-100 start-0">
+            Please choose a valid user.
+          </div>
+        </div>
+        <div class="input-group has-validation position-relative mb-2">
+          <span class="input-group-text" style="width: 48px;">***</span>
+          <div id="passwordContainer" class="form-floating">
+            <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
+            <label for="password">Password</label>
+          </div>
+          <div class="invalid-feedback position-absolute top-100 start-0">
+            Please choose a valid password.
+          </div>
+        </div>
+        <button class="btn btn-primary btn-lg">Iniciar sesión</button>
+      </form>
+    </div>
+  </section>
   <script>
-    let user;
-    let password;
+    const registroForm = document.forms['registroForm'];
 
-    alert('Registro Feliz');
-    user = prompt('Usuario');
-    password = prompt('Contraseña');
+    registroForm.addEventListener('submit', e => {
+      e.preventDefault();
 
-    alert(`
-      Felicitaciones, usted se ha registrado.
-      Usuario: ${user}
-      Contraseña: ${password}
-    `)
-    window.location.href = '../happy-login';
+      const nameContainer = document.getElementById('nameContainer');
+      const user = registroForm['user'];
+      const passwordContainer = document.getElementById('passwordContainer');
+      const password = registroForm['password'];
+
+      if (user.value.trim() !== '') {
+        nameContainer.classList.remove('is-invalid');
+        user.classList.remove('is-invalid');
+        if (password.value.trim() !== '') {
+          window.location.href = '../happy-login';
+        } else {
+          passwordContainer.classList.add('is-invalid');
+          password.classList.add('is-invalid');
+        }
+      } else {
+        nameContainer.classList.add('is-invalid');
+        user.classList.add('is-invalid');
+      }
+    });
   </script>
 </body>
 
