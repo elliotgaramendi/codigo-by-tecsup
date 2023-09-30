@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-bs-theme="dark">
 
 <head>
   <meta charset="UTF-8" />
@@ -10,9 +10,34 @@
 </head>
 
 <body>
-  <h1>Login Feliz</h1>
-
-  <script>
+  <section class="py-4">
+    <div class="container">
+      <h1 class="text-center">Login Feliz</h1>
+      <form class="d-flex flex-column gap-4">
+        <div class="input-group has-validation position-relative mb-2">
+          <span class="input-group-text" style="width: 48px;">@</span>
+          <div class="form-floating">
+            <input type="text" class="form-control" id="user" placeholder="User" required>
+            <label for="user">User</label>
+          </div>
+          <div class="invalid-feedback position-absolute top-100 start-0">
+            Please choose a user.
+          </div>
+        </div>
+        <div class="input-group has-validation position-relative mb-2">
+          <span class="input-group-text" style="width: 48px;">***</span>
+          <div class="form-floating">
+            <input type="text" class="form-control" id="password" placeholder="Password" required>
+            <label for="password">Password</label>
+          </div>
+          <div class="invalid-feedback position-absolute top-100 start-0">
+            Please choose a password.
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+  <!-- <script>
     const userData = 'admin';
     const passwordData = '123456';
     let user = '';
@@ -27,7 +52,7 @@
     } else {
       alert('Credenciales incorrectas');
     }
-  </script>
+  </script> -->
 </body>
 
 </html>
