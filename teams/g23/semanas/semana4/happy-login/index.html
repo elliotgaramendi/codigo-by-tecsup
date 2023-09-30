@@ -13,11 +13,11 @@
   <section class="py-4">
     <div class="container">
       <h1 class="text-center">Login Feliz</h1>
-      <form class="d-flex flex-column gap-4">
+      <form name="loginForm" class="d-flex flex-column gap-4">
         <div class="input-group has-validation position-relative mb-2">
           <span class="input-group-text" style="width: 48px;">@</span>
-          <div class="form-floating">
-            <input type="text" class="form-control" id="user" placeholder="User" required>
+          <div name="nameContainer" class="form-floating">
+            <input type="text" name="user" class="form-control" id="user" placeholder="User" required>
             <label for="user">User</label>
           </div>
           <div class="invalid-feedback position-absolute top-100 start-0">
@@ -26,8 +26,8 @@
         </div>
         <div class="input-group has-validation position-relative mb-2">
           <span class="input-group-text" style="width: 48px;">***</span>
-          <div class="form-floating">
-            <input type="text" class="form-control" id="password" placeholder="Password" required>
+          <div name="passwordContainer" class="form-floating">
+            <input type="text" name="password" class="form-control" id="password" placeholder="Password" required>
             <label for="password">Password</label>
           </div>
           <div class="invalid-feedback position-absolute top-100 start-0">
