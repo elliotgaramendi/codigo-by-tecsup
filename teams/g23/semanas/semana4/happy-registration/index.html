@@ -18,9 +18,12 @@
     user = prompt('Usuario');
     password = prompt('Contraseña');
 
-    alert('Felicitaciones, usted se ha registrado.')
-    alert('Usuario: ' + user);
-    alert('Contraseña: ' + password);
+    alert(`
+      Felicitaciones, usted se ha registrado.
+      Usuario: ${user}
+      Contraseña: ${password}
+    `)
+    window.location.href = '../happy-login';
   </script>
 </body>
 
