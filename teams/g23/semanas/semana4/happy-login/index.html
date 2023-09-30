@@ -21,7 +21,7 @@
             <label for="user">User</label>
           </div>
           <div class="invalid-feedback position-absolute top-100 start-0">
-            Please choose a user.
+            Please choose a correct user.
           </div>
         </div>
         <div class="input-group has-validation position-relative mb-2">
@@ -31,7 +31,7 @@
             <label for="password">Password</label>
           </div>
           <div class="invalid-feedback position-absolute top-100 start-0">
-            Please choose a password.
+            Please choose a correct password.
           </div>
         </div>
         <button class="btn btn-primary btn-lg">Iniciar sesión</button>
@@ -39,18 +39,33 @@
     </div>
   </section>
   <script>
+    const userData = 'admin';
+    const passwordData = '123456';
+
     const loginForm = document.forms['loginForm'];
 
     loginForm.addEventListener('submit', e => {
       e.preventDefault();
       const nameContainer = document.getElementById('nameContainer');
-      const user = loginForm['user'].value;
+      const user = loginForm['user'];
       const passwordContainer = document.getElementById('passwordContainer');
-      const password = loginForm['password'].value;
-      console.log(nameContainer);
-      console.log(user);
-      console.log(passwordContainer);
-      console.log(password);
+      const password = loginForm['password'];
+
+      if (userData == user.value) {
+        nameContainer.classList.remove('is-invalid');
+        user.classList.remove('is-invalid');
+        if (passwordData == password.value) {
+          alert('Bienvenido');
+          passwordContainer.classList.remove('is-invalid');
+          password.classList.remove('is-invalid');
+        } else {
+          passwordContainer.classList.add('is-invalid');
+          password.classList.add('is-invalid');
+        }
+      } else {
+        nameContainer.classList.add('is-invalid');
+        user.classList.add('is-invalid');
+      }
     });
   </script>
 </body>
