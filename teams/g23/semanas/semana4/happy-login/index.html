@@ -12,11 +12,11 @@
 <body>
   <section class="py-4">
     <div class="container">
-      <h1 class="text-center">Login Feliz</h1>
       <form name="loginForm" class="d-flex flex-column gap-4">
+        <h1 class="text-center">Login Feliz</h1>
         <div class="input-group has-validation position-relative mb-2">
           <span class="input-group-text" style="width: 48px;">@</span>
-          <div name="nameContainer" class="form-floating">
+          <div id="nameContainer" class="form-floating">
             <input type="text" name="user" class="form-control" id="user" placeholder="User" required>
             <label for="user">User</label>
           </div>
@@ -26,33 +26,33 @@
         </div>
         <div class="input-group has-validation position-relative mb-2">
           <span class="input-group-text" style="width: 48px;">***</span>
-          <div name="passwordContainer" class="form-floating">
-            <input type="text" name="password" class="form-control" id="password" placeholder="Password" required>
+          <div id="passwordContainer" class="form-floating">
+            <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
             <label for="password">Password</label>
           </div>
           <div class="invalid-feedback position-absolute top-100 start-0">
             Please choose a password.
           </div>
         </div>
+        <button class="btn btn-primary btn-lg">Iniciar sesión</button>
       </form>
     </div>
   </section>
-  <!-- <script>
-    const userData = 'admin';
-    const passwordData = '123456';
-    let user = '';
-    let password = '';
+  <script>
+    const loginForm = document.forms['loginForm'];
 
-    alert('Login Feliz');
-    user = prompt('Usuario');
-    password = prompt('Contraseña');
-
-    if (userData == user && passwordData == password) {
-      alert('Bienvenido');
-    } else {
-      alert('Credenciales incorrectas');
-    }
-  </script> -->
+    loginForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const nameContainer = document.getElementById('nameContainer');
+      const user = loginForm['user'].value;
+      const passwordContainer = document.getElementById('passwordContainer');
+      const password = loginForm['password'].value;
+      console.log(nameContainer);
+      console.log(user);
+      console.log(passwordContainer);
+      console.log(password);
+    });
+  </script>
 </body>
 
 </html>
