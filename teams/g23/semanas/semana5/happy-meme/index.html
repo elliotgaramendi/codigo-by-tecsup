@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meme Feliz</title>
+  <link rel="stylesheet" href="./css/index.css" />
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+</head>
+
+<body class="body">
+  <header class="header">
+    <nav class="header-nav">
+      <div class="header-nav__container">
+        <a href="#hero" class="header-nav__link-logo-container">
+          <img src="./img/logo.png" alt="Logo de Memes" class="header-nav__link-logo" />
+        </a>
+        <ul class="header-nav__menu-link-list">
+          <li class="header-nav__menu-link-item">
+            <a href="#memes" class="header-nav__menu-link">Memes</a>
+          </li>
+          <li class="header-nav__menu-link-item">
+            <a href="https://www.linkedin.com/in/elliotgaramendi/"
+              class="header-nav__menu-link header-nav__menu-link--active" target="_blank" rel="noopener noreferrer">
+              Elliot
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="hero" id="hero">
+      <div class="hero__bubble-container">
+        <div class="hero__bubble"></div>
+        <div class="hero__bubble"></div>
+        <div class="hero__bubble"></div>
+        <div class="hero__bubble"></div>
+        <div class="hero__bubble"></div>
+        <div class="hero__bubble"></div>
+        <div class="hero__bubble"></div>
+        <div class="hero__bubble"></div>
+        <div class="hero__bubble"></div>
+      </div>
+      <div class="hero__container">
+        <div class="hero__info">
+          <h1 class="hero__info-title">¡Los mejores memes del mundo!</h1>
+          <a href="#memes" class="hero__info-link hero__info-link--active">Buscar memes</a>
+        </div>
+        <div class="hero__figure">
+          <figure class="hero__figure-image-container">
+            <img src="./img/meme.png" alt="Meme" class="hero__figure-image" />
+          </figure>
+        </div>
+      </div>
+    </section>
+    <section class="memes" id="memes">
+      <div class="memes__container">
+        <h2 class="memes__title">Busca tu meme favorito</h2>
+        <input class="memes__buscador" type="search" placeholder='Ponte las pilas crag' id="memesBuscador" required />
+        <div class="memes__meme-container" id="memesMemeContainer"></div>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>
