@@ -29,7 +29,7 @@
   --button-color-active: #2a9d8f;
   --button-text-color: #fff;
 
-  --primary-shadow-color: #8888;
+  --primary-shadow-color: #88888880;
   --secondary-shadow-color: #21242c80;
   --primary-highlight-color: #61dafb;
   --secondary-highlight-color: #ffd700;
@@ -58,7 +58,7 @@
 }
 
 .header--scroll {
-  background-color: var(--primary-shadow-color);
+  background-color: var(--text-color);
 }
 
 .header-nav {
