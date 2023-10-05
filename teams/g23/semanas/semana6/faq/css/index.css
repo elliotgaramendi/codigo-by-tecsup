@@ -1,9 +1,14 @@
 :root {
   color-scheme: dark;
   --primary-theme-color: #087ea4;
+  --primary-background-color: #080808;
+  --primary-text-color: #f7f8f9;
+  --primary-shadow-color: #ffffff40;
   --max-width: 512px;
   --element-size: 1rem;
   --element-spacing: 2rem;
+  --border-radius: 1rem;
+  --transition-duration: 0.25s;
 }
 
 .body {
@@ -14,9 +19,65 @@
 
 .container {
   max-width: var(--max-width);
-  padding-right: calc(var(--element-spacing) / 2);
-  padding-left: calc(var(--element-spacing) / 2);
+  padding-right: calc(var(--element-spacing) * 0.5);
+  padding-left: calc(var(--element-spacing) * 0.5);
   margin: 0 auto;
+}
+
+.card {
+  max-width: 256px;
+  margin: 0 auto;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.card__body {
+  padding: calc(var(--element-spacing) * 0.5);
+  background-color: var(--primary-shadow-color);
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--element-spacing) * 0.25);
+}
+
+.card__title {
+  margin: 0;
+  font-size: calc(var(--element-size) * 1.25);
+  text-align: center;
+}
+
+.card__text {
+  margin: 0;
+  font-size: var(--element-size);
+  text-align: center;
+}
+
+.button {
+  --button-border-color: var(--primary-background-color);
+  --button-background-color: var(--primary-background-color);
+  --button-text-color: var(--primary-text-color);
+  all: unset;
+  display: inline-block;
+  padding: 0.5em 2em;
+  border: calc(var(--element-size) * 0.125) solid var(--button-border-color);
+  border-radius: var(--border-radius);
+  background-color: var(--button-background-color);
+  color: var(--button-text-color);
+  font-size: calc(var(--element-size) * 0.875);
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: box-shadow var(--transition-duration), background-color var(--transition-duration), filter var(--transition-duration);
+
+  &:hover {
+    box-shadow: 0 0 calc(var(--element-size) * 0.25) calc(var(--element-size) * 0.125) var(--button-background-color);
+    filter: brightness(1.25);
+  }
+
+  &.button--primary {
+    --button-border-color: var(--primary-theme-color);
+    --button-background-color: var(--primary-theme-color);
+    --button-text-color: var(--primary-text-color);
+  }
 }
 
 .img {
