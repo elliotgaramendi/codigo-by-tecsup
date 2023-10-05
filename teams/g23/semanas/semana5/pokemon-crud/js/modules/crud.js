@@ -12,6 +12,7 @@ const crud = () => {
     const image = pokemonForm['image'].value;
 
     pokemons = [...pokemons, { name, type, hp, basic, special, image }];
+    localStorage.setItem('pokemonCrud', JSON.stringify(pokemons));
     readPokemon();
     pokemonForm.reset();
   };
@@ -78,6 +79,11 @@ const crud = () => {
       pokemonTBody.appendChild(tableRow);
     });
   };
+
+  if (localStorage.getItem('pokemonCrud') !== null) {
+    pokemons = JSON.parse(localStorage.getItem('pokemonCrud'));
+    readPokemon();
+  }
 
   pokemonForm.addEventListener('submit', e => {
     e.preventDefault();
