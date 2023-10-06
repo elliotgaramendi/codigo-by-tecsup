@@ -4,7 +4,7 @@
   --primary-background-color: #080808;
   --primary-text-color: #f7f8f9;
   --primary-shadow-color: #ffffff40;
-  --max-width: 512px;
+  --max-width: 1024px;
   --element-size: 1rem;
   --element-spacing: 2rem;
   --border-radius: 1rem;
@@ -22,6 +22,7 @@
   padding-right: calc(var(--element-spacing) * 0.5);
   padding-left: calc(var(--element-spacing) * 0.5);
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .card {
@@ -32,10 +33,12 @@
 }
 
 .card__body {
+  height: 100%;
   padding: calc(var(--element-spacing) * 0.5);
   background-color: var(--primary-shadow-color);
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: calc(var(--element-spacing) * 0.25);
 }
 
@@ -105,6 +108,18 @@
     height: 0.125em;
     background-color: var(--primary-theme-color);
   }
+}
+
+.g-layout {
+  display: grid;
+}
+
+.g-layout--auto-fit-columns {
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
+.w-100\% {
+  width: 100%;
 }
 
 .d-flex {
