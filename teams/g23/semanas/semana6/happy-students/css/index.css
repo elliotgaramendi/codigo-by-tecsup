@@ -10,7 +10,7 @@
   --border-radius: 16px;
 }
 
-body {
+.body {
   min-height: 100vh;
   margin: 0;
   background-image: url('https://i.postimg.cc/x9MyhM3D/react-system.webp');
@@ -24,7 +24,7 @@ body {
   justify-content: center;
 }
 
-main {
+.card {
   max-width: calc(var(--element-size) * 20);
   padding: calc(var(--element-spacing) / 2);
   margin: calc(var(--element-spacing) / 2);
@@ -39,39 +39,24 @@ main {
   gap: calc(var(--element-spacing) / 4);
 }
 
-img {
-  width: calc(var(--element-size) * 12.5);
-  height: calc(var(--element-size) * 12.5);
-  border-radius: 50%;
-  box-shadow: 0 0 calc(var(--element-size) * 0.5) calc(var(--element-size) * 0.25) var(--primary-shadow-color);
-  display: block;
-}
-
-h1,
-h2,
-p {
+.card__title {
   margin: 0;
-}
-
-h2,
-span {
-  color: var(--secondary-text-color);
-  font-weight: 400;
-}
-
-h1 {
   font-size: calc(var(--element-size) * 1.125);
 }
 
-h2 {
+.card__subtitle {
+  margin: 0;
+  color: var(--secondary-text-color);
   font-size: var(--element-size);
+  font-weight: 400;
 }
 
-p {
+.card__text {
+  margin: 0;
   font-size: calc(var(--element-size) * 0.875);
 }
 
-ul {
+.list {
   padding: 0;
   margin: 0;
   list-style: none;
@@ -81,7 +66,7 @@ ul {
   gap: calc(var(--element-size) / 2);
 }
 
-.skill {
+.button {
   padding: 0.25em 1em;
   border-radius: var(--border-radius);
   background-color: var(--primary-theme-color);
@@ -89,7 +74,15 @@ ul {
   font-weight: 700;
 }
 
-a {
+.img {
+  width: calc(var(--element-size) * 12.5);
+  height: calc(var(--element-size) * 12.5);
+  border-radius: 50%;
+  box-shadow: 0 0 calc(var(--element-size) * 0.5) calc(var(--element-size) * 0.25) var(--primary-shadow-color);
+  display: block;
+}
+
+.link {
   color: var(--primary-text-color);
   font-size: calc(var(--element-size) * 1.25);
 }
