@@ -1,5 +1,3 @@
 'use strict';
 
-document.addEventListener('DOMContentLoaded', () => {
-  alert('hola mundo');
-});
+document.addEventListener('DOMContentLoaded', () => { });

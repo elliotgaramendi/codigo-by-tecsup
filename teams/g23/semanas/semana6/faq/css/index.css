@@ -22,7 +22,6 @@
   padding-right: calc(var(--element-spacing) * 0.5);
   padding-left: calc(var(--element-spacing) * 0.5);
   margin: 0 auto;
-  box-sizing: border-box;
 }
 
 .card {

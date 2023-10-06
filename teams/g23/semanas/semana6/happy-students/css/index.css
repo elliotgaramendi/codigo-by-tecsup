@@ -1,10 +1,12 @@
 :root {
+  color-scheme: dark;
   --primary-theme-color: #087ea4;
   --primary-text-color: #f7f8f9;
   --secondary-text-color: #bbb;
   --primary-shadow-color: #ffffff80;
   --light-primary-shadow-color: #00000080;
   --primary-font-family: monospace;
+  --max-width: 1024px;
   --element-spacing: 32px;
   --element-size: 16px;
   --border-radius: 16px;
@@ -16,18 +18,26 @@
   background-image: url('https://i.postimg.cc/x9MyhM3D/react-system.webp');
   background-size: cover;
   background-position: center;
-  color: var(--primary-text-color);
+  background-attachment: fixed;
   font-family: var(--primary-font-family);
   font-size: var(--element-size);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+}
+
+.section {
+  padding-top: var(--element-spacing);
+  padding-bottom: var(--element-spacing);
+}
+
+.container {
+  max-width: var(--max-width);
+  padding-right: calc(var(--element-spacing) / 2);
+  padding-left: calc(var(--element-spacing) / 2);
+  margin: 0 auto;
 }
 
 .card {
-  max-width: calc(var(--element-size) * 20);
+  max-width: calc(var(--element-size) * 32);
   padding: calc(var(--element-spacing) / 2);
-  margin: calc(var(--element-spacing) / 2);
   background-color: var(--light-primary-shadow-color);
   backdrop-filter: blur(var(--element-size));
   border-radius: var(--border-radius);
@@ -74,6 +84,22 @@
   font-weight: 700;
 }
 
+.title {
+  position: relative;
+  margin: 0;
+  font-size: calc(var(--element-size) * 2);
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: -0.125em;
+    left: 0;
+    width: 2em;
+    height: 0.125em;
+    background-color: var(--primary-theme-color);
+  }
+}
+
 .img {
   width: calc(var(--element-size) * 12.5);
   height: calc(var(--element-size) * 12.5);
@@ -85,4 +111,28 @@
 .link {
   color: var(--primary-text-color);
   font-size: calc(var(--element-size) * 1.25);
+}
+
+.g-layout {
+  display: grid;
+}
+
+.g-layout--auto-fit-columns {
+  grid-template-columns: repeat(auto-fit, minmax(calc(var(--element-size) * 20), 1fr));
+}
+
+.d-flex {
+  display: flex;
+}
+
+.f-direction-column {
+  flex-direction: column;
+}
+
+.j-items-center {
+  justify-items: center;
+}
+
+.g-md {
+  gap: var(--element-spacing);
 }
