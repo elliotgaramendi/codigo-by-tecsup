@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "image": "https://static.xx.fbcdn.net/assets/?revision=1431132240730458&name=Illustrations-Get-Started&density=1",
+    "title": "Guía de inicio rápido",
+    "text": "Aprenda como usar la aplicación Cineplanet Perú"
+  },
+  {
+    "id": 2,
+    "image": "https://static.xx.fbcdn.net/assets/?revision=1431132240730458&name=Illustrations-Stay-Safe&density=1",
+    "title": "Mantente segur@",
+    "text": "Su privacidad y seguridad son importantes. Aprenda cómo mantenerse seguro en Cineplanet."
+  },
+  {
+    "id": 3,
+    "image": "https://static.xx.fbcdn.net/assets/?revision=1431132240730458&name=Illustrations-Communities&density=1",
+    "title": "Comunidades",
+    "text": "Aprenda a crear y participar en comunidades."
+  },
+  {
+    "id": 4,
+    "image": "https://static.xx.fbcdn.net/assets/?revision=1431132240730458&name=Illustrations-Security&density=1",
+    "title": "Seguridad",
+    "text": "Aprenda cómo agregar seguridad adicional a su cuenta."
+  },
+  {
+    "id": 5,
+    "image": "https://static.xx.fbcdn.net/assets/?revision=1431132240730458&name=Illustrations-Backup&density=1",
+    "title": "Copia de seguridad o restauración",
+    "text": "Aprenda cómo hacer una copia de seguridad y restaurar su información."
+  },
+  {
+    "id": 6,
+    "image": "https://static.xx.fbcdn.net/assets/?revision=1431132240730458&name=Illustrations-Business&density=1",
+    "title": "Funciones comerciales",
+    "text": "Conozca las soluciones empresariales de Cineplanet y cómo empezar."
+  }
+]
