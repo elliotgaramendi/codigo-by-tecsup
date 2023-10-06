@@ -1,0 +1,95 @@
+:root {
+  --primary-theme-color: #087ea4;
+  --primary-text-color: #f7f8f9;
+  --secondary-text-color: #bbb;
+  --primary-shadow-color: #ffffff80;
+  --light-primary-shadow-color: #00000080;
+  --primary-font-family: monospace;
+  --element-spacing: 32px;
+  --element-size: 16px;
+  --border-radius: 16px;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background-image: url('https://i.postimg.cc/x9MyhM3D/react-system.webp');
+  background-size: cover;
+  background-position: center;
+  color: var(--primary-text-color);
+  font-family: var(--primary-font-family);
+  font-size: var(--element-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  max-width: calc(var(--element-size) * 20);
+  padding: calc(var(--element-spacing) / 2);
+  margin: calc(var(--element-spacing) / 2);
+  background-color: var(--light-primary-shadow-color);
+  backdrop-filter: blur(var(--element-size));
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 calc(var(--element-size) * 0.25) calc(var(--element-size) * 0.125) var(--primary-shadow-color);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(var(--element-spacing) / 4);
+}
+
+img {
+  width: calc(var(--element-size) * 12.5);
+  height: calc(var(--element-size) * 12.5);
+  border-radius: 50%;
+  box-shadow: 0 0 calc(var(--element-size) * 0.5) calc(var(--element-size) * 0.25) var(--primary-shadow-color);
+  display: block;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h2,
+span {
+  color: var(--secondary-text-color);
+  font-weight: 400;
+}
+
+h1 {
+  font-size: calc(var(--element-size) * 1.125);
+}
+
+h2 {
+  font-size: var(--element-size);
+}
+
+p {
+  font-size: calc(var(--element-size) * 0.875);
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: calc(var(--element-size) / 2);
+}
+
+.skill {
+  padding: 0.25em 1em;
+  border-radius: var(--border-radius);
+  background-color: var(--primary-theme-color);
+  font-size: calc(var(--element-size) * 0.75);
+  font-weight: 700;
+}
+
+a {
+  color: var(--primary-text-color);
+  font-size: calc(var(--element-size) * 1.25);
+}
