@@ -1,0 +1,100 @@
+.pokemon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.pokemon--local {
+  grid-area: pokemon-local;
+}
+.pokemon--remote {
+  grid-area: pokemon-remote;
+}
+.pokemon__title {
+  margin: 0;
+  font-size: 1.25rem;
+}
+.pokemon__card {
+  background-color: var(--secondary-theme-color);
+  max-width: 20rem;
+  height: 333px;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0 0.125rem 0.125rem var(--secondary-shadow-color);
+  transition: var(--all-transitions);
+}
+.pokemon__header {
+  display: flex;
+  max-height: 96px;
+  width: 100%;
+}
+.pokemon__header-image {
+  width: 100%;
+  object-fit: cover;
+}
+.pokemon__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding-bottom: 1rem;
+}
+.pokemon__body-image-container {
+  display: flex;
+  background-color: var(--primary-theme-color);
+  border-radius: 50%;
+  overflow: hidden;
+  width: 8rem;
+  height: 8rem;
+  margin: -5rem 0 0 0;
+  transition: var(--all-transitions);
+}
+.pokemon__body-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.pokemon__body-title {
+  text-transform: capitalize;
+  font-size: 1.25rem;
+  margin: 0;
+}
+.pokemon__body-id {
+  font-size: 0.875rem;
+  font-weight: 100;
+  margin: 0;
+}
+.pokemon__body-types {
+  color: var(--secondary-text-color);
+  font-size: 0.875rem;
+  font-weight: 200;
+  text-transform: capitalize;
+  margin: 0;
+}
+.pokemon__footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.5rem;
+  border-top: 0.125rem solid var(--primary-shadow-color);
+  padding: 1rem;
+}
+.pokemon__footer-stats {
+  display: flex;
+  flex-direction: column;
+}
+.pokemon__footer-stats-base {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-align: center;
+  margin: 0;
+}
+.pokemon__footer-stats-name {
+  font-size: 0.625rem;
+  font-weight: 300;
+  text-align: center;
+  text-transform: capitalize;
+  margin: 0;
+}
+
+/*# sourceMappingURL=pokemon.css.map */
