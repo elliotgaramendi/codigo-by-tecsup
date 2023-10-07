@@ -1,3 +1,5 @@
+import { renderPokemonCard } from '../../utils/util.js';
+
 const card = async () => {
   const localPokemon = document.getElementById('localPokemon');
   const remotePokemon = document.getElementById('remotePokemon');
@@ -15,8 +17,8 @@ const card = async () => {
   };
 
   const [localPokemonData, remotePokemonData] = await Promise.all([fetchData('./json/pokemon-151.json'), fetchData(`https://pokeapi.co/api/v2/pokemon/${~~(Math.random() * 151 + 1)}`)]);
-  console.log(localPokemonData);
-  console.log(remotePokemonData);
+  renderPokemonCard(localPokemon, localPokemonData);
+  renderPokemonCard(remotePokemon, remotePokemonData);
 };
 
 export default card;
