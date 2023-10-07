@@ -33,7 +33,7 @@
 
 .card--flip {
   position: relative;
-  width: calc(var(--element-size) * 16);
+  width: 100%;
   height: calc(var(--element-size) * 16);
   perspective: calc(var(--element-size) * 64);
 
@@ -82,13 +82,13 @@
 
 .card__title {
   margin: 0;
-  font-size: calc(var(--element-size) * 1.5);
+  font-size: calc(var(--element-size) * 1.375);
   text-align: center;
 }
 
 .card__text {
   margin: 0;
-  font-size: calc(var(--element-size) * 1.25);
+  font-size: calc(var(--element-size) * 1.125);
   text-align: center;
 }
 
@@ -103,7 +103,7 @@
   border-radius: var(--border-radius);
   background-color: var(--button-background-color);
   color: var(--button-text-color);
-  font-size: calc(var(--element-size) * 1.125);
+  font-size: var(--element-size);
   font-weight: 600;
   text-align: center;
   cursor: pointer;
@@ -159,7 +159,7 @@
 }
 
 .g-layout--auto-fit-columns {
-  grid-template-columns: repeat(auto-fit, minmax(calc(var(--element-size) * 20), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(calc(var(--element-size) * 11.25), 1fr));
 }
 
 .d-flex {
