@@ -19,7 +19,7 @@
   --all-transitions: all 0.25s;
 }
 
-.body--light {
+:root.light {
   --primary-theme-color: #fff;
   --secondary-theme-color: #f5f5f5;
   --primary-text-color: #000;
