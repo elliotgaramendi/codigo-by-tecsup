@@ -8,7 +8,7 @@ const header = () => {
   const openMenu = () => linksMenu.classList.add('header-nav__menu-link-list--open');
   const closeMenu = () => linksMenu.classList.remove('header-nav__menu-link-list--open');
 
-  document.addEventListener('scroll', () => {
+  window.addEventListener('scroll', () => {
     header.classList.toggle('header--scroll', scrollY > 0);
     nav.classList.toggle('header-nav--scroll', scrollY > 0);
   });

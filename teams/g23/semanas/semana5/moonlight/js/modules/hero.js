@@ -6,7 +6,7 @@ const hero = () => {
   const heroMountainsBehind = document.querySelector('.hero__mountains-behind-image');
   const heroMountainsFront = document.querySelector('.hero__mountains-front-image');
 
-  document.addEventListener('scroll', () => {
+  window.addEventListener('scroll', () => {
     heroTitle.style.transform = `translate(-${scrollY * 1.25}px, ${scrollY * 0.25}px)`;
     heroLearnButton.style.transform = `translate(-50%, ${scrollY * 0.25}px)`;
     heroStars.style.transform = `translate(0, ${scrollY * 0.75}px)`;
