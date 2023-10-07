@@ -7,10 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const response = await fetch('./json/students.json');
     const data = await response.json();
     data.forEach(element => {
-      const { id, name, age, keywords, location, description, youtube, github, linkedin, instagram } = element;
+      const { id, name, age, keywords, location, description, youtube, github, linkedin, instagram, image } = element;
       students.innerHTML += `
         <div class="card" key="${id}">
-          <img src="https://i.postimg.cc/pL3zrqqS/elliot-garamendi-perrito.webp" alt="Elliot Garamendi" width="200"
+          <img src="${image || 'https://em-content.zobj.net/source/whatsapp/268/boar_1f417.png'}" alt="${name}" width="200"
             height="200" class="img" />
           <h1 class="card__title">
             ${name}

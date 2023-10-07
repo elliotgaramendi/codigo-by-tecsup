@@ -103,6 +103,7 @@
 .img {
   width: calc(var(--element-size) * 12.5);
   height: calc(var(--element-size) * 12.5);
+  object-fit: cover;
   border-radius: 50%;
   box-shadow: 0 0 calc(var(--element-size) * 0.5) calc(var(--element-size) * 0.25) var(--primary-shadow-color);
   display: block;
