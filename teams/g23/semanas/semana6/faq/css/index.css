@@ -2,6 +2,7 @@
   color-scheme: dark;
   --primary-theme-color: #087ea4;
   --primary-background-color: #080808;
+  --secondary-background-color: #222222;
   --primary-text-color: #f7f8f9;
   --primary-shadow-color: #ffffff40;
   --max-width: 1024px;
@@ -25,7 +26,7 @@
 }
 
 .card {
-  max-width: 256px;
+  width: 100%;
   margin: 0 auto;
   border-radius: var(--border-radius);
   overflow: hidden;
@@ -114,7 +115,7 @@
 }
 
 .g-layout--auto-fit-columns {
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(calc(var(--element-size) * 20), 1fr));
 }
 
 .w-100\% {
@@ -127,6 +128,10 @@
 
 .f-direction-column {
   flex-direction: column;
+}
+
+.j-items-center {
+  justify-items: center;
 }
 
 .g-md {
