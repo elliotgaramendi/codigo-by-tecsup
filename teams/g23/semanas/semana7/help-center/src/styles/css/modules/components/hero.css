@@ -1,4 +1,22 @@
 .hero {
   position: relative;
   height: 37.5vh;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: var(--element-size);
+    background-image: linear-gradient(var(--primary-background-color), transparent);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: var(--element-size);
+    background-image: linear-gradient(transparent, var(--primary-background-color));
+  }
 }

@@ -8,7 +8,7 @@ const Hero = () => {
         height={1080}
         className="img img--hero-background"
       />
-      <div>
+      <div className="container">
         <h1>Centro de ayuda</h1>
         <h2>Podrás navegar por nuestras categorías y buscar información para resolver tus consultas.</h2>
       </div>
