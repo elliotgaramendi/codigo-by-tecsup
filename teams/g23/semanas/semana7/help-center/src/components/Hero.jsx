@@ -1,6 +1,6 @@
 const Hero = () => {
   return (
-    <section>
+    <section className="hero d-flex">
       <img
         src="https://peruretail.sfo3.cdn.digitaloceanspaces.com/wp-content/uploads/CP-Xtreme.jpg"
         alt="Centro de Ayuda"
@@ -9,7 +9,8 @@ const Hero = () => {
         className="img img--hero-background"
       />
       <div>
-
+        <h1>Centro de ayuda</h1>
+        <h2>Podrás navegar por nuestras categorías y buscar información para resolver tus consultas.</h2>
       </div>
     </section>
   );
