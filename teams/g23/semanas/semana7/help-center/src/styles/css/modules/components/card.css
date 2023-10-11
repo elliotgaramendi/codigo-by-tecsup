@@ -1,0 +1,41 @@
+/* .card {} */
+
+/* .card__body {} */
+
+.card__title {
+  margin: 0;
+  font-size: calc(var(--element-size) * 1.25);
+  font-weight: 700;
+}
+
+.card__title--lg {
+  font-size: calc(var(--element-size) * 1.25);
+}
+
+.card__title--xl {
+  font-size: calc(var(--element-size) * 1.375);
+}
+
+.card__title--2xl {
+  font-size: calc(var(--element-size) * 1.5);
+}
+
+.card__title--3xl {
+  font-size: calc(var(--element-size) * 1.5);
+  font-weight: 800;
+}
+
+.card__title--4xl {
+  font-size: calc(var(--element-size) * 1.625);
+  font-weight: 800;
+}
+
+.card__title--5xl {
+  font-size: calc(var(--element-size) * 1.75);
+  font-weight: 800;
+}
+
+.card__text {
+  margin: 0;
+  font-size: var(--element-size);
+}

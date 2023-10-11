@@ -1,3 +1,39 @@
 .d-flex {
   display: flex;
 }
+
+.f-direction-column {
+  flex-direction: column;
+}
+
+.g-6xs {
+  gap: calc(var(--element-spacing) * 0.125);
+}
+
+.g-5xs {
+  gap: calc(var(--element-spacing) * 0.25);
+}
+
+.g-4xs {
+  gap: calc(var(--element-spacing) * 0.375);
+}
+
+.g-3xs {
+  gap: calc(var(--element-spacing) * 0.5);
+}
+
+.g-2xs {
+  gap: calc(var(--element-spacing) * 0.625);
+}
+
+.g-xs {
+  gap: calc(var(--element-spacing) * 0.75);
+}
+
+.g-sm {
+  gap: calc(var(--element-spacing) * 0.875);
+}
+
+.g-md {
+  gap: var(--element-spacing);
+}
