@@ -1,0 +1,14 @@
+.g-layout {
+  display: grid;
+}
+
+.g-layout--center {
+  place-items: center;
+  place-content: center;
+}
+
+@media (width >=768px) {
+  .md\:g-layout--1fr-2fr {
+    grid-template-columns: 1fr 2fr;
+  }
+}
