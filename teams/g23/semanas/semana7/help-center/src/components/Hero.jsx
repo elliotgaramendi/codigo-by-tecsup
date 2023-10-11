@@ -15,8 +15,8 @@ const Hero = () => {
             <h2 className="card__text">Podrás navegar por nuestras categorías y buscar información para resolver tus consultas.</h2>
           </div>
         </div>
-        <form>
-          <input type="search" name="question" placeholder="Pregunta" />
+        <form className="w-100% d-flex">
+          <input type="search" name="question" placeholder="Pregunta" className="input input--search"/>
         </form>
       </div>
     </section>

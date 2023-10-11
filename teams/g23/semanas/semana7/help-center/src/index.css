@@ -5,6 +5,7 @@
   --max-width: 64rem;
   --element-size: 1rem;
   --element-spacing: 2rem;
+  --border-radius: 1rem;
 }
 
 .body {
