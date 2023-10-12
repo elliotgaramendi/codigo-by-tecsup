@@ -10,3 +10,9 @@
   height: 100%;
   opacity: 0.25;
 }
+
+.img--flip {
+  padding: 1rem;
+  background-color: var(--light-primary-shadow-color);
+  border-radius: 50%;
+}

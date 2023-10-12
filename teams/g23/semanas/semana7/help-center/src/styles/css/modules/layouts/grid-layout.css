@@ -7,6 +7,10 @@
   place-content: center;
 }
 
+.g-layout--auto-fit-columns {
+  grid-template-columns: repeat(auto-fit, minmax(calc(var(--element-size) * 11.25), 1fr));
+}
+
 @media (width >=768px) {
   .md\:g-layout--1fr-2fr {
     grid-template-columns: 1fr 2fr;
