@@ -1,0 +1,20 @@
+.section {
+  padding-top: var(--element-spacing);
+  padding-bottom: var(--element-spacing);
+}
+
+.section__title {
+  position: relative;
+  margin: 0;
+  font-size: calc(var(--element-size) * 2);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 2em;
+    height: 0.125em;
+    background-color: var(--primary-theme-color);
+  }
+}
