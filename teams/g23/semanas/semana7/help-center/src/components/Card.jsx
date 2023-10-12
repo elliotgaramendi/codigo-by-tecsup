@@ -1,4 +1,5 @@
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
+
 const Card = ({ data }) => {
   const { title, image, text } = data;
 
@@ -16,6 +17,10 @@ const Card = ({ data }) => {
       </div>
     </div>
   );
+};
+
+Card.propTypes = {
+  data: PropTypes.object
 };
 
 export default Card;
