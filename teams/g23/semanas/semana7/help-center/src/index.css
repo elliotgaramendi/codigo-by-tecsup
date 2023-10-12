@@ -1,7 +1,7 @@
 :root {
   color-scheme: dark;
   --primary-background-color: #080808;
-  --primary-font-family: monospace;
+  --primary-font-family: 'Source Code Pro', monospace;
   --max-width: 64rem;
   --element-size: 1rem;
   --element-spacing: 2rem;

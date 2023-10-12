@@ -1,7 +1,7 @@
 .input--search {
   width: min(calc(var(--element-size) * 32), 100%);
   margin: 0 auto;
-  padding: 0.75em;
+  padding: 0.75em 1em;
   border-radius: var(--border-radius);
   font-size: var(--element-size);
 }
