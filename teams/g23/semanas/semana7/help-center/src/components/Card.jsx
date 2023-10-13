@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const Card = ({ data }) => {
-  const { title, image, text } = data;
+  const { title, slug, image, text } = data;
 
   return (
     <div className="card card--flip">
@@ -13,7 +13,7 @@ const Card = ({ data }) => {
         </div>
         <div className="card__face">
           <p className="card__text">{text}</p>
-          <Link to="/category" className="button button--primary">Ver preguntas</Link>
+          <Link to={`/categorias/${slug}`} className="button button--primary">Ver preguntas</Link>
         </div>
       </div>
     </div>
