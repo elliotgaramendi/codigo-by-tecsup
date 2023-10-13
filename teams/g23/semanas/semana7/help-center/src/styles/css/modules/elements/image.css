@@ -16,3 +16,8 @@
   background-color: var(--light-primary-shadow-color);
   border-radius: 50%;
 }
+
+.img--cover {
+  width: calc(var(--element-size) * 16);
+  height: calc(var(--element-size) * 16);
+}

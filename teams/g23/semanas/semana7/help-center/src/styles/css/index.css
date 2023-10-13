@@ -1,9 +1,12 @@
 @import url('./modules/components/hero.css');
 @import url('./modules/components/section.css');
 @import url('./modules/components/card.css');
+@import url('./modules/components/list.css');
+@import url('./modules/components/accordion.css');
 @import url('./modules/elements/image.css');
 @import url('./modules/elements/input.css');
 @import url('./modules/elements/button.css');
 @import url('./modules/layouts/container.css');
+@import url('./modules/layouts/flexbox.css');
 @import url('./modules/layouts/grid-layout.css');
 @import url('./modules/utils/utils.css');

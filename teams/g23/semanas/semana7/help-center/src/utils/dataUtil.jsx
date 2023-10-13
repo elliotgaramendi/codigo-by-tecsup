@@ -94,21 +94,6 @@ export const categoriesData = {
           "id": 3,
           "question": "¿Cómo reconocer correos electrónicos de phishing?",
           "answer": "Los correos electrónicos de phishing son intentos de estafas en línea que pueden parecer legítimos. Para reconocerlos y protegerse, preste atención a lo siguiente: Verifique la dirección del remitente, evite hacer clic en enlaces sospechosos y no comparta información personal por correo electrónico."
-        },
-        {
-          "id": 4,
-          "question": "¿Cómo habilitar la autenticación de dos factores?",
-          "answer": "Para habilitar la autenticación de dos factores en su cuenta Cineplanet y agregar una capa adicional de seguridad, siga estos pasos: Inicie sesión, vaya a la configuración de seguridad y active la autenticación de dos factores."
-        },
-        {
-          "id": 5,
-          "question": "¿Cómo proteger mi información de pago?",
-          "answer": "Para proteger su información de pago en Cineplanet, siga estos consejos: No comparta su información de tarjeta de crédito, utilice métodos de pago seguros y revise sus transacciones regularmente."
-        },
-        {
-          "id": 6,
-          "question": "¿Cómo reconocer correos electrónicos de phishing?",
-          "answer": "Los correos electrónicos de phishing son intentos de estafas en línea que pueden parecer legítimos. Para reconocerlos y protegerse, preste atención a lo siguiente: Verifique la dirección del remitente, evite hacer clic en enlaces sospechosos y no comparta información personal por correo electrónico."
         }
       ]
     },

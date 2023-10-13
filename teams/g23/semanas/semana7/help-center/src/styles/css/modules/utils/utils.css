@@ -10,6 +10,10 @@
   flex-direction: column;
 }
 
+.j-items-center {
+  justify-items: center;
+}
+
 .g-6xs {
   gap: calc(var(--element-spacing) * 0.125);
 }
