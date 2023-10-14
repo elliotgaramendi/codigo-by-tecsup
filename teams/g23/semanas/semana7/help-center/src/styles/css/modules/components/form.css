@@ -1,0 +1,10 @@
+.form {
+  padding-top: var(--nav-spacing);
+  transition: padding var(--transition-duration);
+  text-align: center;
+}
+
+.form__input {
+  border-radius: var(--border-radius);
+  padding: 0.5em 1em;
+}

@@ -3,6 +3,11 @@
   object-fit: cover;
 }
 
+.img--logo {
+  height: calc(var(--element-size) * 2);
+  width: auto;
+}
+
 .img--hero-background {
   position: absolute;
   z-index: -1;
@@ -12,7 +17,7 @@
 }
 
 .img--flip {
-  padding: 1rem;
+  padding: var(--element-size);
   background-color: var(--light-primary-shadow-color);
   border-radius: 50%;
 }

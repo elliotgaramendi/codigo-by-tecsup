@@ -1,6 +1,8 @@
 @import url('./modules/variables/variables.css');
 @import url('./modules/components/header.css');
 @import url('./modules/components/nav.css');
+@import url('./modules/components/off-canvas.css');
+@import url('./modules/components/form.css');
 @import url('./modules/components/hero.css');
 @import url('./modules/components/section.css');
 @import url('./modules/components/card.css');
@@ -8,6 +10,7 @@
 @import url('./modules/components/accordion.css');
 @import url('./modules/elements/image.css');
 @import url('./modules/elements/input.css');
+@import url('./modules/elements/icon.css');
 @import url('./modules/elements/button.css');
 @import url('./modules/layouts/container.css');
 @import url('./modules/layouts/flexbox.css');

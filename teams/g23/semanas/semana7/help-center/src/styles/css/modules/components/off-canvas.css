@@ -1,0 +1,23 @@
+.off-canvas {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--light-primary-shadow-color);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-duration);
+}
+
+.off-canvas:target {
+  opacity: initial;
+  pointer-events: initial;
+}
+
+.off-canvas__close {
+  position: absolute;
+  top: var(--nav-spacing);
+  right: calc(var(--element-spacing) * 0.5);
+  transition: top var(--transition-duration);
+}

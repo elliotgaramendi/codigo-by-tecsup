@@ -1,0 +1,17 @@
+.icon {
+  color: inherit;
+  font-size: calc(var(--element-size) * 2);
+  text-decoration: none;
+
+  & i {
+    display: flex;
+  }
+}
+
+.icon--sm {
+  font-size: calc(var(--element-size) * 1.875);
+}
+
+.icon--xs {
+  font-size: calc(var(--element-size) * 1.75);
+}
