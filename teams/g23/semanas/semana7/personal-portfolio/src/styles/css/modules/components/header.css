@@ -1,0 +1,12 @@
+.header {
+  position: fixed;
+  z-index: 25;
+  top: 0;
+  width: 100%;
+  transition: background-color var(--transition-duration), box-shadow var(--transition-duration);
+}
+
+.header--scroll {
+  background-color: var(--light-primary-shadow-color);
+  box-shadow: 0 0 calc(var(--element-size) * 0.125) calc(var(--element-size) * 0.0625) var(--primary-shadow-color);
+}

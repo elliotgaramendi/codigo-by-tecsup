@@ -3,7 +3,29 @@ import Header from './components/layout/Header';
 
 function App() {
   return (
-    <Header />
+    <>
+      <Header />
+      <h2>X</h2>
+      <h2>X</h2>
+      <h2>X</h2>
+      <h2>X</h2>
+      <h2>X</h2>
+      <h2>X</h2>
+      <h2>X</h2>
+      <h2>X</h2>
+      <h2>X</h2>
+      <h2>X</h2>
+      <h2>X</h2>
+      <h2>X</h2>
+      <h2>X</h2>
+      <h2>X</h2>
+      <h2>X</h2>
+      <h2>X</h2>
+      <h2>X</h2>
+      <h2>X</h2>
+      <h2>X</h2>
+      <h2>X</h2>
+    </>
   )
 }
 

@@ -1,0 +1,9 @@
+:root {
+  color-scheme: dark;
+  --primary-shadow-color: #ffffff80;
+  --light-primary-shadow-color: #00000080;
+  --primary-font-family: monospace;
+  --element-size: 1rem;
+  --element-spacing: 2rem;
+  --transition-duration: 0.25s;
+}
