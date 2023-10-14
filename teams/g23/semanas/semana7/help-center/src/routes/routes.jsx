@@ -1,14 +1,21 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import Category from "../components/Category";
+import PrimaryLayout from "../layouts/PrimaryLayout";
 
 export const router = createBrowserRouter([
   {
     path: '/',
-    element: <App />
+    element: <PrimaryLayout />,
+    children: [
+      {
+        index: true,
+        element: <App />
+      },
+      {
+        path: '/categorias/:slug',
+        element: <Category />
+      }
+    ]
   },
-  {
-    path: '/categorias/:slug',
-    element: <Category />
-  }
 ]);
