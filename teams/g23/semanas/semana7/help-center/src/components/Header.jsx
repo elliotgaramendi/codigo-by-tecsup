@@ -1,9 +1,28 @@
+import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+  const header = useRef();
+  const nav = useRef();
+
+  const handleScroll = () => {
+    header.current.classList.toggle('header--scroll', window.scrollY > 0);
+    nav.current.classList.toggle('nav--scroll', window.scrollY > 0);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <header>
-      <nav>
+    <header
+      className="header"
+      ref={header}
+    >
+      <nav
+        className="nav"
+        ref={nav}
+      >
         <div>
           <Link to={"/"}>
             <svg

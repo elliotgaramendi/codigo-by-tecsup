@@ -1,3 +1,6 @@
+@import url('./modules/variables/variables.css');
+@import url('./modules/components/header.css');
+@import url('./modules/components/nav.css');
 @import url('./modules/components/hero.css');
 @import url('./modules/components/section.css');
 @import url('./modules/components/card.css');

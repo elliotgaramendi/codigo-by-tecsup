@@ -1,0 +1,15 @@
+:root {
+  color-scheme: dark;
+  --primary-theme-color: #23b5d8;
+  --primary-background-color: #080808;
+  --secondary-background-color: #222222;
+  --primary-text-color: #f7f8f9;
+  --primary-shadow-color: #ffffff80;
+  --light-primary-shadow-color: #00000080;
+  --primary-font-family: 'Source Code Pro', monospace;
+  --max-width: 64rem;
+  --element-size: 1rem;
+  --element-spacing: 2rem;
+  --border-radius: 1rem;
+  --transition-duration: 0.25s;
+}
