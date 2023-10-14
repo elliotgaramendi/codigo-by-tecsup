@@ -1,0 +1,11 @@
+:root {
+  color-scheme: dark;
+  --primary-font-family: 'Source Code Pro', monospace;
+  --element-size: 1rem;
+}
+
+.body {
+  margin: 0;
+  font-family: var(--primary-font-family);
+  font-size: var(--element-size);
+}
