@@ -1,11 +1,15 @@
 import { Outlet } from 'react-router-dom';
+import Header from '../components/Header';
 
 const PrimaryLayout = () => {
   return (
-    <main>
-      <Outlet />
-    </main>
+    <>
+      <Header />
+      <main>
+        <Outlet />
+      </main>
+    </>
   );
-}
+};
 
 export default PrimaryLayout;

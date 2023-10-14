@@ -4,10 +4,10 @@ import Hero from './components/Hero'
 
 function App() {
   return (
-    <main>
+    <>
       <Hero />
       <Categories />
-    </main>
+    </>
   )
 }
 
