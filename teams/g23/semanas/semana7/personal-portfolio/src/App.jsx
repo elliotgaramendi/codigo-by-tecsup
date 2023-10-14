@@ -1,8 +1,9 @@
 import './App.css';
+import Header from './components/layout/Header';
 
 function App() {
   return (
-    <h1>Elliot Garamendi I Desarrollo de Software</h1>
+    <Header />
   )
 }
 
