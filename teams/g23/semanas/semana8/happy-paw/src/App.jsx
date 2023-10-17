@@ -1,6 +1,13 @@
+import Header from "./components/Header";
+
 function App() {
+  const header = {
+    title: '🐾 Patita Feliz I La mejor veterinaria del Perú 🐾',
+    subtitle: '🐭 Porque es parte de nuestra familia, lo cuidamos 🐭'
+  };
+
   return (
-    <h1>Happy Paw</h1>
+    <Header data={header} />
   );
 }
 
