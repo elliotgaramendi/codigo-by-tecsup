@@ -46,7 +46,7 @@ function App() {
       <main>
         <section>
           <div className="container">
-            <div className="row">
+            <div className="row g-4">
               <div className="col-md-4">
                 <h2 className="text-center">🙀 Registrar Cita 🙀</h2>
                 <form onSubmit={handleFormSubmit}>
@@ -118,11 +118,38 @@ function App() {
                   <button className="btn btn-primary w-100">Registrar</button>
                 </form>
               </div>
-              <ul>
-                {appointments.map((element, index) => {
-                  return (<li key={index}>{element.petName}</li>)
-                })}
-              </ul>
+              <div className="col-md-8">
+                <h2 className="text-center">🐶 Citas 🐶</h2>
+                <ul className="list-group">
+                  {appointments.map((element, index) => {
+                    const { petName, ownerName, date, hour, symptoms } = element;
+                    return (
+                      <li
+                        key={index}
+                        className="list-group-item list-group-item-action"
+                        aria-current="false"
+                      >
+                        <div className="d-flex w-100 justify-content-between">
+                          <h5 className="mb-1">Mascota: {petName} 🐾</h5>
+                          <small>📆 {date} 🕤 {hour}</small>
+                        </div>
+                        <p className="mb-1">Síntomas: {symptoms}</p>
+                        <div className="d-flex w-100 justify-content-between">
+                          <small>Dueño: {ownerName} 🤗</small>
+                          <a
+                            href={`https://api.whatsapp.com/send?phone=51999888777&text=Mascota: ${petName}; Síntomas: ${symptoms}; Dueño: ${ownerName}; Cita: ${date} ${hour}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn btn-primary btn-sm"
+                          >
+                            Confirmar
+                          </a>
+                        </div>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
             </div>
           </div>
         </section>
