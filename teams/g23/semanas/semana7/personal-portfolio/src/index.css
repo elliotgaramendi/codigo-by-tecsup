@@ -3,5 +3,8 @@
   font-family: var(--primary-font-family);
   font-size: var(--element-size);
 
+  background-image: url('https://i.postimg.cc/x9MyhM3D/react-system.webp');
+  background-size: cover;
+  background-position: center;
   min-height: 200vh;
 }

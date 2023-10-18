@@ -1,10 +1,10 @@
 .nav {
-  padding-top: calc(var(--element-spacing) * 0.75);
-  padding-bottom: calc(var(--element-spacing) * 0.75);
+  --nav-padding: calc(var(--element-spacing) * 0.75);
+  padding-top: var(--nav-padding);
+  padding-bottom: var(--nav-padding);
   transition: padding var(--transition-duration);
 }
 
 .nav--scroll {
-  padding-top: calc(var(--element-spacing) * 0.5);
-  padding-bottom: calc(var(--element-spacing) * 0.5);
+  --nav-padding: calc(var(--element-spacing) * 0.5);
 }

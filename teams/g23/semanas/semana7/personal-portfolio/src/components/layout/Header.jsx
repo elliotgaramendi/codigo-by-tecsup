@@ -21,6 +21,7 @@ const Header = () => {
     <header
       className="header"
       ref={header}
+      id={header}
     >
       <nav
         className="nav"
@@ -36,9 +37,11 @@ const Header = () => {
               height={48}
             />
           </a>
-          <div className="off-canvas" id="off-canvas">
+          <div className="off-canvas off-canvas--right" id="off-canvas">
             <div className="off-canvas__child">
-              <a href="#off-canvas">✖</a>
+              <a href="#header" className="off-canvas__close">
+                ✖
+              </a>
               <ul>
                 <li>
                   <a href="#">Experiencia</a>
@@ -67,7 +70,7 @@ const Header = () => {
                 <a href="#">Instagram</a>
               </li>
             </ul>
-            <a href="#off-canvas--close">
+            <a href="#off-canvas">
               🍔
             </a>
           </div>

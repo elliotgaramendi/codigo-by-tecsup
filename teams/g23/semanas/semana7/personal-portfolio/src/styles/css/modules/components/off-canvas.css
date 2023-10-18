@@ -1,0 +1,39 @@
+.off-canvas {
+  --t-translate: -100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--light-primary-shadow-color);
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-duration);
+
+  &:target {
+    --t-translate: 0;
+    opacity: initial;
+    pointer-events: initial;
+  }
+}
+
+.off-canvas--right {
+  --t-translate: 100%;
+  justify-content: flex-end;
+}
+
+.off-canvas__child {
+  background-color: var(--light-primary-shadow-color);
+  width: min(50%, calc(var(--element-size) * 32));
+  height: 100%;
+  transform: translate(var(--t-translate));
+  transition: transform var(--transition-duration);
+}
+
+.off-canvas__close {
+  position: absolute;
+  top: var(--nav-padding);
+  right: calc(var(--element-spacing) * 0.5);
+  transition: top var(--transition-duration);
+}
