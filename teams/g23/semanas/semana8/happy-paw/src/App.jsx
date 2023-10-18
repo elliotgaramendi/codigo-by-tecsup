@@ -40,6 +40,8 @@ function App() {
     });
   };
 
+  const deleteAppointment = id => setAppointments(appointments.filter((_, index) => index !== id));
+
   return (
     <>
       <Header data={header} />
@@ -136,14 +138,22 @@ function App() {
                         <p className="mb-1">Síntomas: {symptoms}</p>
                         <div className="d-flex w-100 justify-content-between">
                           <small>Dueño: {ownerName} 🤗</small>
-                          <a
-                            href={`https://api.whatsapp.com/send?phone=51999888777&text=Mascota: ${petName}; Síntomas: ${symptoms}; Dueño: ${ownerName}; Cita: ${date} ${hour}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="btn btn-primary btn-sm"
-                          >
-                            Confirmar
-                          </a>
+                          <div className="d-flex gap-2">
+                            <a
+                              href={`https://api.whatsapp.com/send?phone=51999888777&text=Mascota: ${petName}; Síntomas: ${symptoms}; Dueño: ${ownerName}; Cita: ${date} ${hour}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="btn btn-primary btn-sm"
+                            >
+                              Confirmar
+                            </a>
+                            <button
+                              className="btn btn-danger btn-sm"
+                              onClick={() => deleteAppointment(index)}
+                            >
+                              Eliminar
+                            </button>
+                          </div>
                         </div>
                       </li>
                     );
