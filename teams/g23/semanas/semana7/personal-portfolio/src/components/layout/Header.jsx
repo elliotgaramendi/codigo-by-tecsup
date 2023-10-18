@@ -7,7 +7,7 @@ const Header = () => {
   const handleScroll = () => {
     header.current.classList.toggle('header--scroll', window.scrollY > 0);
     nav.current.classList.toggle('nav--scroll', window.scrollY > 0);
-  }
+  };
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);

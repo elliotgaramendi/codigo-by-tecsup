@@ -2,4 +2,6 @@
   margin: 0;
   font-family: var(--primary-font-family);
   font-size: var(--element-size);
+
+  min-height: 200vh;
 }
