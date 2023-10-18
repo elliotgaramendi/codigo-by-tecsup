@@ -22,19 +22,15 @@ function App() {
 
   const { petName, ownerName, date, hour, symptoms } = appointmentForm;
 
-  const handleFormInput = e => {
-    setAppointmentForm({
-      ...appointmentForm,
-      [e.target.name]: e.target.value
-    });
-  };
+  const handleFormInput = e => setAppointmentForm({ ...appointmentForm, [e.target.name]: e.target.value });
 
   const handleFormSubmit = e => {
     e.preventDefault();
-    setAppointments([
-      ...appointments,
-      appointmentForm
-    ]);
+    appointmentForm.index === undefined ? (
+      setAppointments([...appointments, appointmentForm])
+    ) : (
+      updateAppointment(appointmentForm)
+    );
     setAppointmentForm({
       petName: '',
       ownerName: '',
@@ -44,7 +40,12 @@ function App() {
     });
   };
 
-  const readAppointment = id => setAppointmentForm(appointments.find((_, index) => index === id));
+  const readAppointment = id => setAppointmentForm({ ...appointments.find((_, index) => index === id), index: id });
+
+  const updateAppointment = appointment => {
+    setAppointments(appointments.map((element, index) => index !== appointment.index ? element : appointment));
+    setAppointmentForm({ petName: '', ownerName: '', date: '', hour: '', symptoms: '' });
+  };
 
   const deleteAppointment = id => setAppointments(appointments.filter((_, index) => index !== id));
 
@@ -123,7 +124,7 @@ function App() {
                     />
                     <label htmlFor="symptoms">Síntomas</label>
                   </div>
-                  <button className="btn btn-primary w-100">Registrar</button>
+                  <button className="btn btn-primary w-100">{appointmentForm.index === undefined ? 'Registrar' : 'Editar'}</button>
                 </form>
               </div>
               <div className="col-md-8">
