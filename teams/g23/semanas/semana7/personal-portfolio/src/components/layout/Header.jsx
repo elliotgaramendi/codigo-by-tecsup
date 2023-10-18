@@ -26,7 +26,7 @@ const Header = () => {
         className="nav"
         ref={nav}
       >
-        <div className="container">
+        <div className="container flexbox flexbox--centered-sides">
           <a href="#">
             <img
               src="https://i.postimg.cc/Y9zngjZV/elliot-garamendi-sonrisa.png"
