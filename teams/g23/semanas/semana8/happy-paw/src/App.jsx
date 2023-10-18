@@ -14,7 +14,11 @@ function App() {
     hour: '',
     symptoms: ''
   });
-  const [appointments, setAppointments] = useState([]);
+  const [appointments, setAppointments] = useState([
+    { petName: 'Doky', ownerName: 'Elliot', date: '2023-10-20', hour: '18:00', symptoms: 'Come mucho' },
+    { petName: 'Chocolate', ownerName: 'Leo', date: '2023-10-25', hour: '20:00', symptoms: 'Lame mucho' },
+    { petName: 'Amorosa', ownerName: 'Garamendi', date: '2023-10-30', hour: '22:00', symptoms: 'Camina mucho' }
+  ]);
 
   const { petName, ownerName, date, hour, symptoms } = appointmentForm;
 
@@ -39,6 +43,8 @@ function App() {
       symptoms: ''
     });
   };
+
+  const readAppointment = id => setAppointmentForm(appointments.find((_, index) => index === id));
 
   const deleteAppointment = id => setAppointments(appointments.filter((_, index) => index !== id));
 
@@ -152,6 +158,12 @@ function App() {
                               onClick={() => deleteAppointment(index)}
                             >
                               Eliminar
+                            </button>
+                            <button
+                              className="btn btn-warning btn-sm"
+                              onClick={() => readAppointment(index)}
+                            >
+                              Editar
                             </button>
                           </div>
                         </div>
