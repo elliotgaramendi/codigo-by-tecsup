@@ -1,0 +1,9 @@
+.icon {
+  color: inherit;
+  font-size: calc(var(--element-size) * 2);
+  text-decoration: none;
+
+  & i {
+    display: flex;
+  }
+}

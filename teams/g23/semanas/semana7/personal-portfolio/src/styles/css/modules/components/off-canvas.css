@@ -29,9 +29,10 @@
   width: min(50%, calc(var(--element-size) * 32));
   height: 100%;
   padding: calc(var(--element-spacing) * 0.75) calc(var(--element-spacing) * 0.5);
+  padding-top: var(--nav-padding);
   box-sizing: border-box;
   transform: translate(var(--t-translate));
-  transition: transform var(--transition-duration);
+  transition: transform var(--transition-duration), padding var(--transition-duration);
 }
 
 .off-canvas__close {

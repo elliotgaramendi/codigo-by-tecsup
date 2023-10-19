@@ -39,8 +39,8 @@ const Header = () => {
           </a>
           <div className="off-canvas off-canvas--right" id="off-canvas">
             <div className="off-canvas__child">
-              <a href="#header" className="off-canvas__close">
-                ✖
+              <a href="#header" className="off-canvas__close icon">
+                <i className="bi bi-x"></i>
               </a>
               <ul className="list d-flex f-direction-column g-4xs">
                 <li>
@@ -58,20 +58,28 @@ const Header = () => {
           <div className="d-flex a-items-center g-5xs">
             <ul className="list d-flex g-5xs">
               <li>
-                <a href="#" className="link">YouTube</a>
+                <a href="#" className="link link--xl">
+                  <i className="bi bi-youtube"></i>
+                </a>
               </li>
               <li>
-                <a href="#" className="link">GitHub</a>
+                <a href="#" className="link link--xl">
+                  <i className="bi bi-github"></i>
+                </a>
               </li>
               <li>
-                <a href="#" className="link">LinkedIn</a>
+                <a href="#" className="link link--xl">
+                  <i className="bi bi-linkedin"></i>
+                </a>
               </li>
               <li>
-                <a href="#" className="link">Instagram</a>
+                <a href="#" className="link link--xl">
+                  <i className="bi bi-instagram"></i>
+                </a>
               </li>
             </ul>
-            <a href="#off-canvas">
-              🍔
+            <a href="#off-canvas" className="icon">
+              <i className="bi bi-list"></i>
             </a>
           </div>
         </div>

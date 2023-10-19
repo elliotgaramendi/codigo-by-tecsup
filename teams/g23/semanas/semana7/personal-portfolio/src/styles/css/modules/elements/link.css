@@ -30,36 +30,15 @@
     transition: transform var(--transition-duration);
   }
 
-  &--2xs {
-    font-size: calc(var(--element-size) * 0.625);
-  }
-
-  &--xs {
-    font-size: calc(var(--element-size) * 0.75);
-  }
-
-  &--sm {
-    font-size: calc(var(--element-size) * 0.875);
-  }
-
-  &--lg {
-    font-size: calc(var(--element-size) * 1.125);
-  }
-
-  &--xl {
-    font-size: calc(var(--element-size) * 1.25);
-  }
-
-  &--2xl {
-    font-size: calc(var(--element-size) * 1.375);
-  }
-
-  &--3xl {
-    font-size: calc(var(--element-size) * 1.5);
-    font-weight: 500;
-  }
-
   & i {
     display: flex;
   }
+}
+
+.link--lg {
+  font-size: calc(var(--element-size) * 1.125);
+}
+
+.link--xl {
+  font-size: calc(var(--element-size) * 1.25);
 }
