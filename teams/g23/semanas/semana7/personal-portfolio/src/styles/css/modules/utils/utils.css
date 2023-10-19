@@ -6,6 +6,10 @@
   flex-direction: column;
 }
 
+.a-items-center {
+  align-items: center;
+}
+
 .g-6xs {
   gap: calc(var(--element-spacing) * 0.125);
 }

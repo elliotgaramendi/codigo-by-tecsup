@@ -1,5 +1,6 @@
 :root {
   color-scheme: dark;
+  --primary-theme-color: #23b5d8;
   --primary-shadow-color: #ffffff80;
   --light-primary-shadow-color: #00000080;
   --primary-font-family: monospace;

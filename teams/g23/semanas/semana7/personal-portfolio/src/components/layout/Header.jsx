@@ -44,30 +44,30 @@ const Header = () => {
               </a>
               <ul className="list d-flex f-direction-column g-4xs">
                 <li>
-                  <a href="#">Experiencia</a>
+                  <a href="#" className="link">Experiencia</a>
                 </li>
                 <li>
-                  <a href="#">Proyectos</a>
+                  <a href="#" className="link">Proyectos</a>
                 </li>
                 <li>
-                  <a href="#">Contacto</a>
+                  <a href="#" className="link">Contacto</a>
                 </li>
               </ul>
             </div>
           </div>
-          <div>
-            <ul>
+          <div className="d-flex a-items-center g-5xs">
+            <ul className="list d-flex g-5xs">
               <li>
-                <a href="#">YouTube</a>
+                <a href="#" className="link">YouTube</a>
               </li>
               <li>
-                <a href="#">GitHub</a>
+                <a href="#" className="link">GitHub</a>
               </li>
               <li>
-                <a href="#">LinkedIn</a>
+                <a href="#" className="link">LinkedIn</a>
               </li>
               <li>
-                <a href="#">Instagram</a>
+                <a href="#" className="link">Instagram</a>
               </li>
             </ul>
             <a href="#off-canvas">

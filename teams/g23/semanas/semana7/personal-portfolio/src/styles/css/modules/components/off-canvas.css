@@ -1,6 +1,7 @@
 .off-canvas {
   --t-translate: -100%;
   position: fixed;
+  z-index: 50;
   top: 0;
   right: 0;
   bottom: 0;

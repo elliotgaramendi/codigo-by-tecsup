@@ -6,4 +6,5 @@
 @import url('./modules/layouts/container.css');
 @import url('./modules/layouts/flexbox.css');
 @import url('./modules/elements/img.css');
+@import url('./modules/elements/link.css');
 @import url('./modules/utils/utils.css');
