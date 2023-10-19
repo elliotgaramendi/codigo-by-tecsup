@@ -1,6 +1,8 @@
+import Hero from "./components/modules/Hero";
+
 function App() {
   return (
-    <h1>Rick and Morty</h1>
+    <Hero />
   );
 }
 
