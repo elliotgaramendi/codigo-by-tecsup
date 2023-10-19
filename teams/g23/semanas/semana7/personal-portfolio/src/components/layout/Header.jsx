@@ -42,7 +42,7 @@ const Header = () => {
               <a href="#header" className="off-canvas__close">
                 ✖
               </a>
-              <ul className="list">
+              <ul className="list d-flex f-direction-column g-4xs">
                 <li>
                   <a href="#">Experiencia</a>
                 </li>

@@ -27,6 +27,8 @@
   background-color: var(--light-primary-shadow-color);
   width: min(50%, calc(var(--element-size) * 32));
   height: 100%;
+  padding: calc(var(--element-spacing) * 0.75) calc(var(--element-spacing) * 0.5);
+  box-sizing: border-box;
   transform: translate(var(--t-translate));
   transition: transform var(--transition-duration);
 }
