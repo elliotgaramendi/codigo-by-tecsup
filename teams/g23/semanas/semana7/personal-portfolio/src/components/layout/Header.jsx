@@ -42,7 +42,7 @@ const Header = () => {
               <a href="#header" className="off-canvas__close">
                 ✖
               </a>
-              <ul>
+              <ul className="list">
                 <li>
                   <a href="#">Experiencia</a>
                 </li>
