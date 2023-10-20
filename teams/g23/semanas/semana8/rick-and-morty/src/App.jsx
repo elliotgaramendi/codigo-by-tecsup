@@ -1,8 +1,8 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import Characters from "./components/modules/Characters";
 import Hero from "./components/modules/Hero";
-import { useState } from "react";
 
-function App() {
+export function App() {
   const heroData = {
     title: 'Rick and Morty',
     image: 'https://images.alphacoders.com/133/thumb-1920-1330376.png'
@@ -20,8 +20,9 @@ function App() {
   }, []);
 
   return (
-    <Hero data={heroData} />
+    <>
+      <Hero data={heroData} />
+      <Characters data={data.results} />
+    </>
   );
 }
-
-export default App;
