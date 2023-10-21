@@ -1,20 +1,33 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
   const header = useRef();
   const nav = useRef();
 
-  const handleScroll = () => {
+  const [theme, setTheme] = useState('system');
+
+  const handlePageScroll = () => {
     header.current.classList.toggle('header--scroll', window.scrollY > 0);
     nav.current.classList.toggle('nav--scroll', window.scrollY > 0);
   };
 
+  const handleThemeChange = e => {
+    const themeData = e.target.value;
+    document.documentElement.className = themeData;
+    localStorage.setItem('theme', themeData);
+    setTheme(themeData);
+  };
+
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    const themeData = localStorage.getItem('theme') ?? 'system';
+    setTheme(themeData);
+    (themeData !== 'system') && (document.documentElement.className = themeData);
+
+    window.addEventListener('scroll', handlePageScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', handlePageScroll);
     };
   }, []);
 
@@ -61,14 +74,18 @@ const Header = () => {
             <a href="#searchOffCanvas" className="icon icon--2xs">
               <i className="bi bi-search"></i>
             </a>
-            <select className="select">
+            <select
+              className="select"
+              onChange={handleThemeChange}
+              value={theme}
+            >
               <option value="">💻</option>
-              <option value="">🌚</option>
-              <option value="">🌞</option>
-              <option value="">💙</option>
-              <option value="">🤍</option>
-              <option value="">💛</option>
-              <option value="">🖤</option>
+              <option value="dark">🌚</option>
+              <option value="light">🌞</option>
+              <option value="classic">💙</option>
+              <option value="silver">🤍</option>
+              <option value="gold">💛</option>
+              <option value="black">🖤</option>
             </select>
             <a href="#" className="icon">
               <i className="bi bi-list"></i>
