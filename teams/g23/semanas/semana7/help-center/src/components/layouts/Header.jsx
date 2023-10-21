@@ -50,7 +50,7 @@ const Header = () => {
           <div className="off-canvas off-canvas--top" id="searchOffCanvas">
             <div className="off-canvas__child">
               <a href="#header" className="off-canvas__close icon">
-                <i className="bi bi-x-circle"></i>
+                <i className="bi bi-x"></i>
               </a>
               <form className="form">
                 <input type="search" name="q" placeholder="Pregunta" className="form__input" />
