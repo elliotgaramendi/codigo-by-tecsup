@@ -87,7 +87,7 @@ const Header = () => {
               <option value="gold">💛</option>
               <option value="black">🖤</option>
             </select>
-            <a href="#" className="icon">
+            <a href="#menuOffCanvas" className="icon">
               <i className="bi bi-list"></i>
             </a>
           </div>
@@ -95,10 +95,17 @@ const Header = () => {
       </nav>
       <nav>
         <div className="container flexbox flexbox--centered-sides">
-          <a href="https://www.cineplanet.com.pe/peliculas" target="_blank" rel="noopener noreferrer">Películas</a>
-          <div>
-            <div>
-              <a href="#">
+          <a
+            href="https://www.cineplanet.com.pe/peliculas"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="button"
+          >
+            Películas
+          </a>
+          <div className="off-canvas off-canvas--right" id="menuOffCanvas">
+            <div className="off-canvas__child">
+              <a href="#header" className="off-canvas__close icon">
                 <i className="bi bi-x"></i>
               </a>
               <ul>
@@ -111,7 +118,7 @@ const Header = () => {
               </ul>
             </div>
           </div>
-          <ul>
+          <ul className="d-flex">
             <li>
               <a href="#" target="_blank" rel="noopener noreferrer">
                 <i className="bi bi-facebook"></i>
