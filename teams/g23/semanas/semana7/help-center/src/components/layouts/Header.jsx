@@ -108,34 +108,64 @@ const Header = () => {
               <a href="#header" className="off-canvas__close icon">
                 <i className="bi bi-x"></i>
               </a>
-              <ul>
+              <ul className="list d-flex f-direction-column g-2xs">
                 <li>
-                  <Link to={"#"}>Categorías</Link>
+                  <Link
+                    to={"#"}
+                    className="link"
+                  >
+                    Categorías
+                  </Link>
                 </li>
                 <li>
-                  <Link to={"#"}>Contacto</Link>
+                  <Link
+                    to={"#"}
+                    className="link"
+                  >
+                    Contacto
+                  </Link>
                 </li>
               </ul>
             </div>
           </div>
-          <ul className="d-flex">
+          <ul className="list d-flex g-5xs">
             <li>
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link link--xl"
+              >
                 <i className="bi bi-facebook"></i>
               </a>
             </li>
             <li>
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link link--xl"
+              >
                 <i className="bi bi-twitter-x"></i>
               </a>
             </li>
             <li>
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link link--xl"
+              >
                 <i className="bi bi-instagram"></i>
               </a>
             </li>
             <li>
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link link--xl"
+              >
                 <i className="bi bi-tiktok"></i>
               </a>
             </li>

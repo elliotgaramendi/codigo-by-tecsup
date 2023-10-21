@@ -1,0 +1,44 @@
+.link {
+  all: unset;
+  position: relative;
+  font-size: var(--element-size);
+  font-weight: 700;
+  cursor: pointer;
+  transition: color var(--transition-duration);
+
+  &:hover {
+    color: var(--primary-theme-color);
+
+    &::before {
+      transform: scale(1);
+    }
+  }
+
+  &:has(i)::before {
+    bottom: -0.25em;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -0.125em;
+    width: 100%;
+    height: 0.125em;
+    background-color: var(--primary-theme-color);
+    transform: scale(0);
+    transition: transform var(--transition-duration);
+  }
+
+  & i {
+    display: flex;
+  }
+}
+
+.link--lg {
+  font-size: calc(var(--element-size) * 1.125);
+}
+
+.link--xl {
+  font-size: calc(var(--element-size) * 1.25);
+}
