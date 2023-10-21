@@ -1,3 +1,5 @@
+import { format } from "date-fns";
+import { es } from "date-fns/locale";
 import { useEffect, useState } from "react";
 
 function App() {
@@ -40,8 +42,8 @@ function App() {
                   <div className="flex flex-col gap-1">
                     <h2 className="text-xl font-bold line-clamp-2">{title}</h2>
                     <div className="flex items-center gap-2">
-                      <div className="text-sm text-gray-400">{original_language}</div>
-                      <div className="text-sm text-gray-500">{release_date}</div>
+                      <div className="text-sm text-gray-400">{format(new Date(release_date), 'dd MMMM yyyy', { locale: es })}</div>
+                      <div className="text-sm text-gray-500">{original_language}</div>
                     </div>
                     <p className="line-clamp-6">{overview}</p>
                   </div>
