@@ -8,6 +8,6 @@
 .form__input {
   width: 100%;
   padding: 0.3125em 0.8125em;
-  border-radius: var(--border-radius);
+  border-radius: calc(var(--border-radius) * 0.75);
   font-size: var(--element-size);
 }

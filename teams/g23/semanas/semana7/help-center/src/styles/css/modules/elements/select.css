@@ -1,0 +1,10 @@
+.select {
+  all: unset;
+  padding: 0.125em;
+  border: 0.0625rem solid var(--primary-theme-color);
+  border-radius: calc(var(--border-radius) * 0.25);
+  background-color: var(--primary-background-color);
+  font-size: var(--element-size);
+  text-align: center;
+  cursor: pointer;
+}

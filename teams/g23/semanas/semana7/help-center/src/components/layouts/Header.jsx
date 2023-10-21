@@ -57,11 +57,11 @@ const Header = () => {
               </form>
             </div>
           </div>
-          <div className="d-flex">
-            <a href="#searchOffCanvas" className="icon icon--xs">
+          <div className="d-flex a-items-center g-5xs">
+            <a href="#searchOffCanvas" className="icon icon--2xs">
               <i className="bi bi-search"></i>
             </a>
-            <select>
+            <select className="select">
               <option value="">💻</option>
               <option value="">🌚</option>
               <option value="">🌞</option>
