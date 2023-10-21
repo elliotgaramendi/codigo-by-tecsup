@@ -6,6 +6,7 @@
 .img--logo {
   height: calc(var(--element-size) * 2);
   width: auto;
+  color: var(--primary-text-color);
 }
 
 .img--hero-background {
