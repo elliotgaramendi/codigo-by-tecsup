@@ -21,9 +21,35 @@ function App() {
     <section className="py-8">
       <div className="container px-2 mx-auto flex flex-col gap-8">
         <h1 className="text-sky-500 text-3xl text-center font-black">Cine Feliz</h1>
-        <ul>
-          {moviesData.results?.map(element => <li key={element.id}>{element.id}</li>)}
-        </ul>
+        <div className="grid grid-cols-[repeat(auto-fit,_minmax(320px,_1fr))] gap-8">
+          {moviesData.results?.map(element => {
+            const { id, original_language, overview, poster_path, release_date, title, vote_average } = element;
+            return (
+              <div key={id}>
+                <div className="h-64 p-4 rounded-2xl bg-zinc-800 shadow-lg shadow-sky-500 grid grid-cols-[1.5fr,_2fr] gap-8">
+                  <div className="relative h-56">
+                    <img
+                      src={'https://image.tmdb.org/t/p/w300' + poster_path}
+                      alt=""
+                      width={160}
+                      height={256}
+                      className="block object-cover w-full h-full rounded-2xl"
+                    />
+                    <div className="absolute top-2 right-2 p-2 rounded-2xl bg-amber-500 font-bold">{vote_average}</div>
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    <h2 className="text-xl font-bold line-clamp-2">{title}</h2>
+                    <div className="flex items-center gap-2">
+                      <div className="text-sm text-gray-400">{original_language}</div>
+                      <div className="text-sm text-gray-500">{release_date}</div>
+                    </div>
+                    <p className="line-clamp-6">{overview}</p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
