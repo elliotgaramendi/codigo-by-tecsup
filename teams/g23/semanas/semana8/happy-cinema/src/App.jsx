@@ -9,7 +9,7 @@ function App() {
     const fetchData = async () => {
       const options = {
         headers: {
-          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0ZjlmNzA1YjQ3ODRmNTQ3Mzc2ZjJjZDg4Mzg5MTY4NiIsInN1YiI6IjYyNTA1MjFlYTA1NWVmMDA2NTU3NTEzOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.jYHK5Rt55pBTHvGjrEGTjAXRVlGOdnDBpqBxhnhrCL4'
+          Authorization: 'Bearer ' + import.meta.env.VITE_API_TOKEN
         }
       };
       const response = await fetch('https://api.themoviedb.org/3/discover/movie', options);
