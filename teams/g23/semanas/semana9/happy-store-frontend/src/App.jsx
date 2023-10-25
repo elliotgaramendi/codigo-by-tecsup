@@ -1,4 +1,5 @@
-import Header from "./components/Header";
+import Header from './components/Header';
+import SectionWrapper from './components/SectionWrapper';
 
 function App() {
   const header = {
@@ -6,7 +7,12 @@ function App() {
   };
 
   return (
-    <Header title={header.title} />
+    <>
+      <Header title={header.title} />
+      <SectionWrapper>
+        <h2>Productos</h2>
+      </SectionWrapper>
+    </>
   );
 }
 
