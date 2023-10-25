@@ -1,6 +1,12 @@
+import Header from "./components/Header";
+
 function App() {
+  const header = {
+    title: '🛒 Tiendita Feliz 🛒'
+  };
+
   return (
-    <h1>Tiendita Feliz</h1>
+    <Header title={header.title} />
   );
 }
 
