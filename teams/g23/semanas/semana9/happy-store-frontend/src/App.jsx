@@ -1,5 +1,7 @@
 import Header from './components/Header';
+import Products from './components/Products';
 import SectionWrapper from './components/SectionWrapper';
+import { products } from './mocks/products.json';
 
 function App() {
   const header = {
@@ -10,7 +12,7 @@ function App() {
     <>
       <Header title={header.title} />
       <SectionWrapper>
-        <h2>Productos</h2>
+        <Products data={products} />
       </SectionWrapper>
     </>
   );
