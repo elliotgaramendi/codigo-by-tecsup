@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Header from './components/Header';
 import Products from './components/Products';
 import SectionWrapper from './components/SectionWrapper';
+import useFilters from './hooks/useFilters';
 import { products as initialProducts } from './mocks/products.json';
 
 function App() {
@@ -10,22 +11,7 @@ function App() {
   };
 
   const [products, setProducts] = useState([]);
-  const [filters, setFilters] = useState({
-    minPrice: 0,
-    category: ''
-  });
-
-  const filterProducts = data => {
-    return data.filter(element => {
-      return (
-        element.price >= filters.minPrice &&
-        (
-          filters.category === '' ||
-          element.category === filters.category
-        )
-      );
-    });
-  };
+  const [filters, setFilters, filterProducts] = useFilters();
 
   useEffect(() => {
     setProducts(filterProducts(initialProducts));
