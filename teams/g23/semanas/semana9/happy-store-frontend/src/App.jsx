@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import Footer from './components/Footer';
-import Header from './components/Header';
-import Products from './components/Products';
-import SectionWrapper from './components/SectionWrapper';
+import Products from './components/Products/Products';
+import Footer from './components/layouts/Footer';
+import Header from './components/layouts/Header';
+import SectionWrapper from './components/wrappers/SectionWrapper';
 import { IS_DEVELOPMENT } from './configs/configs';
 import useFilters from './hooks/useFilters';
 import { products as initialProducts } from './mocks/products.json';

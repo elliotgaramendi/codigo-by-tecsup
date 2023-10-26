@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 
-import { useState } from "react";
+import { useState } from 'react';
 
 const Filters = ({ setFilters }) => {
   const [inputValues, setInputValues] = useState({
