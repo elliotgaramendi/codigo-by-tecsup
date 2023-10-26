@@ -1,9 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import Footer from './components/layouts/Footer';
 import Header from './components/layouts/Header';
 import Products from './components/products/Products';
 import SectionWrapper from './components/wrappers/SectionWrapper';
 import { IS_DEVELOPMENT } from './configs/configs';
+import { ProductContext } from './context/ProductContext';
 import useFilters from './hooks/useFilters';
 import { products as initialProducts } from './mocks/products.json';
 
@@ -12,7 +13,7 @@ function App() {
     title: '🛒 Tiendita Feliz 🛒'
   };
 
-  const [products, setProducts] = useState([]);
+  const { products, setProducts } = useContext(ProductContext);
   const [filters, setFilters, filterProducts] = useFilters();
 
   useEffect(() => {
