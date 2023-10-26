@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import Products from './components/Products/Products';
 import Footer from './components/layouts/Footer';
 import Header from './components/layouts/Header';
+import Products from './components/products/Products';
 import SectionWrapper from './components/wrappers/SectionWrapper';
 import { IS_DEVELOPMENT } from './configs/configs';
 import useFilters from './hooks/useFilters';

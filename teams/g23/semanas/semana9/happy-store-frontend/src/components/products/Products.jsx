@@ -1,10 +1,8 @@
 /* eslint-disable react/prop-types */
 
-const Products = ({ data }) => {
-  const formatCurrency = (amount) => {
-    return amount.toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2 });
-  };
+import { formatCurrency } from "../utils/formatUtil";
 
+const Products = ({ data }) => {
   return (
     <ul className="grid grid-cols-[repeat(auto-fill,_minmax(256px,_1fr))] gap-6">
       {data.map(element => {

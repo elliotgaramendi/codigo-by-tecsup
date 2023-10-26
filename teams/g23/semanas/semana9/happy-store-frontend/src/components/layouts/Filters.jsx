@@ -3,6 +3,7 @@
 import { useState } from 'react';
 
 const Filters = ({ setFilters }) => {
+  // ToDo mejorar el estado de los filtros
   const [inputValues, setInputValues] = useState({
     minPrice: 0,
     category: ''
