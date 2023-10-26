@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 
-import { formatCurrency } from "../utils/formatUtil";
+import { formatCurrency } from "../../utils/formatUtil";
+
 
 const Products = ({ data }) => {
   return (

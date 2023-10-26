@@ -16,12 +16,29 @@ export const ProductProvider = ({ children }) => {
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
 
+  const filterProducts = data => {
+    return data.filter(element => {
+      return (
+        element.price * (100 - element.discountPercentage) / 100 >= filters.minPrice &&
+        (
+          filters.category === '' ||
+          element.category === filters.category
+        )
+      );
+    });
+  };
+
   useEffect(() => {
     setCategories(initialProducts.reduce((categories, element) => {
       categories.includes(element.category) === false && categories.push(element.category);
       return categories;
     }, []));
-  }, [setCategories]);
+  }, []);
+
+  useEffect(() => {
+    setProducts(filterProducts(initialProducts));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filters]);
 
   return (
     <ProductContext.Provider
