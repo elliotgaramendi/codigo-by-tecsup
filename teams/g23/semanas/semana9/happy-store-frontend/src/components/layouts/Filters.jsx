@@ -1,21 +1,12 @@
 /* eslint-disable react/prop-types */
 
-import { useState } from 'react';
+import useProducts from '../../hooks/useProducts';
 
-const Filters = ({ setFilters }) => {
-  // ToDo mejorar el estado de los filtros
-  const [inputValues, setInputValues] = useState({
-    minPrice: 0,
-    category: ''
-  });
-
-  const { minPrice, category } = inputValues;
+const Filters = () => {
+  const { filters, setFilters } = useProducts();
+  const { minPrice, category } = filters;
 
   const handleInput = e => {
-    setInputValues({
-      ...inputValues,
-      [e.target.name]: e.target.value
-    });
     setFilters(f => ({
       ...f,
       [e.target.name]: e.target.value

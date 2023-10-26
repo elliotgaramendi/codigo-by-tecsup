@@ -1,10 +1,7 @@
-import { useState } from 'react';
+import useProducts from './useProducts';
 
 const useFilters = () => {
-  const [filters, setFilters] = useState({
-    minPrice: 0,
-    category: ''
-  });
+  const { filters, setFilters } = useProducts();
 
   const filterProducts = data => {
     return data.filter(element => {
