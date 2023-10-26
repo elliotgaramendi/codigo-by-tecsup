@@ -3,7 +3,7 @@
 import useProducts from '../../hooks/useProducts';
 
 const Filters = () => {
-  const { filters, setFilters } = useProducts();
+  const { filters, setFilters, categories } = useProducts();
   const { minPrice, category } = filters;
 
   const handleInput = e => {
@@ -38,8 +38,7 @@ const Filters = () => {
           onInput={handleInput}
         >
           <option value="">Todos</option>
-          <option value="laptops">Laptops</option>
-          <option value="smartphones">Celulares</option>
+          {categories.map((element, index) => <option key={index} value={element}>{element}</option>)}
         </select>
       </div>
     </div>

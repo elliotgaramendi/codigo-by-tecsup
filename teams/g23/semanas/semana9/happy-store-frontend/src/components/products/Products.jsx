@@ -11,7 +11,7 @@ const Products = ({ data }) => {
         return (
           <li
             key={id}
-            className="rounded-2xl overflow-hidden transition-shadow hover:shadow-xl hover:shadow-sky-500"
+            className="rounded-2xl bg-zinc-700 overflow-hidden transition-shadow hover:shadow-xl hover:shadow-sky-500"
           >
             <img
               src={thumbnail}
