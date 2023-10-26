@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
+import Footer from './components/Footer';
 import Header from './components/Header';
 import Products from './components/Products';
 import SectionWrapper from './components/SectionWrapper';
+import { IS_DEVELOPMENT } from './configs/configs';
 import useFilters from './hooks/useFilters';
 import { products as initialProducts } from './mocks/products.json';
 
@@ -27,6 +29,7 @@ function App() {
       <SectionWrapper>
         <Products data={products} />
       </SectionWrapper>
+      {IS_DEVELOPMENT && <Footer filters={filters} />}
     </>
   );
 }
