@@ -7,7 +7,7 @@ export const ProductContext = createContext();
 
 export const ProductProvider = ({ children }) => {
   const header = {
-    title: '🛒 Tiendita Feliz 🛒'
+    title: 'TienditaFeliz'
   };
   const [filters, setFilters] = useState({
     minPrice: 0,

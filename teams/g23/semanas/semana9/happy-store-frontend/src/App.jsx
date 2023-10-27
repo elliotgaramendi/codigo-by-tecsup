@@ -1,3 +1,4 @@
+import Filters from './components/layouts/Filters';
 import Footer from './components/layouts/Footer';
 import Header from './components/layouts/Header';
 import Products from './components/products/Products';
@@ -12,6 +13,7 @@ function App() {
     <>
       <Header title={header.title} />
       <SectionWrapper>
+        <Filters />
         <Products data={products} />
       </SectionWrapper>
       {IS_DEVELOPMENT && <Footer filters={filters} />}
