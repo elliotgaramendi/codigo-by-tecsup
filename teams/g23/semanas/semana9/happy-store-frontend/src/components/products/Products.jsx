@@ -2,7 +2,6 @@
 
 import { formatCurrency } from "../../utils/formatUtil";
 
-
 const Products = ({ data }) => {
   return (
     <ul className="grid grid-cols-[repeat(auto-fill,_minmax(256px,_1fr))] gap-6">
