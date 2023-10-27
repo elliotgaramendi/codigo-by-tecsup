@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 
-import ShoppingCart from "./ShoppingCart";
+import ShoppingCart from '../shoppingCart/ShoppingCart';
 
 const Header = ({ title }) => {
   return (
