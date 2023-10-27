@@ -12,14 +12,14 @@ const Products = ({ data }) => {
         return (
           <li
             key={id}
-            className="rounded-2xl bg-zinc-700 overflow-hidden transition-shadow hover:shadow-xl hover:shadow-sky-500"
+            className="rounded-2xl overflow-hidden transition-shadow hover:shadow-xl hover:shadow-sky-500"
           >
             <img
               src={thumbnail}
               alt={title}
               width={256}
               height={256}
-              className="w-full h-48 object-cover"
+              className="w-full h-48 object-cover bg-zinc-700"
             />
             <div className="h-64 p-3 bg-zinc-800 flex flex-col gap-0.5">
               <h2 className="text-zinc-400 font-bold">{brand}</h2>

@@ -33,7 +33,6 @@
 
   & .off-canvas__child {
     width: min(calc(var(--element-size) * 32), 50%);
-    height: 100%;
     transform: translate(var(--t-translate), 0);
   }
 
