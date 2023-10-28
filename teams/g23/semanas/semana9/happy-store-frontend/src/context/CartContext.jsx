@@ -18,8 +18,17 @@ export const CartProvider = ({ children }) => {
   const removeFromCart = data => setCartItems(cartItems.filter(element => element.id !== data.id));
 
   const updateQuantity = data => {
+    const changeValue = (quantity, value) => {
+      if (quantity + value <= 0) {
+        return quantity
+      } else if (quantity + value > 10) {
+        return quantity
+      } else {
+        return quantity + value;
+      }
+    }
     setCartItems(cartItems.map(element => {
-      return element.id !== data.id ? element : { ...element, quantity: element.quantity + data.value };
+      return element.id !== data.element.id ? element : { ...element, quantity: changeValue(element.quantity, data.value) };
     }));
   }
 

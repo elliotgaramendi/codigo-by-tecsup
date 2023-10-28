@@ -2,7 +2,7 @@ import useCart from '../../hooks/useCart';
 import { formatCurrency } from '../../utils/formatUtil';
 
 const CartList = () => {
-  const { cartItems, removeFromCart } = useCart();
+  const { cartItems, removeFromCart, updateQuantity } = useCart();
 
   return (
     <ul className="flex flex-col gap-4">
@@ -30,7 +30,11 @@ const CartList = () => {
               <h2 className="text-zinc-400 text-xs font-bold">{brand}</h2>
               <h3 className="text-sky-500 text-sm font-extrabold">{title}</h3>
               <h4 className="text-xs"> <span className="text-sky-500 font-bold">{formatCurrency(price * (100 - discountPercentage) / 100)}</span> <span className="line-through">{formatCurrency(price)}</span> <sup className="py-0.5 px-2 rounded-lg bg-sky-600">{discountPercentage * -1}%</sup></h4>
-              <h2 className="text-zinc-400 text-xs font-bold">Cantidad: {quantity}</h2>
+              <h5 className="text-zinc-400 text-xs font-bold">
+                <button onClick={() => updateQuantity({ element, value: -1 })}>➖</button>
+                {quantity}
+                <button onClick={() => updateQuantity({ element, value: 1 })}>➕</button>
+              </h5>
             </div>
           </li>
         );
