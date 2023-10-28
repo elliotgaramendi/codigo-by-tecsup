@@ -1,5 +1,4 @@
 import { createContext, useState } from 'react';
-
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
@@ -7,7 +6,7 @@ export const CartProvider = ({ children }) => {
 
   const addToCart = data => {
     if (cartItems.findIndex(element => element.id === data.id) === -1) {
-      setCartItems([...cartItems, { ...data, quantity: 1 }])
+      setCartItems([...cartItems, { ...data, quantity: 1 }]);
     } else {
       setCartItems(cartItems.map(element => {
         return element.id !== data.id ? element : { ...element, quantity: element.quantity + 1 };
@@ -18,19 +17,12 @@ export const CartProvider = ({ children }) => {
   const removeFromCart = data => setCartItems(cartItems.filter(element => element.id !== data.id));
 
   const updateQuantity = data => {
-    const changeValue = (quantity, value) => {
-      if (quantity + value <= 0) {
-        return quantity
-      } else if (quantity + value > 10) {
-        return quantity
-      } else {
-        return quantity + value;
-      }
-    }
+    const changeValue = (quantity, value) => quantity + value <= 0 || quantity + value > 10 ? quantity : quantity + value;
+
     setCartItems(cartItems.map(element => {
       return element.id !== data.element.id ? element : { ...element, quantity: changeValue(element.quantity, data.value) };
     }));
-  }
+  };
 
   return (
     <CartContext.Provider
@@ -44,4 +36,4 @@ export const CartProvider = ({ children }) => {
       {children}
     </CartContext.Provider>
   );
-}
+};
