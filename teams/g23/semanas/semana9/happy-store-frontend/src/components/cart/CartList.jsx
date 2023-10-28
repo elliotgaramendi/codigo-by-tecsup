@@ -1,12 +1,12 @@
-import useShoppingCart from "../../hooks/useShoppingCart";
-import { formatCurrency } from "../../utils/formatUtil";
+import useCart from '../../hooks/useCart';
+import { formatCurrency } from '../../utils/formatUtil';
 
-const ShoppingCart = () => {
-  const { shoppingCart } = useShoppingCart();
+const CartList = () => {
+  const { cartItems } = useCart();
 
   return (
     <ul className="flex flex-col gap-4">
-      {shoppingCart.map(element => {
+      {cartItems.map(element => {
         const { id, title, price, discountPercentage, brand, thumbnail } = element;
         return (
           <li
@@ -33,4 +33,4 @@ const ShoppingCart = () => {
   );
 };
 
-export default ShoppingCart;
+export default CartList;

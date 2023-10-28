@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
 
-import useShoppingCart from "../../hooks/useShoppingCart";
-import { formatCurrency } from "../../utils/formatUtil";
+import useCart from '../../hooks/useCart';
+import { formatCurrency } from '../../utils/formatUtil';
 
 const Products = ({ data }) => {
-  const { setShoppingCart } = useShoppingCart();
+  const { setCartItems } = useCart();
 
   return (
     <ul className="grid grid-cols-[repeat(auto-fill,_minmax(256px,_1fr))] gap-6">
@@ -31,7 +31,7 @@ const Products = ({ data }) => {
               <h5 className="text-sky-500 text-lg font-bold">{formatCurrency(price * (100 - discountPercentage) / 100)}</h5>
               <button
                 className="py-2 px-8 mt-auto rounded-2xl bg-sky-500 font-semibold transition-colors hover:bg-sky-400"
-                onClick={() => { setShoppingCart(sC => [...sC, element]) }}
+                onClick={() => { setCartItems(cI => [...cI, element]) }}
               >
                 Agregar a carrito
               </button>
