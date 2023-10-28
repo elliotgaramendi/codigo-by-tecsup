@@ -2,7 +2,7 @@ import useCart from '../../hooks/useCart';
 import { formatCurrency } from '../../utils/formatUtil';
 
 const CartList = () => {
-  const { cartItems } = useCart();
+  const { cartItems, removeFromCart } = useCart();
 
   return (
     <ul className="flex flex-col gap-4">
@@ -10,9 +10,15 @@ const CartList = () => {
         const { id, title, price, discountPercentage, brand, thumbnail, quantity } = element;
         return (
           <li
-            className="rounded-2xl overflow-hidden transition-shadow grid grid-cols-[1fr,_2fr] hover:shadow-xl hover:shadow-sky-500"
+            className="relative rounded-2xl overflow-hidden transition-shadow grid grid-cols-[1fr,_2fr] hover:shadow-xl hover:shadow-sky-500"
             key={id}
           >
+            <button
+              className="absolute top-2 right-2"
+              onClick={() => removeFromCart(element)}
+            >
+              🗑
+            </button>
             <img
               src={thumbnail}
               alt="Key Holder"

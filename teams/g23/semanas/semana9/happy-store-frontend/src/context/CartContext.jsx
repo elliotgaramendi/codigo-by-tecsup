@@ -15,7 +15,7 @@ export const CartProvider = ({ children }) => {
     }
   };
 
-  const removeFromCart = data => setCartItems(cartItems.filter(element => element.id !== data));
+  const removeFromCart = data => setCartItems(cartItems.filter(element => element.id !== data.id));
 
   const updateQuantity = data => {
     setCartItems(cartItems.map(element => {
