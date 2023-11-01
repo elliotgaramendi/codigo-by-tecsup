@@ -1,8 +1,10 @@
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
+
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-  const [cartItems, setCartItems] = useState([]);
+  const initialCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+  const [cartItems, setCartItems] = useState(initialCartItems);
 
   const addToCart = data => {
     if (cartItems.findIndex(element => element.id === data.id) === -1) {
@@ -23,6 +25,10 @@ export const CartProvider = ({ children }) => {
       return element.id !== data.element.id ? element : { ...element, quantity: changeValue(element.quantity, data.value) };
     }));
   };
+
+  useEffect(() => {
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+  }, [cartItems]);
 
   return (
     <CartContext.Provider
