@@ -1,39 +1,28 @@
-import { createContext, useEffect, useState } from 'react';
+import { createContext, useEffect, useReducer } from 'react';
+import { addToCartAction, removeFromCartAction, updateQuantityAction } from '../actions/CartActions';
+import cartReducer from '../reducers/CartReducer';
+
+const initialState = JSON.parse(localStorage.getItem('cartItems')) || [];
 
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-  const initialCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-  const [cartItems, setCartItems] = useState(initialCartItems);
+  const [state, dispatch] = useReducer(cartReducer, initialState);
 
-  const addToCart = data => {
-    if (cartItems.findIndex(element => element.id === data.id) === -1) {
-      setCartItems([...cartItems, { ...data, quantity: 1 }]);
-    } else {
-      setCartItems(cartItems.map(element => {
-        return element.id !== data.id ? element : { ...element, quantity: element.quantity + 1 };
-      }));
-    }
-  };
+  const addToCart = data => dispatch(addToCartAction(data));
 
-  const removeFromCart = data => setCartItems(cartItems.filter(element => element.id !== data.id));
+  const removeFromCart = data => dispatch(removeFromCartAction(data));
 
-  const updateQuantity = data => {
-    const changeValue = (quantity, value) => quantity + value <= 0 || quantity + value > 10 ? quantity : quantity + value;
-
-    setCartItems(cartItems.map(element => {
-      return element.id !== data.element.id ? element : { ...element, quantity: changeValue(element.quantity, data.value) };
-    }));
-  };
+  const updateQuantity = data => dispatch(updateQuantityAction(data));
 
   useEffect(() => {
-    localStorage.setItem('cartItems', JSON.stringify(cartItems));
-  }, [cartItems]);
+    localStorage.setItem('cartItems', JSON.stringify(state));
+  }, [state]);
 
   return (
     <CartContext.Provider
       value={{
-        cartItems,
+        cartItems: state,
         addToCart,
         removeFromCart,
         updateQuantity
