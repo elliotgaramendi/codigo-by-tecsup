@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 
 import { createContext, useEffect, useState } from 'react';
-import { products as initialProducts } from '../mocks/products.json';
+import { products as initialProducts } from '../../mocks/products.json';
 
 export const ProductContext = createContext();
 
