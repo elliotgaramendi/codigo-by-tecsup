@@ -1,11 +1,24 @@
 {
   "name": "blog-cineplanet-test",
   "version": "0.0.1",
-  "description": "",
+  "description": "Proyecto de pruebas automatizadas E2E para el frontend del Blog Cineplanet.",
   "main": "index.js",
-  "scripts": {},
-  "keywords": [],
-  "author": "",
+  "scripts": {
+    "test": "npx playwright test --ui",
+    "codegen": "npx playwright codegen"
+  },
+  "keywords": [
+    "blog",
+    "cineplanet",
+    "test",
+    "automated",
+    "testing",
+    "e2e",
+    "frontend",
+    "web",
+    "playwright"
+  ],
+  "author": "Elliot Garamendi",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.39.0",
