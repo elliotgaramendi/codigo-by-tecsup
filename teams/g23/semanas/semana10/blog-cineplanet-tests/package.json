@@ -1,5 +1,5 @@
 {
-  "name": "blog-cineplanet-test",
+  "name": "blog-cineplanet-tests",
   "version": "0.0.1",
   "description": "Proyecto de pruebas automatizadas E2E para el frontend del Blog Cineplanet.",
   "main": "index.js",
