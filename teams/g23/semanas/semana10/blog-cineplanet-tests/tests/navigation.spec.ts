@@ -6,6 +6,6 @@ test.beforeEach(async ({ page }) => {
 
 test.describe('Web entry test', () => {
   test('Has title', async ({page}) => {
-    await expect(page).toHaveTitle(/Cineplanet Perú/);
+    await expect(page).toHaveTitle(/Blog Cineplanet/);
   });
 });
