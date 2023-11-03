@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 
+import CartFooter from "../cart/CartFooter";
 import CartHeader from "../cart/CartHeader";
 import CartList from "../cart/CartList";
 
@@ -13,6 +14,7 @@ const Header = ({ title }) => {
           <div className="relative w-3/4 max-w-lg h-full p-4 bg-zinc-900/50 flex flex-col gap-4 ">
             <CartHeader />
             <CartList />
+            <CartFooter />
           </div>
         </div>
       </div>

@@ -35,7 +35,7 @@ const CartList = () => {
                 {formatQuantity(quantity)}
                 <button onClick={() => updateQuantity({ element, value: 1 })}>➕</button>
               </h5>
-              <h6 className="text-sky-400 text-xs font-semibold">Subtotal: {formatCurrency(price * quantity)}</h6>
+              <h6 className="text-sky-400 text-xs font-semibold">Subtotal: {formatCurrency(price * (100 - discountPercentage) / 100 * quantity)}</h6>
             </div>
           </li>
         );
