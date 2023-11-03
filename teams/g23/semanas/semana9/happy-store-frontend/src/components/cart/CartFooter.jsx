@@ -4,6 +4,7 @@ import { formatCurrency } from "../../utils/formatUtil";
 
 const CartFooter = () => {
   const { cartItems } = useCart();
+
   const [subtotal, setSubtotal] = useState(0);
   const [realPrice, setRealPrice] = useState(0);
   const [shipment, setShipment] = useState(0);
