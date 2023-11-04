@@ -1,8 +1,11 @@
+import { useDispatch } from 'react-redux';
 import useCart from '../../hooks/useCart';
+import { removeFromCart, updateQuantity } from '../../state/redux/slices/cartSlice';
 import { formatCurrency, formatQuantity } from '../../utils/formatUtil';
 
 const CartList = () => {
-  const { cartItems, removeFromCart, updateQuantity } = useCart();
+  const dispatch = useDispatch();
+  const { cartItems } = useCart();
 
   return (
     <ul className="h-full flex flex-col gap-4 overflow-auto">
@@ -15,7 +18,7 @@ const CartList = () => {
           >
             <button
               className="absolute top-2 right-2"
-              onClick={() => removeFromCart(element)}
+              onClick={() => dispatch(removeFromCart(element))}
             >
               🗑
             </button>
@@ -31,9 +34,9 @@ const CartList = () => {
               <h3 className="text-sky-500 text-sm font-extrabold">{title}</h3>
               <h4 className="text-xs"> <span className="text-sky-500 font-bold">{formatCurrency(price * (100 - discountPercentage) / 100)}</span> <span className="line-through">{formatCurrency(price)}</span> <sup className="py-0.5 px-2 rounded-lg bg-sky-600">{discountPercentage * -1}%</sup></h4>
               <h5 className="text-zinc-400 text-xs font-bold">
-                <button onClick={() => updateQuantity({ element, value: -1 })}>➖</button>
+                <button onClick={() => dispatch(updateQuantity({ element, value: -1 }))}>➖</button>
                 {formatQuantity(quantity)}
-                <button onClick={() => updateQuantity({ element, value: 1 })}>➕</button>
+                <button onClick={() => dispatch(updateQuantity({ element, value: 1 }))}>➕</button>
               </h5>
               <h6 className="text-sky-400 text-xs font-semibold">Subtotal: {formatCurrency(price * (100 - discountPercentage) / 100 * quantity)}</h6>
             </div>

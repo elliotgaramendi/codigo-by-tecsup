@@ -1,10 +1,11 @@
 /* eslint-disable react/prop-types */
 
-import useCart from '../../hooks/useCart';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../state/redux/slices/cartSlice';
 import { formatCurrency } from '../../utils/formatUtil';
 
 const Products = ({ data }) => {
-  const { addToCart } = useCart();
+  const dispatch = useDispatch();
 
   return (
     <ul className="grid grid-cols-[repeat(auto-fill,_minmax(256px,_1fr))] gap-6">
@@ -31,7 +32,7 @@ const Products = ({ data }) => {
               <h5 className="text-sky-500 text-lg font-bold">{formatCurrency(price * (100 - discountPercentage) / 100)}</h5>
               <button
                 className="py-2 px-8 mt-auto rounded-2xl bg-sky-500 font-semibold transition-colors hover:bg-sky-400"
-                onClick={() => { addToCart(element) }}
+                onClick={() => { dispatch(addToCart(element)) }}
               >
                 Agregar a carrito
               </button>

@@ -1,8 +1,7 @@
-import { useContext } from "react";
-import { CartContext } from "../state/context/CartContext";
+import { useSelector } from 'react-redux';
 
 const useCart = () => {
-  return useContext(CartContext);
+  return useSelector(state => state.cart);
 };
 
 export default useCart;

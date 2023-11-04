@@ -5,7 +5,7 @@ import CartList from "./CartList";
 const Cart = () => {
   return (
     <div
-      onClick={() => window.location.hash = ''}
+      onClick={() => window.location.hash = '#header'}
       className="fixed z-50 top-0 right-0 bottom-0 left-0 bg-zinc-900/50 flex justify-end opacity-0 pointer-events-none transition-opacity target:opacity-100 target:pointer-events-auto" id="cartOffCanvas"
     >
       <div
