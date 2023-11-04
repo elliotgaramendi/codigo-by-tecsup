@@ -1,22 +1,37 @@
 import { ADD_TO_CART, REMOVE_FROM_CART, UPDATE_QUANTITY } from '../types/CartTypes';
 
 const cartReducer = (state, action) => {
-  switch (action.type) {
+  const { cartItems } = state;
+  const { type, payload } = action;
+
+  switch (type) {
     case ADD_TO_CART:
-      if (state.findIndex(element => element.id === action.payload.id) === -1) {
-        return [...state, { ...action.payload, quantity: 1 }];
+      if (cartItems.findIndex(element => element.id === payload.id) === -1) {
+        return ({
+          ...state,
+          cartItems: [...cartItems, { ...payload, quantity: 1 }]
+        });
       } else {
-        return state.map(element => element.id !== action.payload.id ? element : { ...element, quantity: element.quantity + 1 });
+        return ({
+          ...state,
+          cartItems: cartItems.map(element => element.id !== payload.id ? element : { ...element, quantity: element.quantity + 1 })
+        });
       }
     case REMOVE_FROM_CART:
-      return state.filter(element => element.id !== action.payload.id);
+      return ({
+        ...state,
+        cartItems: cartItems.filter(element => element.id !== payload.id)
+      });
     case UPDATE_QUANTITY:
       const changeValue = (quantity, value) => quantity + value <= 0 || quantity + value > 10 ? quantity : quantity + value;
-      return state.map(element => {
-        return element.id !== action.payload.element.id ? element : { ...element, quantity: changeValue(element.quantity, action.payload.value) };
+      return ({
+        ...state,
+        cartItems: cartItems.map(element => {
+          return element.id !== payload.element.id ? element : { ...element, quantity: changeValue(element.quantity, payload.value) };
+        })
       });
     default:
-      return state;
+      return cartItems;
   }
 };
 
